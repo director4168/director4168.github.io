@@ -3,8 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
+	<!-- 我感觉我这写的还可以吧，也是very very good，自我感觉良好-->
 	<title>director_Carter的主页</title>
 	<!-- Material Icons -->
+	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<style>
 		:root {
@@ -142,7 +145,7 @@
 			margin-top: 20px;
 		}
 
-		/* 列表项 - 增大上移动画距离 */
+		/* 动画&描边 */
 		.list-item {
 			display: flex;
 			align-items: center;
@@ -156,16 +159,25 @@
 			margin-bottom: 8px;
 			border: 1px solid transparent;
 			position: relative;
+			/* 修复描边问题 */
+			outline: none;
 		}
 
 		.list-item:hover {
 			background-color: rgba(0, 0, 0, 0.04);
 		}
 
-		.list-item:active {
+		/* 移除active状态，用js控制 */
+		.list-item.active {
 			background-color: rgba(0, 0, 0, 0.08);
 			transform: translateY(-5px);
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			border-color: var(--md-primary);
+		}
+
+		/* 焦点状态样式 */
+		.list-item:focus {
+			border-color: var(--md-primary);
 		}
 
 		.list-icon {
@@ -226,7 +238,8 @@
 			transform: scale(0.95);
 		}
 
-		/* 彩蛋弹窗样式 */
+		/* 彩蛋 */
+		/* 究极彩蛋，隐藏在代码里面  颗秒！梆梆梆梆！nnd是不是翻我源码了 */
 		.easter-egg-modal {
 			position: fixed;
 			top: 0;
@@ -289,15 +302,15 @@
 			.grid {
 				grid-template-columns: 1fr;
 			}
-			
+
 			.main-content {
 				padding: 16px;
 			}
-			
+
 			.hero-section {
 				padding: 32px 16px;
 			}
-			
+
 			.avatar {
 				width: 100px;
 				height: 100px;
@@ -306,21 +319,26 @@
 	</style>
 </head>
 <body>
-	<!-- 顶部应用栏 -->
+	<!-- 顶栏 -->
 	<div class="top-app-bar">
 		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
 		<h1 class="app-bar-title">director_Carter主页</h1>
 	</div>
+
+
+
+
 
 	<!-- 主要内容区域 -->
 	<div class="main-content">
 		<!-- 介绍 -->
 		<div class="hero-section">
 			<div class="avatar" id="avatar">
+				<!-- 头像 -->
 				<img src="https://director4168.github.io/TouXiang.png" alt="头像">
 			</div>
 			<h1 class="hero-title">director_Carter的主页</h1>
-			<p class="hero-description">director_Carter的主页🥰🥰，部署在Github。<p>
+			<p class="hero-description">director_Carter的主页🥰🥰🥰，部署在Github。<p>
 			<p class="hero-description">该网站也用于存储我的一些程序的更新配置数据。</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
@@ -330,9 +348,13 @@
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 			头像数据、网页源数据、配置数据均部署在GitHub。
 			</p>
+
+
 		</div>
 
-		<!-- 社交账号卡片 -->
+
+
+		<!-- 社交账号标签 -->
 		<div class="card">
 			<h2 class="card-title">我的社交账号（点击标签可跳转）</h2>
 			<div class="grid">
@@ -340,58 +362,74 @@
 					<span class="material-icons list-icon">smart_display</span>
 					<div class="list-content">
 						<div class="list-title">哔哩哔哩(中国大陆版)</div>
-						<div class="list-subtitle">欢迎关注我的哔哔哩哔🥰🥰（求点赞投币关注🙃🙃🥰🥰）。</div>
+						<div class="list-subtitle">欢迎关注我的哔哩哔哩🥰🥰🥰（求点赞投币关注🙃🥰）。</div>
+						<!-- 迟早在B站里面看到B -->
 						<div class="list-subtitle">哔哩哔哩📺昵称: director_Carter</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
 
+
 				<a class="list-item" href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=2705722903&card_type=person&source=qrcode">
 					<span class="material-icons list-icon">chat</span>
 					<div class="list-content">
 						<div class="list-title">QQ</div>
-						<div class="list-subtitle">我的QQ，但是可能会显示风险账号，因为之前模块掉了导致root被检测出来了😭😭😭😭😭😭</div>
+						<!-- 密码的Zygisk NEXT 1.3.0😡😡😡 -->
+						<div class="list-subtitle">我的QQ，但是可能会显示风险账号，因为之前更新Zygisk NEXT模块到v1.3.0导致root被检测出来了，也不知道现在有没有给我拉出风险账号😭😭😭（这里奉劝各位使用Zygisk NEXT模块的用户，千万不要更新1.3.0）</div>
 						<div class="list-subtitle">QQ号🐧: 2705722903</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">person_add_alt</span>
 				</a>
 
+
 				<a class="list-item" href="https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2" target="_blank">
 					<span class="material-icons list-icon">forum</span>
 					<div class="list-content">
 						<div class="list-title">MT论坛</div>
-						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子🥰🥰。</div>
+						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子🥰🥰🥰。</div>
 						<div class="list-subtitle">MT论坛📖昵称: director_mark</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
 
+
 				<a class="list-item" href="https://github.com/director4168" target="_blank">
 					<span class="material-icons list-icon">code</span>
 					<div class="list-content">
 						<div class="list-title">GitHub</div>
-						<div class="list-subtitle">我的Github帐号，不过实际上我的大部分代码都是直接开源在压缩包里的（开源协议通常使用GPL-3），在Github基本上没有发（首先绝对不是因为懒😏😏🙃🙃）。</div>
+						<div class="list-subtitle">我的Github帐号，不过实际上我的大部分代码都是直接开源在压缩包里的（开源协议通常使用GPL-3），在Github基本上没有发（首先绝对不是因为懒😏🙃）。</div>
+						<!-- 好吧其实就是懒 -->
 						<div class="list-subtitle">Github🖥🐈昵称: director4168</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
 
+
 				<a class="list-item" href="mailto:2705722903@qq.com">
 					<span class="material-icons list-icon">email</span>
 					<div class="list-content">
 						<div class="list-title">QQ邮箱</div>
-						<div class="list-subtitle">欢迎通过电子邮件向我提出建议、反馈bug等🙃🙃。</div>
+						<div class="list-subtitle">欢迎通过电子邮件向我提出建议、反馈bug等🥰🥰🥰。</div>
 						<div class="list-subtitle">邮箱📮: 2705722903@qq.com</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
 				</a>
+
+
 			</div>
 		</div>
 
+
+
+
+
 		<!-- 其他 -->
+		<!-- 懒得重写一个css了，把前面的直接复制过来用 -->
 		<div class="hero-section">
 			<h2 class="card-title">其它</h2>
-<p class="hero-description">因为所以，这里塞点这东西。</p>
+			<p class="hero-description">因为所以，这里塞点这东西。</p>
+
+
 
 			<a class="list-item" href="https://github.com/director4168/director4168.github.io" target="_blank">
 				<span class="material-icons list-icon">code</span>
@@ -399,41 +437,60 @@
 					<div class="list-title">网站开源地址</div>
 					<div class="list-subtitle">该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码，但请尽量标注原作者（MT论坛 director_mark）。</div>
 					<div class="list-subtitle">本来这里应该写开源地址，但是老是出bug修复不了了，还是不放了🙃🙃🙃。</div>
-		</div>
+				</div>
 				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 			</a>
+
+
 		</div>
-
-
-
 	</div>
+
+
+
+
 
 	<!-- 页尾 -->
+	<!-- 关心一下远古浏览器吧，©用 &copy 来表示，虽然在现代浏览器中一般使用前者（毕竟更好区分），但远古浏览器可能会显示异常 -->
+	<!-- 细节使用中英双版权 -->
 	<div class="footer">
-		<p>© <span id="current-year">2025</span> director_Carter | 主页</p>
+		<p>&copy 版权所有 <span id="current-year">2025</span> director_Carter | 主页</p>
+		<p>&copy; 2020-2025 director_Carter. All Rights Reserved. | Homepage</p>
 	</div>
+
+
+
+
 
 	<!-- 主题切换按钮 -->
 	<div class="theme-toggle" id="themeToggle">
 		<span class="material-icons">dark_mode</span>
 	</div>
 
+
+
 	<!-- 彩蛋 -->
+	<!-- 其实还有一个彩蛋哦，静等有缘人找到 -->
+	<!-- 彩蛋弹窗里面的文字感觉间隔有点大，算了暂时不管了 -->
 	<div class="easter-egg-modal" id="easterEggModal">
 		<div class="easter-egg-content">
-			<h2>🎆 彩蛋 🎆</h2>
-			<p>恭喜你发现了这个隐藏彩蛋！</p>
-			<p>所以你居然戳我，而且是快速的戳我，估计是不小心点了一下之后发现点击有反应吧</p>
-			<button class="easter-egg-close" id="easterEggClose">关闭</button>
+			<h2>🎆🎆🎆 彩蛋 🎆🎆🎆</h2>
+			<p>颗秒！</p>
+			<p>梆梆梆梆！</p>
+			<p>director_Carter在此恭喜你，成功的发现了这个彩蛋，但是没奖励🤪（贱笑）</p>
+			<button class="easter-egg-close" id="easterEggClose">😇敢关闭就等着被我颗秒吧😇</button>
 		</div>
 	</div>
+
+
+
+
 
 	<script>
 		// 主题切换功能
 		document.addEventListener('DOMContentLoaded', function() {
 			const themeToggle = document.getElementById('themeToggle');
 			const themeIcon = themeToggle.querySelector('.material-icons');
-			
+
 			// 检测系统主题偏好
 			const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -456,7 +513,7 @@
 					themeIcon.textContent = 'dark_mode';
 				}
 			});
-			
+
 			// 手动切换主题
 			themeToggle.addEventListener('click', function() {
 				if (document.body.classList.contains('dark-theme')) {
@@ -477,7 +534,8 @@
 				yearElement.textContent = '2025';
 			}
 
-			// 彩蛋功能
+			// 彩蛋
+			// 其实不止这一个彩蛋，静等有缘人找到
 			const avatar = document.getElementById('avatar');
 			const easterEggModal = document.getElementById('easterEggModal');
 			const easterEggClose = document.getElementById('easterEggClose');
@@ -500,6 +558,46 @@
 
 			easterEggClose.addEventListener('click', function() {
 				easterEggModal.classList.remove('show');
+			// 直接用原生alert弹窗，首先绝对不是因为懒
+			alert('算了，这次就放过你吧');
+			});
+
+			// 修复列表项点击动画问题
+			const listItems = document.querySelectorAll('.list-item');
+			let activeItem = null;
+
+			// 点击文档其他地方时移除所有激活状态
+			document.addEventListener('click', function(e) {
+				// 检查点击的是否是列表项
+				const isListItem = e.target.closest('.list-item');
+
+				if (!isListItem && activeItem) {
+					// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
+					activeItem.classList.remove('active');
+					activeItem = null;
+				}
+			});
+
+			listItems.forEach(item => {
+				item.addEventListener('click', function(e) {
+					// 阻止事件冒泡，避免触发document的点击事件
+					e.stopPropagation();
+
+					// 如果已经有激活的项，先移除其激活状态
+					if (activeItem && activeItem !== this) {
+						activeItem.classList.remove('active');
+					}
+
+					// 切换当前项的激活状态
+					this.classList.toggle('active');
+
+					// 更新当前激活的项
+					if (this.classList.contains('active')) {
+						activeItem = this;
+					} else {
+						activeItem = null;
+					}
+				});
 			});
 		});
 	</script>
