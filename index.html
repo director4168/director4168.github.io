@@ -278,7 +278,7 @@
 		}
 
 		.easter-egg-content p {
-			margin-bottom: 24px;
+			margin-bottom: 2px;
 		}
 
 		.easter-egg-close {
@@ -293,6 +293,88 @@
 		}
 
 		.easter-egg-close:hover {
+			background-color: var(--md-primary-container);
+			color: var(--md-on-primary-container);
+		}
+
+		/* MD3对话框样式 */
+		.md3-dialog {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1001;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s, visibility 0.3s;
+		}
+
+		.md3-dialog.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.md3-dialog-content {
+			background-color: var(--md-surface);
+			color: var(--md-on-surface);
+			border-radius: 16px;
+			width: 90%;
+			max-width: 400px;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			overflow: hidden;
+		}
+
+		.md3-dialog-header {
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			padding: 20px 24px;
+			font-size: 20px;
+			font-weight: 500;
+		}
+
+		.md3-dialog-body {
+			padding: 20px 24px;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.md3-dialog-actions {
+			display: flex;
+			justify-content: flex-end;
+			padding: 16px 24px;
+			gap: 12px;
+		}
+
+		.md3-button {
+			padding: 10px 20px;
+			border-radius: 8px;
+			font-weight: 500;
+			font-size: 14px;
+			cursor: pointer;
+			border: none;
+			transition: background-color 0.2s;
+		}
+
+		.md3-button.text {
+			background-color: transparent;
+			color: var(--md-primary);
+		}
+
+		.md3-button.text:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+		}
+
+		.md3-button.contained {
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+		}
+
+		.md3-button.contained:hover {
 			background-color: var(--md-primary-container);
 			color: var(--md-on-primary-container);
 		}
@@ -325,10 +407,6 @@
 		<h1 class="app-bar-title">director_Carter主页</h1>
 	</div>
 
-
-
-
-
 	<!-- 主要内容区域 -->
 	<div class="main-content">
 		<!-- 介绍 -->
@@ -338,7 +416,7 @@
 				<img src="https://director4168.github.io/TouXiang.png" alt="头像">
 			</div>
 			<h1 class="hero-title">director_Carter的主页</h1>
-			<p class="hero-description">director_Carter的主页🥰🥰🥰，部署在Github。<p>
+			<p class="hero-description">director_Carter的主页，部署在Github。<p>
 			<p class="hero-description">该网站也用于存储我的一些程序的更新配置数据。</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
@@ -348,9 +426,9 @@
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 			头像数据、网页源数据、配置数据均部署在GitHub。
 			</p>
-
-
 		</div>
+
+
 
 
 
@@ -358,46 +436,52 @@
 		<div class="card">
 			<h2 class="card-title">我的社交账号（点击标签可跳转）</h2>
 			<div class="grid">
-				<a class="list-item" href="https://b23.tv/tIm8pA4" target="_blank">
+				<a class="list-item" href="javascript:void(0);" data-href="https://b23.tv/tIm8pA4" data-title="哔哩哔哩" data-content="是否跳转到director_Carter的哔哩哔哩首页？">
 					<span class="material-icons list-icon">smart_display</span>
 					<div class="list-content">
 						<div class="list-title">哔哩哔哩(中国大陆版)</div>
-						<div class="list-subtitle">欢迎关注我的哔哩哔哩🥰🥰🥰（求点赞投币关注🙃🥰）。</div>
+						<div class="list-subtitle">欢迎关注我的哔哩哔哩（求点赞投币关注🙃🥰）。</div>
 						<!-- 迟早在B站里面看到B -->
 						<div class="list-subtitle">哔哩哔哩📺昵称: director_Carter</div>
 					</div>
-					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+					<span class="material-icons" style="color: var(--md-outline);">movie</span>
 				</a>
 
 
-				<a class="list-item" href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=2705722903&card_type=person&source=qrcode">
+
+
+				<a class="list-item" href="javascript:void(0);" data-href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=2705722903&card_type=person&source=qrcode" data-title="风险提示" data-content="我的QQ之前升级Zygisk NEXT导致环境异常，被QQ检测出来并把我列入高风险名单了，导致添加我的QQ会提示有风险，并可能需要阅读10秒的一篇短文">
 					<span class="material-icons list-icon">chat</span>
 					<div class="list-content">
 						<div class="list-title">QQ</div>
-						<!-- 密码的Zygisk NEXT 1.3.0😡😡😡 -->
-						<div class="list-subtitle">我的QQ，但是可能会显示风险账号，因为之前更新Zygisk NEXT模块到v1.3.0导致root被检测出来了，也不知道现在有没有给我拉出风险账号😭😭😭（这里奉劝各位使用Zygisk NEXT模块的用户，千万不要更新1.3.0）</div>
+						<div class="list-subtitle">我的QQ，并且我的QQ是MT管理器公测群的管理员，欢于添加我的QQ交流🥰</div>
 						<div class="list-subtitle">QQ号🐧: 2705722903</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">person_add_alt</span>
 				</a>
 
 
-				<a class="list-item" href="https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2" target="_blank">
+
+
+				<a class="list-item" href="javascript:void(0);" data-href="https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2" data-title="MT论坛" data-content="是否跳转到director_Carter的MT论坛？（注: 本人MT论坛昵称是director_mark，director_Carter为小号）">
 					<span class="material-icons list-icon">forum</span>
 					<div class="list-content">
 						<div class="list-title">MT论坛</div>
-						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子🥰🥰🥰。</div>
+						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子🥰。</div>
 						<div class="list-subtitle">MT论坛📖昵称: director_mark</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
 
 
-				<a class="list-item" href="https://github.com/director4168" target="_blank">
+
+
+				<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168" data-title="Github" data-content="是否跳转到director_Carter的GitHub主页？（注: 我的Github账号昵称为director4168)">
 					<span class="material-icons list-icon">code</span>
 					<div class="list-content">
 						<div class="list-title">GitHub</div>
-						<div class="list-subtitle">我的Github帐号，不过实际上我的大部分代码都是直接开源在压缩包里的（开源协议通常使用GPL-3），在Github基本上没有发（首先绝对不是因为懒😏🙃）。</div>
+						<div class="list-subtitle">我的Github帐号。</div>
+						<div class="list-subtitle">本人主要开源作品均上传了GitHub，开源协议一般使用GPL-3或MPL-2.0。</div>
 						<!-- 好吧其实就是懒 -->
 						<div class="list-subtitle">Github🖥🐈昵称: director4168</div>
 					</div>
@@ -405,43 +489,37 @@
 				</a>
 
 
-				<a class="list-item" href="mailto:2705722903@qq.com">
+
+
+				<a class="list-item" href="javascript:void(0);" data-href="mailto:2705722903@qq.com" data-title="邮箱" data-content="是否向我发送邮件？">
 					<span class="material-icons list-icon">email</span>
 					<div class="list-content">
 						<div class="list-title">QQ邮箱</div>
-						<div class="list-subtitle">欢迎通过电子邮件向我提出建议、反馈bug等🥰🥰🥰。</div>
+						<div class="list-subtitle">欢迎通过电子邮件向我提出建议、反馈bug等🥰。</div>
 						<div class="list-subtitle">邮箱📮: 2705722903@qq.com</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
 				</a>
-
-
 			</div>
 		</div>
 
 
 
 
-
 		<!-- 其他 -->
-		<!-- 懒得重写一个css了，把前面的直接复制过来用 -->
 		<div class="hero-section">
 			<h2 class="card-title">其它</h2>
 			<p class="hero-description">因为所以，这里塞点这东西。</p>
 
-
-
-			<a class="list-item" href="https://github.com/director4168/director4168.github.io" target="_blank">
+			<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？(注: 网站使用并遵守MPL-2.0开源协议">
 				<span class="material-icons list-icon">code</span>
 				<div class="list-content">
 					<div class="list-title">网站开源地址</div>
-					<div class="list-subtitle">该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码，但请尽量标注原作者（MT论坛 director_mark）。</div>
-					<div class="list-subtitle">本来这里应该写开源地址，但是老是出bug修复不了了，还是不放了🙃🙃🙃。</div>
+					<div class="list-subtitle">该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码。</div>
+					<div class="list-subtitle">该网站使用MPL-2.0开源协议。</div>
 				</div>
 				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 			</a>
-
-
 		</div>
 	</div>
 
@@ -450,11 +528,9 @@
 
 
 	<!-- 页尾 -->
-	<!-- 关心一下远古浏览器吧，©用 &copy 来表示，虽然在现代浏览器中一般使用前者（毕竟更好区分），但远古浏览器可能会显示异常 -->
-	<!-- 细节使用中英双版权 -->
 	<div class="footer">
-		<p>&copy 版权所有 <span id="current-year">2025</span> director_Carter | 主页</p>
-		<p>&copy; 2020-2025 director_Carter. All Rights Reserved. | Homepage</p>
+		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v8</p>
+		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v8</p>
 	</div>
 
 
@@ -468,16 +544,105 @@
 
 
 
-	<!-- 彩蛋 -->
-	<!-- 其实还有一个彩蛋哦，静等有缘人找到 -->
-	<!-- 彩蛋弹窗里面的文字感觉间隔有点大，算了暂时不管了 -->
-	<div class="easter-egg-modal" id="easterEggModal">
-		<div class="easter-egg-content">
-			<h2>🎆🎆🎆 彩蛋 🎆🎆🎆</h2>
-			<p>颗秒！</p>
-			<p>梆梆梆梆！</p>
-			<p>director_Carter在此恭喜你，成功的发现了这个彩蛋，但是没奖励🤪（贱笑）</p>
-			<button class="easter-egg-close" id="easterEggClose">😇敢关闭就等着被我颗秒吧😇</button>
+
+
+
+
+
+
+
+<!-- 彩蛋弹窗 -->
+<div class="easter-egg-modal" id="easterEggModal">
+	<div class="easter-egg-content">
+		<h2>🎆🎆🎆 彩蛋 🎆🎆🎆</h2>
+		<p>颗秒！</p>
+		<p>梆梆梆梆！</p>
+		<p>director_Carter再此恭喜你，成功的发现了这个彩蛋，但是没奖励🤪（贱笑）</p>
+		<button class="easter-egg-close" id="easterEggClose">关闭（😇但是敢关闭就等着被我颗秒吧😇）</button>
+	</div>
+</div>
+
+<!-- 专用彩蛋关闭确认对话框 -->
+<div class="md3-dialog" id="easterEggCloseDialog">
+	<div class="md3-dialog-content">
+		<div class="md3-dialog-header" id="easterEggCloseDialogHeader">关闭彩蛋弹窗</div>
+			<div class="md3-dialog-body" id="easterEggCloseDialogBody">就放过你吧，点击确定按钮或弹窗外任意位置即可关闭</div>
+<!-- 发表感慨 -->
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+			就这东西我写俩小时，老是出bug，因为一开始的思路不是很正确
+			</p>
+		<div class="md3-dialog-actions">
+			<button class="md3-button contained" id="easterEggCloseDialogConfirm">确定</button>
+		</div>
+	</div>
+</div>
+
+<!-- 彩蛋弹窗关闭逻辑 -->
+<script>
+// Close the fucking popup.
+// 就这东西耗了我俩小时才写好，fuck不是跳转到新标签页，就是打不开彩蛋，或者关闭了彩蛋之后跳转标签失灵，一会儿整这出bug一会儿整那出bug，我真服了，Fuck this part of the code.
+
+	const avatar = document.getElementById('avatar');
+	const easterEggModal = document.getElementById('easterEggModal');
+	const easterEggClose = document.getElementById('easterEggClose');
+	const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
+	const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
+	let clickCount = 0;
+	let lastClickTime = 0;
+
+	// 彩蛋触发逻辑
+	avatar.addEventListener('click', function() {
+		const now = new Date().getTime();
+		if (now - lastClickTime > 300) {
+			clickCount = 0;
+		}
+		clickCount++;
+		lastClickTime = now;
+
+		if (clickCount >= 10) {
+			easterEggModal.classList.add('show');
+			clickCount = 0;
+		}
+	});
+
+	// 修改关闭彩蛋逻辑
+	easterEggClose.addEventListener('click', function() {
+		easterEggModal.classList.remove('show');
+		easterEggCloseDialog.classList.add('show');
+	});
+
+	// 专用关闭对话框确认按钮事件
+	easterEggCloseDialogConfirm.addEventListener('click', function() {
+		easterEggCloseDialog.classList.remove('show');
+	});
+
+	// 点击对话框外部关闭专用关闭对话框
+	easterEggCloseDialog.addEventListener('click', function(e) {
+	if (e.target === easterEggCloseDialog) {
+		easterEggCloseDialog.classList.remove('show');
+	}
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
+			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+			</div>
 		</div>
 	</div>
 
@@ -485,121 +650,169 @@
 
 
 
-	<script>
-		// 主题切换功能
-		document.addEventListener('DOMContentLoaded', function() {
-			const themeToggle = document.getElementById('themeToggle');
-			const themeIcon = themeToggle.querySelector('.material-icons');
+<script>
+// 主题切换功能
+document.addEventListener('DOMContentLoaded', function() {
+	const themeToggle = document.getElementById('themeToggle');
+	const themeIcon = themeToggle.querySelector('.material-icons');
 
-			// 检测系统主题偏好
-			const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+	// 检测系统主题偏好
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-			// 根据系统主题设置初始样式
-			if (prefersDarkScheme.matches) {
-				document.body.classList.add('dark-theme');
-				themeIcon.textContent = 'light_mode';
-			} else {
-				document.body.classList.remove('dark-theme');
-				themeIcon.textContent = 'dark_mode';
+	// 根据系统主题设置初始样式
+	if (prefersDarkScheme.matches) {
+		document.body.classList.add('dark-theme');
+		themeIcon.textContent = 'light_mode';
+	} else {
+		document.body.classList.remove('dark-theme');
+		themeIcon.textContent = 'dark_mode';
+	}
+
+	// 监听系统主题变化
+	prefersDarkScheme.addEventListener('change', e => {
+		if (e.matches) {
+			document.body.classList.add('dark-theme');
+			themeIcon.textContent = 'light_mode';
+		} else {
+			document.body.classList.remove('dark-theme');
+			themeIcon.textContent = 'dark_mode';
+		}
+	});
+
+	// 手动切换主题
+	themeToggle.addEventListener('click', function() {
+		if (document.body.classList.contains('dark-theme')) {
+			document.body.classList.remove('dark-theme');
+			themeIcon.textContent = 'dark_mode';
+		} else {
+			document.body.classList.add('dark-theme');
+			themeIcon.textContent = 'light_mode';
+		}
+	});
+
+
+
+
+
+// 更新页脚年份
+	const currentYear = new Date().getFullYear();
+
+// 获取中英文版权的元素
+	const chineseYearElement = document.getElementById('chinese-copyright-year');
+	const englishYearElement = document.getElementById('english-copyright-year');
+
+// 统一的年份更新逻辑
+function updateYearDisplay(yearElement) {
+	if (currentYear > 2025) {
+		yearElement.textContent = `2025-${currentYear}`;
+	} else {
+		yearElement.textContent = '2025';
+	}
+}
+
+// 分别更新两个元素
+updateYearDisplay(chineseYearElement);
+updateYearDisplay(englishYearElement);
+
+
+
+
+
+// 修复列表项点击动画问题
+	const listItems = document.querySelectorAll('.list-item');
+	let activeItem = null;
+
+	// 点击文档其他地方时移除所有激活状态
+	document.addEventListener('click', function(e) {
+		// 检查点击的是否是列表项
+		const isListItem = e.target.closest('.list-item');
+
+		if (!isListItem && activeItem) {
+			// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
+			activeItem.classList.remove('active');
+			activeItem = null;
+		}
+	});
+
+
+
+
+
+// MD3对话框功能
+	const md3Dialog = document.getElementById('md3Dialog');
+	const md3DialogHeader = document.getElementById('md3DialogHeader');
+	const md3DialogBody = document.getElementById('md3DialogBody');
+	const md3DialogCancel = document.getElementById('md3DialogCancel');
+	const md3DialogConfirm = document.getElementById('md3DialogConfirm');
+
+	let currentHref = '';
+
+	// 显示对话框函数
+	function showDialog(title, content, href) {
+		md3DialogHeader.textContent = title;
+		md3DialogBody.textContent = content;
+		currentHref = href;
+		md3Dialog.classList.add('show');
+	}
+
+	// 隐藏对话框函数
+	function hideDialog() {
+		md3Dialog.classList.remove('show');
+	}
+
+	// 对话框按钮事件
+	md3DialogCancel.addEventListener('click', function() {
+		hideDialog();
+	});
+
+	md3DialogConfirm.addEventListener('click', function() {
+		window.open(currentHref, '_blank');
+		hideDialog();
+	});
+
+	// 点击对话框外部关闭
+	md3Dialog.addEventListener('click', function(e) {
+		if (e.target === md3Dialog) {
+			hideDialog();
+		}
+	});
+
+
+
+
+
+// 为每个列表项添加点击事件
+	listItems.forEach(item => {
+		item.addEventListener('click', function(e) {
+			// 阻止事件冒泡，避免触发document的点击事件
+			e.stopPropagation();
+
+			// 如果已经有激活的项，先移除其激活状态
+			if (activeItem && activeItem !== this) {
+				activeItem.classList.remove('active');
 			}
 
-			// 监听系统主题变化
-			prefersDarkScheme.addEventListener('change', e => {
-				if (e.matches) {
-					document.body.classList.add('dark-theme');
-					themeIcon.textContent = 'light_mode';
-				} else {
-					document.body.classList.remove('dark-theme');
-					themeIcon.textContent = 'dark_mode';
-				}
-			});
+			// 切换当前项的激活状态
+			this.classList.toggle('active');
 
-			// 手动切换主题
-			themeToggle.addEventListener('click', function() {
-				if (document.body.classList.contains('dark-theme')) {
-					document.body.classList.remove('dark-theme');
-					themeIcon.textContent = 'dark_mode';
-				} else {
-					document.body.classList.add('dark-theme');
-					themeIcon.textContent = 'light_mode';
-				}
-			});
-
-			// 更新页脚年份
-			const currentYear = new Date().getFullYear();
-			const yearElement = document.getElementById('current-year');
-			if (currentYear > 2025) {
-				yearElement.textContent = `2025-${currentYear}`;
+			// 更新当前激活的项
+			if (this.classList.contains('active')) {
+				activeItem = this;
 			} else {
-				yearElement.textContent = '2025';
+				activeItem = null;
 			}
 
-			// 彩蛋
-			// 其实不止这一个彩蛋，静等有缘人找到
-			const avatar = document.getElementById('avatar');
-			const easterEggModal = document.getElementById('easterEggModal');
-			const easterEggClose = document.getElementById('easterEggClose');
-			let clickCount = 0;
-			let lastClickTime = 0;
+			// 获取链接数据并显示对话框
+			const href = this.getAttribute('data-href');
+			const title = this.getAttribute('data-title');
+			const content = this.getAttribute('data-content');
 
-			avatar.addEventListener('click', function() {
-				const now = new Date().getTime();
-				if (now - lastClickTime > 500) { // 防止快速连续点击
-					clickCount = 0;
-				}
-				clickCount++;
-				lastClickTime = now;
-
-				if (clickCount >= 10) {
-					easterEggModal.classList.add('show');
-					clickCount = 0;
-				}
-			});
-
-			easterEggClose.addEventListener('click', function() {
-				easterEggModal.classList.remove('show');
-			// 直接用原生alert弹窗，首先绝对不是因为懒
-			alert('算了，这次就放过你吧');
-			});
-
-			// 修复列表项点击动画问题
-			const listItems = document.querySelectorAll('.list-item');
-			let activeItem = null;
-
-			// 点击文档其他地方时移除所有激活状态
-			document.addEventListener('click', function(e) {
-				// 检查点击的是否是列表项
-				const isListItem = e.target.closest('.list-item');
-
-				if (!isListItem && activeItem) {
-					// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
-					activeItem.classList.remove('active');
-					activeItem = null;
-				}
-			});
-
-			listItems.forEach(item => {
-				item.addEventListener('click', function(e) {
-					// 阻止事件冒泡，避免触发document的点击事件
-					e.stopPropagation();
-
-					// 如果已经有激活的项，先移除其激活状态
-					if (activeItem && activeItem !== this) {
-						activeItem.classList.remove('active');
-					}
-
-					// 切换当前项的激活状态
-					this.classList.toggle('active');
-
-					// 更新当前激活的项
-					if (this.classList.contains('active')) {
-						activeItem = this;
-					} else {
-						activeItem = null;
-					}
-				});
-			});
+			if (href && title && content) {
+				showDialog(title, content, href);
+			}
 		});
-	</script>
+	});
+});
+</script>
 </body>
 </html>
