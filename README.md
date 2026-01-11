@@ -2,16 +2,16 @@
 
 ## 版权声明 | Copyright Statement
 
-**版权所有 (C) 2025-20XX director_Carter**  
-**Copyright (C) 2025-20XX director_Carter.**
+**(C) 2025-20XX director_Carter 版权所有**  
+**(C) 2025-20XX director_Carter. All Rights Reserved**
 
 ### 中文
-- 本版权声明适用于 [**director4168.github.io**] 整体软件及所有随附分发的文件（除非单个文件中另有特殊说明）。  
+- 本版权声明适用于 [**豆米**] 整体软件及所有随附分发的文件（除非单个文件中另有特殊说明）。  
 - 本文档源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
 
 ### English
-- This copyright statement applies to the entire [**director4168.github.i**] software and all accompanying distributed files (unless otherwise specifically stated in an individual file).  
+- This copyright statement applies to the entire [**豆米**] software and all accompanying distributed files (unless otherwise specifically stated in an individual file).  
 - The source code of this document is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
 http://mozilla.org/MPL/2.0/  
 
@@ -22,14 +22,16 @@ http://mozilla.org/MPL/2.0/
 ### 中文
 本声明文件遵循 MPL-2.0 开源协议。
 
-- **版本:** v2.0.0
-- **时间:** 2025年12月13日 16:23
+- **版本:** v2.0.1
+- **时间:** 2025年12月25日 20:06
+- **作者:** director_Carter
 
 ### English
 This declaration document complies with the MPL-2.0 open source license.
 
-- **Version:** v2.0.0
-- **Time:** 2025.12.13 16:23
+- **Version:** v2.0.1
+- **Time:** 2025.12.25 20:06
+- **Author:** director_Carter
 
 ---
 
@@ -77,4 +79,3 @@ https://b23.tv/tk7CcWA
 ----
 > 版权所有 (C) 2025-20XX director_Carter
 Copyright (C) 2025-20XX director_Carter.
-
