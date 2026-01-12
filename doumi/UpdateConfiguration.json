@@ -1,7 +1,7 @@
 {
     "download_URL": "https://director4168.github.io/doumi/doumi.zip",
-    "Version": "v5.1.0",
-    "Version_B": "2601110339",
-    "ZIP_SHA256": "a8c3c7d5ca53238d082b180e2265a21a15e6e60ed1f86a071bef0bc45ac63bb3",
-    "Notice": "\033[1;37m不适配v5.1.0以前的版本\033[0m"
+    "Version": "v6.0.1",
+    "Version_B": "2601112102",
+    "ZIP_SHA256": "8e67b69a0713c58d54c09e93cf1a3d159b98045246bdafda1045d33bc8010f0e",
+    "Notice": "\033[1;37m不适配v6.0.0以前的版本\033[0m"
 }
