@@ -1,7 +1,7 @@
 {
     "download_URL": "https://director4168.github.io/doumi/doumi.zip",
-    "Version": "v6.1.1",
-    "Version_B": "2601131307",
-    "ZIP_SHA256": "6fe386656bc9068114849fb7c055a714db68f32a3a3870f10627644085a83bdd",
-    "Notice": "\033[1;37m添加了SHA256校验\n最新版正在上传中\033[0m"
+    "Version": "v6.1.2",
+    "Version_B": "2601131647",
+    "ZIP_SHA256": "79f3b8fb81b7214137a1e71615d5a601781f823e31a0ac1b02a0e02b492253c0",
+    "Notice": "\033[1;37m添加了SHA256校验，优化更新模块\033[0m"
 }
