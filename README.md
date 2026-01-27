@@ -52,7 +52,7 @@ https://b23.tv/tk7CcWA
 - **UID:** 134138
 - **主页 | Home page:**   https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
 
-### QQ
+### QQ | QQ(**Non international**)
 - 2705722903
 - 1316983035
 
