@@ -22,15 +22,15 @@ http://mozilla.org/MPL/2.0/
 ### 中文
 本声明文件遵循 MPL-2.0 开源协议。
 
-- **版本:** v2.0.1
-- **时间:** 2025年12月25日 20:06
+- **版本:** v3.0.0
+- **时间:** 2026年01月28日 04:32 (UTC+8:00)
 - **作者:** director_Carter
 
 ### English
 This declaration document complies with the MPL-2.0 open source license.
 
-- **Version:** v2.0.1
-- **Time:** 2025.12.25 20:06
+- **Version:** v3.0.0
+- **Time:** 2026.01.28 04:32 (UTC+8:00)
 - **Author:** director_Carter
 
 ---
