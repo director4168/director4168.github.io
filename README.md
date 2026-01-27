@@ -11,7 +11,7 @@
 http://mozilla.org/MPL/2.0/  
 
 ### English
-- This copyright statement applies to the entire website of [**director4168.gitHub.io**] and all accompanying distributed files (unless otherwise specified in individual files).
+- This copyright statement applies to the entire website of [**director4168.github.io**] and all accompanying distributed files (unless otherwise specified in individual files).
 - The source code of this document is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
 http://mozilla.org/MPL/2.0/  
 
