@@ -6,12 +6,12 @@
 **(C) 2025-20XX director_Carter. All Rights Reserved**
 
 ### 中文
-- 本版权声明适用于 [**豆米**] 整体软件及所有随附分发的文件（除非单个文件中另有特殊说明）。  
+- 本版权声明适用于 [**director4168.github.io**] 整体网站及所有随附分发的文件（除非单个文件中另有特殊说明）。  
 - 本文档源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
 
 ### English
-- This copyright statement applies to the entire [**豆米**] software and all accompanying distributed files (unless otherwise specifically stated in an individual file).  
+- This copyright statement applies to the entire website of [**director4168.GitHub.io**] and all accompanying distributed files (unless otherwise specified in individual files).
 - The source code of this document is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
 http://mozilla.org/MPL/2.0/  
 
