@@ -154,7 +154,8 @@
 			background-color: var(--md-surface);
 			color: var(--md-on-surface);
 			cursor: pointer;
-			transition: all 0.4s ease;
+			/* 点击跳转卡片时卡片的动画时间 */
+			transition: all 0.5s ease;
 			text-decoration: none;
 			margin-bottom: 8px;
 			border: 1px solid transparent;
@@ -253,6 +254,8 @@
 			z-index: 1000;
 			opacity: 0;
 			visibility: hidden;
+			/* 彩蛋弹窗一级弹窗 */
+			/* 和通用弹窗一样 */
 			transition: opacity 0.4s, visibility 0.4s;
 		}
 
@@ -311,7 +314,11 @@
 			z-index: 1001;
 			opacity: 0;
 			visibility: hidden;
-			transition: opacity 0.4s, visibility 0.4s;
+			/* 下面这个控制通用弹窗动画时间 */
+			/* 前面的是开启，后面的是结束时长 */
+			/* 彩蛋弹窗二级弹窗同样生效 */
+			/* 建议两个的动画时长一样 */
+			transition: opacity 0.5s, visibility 0.5s;
 		}
 
 		.md3-dialog.show {
@@ -529,8 +536,8 @@
 
 	<!-- 页尾 -->
 	<div class="footer">
-		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v8.3</p>
-		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v8.3</p>
+		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v8.4</p>
+		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v8.4</p>
 	</div>
 
 
