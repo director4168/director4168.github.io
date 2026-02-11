@@ -1,7 +1,7 @@
 {
     "download_URL": "https://director4168.github.io/doumi/doumi.zip",
-    "Version": "v6.1.5",
-    "Version_B": "2602120510",
+    "Version": "v6.1.6",
+    "Version_B": "2602120632",
     "ZIP_SHA256": "72bdc38c5831233e4c93f1dd0e6edd6e73d841dcfdef3421e2be7b8cbbc70535",
     "Notice": "\033[1;37m主要更新:\n新增: SMA服务器消息公告 模块\033[0m"
 }
