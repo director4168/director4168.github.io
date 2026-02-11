@@ -3,5 +3,5 @@
     "Version": "v6.1.4",
     "Version_B": "2602120440",
     "ZIP_SHA256": "a4bba41eef0385c8e6f91d529751b232ddb9adcac9aa6fdf7610ed42a8c13439",
-    "Notice": "\033[1;37m主要更新:\n新增: SMA服务器消息公告 模块\n\033[1;31m待上传\033[0m"
+    "Notice": "\033[1;37m主要更新:\n新增: SMA服务器消息公告 模块\033[0m"
 }
