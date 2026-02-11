@@ -1,6 +1,4 @@
 {
-    "Test1": "Test1",
-    "Test2": "\033[1;37mTest2\033[0m",
-    "Test3": "Test\nTest3",
-    "Test4": "\033[1;37mTest\nTest4\033[0m",
+    "Announcement": "暂无公告",
+    "Other": "暂无其他"
 }
