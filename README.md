@@ -77,5 +77,5 @@ https://b23.tv/tk7CcWA
 - This program is for entertainment, learning, and reference purposes only.
 
 ----
-> (C) 2025-20XX director_Carter 保留所有权利 
+> (C) 2025-20XX director_Carter 保留所有权利
 > (C) 2025-20XX director_Carter All Rights Reserved.
