@@ -2,7 +2,7 @@
 
 ## 版权声明 | Copyright Statement
 
-**(C) 2025-20XX director_Carter 版权所有**  
+**(C) 2025-20XX director_Carter 保留所有权利**  
 **(C) 2025-20XX director_Carter. All Rights Reserved**
 
 ### 中文
@@ -77,5 +77,5 @@ https://b23.tv/tk7CcWA
 - This program is for entertainment, learning, and reference purposes only.
 
 ----
-> 版权所有 (C) 2025-20XX director_Carter
-Copyright (C) 2025-20XX director_Carter.
+> (C) 2025-20XX director_Carter 保留所有权利
+(C) 2025-20XX director_Carter All Rights Reserved.
