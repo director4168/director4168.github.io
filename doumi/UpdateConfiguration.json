@@ -1,7 +1,7 @@
 {
     "download_URL": "https://director4168.github.io/doumi/doumi.zip",
-    "Version": "v6.1.3",
-    "Version_B": "2602091504",
-    "ZIP_SHA256": "7c12a02d9038656be6f761d31612a7b46d9cf631b15073474bc656c48295fca2",
-    "Notice": "\033[1;37m主要更新:\n修复系统环境下TAD模块的一个严重bug\033[0m"
+    "Version": "v6.1.4",
+    "Version_B": "2602120440",
+    "ZIP_SHA256": "a4bba41eef0385c8e6f91d529751b232ddb9adcac9aa6fdf7610ed42a8c13439",
+    "Notice": "\033[1;37m主要更新:\n新增: SMA服务器消息公告 模块\n\033[1;31m待上传\033[0m"
 }
