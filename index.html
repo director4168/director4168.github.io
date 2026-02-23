@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
-	<!-- 我感觉我这写的还可以吧，也是very very good，自我感觉良好-->
+	<!-- 本网站由“腾讯元宝”编写几乎大部分代码，显示内容（文本）由本人编写显示内容 -->
 	<title>director_Carter的主页</title>
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
@@ -442,7 +442,7 @@
 					<span class="material-icons list-icon">smart_display</span>
 					<div class="list-content">
 						<div class="list-title">哔哩哔哩(中国大陆版)</div>
-						<div class="list-subtitle">欢迎关注我的哔哩哔哩（求点赞投币关注🙃🥰）。</div>
+						<div class="list-subtitle">欢迎关注我的哔哩哔哩（求点赞投币关注）。</div>
 						<!-- 迟早在B站里面看到B -->
 						<div class="list-subtitle">哔哩哔哩📺昵称: director_Carter</div>
 					</div>
@@ -456,7 +456,11 @@
 					<span class="material-icons list-icon">chat</span>
 					<div class="list-content">
 						<div class="list-title">QQ</div>
-						<div class="list-subtitle">我的QQ，并且我的QQ是MT管理器公测群的管理员，欢于添加我的QQ交流🥰</div>
+							<div class="avatar" id="avatar">
+								<!-- 头像 -->
+									<img src="https://q1.qlogo.cn/g?b=qq&nk=2705722903&s=640" alt="QQ头像" >
+							</div>
+						<div class="list-subtitle">我的QQ，平时看消息基本上都是从QQ里看的</div>
 						<div class="list-subtitle">QQ号🐧: 2705722903</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">person_add_alt</span>
@@ -469,8 +473,8 @@
 					<span class="material-icons list-icon">forum</span>
 					<div class="list-content">
 						<div class="list-title">MT论坛</div>
-						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子🥰。</div>
-						<div class="list-subtitle">MT论坛📖昵称: director_mark</div>
+						<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子。</div>
+						<div class="list-subtitle">MT论坛昵称: director_mark</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
@@ -483,8 +487,8 @@
 					<div class="list-content">
 						<div class="list-title">GitHub</div>
 						<div class="list-subtitle">我的Github帐号。</div>
-						<div class="list-subtitle">给个星⭐️吧~🥰。开源协议一般使用GPL-3或MPL-2.0。</div>
-						<div class="list-subtitle">Github🖥🐈昵称: director4168</div>
+						<div class="list-subtitle">给个星⭐️吧~。开源协议一般使用GPL-3或MPL-2.0。</div>
+						<div class="list-subtitle">Github昵称: director4168</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
@@ -496,8 +500,8 @@
 					<span class="material-icons list-icon">email</span>
 					<div class="list-content">
 						<div class="list-title">QQ邮箱</div>
-						<div class="list-subtitle">欢迎通过电子邮件向我提出建议、反馈bug等🥰。</div>
-						<div class="list-subtitle">邮箱📮: 2705722903@qq.com</div>
+						<div class="list-subtitle">欢迎通过电子邮箱向我提出建议、反馈bug等。</div>
+						<div class="list-subtitle">邮箱: 2705722903@qq.com</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
 				</a>
@@ -530,8 +534,8 @@
 
 	<!-- 页尾 -->
 	<div class="footer">
-		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v8.6</p>
-		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v8.6</p>
+		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v9.0-C</p>
+		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v9.0-C</p>
 	</div>
 
 
@@ -568,11 +572,6 @@
 	<div class="md3-dialog-content">
 		<div class="md3-dialog-header" id="easterEggCloseDialogHeader">关闭彩蛋弹窗</div>
 			<div class="md3-dialog-body" id="easterEggCloseDialogBody">就放过你吧，点击确定按钮或弹窗外任意位置即可关闭</div>
-<!-- 发表感慨 -->
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
-				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-			就这东西我写俩小时，老是出bug，因为一开始的思路不是很正确
-			</p>
 		<div class="md3-dialog-actions">
 			<button class="md3-button contained" id="easterEggCloseDialogConfirm">确定</button>
 		</div>
@@ -581,9 +580,6 @@
 
 <!-- 彩蛋弹窗关闭逻辑 -->
 <script>
-// Close the fucking popup.
-// 就这东西耗了我俩小时才写好，fuck不是跳转到新标签页，就是打不开彩蛋，或者关闭了彩蛋之后跳转标签失灵，一会儿整这出bug一会儿整那出bug，我真服了，Fuck this part of the code.
-
 	const avatar = document.getElementById('avatar');
 	const easterEggModal = document.getElementById('easterEggModal');
 	const easterEggClose = document.getElementById('easterEggClose');
