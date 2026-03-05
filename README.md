@@ -22,15 +22,15 @@ http://mozilla.org/MPL/2.0/
 ### 中文
 本声明文件遵循 MPL-2.0 开源协议。
 
-- **版本:** v3.0.0
-- **时间:** 2026年01月28日 04:32 (UTC+8:00)
+- **版本:** v3.0.2
+- **时间:** 2026年03月06日 03:57 (UTC+8:00)
 - **作者:** director_Carter
 
 ### English
 This declaration document complies with the MPL-2.0 open source license.
 
-- **Version:** v3.0.0
-- **Time:** 2026.01.28 04:32 (UTC+8:00)
+- **Version:** v3.0.2
+- **Time:** 2026.03.06 03:57 (UTC+8:00)
 - **Author:** director_Carter
 
 ---
@@ -67,16 +67,16 @@ https://b23.tv/tk7CcWA
 ### 中文
 - 原作者**没有义务**承担因您使用本程序而导致的**任何风险与责任**。
 - **所有文件**均采用 **MPL-2.0** 开源协议（详见项目中的 `LICENSE` 与 `NOTICE.md` 文件）。
-- 如需修改，请**严格遵守** MPL-2.0 开源协议的要求。
+- 如需修改，请**严格遵守** **MPL-2.0** 开源协议的要求。
 - 本程序仅供娱乐、学习与参考。
-- 此md文档，**英文**部分由**Google Translate**（**谷歌翻译**）提供翻译支持，与实际内容可能存在偏差！
+- 此MarkDown文档，**英文**部分由**Google Translate**（**谷歌翻译**）提供翻译支持，与实际内容可能存在偏差！
 
 ### English
 - The original author **has no obligation** to assume **any risks and responsibilities** caused by your use of this program.
 - **All files** adopt the **MPL-2.0** open source license (see the `LICENSE` and `NOTICE.md` files in the project for details).
-- If you modify the work, please **strictly comply** with the terms of the MPL-2.0 open source agreement.
+- If you modify the work, please **strictly comply** with the terms of the **MPL-2.0** open source agreement.
 - This program is for entertainment, learning, and reference purposes only.
-- The **English** part of this md document is translated by **Google Translate**, and there may be deviations from the actual content!
+- The **English** part of this MarkDown document is translated by **Google Translate**, and there may be deviations from the actual content!
 
 ----
 > (C) 2025-20XX director_Carter 保留所有权利
