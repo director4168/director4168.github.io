@@ -7,12 +7,12 @@
 
 ### 中文
 - 本版权声明适用于 [**director4168.github.io**] 整体网站及所有随附分发的文件（除非单个文件中另有特殊说明）。  
-- 本文档源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
+- 本项目整体源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
 
 ### English
 - This copyright statement applies to the entire website of [**director4168.github.io**] and all accompanying distributed files (unless otherwise specified in individual files).
-- The source code of this document is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
+- The entire source code of this project is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
 http://mozilla.org/MPL/2.0/  
 
 ---
@@ -69,13 +69,15 @@ https://b23.tv/tk7CcWA
 - **所有文件**均采用 **MPL-2.0** 开源协议（详见项目中的 `LICENSE` 与 `NOTICE.md` 文件）。
 - 如需修改，请**严格遵守** MPL-2.0 开源协议的要求。
 - 本程序仅供娱乐、学习与参考。
+- 此md文档，**英文**部分由**Google Translate**（**谷歌翻译**）提供翻译支持，与实际内容可能存在偏差！
 
 ### English
 - The original author **has no obligation** to assume **any risks and responsibilities** caused by your use of this program.
 - **All files** adopt the **MPL-2.0** open source license (see the `LICENSE` and `NOTICE.md` files in the project for details).
 - If you modify the work, please **strictly comply** with the terms of the MPL-2.0 open source agreement.
 - This program is for entertainment, learning, and reference purposes only.
+- The **English** part of this md document is translated by **Google Translate**, and there may be deviations from the actual content!
 
 ----
 > (C) 2025-20XX director_Carter 保留所有权利
-> (C) 2025-20XX director_Carter All Rights Reserved.
+(C) 2025-20XX director_Carter All Rights Reserved.
