@@ -1,40 +1,55 @@
 # 声明 | Statement
 
+<a name='CopyrightStatement'></a>
 ## 版权声明 | Copyright Statement
 
 **(C) 2025-20XX director_Carter 保留所有权利**  
 **(C) 2025-20XX director_Carter. All Rights Reserved**
 
 ### 中文
-- 本版权声明适用于 [**director4168.github.io**] 整体网站及所有随附分发的文件（除非单个文件中另有特殊说明）。  
+- 本版权声明适用于 [**https://github.com/director4168/director4168.github.io** 和 **https://director4168.github.io**] 整体 网站/仓库 及所有随附分发的文件（除非单个文件中另有特殊说明）。  
 - 本项目整体源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
 
 ### English
-- This copyright statement applies to the entire website of [**director4168.github.io**] and all accompanying distributed files (unless otherwise specified in individual files).
-- The entire source code of this project is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:
+- This copyright statement applies to the [**https://github.com/director4168/director4168.github.io** and **https://director4168.github.io**] website/repository as a whole and all accompanying distributed files (unless otherwise specifically stated in an individual file).  
+- The entire source code of this project is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:  
 http://mozilla.org/MPL/2.0/  
 
 ---
 
+<a name='TableOfContents'></a>
+## 目录 | Table of contents
+
+### [版权声明 Copyright Statement](#CopyrightStatement)
+### [目录 Table of contents](#TableOfContents)
+### [本文件信息 Information about this document](#InformationAboutThisDocument)
+### [联系方式 Contact Information](#ContactInformation)
+### [温馨提示 Warm Reminder](#WarmReminder)
+
+
+---
+
+<a name='InformationAboutThisDocument'></a>
 ## 本文件信息 | Information about this document
 
 ### 中文
 本声明文件遵循 MPL-2.0 开源协议。
 
-- **版本:** v3.0.2
-- **时间:** 2026年03月06日 03:57 (UTC+8:00)
+- **版本:** v3.1.0
+- **时间:** 2026年03月06日 04:19 (UTC+8:00)
 - **作者:** director_Carter
 
 ### English
 This declaration document complies with the MPL-2.0 open source license.
 
-- **Version:** v3.0.2
-- **Time:** 2026.03.06 03:57 (UTC+8:00)
+- **Version:** v3.1.0
+- **Time:** 2026.03.06 04:19 (UTC+8:00)
 - **Author:** director_Carter
 
 ---
 
+<a name='ContactInformation'></a>
 ## 联系方式 | Contact Information
 
 ### 个人网站 | Personal website
@@ -62,6 +77,7 @@ https://b23.tv/tk7CcWA
 
 ---
 
+<a name='WarmReminder'></a>
 ## 温馨提醒 | Warm Reminder
 
 ### 中文
