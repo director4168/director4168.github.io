@@ -3,8 +3,8 @@
 <a name='CopyrightStatement'></a>
 ## 版权声明 | Copyright Statement
 
-**(C) 2025-20XX director_Carter 保留所有权利**  
-**(C) 2025-20XX director_Carter. All Rights Reserved**
+**(C) 2025 director_Carter 保留所有权利**  
+**(C) 2025 director_Carter. All Rights Reserved**
 
 ### 中文
 - 本版权声明适用于 [**https://github.com/director4168/director4168.github.io** 和 **https://director4168.github.io**] 整体 网站/仓库 及所有随附分发的文件（除非单个文件中另有特殊说明）。  
