@@ -26,7 +26,7 @@ http://mozilla.org/MPL/2.0/
 ### [本文件信息 Information about this document](#InformationAboutThisDocument)
 ### [联系方式 Contact Information](#ContactInformation)
 ### [温馨提示 Warm Reminder](#WarmReminder)
-
+- English via **Google Translate**
 
 ---
 
