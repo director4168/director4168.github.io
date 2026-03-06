@@ -95,5 +95,5 @@ https://b23.tv/tk7CcWA
 - The **English** part of this MarkDown document is translated by **Google Translate**, and there may be deviations from the actual content!
 
 ----
-> (C) 2025 director_Carter 保留所有权利
-(C) 2025 director_Carter All Rights Reserved.
+> (C) 2025 director_Carter 保留所有权利  
+> (C) 2025 director_Carter All Rights Reserved.
