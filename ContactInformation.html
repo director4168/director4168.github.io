@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
+	<title>director_Carter的主页</title>
+	<!-- Material Icons -->
+	<!-- 官网 https://material.io/resources/icons/ -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		:root {
+			--md-primary: #6750A4;
+			--md-on-primary: #FFFFFF;
+			--md-primary-container: #EADDFF;
+			--md-on-primary-container: #21005D;
+			--md-surface: #FEF7FF;
+			--md-on-surface: #1C1B1F;
+			--md-surface-variant: #E7E0EC;
+			--md-on-surface-variant: #49454F;
+			--md-outline: #79747E;
+		}
+
+		body.dark-theme {
+			--md-primary: #D0BCFF;
+			--md-on-primary: #381E72;
+			--md-primary-container: #4F378B;
+			--md-on-primary-container: #EADDFF;
+			--md-surface: #141218;
+			--md-on-surface: #E6E1E5;
+			--md-surface-variant: #49454F;
+			--md-on-surface-variant: #CAC4D0;
+			--md-outline: #938F99;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+			background-color: var(--md-surface);
+			color: var(--md-on-surface);
+			line-height: 1.6;
+			/* 下一行background-color 0.4s 的 “0.4”是切换日夜间模式的过渡动画时长 */
+			transition: background-color 0.4s, color 0.4s;
+		}
+
+		/* 顶部应用栏 */
+		.top-app-bar {
+			display: flex;
+			align-items: center;
+			padding: 16px 24px;
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.app-bar-title {
+			font-size: 22px;
+			font-weight: 500;
+			margin-left: 16px;
+		}
+
+		/* 主要内容区域 */
+		.main-content {
+			padding: 24px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		/* 显示区域 */
+		.hero-section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 40px 24px;
+			background-color: var(--md-primary-container);
+			color: var(--md-on-primary-container);
+			border-radius: 16px;
+			margin-bottom: 32px;
+		}
+
+		.avatar {
+			width: 120px;
+			height: 120px;
+			border-radius: 60px;
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+			cursor: pointer;
+			transition: transform 0.4s;
+			overflow: hidden;
+		}
+
+		.avatar img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.avatar:active {
+			transform: scale(0.95);
+		}
+
+		.hero-title {
+			font-size: 28px;
+			font-weight: 500;
+			margin-bottom: 12px;
+		}
+
+		.hero-description {
+			font-size: 16px;
+			max-width: 600px;
+			opacity: 0.9;
+		}
+
+		/* 卡片组件 */
+		.card {
+			background-color: var(--md-surface-variant);
+			border-radius: 12px;
+			padding: 24px;
+			margin-bottom: 24px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		.card-title {
+			font-size: 22px;
+			font-weight: 500;
+			margin-bottom: 16px;
+			color: var(--md-on-surface-variant);
+		}
+
+		/* 网格布局 */
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+			gap: 20px;
+			margin-top: 20px;
+		}
+
+		/* 动画&描边 */
+		.list-item {
+			display: flex;
+			align-items: center;
+			padding: 16px;
+			border-radius: 12px;
+			background-color: var(--md-surface);
+			color: var(--md-on-surface);
+			cursor: pointer;
+			/* 点击跳转卡片时卡片的动画时间 */
+			transition: all 0.5s ease;
+			text-decoration: none;
+			margin-bottom: 8px;
+			border: 1px solid transparent;
+			position: relative;
+			/* 修复描边问题 */
+			outline: none;
+		}
+
+		.list-item:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+		}
+
+		/* 移除active状态，用js控制 */
+		.list-item.active {
+			background-color: rgba(0, 0, 0, 0.08);
+			transform: translateY(-5px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			border-color: var(--md-primary);
+		}
+
+		/* 焦点状态样式 */
+		.list-item:focus {
+			border-color: var(--md-primary);
+		}
+
+		.list-icon {
+			margin-right: 16px;
+			color: var(--md-primary);
+			font-size: 24px;
+		}
+
+		.list-content {
+			flex: 1;
+		}
+
+		.list-title {
+			font-weight: 500;
+			margin-bottom: 4px;
+		}
+
+		.list-subtitle {
+			font-size: 14px;
+			color: var(--md-on-surface-variant);
+			line-height: 1.4;
+		}
+
+		/* 底部区域 */
+		.footer {
+			text-align: center;
+			padding: 24px;
+			color: var(--md-on-surface-variant);
+			font-size: 14px;
+			border-top: 1px solid var(--md-outline);
+			margin-top: 40px;
+		}
+
+		/* 主题切换按钮 */
+		.theme-toggle {
+			position: fixed;
+			bottom: 24px;
+			right: 24px;
+			width: 56px;
+			height: 56px;
+			border-radius: 28px;
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			cursor: pointer;
+			z-index: 100;
+			transition: transform 0.4s;
+		}
+
+		.theme-toggle:hover {
+			transform: scale(1.1);
+		}
+
+		.theme-toggle:active {
+			transform: scale(0.95);
+		}
+
+		/* 彩蛋 */
+		/* 究极彩蛋，隐藏在代码里面  颗秒！梆梆梆梆！nnd是不是翻我源码了 */
+		.easter-egg-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1000;
+			opacity: 0;
+			visibility: hidden;
+			/* 彩蛋弹窗一级弹窗 */
+			/* 和通用弹窗一样 */
+			transition: opacity 0.4s, visibility 0.4s;
+		}
+
+		.easter-egg-modal.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.easter-egg-content {
+			background-color: var(--md-surface);
+			color: var(--md-on-surface);
+			padding: 30px;
+			border-radius: 16px;
+			text-align: center;
+			max-width: 80%;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+		}
+
+		.easter-egg-content h2 {
+			font-size: 24px;
+			margin-bottom: 16px;
+			color: var(--md-primary);
+		}
+
+		.easter-egg-content p {
+			margin-bottom: 2px;
+		}
+
+		.easter-egg-close {
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			border: none;
+			padding: 10px 20px;
+			border-radius: 8px;
+			cursor: pointer;
+			font-weight: 500;
+			transition: background-color 0.4s;
+		}
+
+		.easter-egg-close:hover {
+			background-color: var(--md-primary-container);
+			color: var(--md-on-primary-container);
+		}
+
+		/* MD3对话框样式 */
+		.md3-dialog {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1001;
+			opacity: 0;
+			visibility: hidden;
+			/* 下面这个控制通用弹窗动画时间 */
+			/* 前面的是开启，后面的是结束时长 */
+			/* 彩蛋弹窗二级弹窗同样生效 */
+			/* 建议两个的动画时长一样 */
+			transition: opacity 0.5s, visibility 0.5s;
+		}
+
+		.md3-dialog.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.md3-dialog-content {
+			background-color: var(--md-surface);
+			color: var(--md-on-surface);
+			border-radius: 16px;
+			width: 90%;
+			max-width: 400px;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			overflow: hidden;
+		}
+
+		.md3-dialog-header {
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+			padding: 20px 24px;
+			font-size: 20px;
+			font-weight: 500;
+		}
+
+		.md3-dialog-body {
+			padding: 20px 24px;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.md3-dialog-actions {
+			display: flex;
+			justify-content: flex-end;
+			padding: 16px 24px;
+			gap: 12px;
+		}
+
+		.md3-button {
+			padding: 10px 20px;
+			border-radius: 8px;
+			font-weight: 500;
+			font-size: 14px;
+			cursor: pointer;
+			border: none;
+			transition: background-color 0.4s;
+		}
+
+		.md3-button.text {
+			background-color: transparent;
+			color: var(--md-primary);
+		}
+
+		.md3-button.text:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+		}
+
+		.md3-button.contained {
+			background-color: var(--md-primary);
+			color: var(--md-on-primary);
+		}
+
+		.md3-button.contained:hover {
+			background-color: var(--md-primary-container);
+			color: var(--md-on-primary-container);
+		}
+
+		/* 响应式调整 */
+		@media (max-width: 768px) {
+			.grid {
+				grid-template-columns: 1fr;
+			}
+
+			.main-content {
+				padding: 16px;
+			}
+
+			.hero-section {
+				padding: 32px 16px;
+			}
+
+			.avatar {
+				width: 100px;
+				height: 100px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- 顶栏 -->
+	<div class="top-app-bar">
+		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
+		<h1 class="app-bar-title">director_Carter主页</h1>
+	</div>
+
+
+
+
+	<!-- 主要内容区域 -->
+	<div class="main-content">
+		<!-- 介绍 -->
+		<div class="hero-section">
+
+			<div class="avatar" id="avatar">
+				<!-- 头像 -->
+				<img src="https://director4168.github.io/avatar.jpg" alt="头像-主头像">
+			</div>
+
+
+			<h1 class="hero-title">director_Carter的主页</h1>
+			<p class="hero-description">director_Carter的主页，MD3风格，本网站为Github Pages托管的静态网站。<p>
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+			本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
+			</p>
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+			Currently there is only Chinese version. (English via Google Translate)
+			</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 社交账号卡片 -->
+	<div class="card">
+		<h2 class="card-title">我的社交账号</h2>
+		<p class="hero-description">*点击卡片可跳转</p>
+		<div class="grid">
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://b23.tv/tIm8pA4" data-title="哔哩哔哩" data-content="是否跳转到director_Carter的哔哩哔哩首页？UID:1113918991">
+			<span class="material-icons list-icon">smart_display</span>
+			<div class="list-content">
+				<div class="list-title">哔哩哔哩(中国大陆版)</div>
+				<div class="list-subtitle">欢迎关注我的哔哩哔哩（求点赞投币关注）。</div>
+				<div class="list-subtitle">哔哩哔哩昵称: director_Carter</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">movie</span>
+		</a>
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=2705722903&card_type=person&source=qrcode" data-title="注意" data-content="查看我的QQ可能会提示有风险。添加我的QQ为好友可能会收到安全风险警告，玩模块玩出来的高风险。用户名: director_Carter。若此大号被封禁可添加小号3623293903">
+			<span class="material-icons list-icon">chat</span>
+			<div class="list-content" style="display: flex; align-items: center; width: 100%;">
+				<div style="flex: 1; min-width: 0; line-height: 1.4;">
+				<div class="list-title">QQ</div>
+				<div class="list-subtitle">我的QQ，平时看消息基本上都是从QQ里看的。</div>
+				<div class="list-subtitle">若大号被封禁请添加小号3623293903</div>
+				<div class="list-subtitle">右侧显示的那个图片是我的QQ头像。</div>
+				<div class="list-subtitle">QQ号: 2705722903</div>
+				</div>
+
+				<div class="avatar" id="avatar_qq" style="margin-left: 16px; flex-shrink: 0; width: 75px; height: 75px;">
+					<img src="https://q1.qlogo.cn/g?b=qq&nk=2705722903&s=640" alt="头像-QQ头像" style="width: 100%; height: 100%; border-radius: 50%;">
+				</div>
+
+			</div>
+			<span class="material-icons" style="color: var(--md-outline);">person_add_alt</span>
+		</a>
+
+
+
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2" data-title="MT论坛" data-content="是否跳转到director_Carter的MT论坛？（注: 本人MT论坛昵称是director_mark，director_Carter为小号）。大号用户名: director_mark">
+			<span class="material-icons list-icon">forum</span>
+			<div class="list-content">
+				<div class="list-title">MT论坛</div>
+				<div class="list-subtitle">我的MT论坛账号，欢迎来看我的帖子。</div>
+				<div class="list-subtitle">MT论坛昵称: director_mark</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+		</a>
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168" data-title="Github" data-content="是否跳转到director_Carter的GitHub主页？账号名称: director4168">
+			<span class="material-icons list-icon">code</span>
+			<div class="list-content">
+				<div class="list-title">GitHub</div>
+				<div class="list-subtitle">我的Github帐号。</div>
+				<div class="list-subtitle">Github昵称: director4168</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+		</a>
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="mailto:2705722903@qq.com" data-title="邮箱" data-content="是否向我发送邮件？邮箱: 2705722903@qq.com">
+			<span class="material-icons list-icon">email</span>
+			<div class="list-content">
+				<div class="list-title">QQ邮箱</div>
+				<div class="list-subtitle">欢迎通过电子邮箱给我发消息~</div>
+				<div class="list-subtitle">邮箱: 2705722903@qq.com</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
+		</a>
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://www.youtube.com/@director_Carter" data-title="YouTube" data-content="是否跳转到director_Carter的YouTube频道？中国大陆用户请提前挂好梯子哦~。YouTube: @director_Carter">
+			<span class="material-icons list-icon">smart_display</span>
+			<div class="list-content">
+				<div class="list-title">YouTube</div>
+				<div class="list-subtitle">我的YouTube频道。中国大陆用户需提前挂梯子才能正常访问哦~</div>
+				<div class="list-subtitle">YouTube: @director_Carter</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">movie</span>
+		</a>
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://x.com/director4168" data-title="X(前Twitter)" data-content="是否跳转到director_Carter的X(前Twitter)？中国大陆用户请提前挂好梯子呢~。X: director4168">
+			<span class="material-icons list-icon">forum</span>
+			<div class="list-content">
+				<div class="list-title">X(前Twitter)</div>
+				<div class="list-subtitle">我的X(前Twitter)。中国大陆用户需提前挂梯子才能正常访问呢~</div>
+				<div class="list-subtitle">X(Twitter): director4168</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+		</a>
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 其他 -->
+	<div class="card">
+		<h2 class="card-title">其它</h2>
+		<p class="hero-description">其他。</p>
+		<div class="grid">
+
+
+
+
+		<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？(注: 网站使用并遵守MPL-2.0开源协议）">
+		<span class="material-icons list-icon">code</span>
+			<div class="list-content">
+				<div class="list-title">网站开源地址</div>
+				<div class="list-subtitle">该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码。</div>
+				<div class="list-subtitle">该网站使用MPL-2.0开源协议。</div>
+				<div class="list-subtitle">给个星⭐️吧</div>
+			</div>
+		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+		</a>
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 页尾 -->
+	<div class="footer">
+		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v11</p>
+		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v11</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 主题切换按钮 -->
+	<div class="theme-toggle" id="themeToggle">
+		<span class="material-icons">dark_mode</span>
+	</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 彩蛋弹窗 -->
+	<div class="easter-egg-modal" id="easterEggModal">
+		<div class="easter-egg-content">
+			<h2>🎆🎆🎆 彩蛋 🎆🎆🎆</h2>
+			<p>颗秒！</p>
+			<p>梆梆梆梆！</p>
+			<p>director_Carter再此恭喜你，成功的发现了这个彩蛋，但是没奖励🤪（贱笑）</p>
+			<button class="easter-egg-close" id="easterEggClose">关闭（😇但是敢关闭就等着被我颗秒吧😇）</button>
+		</div>
+	</div>
+
+<!-- 专用彩蛋关闭确认对话框 -->
+	<div class="md3-dialog" id="easterEggCloseDialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="easterEggCloseDialogHeader">关闭彩蛋弹窗</div>
+				<div class="md3-dialog-body" id="easterEggCloseDialogBody">就放过你吧，点击确定按钮或弹窗外任意位置即可关闭</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button contained" id="easterEggCloseDialogConfirm">确定</button>
+			</div>
+		</div>
+	</div>
+
+<!-- 彩蛋弹窗关闭逻辑 -->
+<script>
+	const avatar = document.getElementById('avatar');
+	const easterEggModal = document.getElementById('easterEggModal');
+	const easterEggClose = document.getElementById('easterEggClose');
+	const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
+	const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
+	let clickCount = 0;
+	let lastClickTime = 0;
+
+	// 彩蛋触发逻辑
+	avatar.addEventListener('click', function() {
+		const now = new Date().getTime();
+		if (now - lastClickTime > 300) {
+			clickCount = 0;
+		}
+		clickCount++;
+		lastClickTime = now;
+
+		if (clickCount >= 10) {
+			easterEggModal.classList.add('show');
+			clickCount = 0;
+		}
+	});
+
+	// 修改关闭彩蛋逻辑
+	easterEggClose.addEventListener('click', function() {
+		easterEggModal.classList.remove('show');
+		easterEggCloseDialog.classList.add('show');
+	});
+
+	// 专用关闭对话框确认按钮事件
+	easterEggCloseDialogConfirm.addEventListener('click', function() {
+		easterEggCloseDialog.classList.remove('show');
+	});
+
+	// 点击对话框外部关闭专用关闭对话框
+	easterEggCloseDialog.addEventListener('click', function(e) {
+	if (e.target === easterEggCloseDialog) {
+		easterEggCloseDialog.classList.remove('show');
+	}
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
+			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
+			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">确定</button>
+			</div>
+		</div>
+	</div>
+
+
+
+<script>
+// 主题切换功能
+document.addEventListener('DOMContentLoaded', function() {
+	const themeToggle = document.getElementById('themeToggle');
+	const themeIcon = themeToggle.querySelector('.material-icons');
+
+	// 检测系统主题偏好
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+	// 根据系统主题设置初始样式
+	if (prefersDarkScheme.matches) {
+		document.body.classList.add('dark-theme');
+		themeIcon.textContent = 'light_mode';
+	} else {
+		document.body.classList.remove('dark-theme');
+		themeIcon.textContent = 'dark_mode';
+	}
+
+	// 监听系统主题变化
+	prefersDarkScheme.addEventListener('change', e => {
+		if (e.matches) {
+			document.body.classList.add('dark-theme');
+			themeIcon.textContent = 'light_mode';
+		} else {
+			document.body.classList.remove('dark-theme');
+			themeIcon.textContent = 'dark_mode';
+		}
+	});
+
+	// 手动切换主题
+	themeToggle.addEventListener('click', function() {
+		if (document.body.classList.contains('dark-theme')) {
+			document.body.classList.remove('dark-theme');
+			themeIcon.textContent = 'dark_mode';
+		} else {
+			document.body.classList.add('dark-theme');
+			themeIcon.textContent = 'light_mode';
+		}
+	});
+
+
+
+
+
+// 更新页脚年份
+	const currentYear = new Date().getFullYear();
+
+// 获取中英文版权的元素
+	const chineseYearElement = document.getElementById('chinese-copyright-year');
+	const englishYearElement = document.getElementById('english-copyright-year');
+
+// 统一的年份更新逻辑
+function updateYearDisplay(yearElement) {
+	if (currentYear > 2025) {
+		yearElement.textContent = `2025-${currentYear}`;
+	} else {
+		yearElement.textContent = '2025';
+	}
+}
+
+// 分别更新两个元素
+updateYearDisplay(chineseYearElement);
+updateYearDisplay(englishYearElement);
+
+
+
+
+
+// 修复列表项点击动画问题
+	const listItems = document.querySelectorAll('.list-item');
+	let activeItem = null;
+
+	// 点击文档其他地方时移除所有激活状态
+	document.addEventListener('click', function(e) {
+		// 检查点击的是否是列表项
+		const isListItem = e.target.closest('.list-item');
+
+		if (!isListItem && activeItem) {
+			// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
+			activeItem.classList.remove('active');
+			activeItem = null;
+		}
+	});
+
+
+
+
+
+// MD3对话框功能
+	const md3Dialog = document.getElementById('md3Dialog');
+	const md3DialogHeader = document.getElementById('md3DialogHeader');
+	const md3DialogBody = document.getElementById('md3DialogBody');
+	const md3DialogCancel = document.getElementById('md3DialogCancel');
+	const md3DialogConfirm = document.getElementById('md3DialogConfirm');
+
+	let currentHref = '';
+
+	// 显示对话框函数
+	function showDialog(title, content, href) {
+		md3DialogHeader.textContent = title;
+		md3DialogBody.textContent = content;
+		currentHref = href;
+		md3Dialog.classList.add('show');
+	}
+
+	// 隐藏对话框函数
+	function hideDialog() {
+		md3Dialog.classList.remove('show');
+	}
+
+	// 对话框按钮事件
+	md3DialogCancel.addEventListener('click', function() {
+		hideDialog();
+	});
+
+	md3DialogConfirm.addEventListener('click', function() {
+		window.open(currentHref, '_blank');
+		hideDialog();
+	});
+
+	// 点击对话框外部关闭
+	md3Dialog.addEventListener('click', function(e) {
+		if (e.target === md3Dialog) {
+			hideDialog();
+		}
+	});
+
+
+
+
+
+// 为每个列表项添加点击事件
+	listItems.forEach(item => {
+		item.addEventListener('click', function(e) {
+			// 阻止事件冒泡，避免触发document的点击事件
+			e.stopPropagation();
+
+			// 如果已经有激活的项，先移除其激活状态
+			if (activeItem && activeItem !== this) {
+				activeItem.classList.remove('active');
+			}
+
+			// 切换当前项的激活状态
+			this.classList.toggle('active');
+
+			// 更新当前激活的项
+			if (this.classList.contains('active')) {
+				activeItem = this;
+			} else {
+				activeItem = null;
+			}
+
+			// 获取链接数据并显示对话框
+			const href = this.getAttribute('data-href');
+			const title = this.getAttribute('data-title');
+			const content = this.getAttribute('data-content');
+
+			if (href && title && content) {
+				showDialog(title, content, href);
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>
