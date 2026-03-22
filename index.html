@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
-	<title>director_Carter的主页-首页</title>
+	<title>director_Carter的主页-首页&目录页</title>
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -411,7 +411,7 @@
 	<!-- 顶栏 -->
 	<div class="top-app-bar">
 		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
-		<h1 class="app-bar-title">director_Carter主页-首页</h1>
+		<h1 class="app-bar-title">director_Carter</h1>
 	</div>
 
 
@@ -422,14 +422,17 @@
 		<!-- 介绍 -->
 		<div class="hero-section">
 
+<!-- 头像 -->
+<!--
 			<div class="avatar" id="avatar">
-				<!-- 头像 -->
 				<img src="https://director4168.github.io/avatar.jpg" alt="头像-主头像">
 			</div>
+-->
 
 
-			<h1 class="hero-title">director_Carter的主页</h1>
-			<p class="hero-description">director_Carter的主页，MD3风格，本网站为Github Pages托管的静态网站。<p>
+			<h1 class="hero-title">首页、目录页</h1>
+			<p class="hero-description">director_Carter的网站，MD3风格，本网站为Github Pages托管的静态网站。<p>
+			<p class="hero-description">纯html编写的纯静态网站，但仍推荐使用现代浏览器内核浏览</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 			本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
@@ -458,8 +461,8 @@
 
 
 
-		<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/ContactInformation.html" data-title="联系方式" data-content="是否跳转到我的联系方式部分？">
-			<span class="material-icons list-icon">person</span>
+		<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/ContactInformation.html" data-title="联系方式" data-content="是否跳转到联系方式部分？https://director4168.github.io/ContactInformation.html">
+			<span class="material-icons list-icon">contacts</span>
 			<div class="list-content">
 				<div class="list-title">联系方式</div>
 				<div class="list-subtitle">我的各个联系方式，如QQ、B站、YouTube</div>
@@ -483,8 +486,9 @@
 
 	<!-- 页尾 -->
 	<div class="footer">
-		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。 | 主页 v11.0</p>
-		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. | Home page v11.0</p>
+	  <p>Website version: v26.03.23.0200</p>
+		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。</p>
+		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.</p>
 	</div>
 
 
@@ -500,81 +504,6 @@
 	<div class="theme-toggle" id="themeToggle">
 		<span class="material-icons">dark_mode</span>
 	</div>
-
-
-
-
-
-
-
-
-
-
-<!-- 彩蛋弹窗 -->
-	<div class="easter-egg-modal" id="easterEggModal">
-		<div class="easter-egg-content">
-			<h2>🎆🎆🎆 彩蛋 🎆🎆🎆</h2>
-			<p>颗秒！</p>
-			<p>梆梆梆梆！</p>
-			<p>director_Carter再此恭喜你，成功的发现了这个彩蛋，但是没奖励🤪（贱笑）</p>
-			<button class="easter-egg-close" id="easterEggClose">关闭（😇但是敢关闭就等着被我颗秒吧😇）</button>
-		</div>
-	</div>
-
-<!-- 专用彩蛋关闭确认对话框 -->
-	<div class="md3-dialog" id="easterEggCloseDialog">
-		<div class="md3-dialog-content">
-			<div class="md3-dialog-header" id="easterEggCloseDialogHeader">关闭彩蛋弹窗</div>
-				<div class="md3-dialog-body" id="easterEggCloseDialogBody">就放过你吧，点击确定按钮或弹窗外任意位置即可关闭</div>
-			<div class="md3-dialog-actions">
-				<button class="md3-button contained" id="easterEggCloseDialogConfirm">确定</button>
-			</div>
-		</div>
-	</div>
-
-<!-- 彩蛋弹窗关闭逻辑 -->
-<script>
-	const avatar = document.getElementById('avatar');
-	const easterEggModal = document.getElementById('easterEggModal');
-	const easterEggClose = document.getElementById('easterEggClose');
-	const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
-	const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
-	let clickCount = 0;
-	let lastClickTime = 0;
-
-	// 彩蛋触发逻辑
-	avatar.addEventListener('click', function() {
-		const now = new Date().getTime();
-		if (now - lastClickTime > 300) {
-			clickCount = 0;
-		}
-		clickCount++;
-		lastClickTime = now;
-
-		if (clickCount >= 10) {
-			easterEggModal.classList.add('show');
-			clickCount = 0;
-		}
-	});
-
-	// 修改关闭彩蛋逻辑
-	easterEggClose.addEventListener('click', function() {
-		easterEggModal.classList.remove('show');
-		easterEggCloseDialog.classList.add('show');
-	});
-
-	// 专用关闭对话框确认按钮事件
-	easterEggCloseDialogConfirm.addEventListener('click', function() {
-		easterEggCloseDialog.classList.remove('show');
-	});
-
-	// 点击对话框外部关闭专用关闭对话框
-	easterEggCloseDialog.addEventListener('click', function(e) {
-	if (e.target === easterEggCloseDialog) {
-		easterEggCloseDialog.classList.remove('show');
-	}
-});
-</script>
 
 
 
