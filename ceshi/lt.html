@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实时在线聊天</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
+    body{background:#f5f5f5;padding:20px}
+    .chat-box{max-width:500px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 2px 10px #0001}
+    .chat-header{background:#2d81ff;color:#fff;padding:14px;text-align:center;font-weight:700}
+    .messages{height:400px;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+    .msg{padding:8px 12px;border-radius:16px;max-width:70%;word-break:break-word}
+    .me{align-self:flex-end;background:#2d81ff;color:#fff}
+    .other{align-self:flex-start;background:#eaeaea;color:#333}
+    .input-box{display:flex;padding:10px;border-top:1px solid #eee}
+    input{flex:1;padding:10px 14px;border:1px solid #ddd;border-radius:20px;outline:0}
+    button{margin-left:8px;padding:0 18px;background:#2d81ff;color:#fff;border:none;border-radius:20px;cursor:pointer}
+  </style>
+</head>
+<body>
+
+<div class="chat-box">
+  <div class="chat-header">实时聊天</div>
+  <div class="messages" id="msgList"></div>
+  <div class="input-box">
+    <input type="text" id="msgInput" placeholder="输入消息…">
+    <button id="send">发送</button>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+
+<script>
+// 👇 这是我给你准备的免费公共测试库（仅演示，人多会乱）
+const firebaseConfig = {
+  apiKey: "AIzaSyA2ZgCvB4lWqfI3fQaOvK0zFgU2fQ1aE8A",
+  authDomain: "public-chat-demo-37671.firebaseapp.com",
+  databaseURL: "https://public-chat-demo-37671-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "public-chat-demo-37671",
+  storageBucket: "public-chat-demo-37671.appspot.com",
+  messagingSenderId: "777560402161",
+  appId: "1:777560402161:web:77e70f0c0e0d0e0e0e0e0e"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const chatRef = db.ref("chat");
+
+const msgList = document.getElementById("msgList");
+const msgInput = document.getElementById("msgInput");
+const sendBtn = document.getElementById("send");
+
+// 发送
+function send() {
+  const text = msgInput.value.trim();
+  if (!text) return;
+  chatRef.push({
+    text,
+    time: Date.now(),
+    me: Math.random().toString(36).slice(2,6)
+  });
+  msgInput.value = "";
+}
+
+sendBtn.onclick = send;
+msgInput.onkeydown = e => e.key === "Enter" && send();
+
+// 实时监听消息
+chatRef.orderByChild("time").limitToLast(50).on("value", snap => {
+  msgList.innerHTML = "";
+  const myId = localStorage.getItem("myId") || (localStorage.myId = Math.random().toString(36).slice(2,6));
+  const data = snap.val();
+  if (!data) return;
+  Object.values(data).forEach(m => {
+    const div = document.createElement("div");
+    div.className = "msg " + (m.me === myId ? "me" : "other");
+    div.textContent = m.text;
+    msgList.appendChild(div);
+  });
+  msgList.scrollTop = msgList.scrollHeight;
+});
+</script>
+
+</body>
+</html>
