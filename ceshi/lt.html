@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase 实时聊天室</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧聊天区域 -->
+        <div class="chat-container">
+            <header>
+                <h1><i class="fas fa-comments"></i> Supabase 实时聊天</h1>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="username" id="usernameDisplay">游客</div>
+                        <div class="status" id="statusIndicator">连接中...</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 消息显示区域 -->
+            <div class="messages" id="messagesContainer">
+                <div class="system-message">
+                    <i class="fas fa-info-circle"></i> 欢迎来到聊天室！请输入用户名开始聊天
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-area">
+                <!-- 用户名输入 -->
+                <div class="username-input" id="usernameSection">
+                    <input type="text" id="usernameInput" placeholder="请输入你的昵称..." maxlength="20" autocomplete="off">
+                    <button id="setUsernameBtn" class="btn-primary">
+                        <i class="fas fa-check"></i> 确认
+                    </button>
+                </div>
+
+                <!-- 消息输入 -->
+                <div class="message-input" id="messageSection" style="display: none;">
+                    <div class="input-wrapper">
+                        <input type="text" id="messageInput" placeholder="输入消息..." autocomplete="off" disabled>
+                        <button id="sendBtn" class="btn-send" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="hint">
+                        <i class="fas fa-info-circle"></i> 连接到 Supabase 后，你可以与所有在线用户实时聊天
+                    </div>
+                </div>
+
+                <!-- Supabase 配置 -->
+                <div class="config-section">
+                    <div class="config-header" id="configToggle">
+                        <i class="fas fa-cog"></i> Supabase 配置
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="config-content" id="configContent">
+                        <div class="config-group">
+                            <label for="supabaseUrl">Supabase URL</label>
+                            <input type="text" id="supabaseUrl" 
+                                   placeholder="https://xxxxx.supabase.co" 
+                                   value=""
+                                   autocomplete="off">
+                        </div>
+                        <div class="config-group">
+                            <label for="anonKey">Anon Key</label>
+                            <input type="text" id="anonKey" 
+                                   placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." 
+                                   value=""
+                                   autocomplete="off">
+                        </div>
+                        <div class="config-actions">
+                            <button id="testConnectionBtn" class="btn-secondary">
+                                <i class="fas fa-plug"></i> 测试连接
+                            </button>
+                            <button id="saveConfigBtn" class="btn-primary">
+                                <i class="fas fa-save"></i> 保存并连接
+                            </button>
+                        </div>
+                        <div id="configStatus" class="config-status"></div>
+                    </div>
+                </div>
+
+                <!-- 在线用户 -->
+                <div class="online-users" id="onlineUsers">
+                    <h3><i class="fas fa-users"></i> 在线用户 (<span id="userCount">0</span>)</h3>
+                    <div class="users-list" id="usersList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧说明区域 -->
+        <div class="sidebar">
+            <h2><i class="fas fa-rocket"></i> 快速开始</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>创建 Supabase 项目</h3>
+                        <p>访问 <a href="https://supabase.com" target="_blank">supabase.com</a> 注册并创建新项目</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>获取配置信息</h3>
+                        <p>进入项目设置 → API，复制：</p>
+                        <ul>
+                            <li><strong>Project URL</strong></li>
+                            <li><strong>anon public</strong> 密钥</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>配置并连接</h3>
+                        <p>在左侧填写 URL 和 Key，点击"保存并连接"</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>开始聊天</h3>
+                        <p>输入用户名，即可与所有用户实时聊天！</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <h3><i class="fas fa-star"></i> 功能特点</h3>
+                <ul>
+                    <li><i class="fas fa-bolt"></i> 真正的实时通信</li>
+                    <li><i class="fas fa-users"></i> 多用户在线列表</li>
+                    <li><i class="fas fa-lock"></i> 安全匿名认证</li>
+                    <li><i class="fas fa-infinity"></i> 免费额度充足</li>
+                </ul>
+            </div>
+
+            <div class="tips">
+                <h3><i class="fas fa-lightbulb"></i> 使用提示</h3>
+                <ul>
+                    <li>同一个 URL 和 Key 的用户都能加入同一聊天室</li>
+                    <li>消息不会永久保存，刷新页面会清空</li>
+                    <li>免费额度每月 5 万活跃用户</li>
+                    <li>支持部署到 GitHub Pages、Vercel 等</li>
+                </ul>
+            </div>
+
+            <div class="deploy-buttons">
+                <button id="deployBtn" class="btn-deploy">
+                    <i class="fas fa-cloud-upload-alt"></i> 一键部署到 Vercel
+                </button>
+                <p class="small-text">或下载代码部署到任意静态托管</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
