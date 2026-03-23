@@ -598,13 +598,13 @@
 	<!-- 其他 -->
 	<div class="card">
 		<h2 class="card-title">其它</h2>
-		<p class="hero-description">其他。</p>
+<!-- 		<p class="hero-description">其他。</p> -->
 		<div class="grid">
 
 
 
 
-		<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？(注: 网站使用并遵守MPL-2.0开源协议）">
+		<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？Github链接，您可能需要挂机子能访问(注: 网站使用并遵守MPL-2.0开源协议）另外，如果感兴趣的话可以给我的这个项目加一个星标⭐️来支持我">
 		<span class="material-icons list-icon">code</span>
 			<div class="list-content">
 				<div class="list-title">网站开源地址</div>
@@ -632,7 +632,7 @@
 
 	<!-- 页尾 -->
 	<div class="footer">
-	  <p>Website version: v26.03.23.0200</p>
+	  <p>Version: v26.03.23.1232</p>
 		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。</p>
 		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.</p>
 	</div>
@@ -664,7 +664,7 @@
 	<div class="easter-egg-modal" id="easterEggModal">
 		<div class="easter-egg-content">
 			<h2>彩蛋</h2>
-			<p>恭喜你发现了我买了一个小彩蛋呢，所以你一直戳我头干什么呀？</p>
+			<p>恭喜你发现了我埋的一个小彩蛋呢，所以你一直戳我头干什么呀？</p>
 			<button class="easter-egg-close" id="easterEggClose">点我关闭，小雑魚~</button>
 		</div>
 	</div>
@@ -693,7 +693,7 @@
 	// 彩蛋触发逻辑
 	avatar.addEventListener('click', function() {
 		const now = new Date().getTime();
-		if (now - lastClickTime > 300) {
+		if (now - lastClickTime > 500) {
 			clickCount = 0;
 		}
 		clickCount++;
@@ -920,7 +920,6 @@ updateYearDisplay(englishYearElement);
 		});
 	});
 });
-//1a
 </script>
 </body>
 </html>
