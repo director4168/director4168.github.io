@@ -39,38 +39,37 @@ http://mozilla.org/MPL/2.0/
 ---
 
 <a name='ContactInformation_cn'></a>
-## 联系方式 | Contact Information
+## 联系方式
 
-### 个人网站 | Personal website
-- **个人网站 | Personal website:**  
+### 个人网站
+- **个人网站:**  
 http://director4168.github.io
 
-### 哔哩哔哩 | BiliBili
-- **昵称 | Name:** director_Carter
+### 哔哩哔哩
+- **昵称:** director_Carter
 - **UID:** 1113918991
-- **主页 | Home page:**  
+- **主页:**  
 https://b23.tv/tk7CcWA
 
-### MT论坛 | MT Forum
-- **昵称 | Name:** director_mark
+### MT论坛
+- **昵称:** director_mark
 - **UID:** 134138
-- **主页 | Home page:**  
+- **主页:**  
 https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
 
 ### QQ
 - 2705722903
 - 3623293903
 
-### 邮箱 | Email
+### 邮箱
 - 2705722903@qq.com
 - 3623293903@qq.com
 
 ---
 
 <a name='WarmReminder_cn'></a>
-## 温馨提醒 | Warm Reminder
+## 温馨提醒
 
-### 中文
 - 原作者**没有义务**承担因您使用本程序而导致的**任何风险与责任**。
 - **所有文件**均采用 **MPL-2.0** 开源协议（详见项目中的 `LICENSE` 与 `NOTICE.md` 文件）。
 - 如需修改和使用，请**严格遵守** **MPL-2.0** 开源协议的要求。
