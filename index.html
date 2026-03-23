@@ -8,404 +8,9 @@
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<style>
-		:root {
-			--md-primary: #6750A4;
-			--md-on-primary: #FFFFFF;
-			--md-primary-container: #EADDFF;
-			--md-on-primary-container: #21005D;
-			--md-surface: #FEF7FF;
-			--md-on-surface: #1C1B1F;
-			--md-surface-variant: #E7E0EC;
-			--md-on-surface-variant: #49454F;
-			--md-outline: #79747E;
-		}
 
-		body.dark-theme {
-			--md-primary: #D0BCFF;
-			--md-on-primary: #381E72;
-			--md-primary-container: #4F378B;
-			--md-on-primary-container: #EADDFF;
-			--md-surface: #141218;
-			--md-on-surface: #E6E1E5;
-			--md-surface-variant: #49454F;
-			--md-on-surface-variant: #CAC4D0;
-			--md-outline: #938F99;
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: 'Roboto', 'Noto Sans SC', sans-serif;
-			background-color: var(--md-surface);
-			color: var(--md-on-surface);
-			line-height: 1.6;
-			/* 下一行background-color 0.4s 的 “0.4”是切换日夜间模式的过渡动画时长 */
-			transition: background-color 0.4s, color 0.4s;
-		}
-
-		/* 顶部应用栏 */
-		.top-app-bar {
-			display: flex;
-			align-items: center;
-			padding: 16px 24px;
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		}
-
-		.app-bar-title {
-			font-size: 22px;
-			font-weight: 500;
-			margin-left: 16px;
-		}
-
-		/* 主要内容区域 */
-		.main-content {
-			padding: 24px;
-			max-width: 1200px;
-			margin: 0 auto;
-		}
-
-		/* 显示区域 */
-		.hero-section {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			padding: 40px 24px;
-			background-color: var(--md-primary-container);
-			color: var(--md-on-primary-container);
-			border-radius: 16px;
-			margin-bottom: 32px;
-		}
-
-		.avatar {
-			width: 120px;
-			height: 120px;
-			border-radius: 60px;
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-bottom: 20px;
-			cursor: pointer;
-			transition: transform 0.4s;
-			overflow: hidden;
-		}
-
-		.avatar img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		.avatar:active {
-			transform: scale(0.95);
-		}
-
-		.hero-title {
-			font-size: 28px;
-			font-weight: 500;
-			margin-bottom: 12px;
-		}
-
-		.hero-description {
-			font-size: 16px;
-			max-width: 600px;
-			opacity: 0.9;
-		}
-
-		/* 卡片组件 */
-		.card {
-			background-color: var(--md-surface-variant);
-			border-radius: 12px;
-			padding: 24px;
-			margin-bottom: 24px;
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-		}
-
-		.card-title {
-			font-size: 22px;
-			font-weight: 500;
-			margin-bottom: 16px;
-			color: var(--md-on-surface-variant);
-		}
-
-		/* 网格布局 */
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-			gap: 20px;
-			margin-top: 20px;
-		}
-
-		/* 动画&描边 */
-		.list-item {
-			display: flex;
-			align-items: center;
-			padding: 16px;
-			border-radius: 12px;
-			background-color: var(--md-surface);
-			color: var(--md-on-surface);
-			cursor: pointer;
-			/* 点击跳转卡片时卡片的动画时间 */
-			transition: all 0.5s ease;
-			text-decoration: none;
-			margin-bottom: 8px;
-			border: 1px solid transparent;
-			position: relative;
-			/* 修复描边问题 */
-			outline: none;
-		}
-
-		.list-item:hover {
-			background-color: rgba(0, 0, 0, 0.04);
-		}
-
-		/* 移除active状态，用js控制 */
-		.list-item.active {
-			background-color: rgba(0, 0, 0, 0.08);
-			transform: translateY(-5px);
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			border-color: var(--md-primary);
-		}
-
-		/* 焦点状态样式 */
-		.list-item:focus {
-			border-color: var(--md-primary);
-		}
-
-		.list-icon {
-			margin-right: 16px;
-			color: var(--md-primary);
-			font-size: 24px;
-		}
-
-		.list-content {
-			flex: 1;
-		}
-
-		.list-title {
-			font-weight: 500;
-			margin-bottom: 4px;
-		}
-
-		.list-subtitle {
-			font-size: 14px;
-			color: var(--md-on-surface-variant);
-			line-height: 1.4;
-		}
-
-		/* 底部区域 */
-		.footer {
-			text-align: center;
-			padding: 24px;
-			color: var(--md-on-surface-variant);
-			font-size: 14px;
-			border-top: 1px solid var(--md-outline);
-			margin-top: 40px;
-		}
-
-		/* 主题切换按钮 */
-		.theme-toggle {
-			position: fixed;
-			bottom: 24px;
-			right: 24px;
-			width: 56px;
-			height: 56px;
-			border-radius: 28px;
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			cursor: pointer;
-			z-index: 100;
-			transition: transform 0.4s;
-		}
-
-		.theme-toggle:hover {
-			transform: scale(1.1);
-		}
-
-		.theme-toggle:active {
-			transform: scale(0.95);
-		}
-
-		/* 彩蛋 */
-		/* 究极彩蛋，隐藏在代码里面  颗秒！梆梆梆梆！nnd是不是翻我源码了 */
-		.easter-egg-modal {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.7);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			z-index: 1000;
-			opacity: 0;
-			visibility: hidden;
-			/* 彩蛋弹窗一级弹窗 */
-			/* 和通用弹窗一样 */
-			transition: opacity 0.4s, visibility 0.4s;
-		}
-
-		.easter-egg-modal.show {
-			opacity: 1;
-			visibility: visible;
-		}
-
-		.easter-egg-content {
-			background-color: var(--md-surface);
-			color: var(--md-on-surface);
-			padding: 30px;
-			border-radius: 16px;
-			text-align: center;
-			max-width: 80%;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-		}
-
-		.easter-egg-content h2 {
-			font-size: 24px;
-			margin-bottom: 16px;
-			color: var(--md-primary);
-		}
-
-		.easter-egg-content p {
-			margin-bottom: 2px;
-		}
-
-		.easter-egg-close {
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-			border: none;
-			padding: 10px 20px;
-			border-radius: 8px;
-			cursor: pointer;
-			font-weight: 500;
-			transition: background-color 0.4s;
-		}
-
-		.easter-egg-close:hover {
-			background-color: var(--md-primary-container);
-			color: var(--md-on-primary-container);
-		}
-
-		/* MD3对话框样式 */
-		.md3-dialog {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.5);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			z-index: 1001;
-			opacity: 0;
-			visibility: hidden;
-			/* 下面这个控制通用弹窗动画时间 */
-			/* 前面的是开启，后面的是结束时长 */
-			/* 彩蛋弹窗二级弹窗同样生效 */
-			/* 建议两个的动画时长一样 */
-			transition: opacity 0.5s, visibility 0.5s;
-		}
-
-		.md3-dialog.show {
-			opacity: 1;
-			visibility: visible;
-		}
-
-		.md3-dialog-content {
-			background-color: var(--md-surface);
-			color: var(--md-on-surface);
-			border-radius: 16px;
-			width: 90%;
-			max-width: 400px;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			overflow: hidden;
-		}
-
-		.md3-dialog-header {
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-			padding: 20px 24px;
-			font-size: 20px;
-			font-weight: 500;
-		}
-
-		.md3-dialog-body {
-			padding: 20px 24px;
-			font-size: 16px;
-			line-height: 1.5;
-		}
-
-		.md3-dialog-actions {
-			display: flex;
-			justify-content: flex-end;
-			padding: 16px 24px;
-			gap: 12px;
-		}
-
-		.md3-button {
-			padding: 10px 20px;
-			border-radius: 8px;
-			font-weight: 500;
-			font-size: 14px;
-			cursor: pointer;
-			border: none;
-			transition: background-color 0.4s;
-		}
-
-		.md3-button.text {
-			background-color: transparent;
-			color: var(--md-primary);
-		}
-
-		.md3-button.text:hover {
-			background-color: rgba(0, 0, 0, 0.04);
-		}
-
-		.md3-button.contained {
-			background-color: var(--md-primary);
-			color: var(--md-on-primary);
-		}
-
-		.md3-button.contained:hover {
-			background-color: var(--md-primary-container);
-			color: var(--md-on-primary-container);
-		}
-
-		/* 响应式调整 */
-		@media (max-width: 768px) {
-			.grid {
-				grid-template-columns: 1fr;
-			}
-
-			.main-content {
-				padding: 16px;
-			}
-
-			.hero-section {
-				padding: 32px 16px;
-			}
-
-			.avatar {
-				width: 100px;
-				height: 100px;
-			}
-		}
-	</style>
+	<!-- 引入主要css样式 -->
+	<link rel="stylesheet" href="./css/CoreStyles.css">
 </head>
 <body>
 	<!-- 顶栏 -->
@@ -422,26 +27,29 @@
 		<!-- 介绍 -->
 		<div class="hero-section">
 
-<!-- 头像 -->
-<!--
-			<div class="avatar" id="avatar">
-				<img src="https://director4168.github.io/avatar.jpg" alt="头像-主头像">
-			</div>
--->
+			<!-- 头像 -->
+			<!--
+																		<div class="avatar" id="avatar">
+																			<img src="https://director4168.github.io/avatar.jpg" alt="头像-主头像">
+																		</div>
+															-->
 
 
 			<h1 class="hero-title">首页、目录页</h1>
-			<p class="hero-description">director_Carter的网站，MD3风格，本网站为Github Pages托管的静态网站。<p>
-			<p class="hero-description">纯html编写的纯静态网站，但仍推荐使用现代浏览器&浏览器内核</p>
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
-				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-			本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
-			</p>
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
-				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-			Currently there is only Chinese version. (English via Google Translate)
-			</p>
-	</div>
+			<p class="hero-description">
+				director_Carter的网站，MD3风格，本网站为Github Pages托管的静态网站。<p>
+					<p class="hero-description">
+						纯html编写的纯静态网站，但仍推荐使用现代浏览器&浏览器内核
+					</p>
+					<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+						<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+						本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
+					</p>
+					<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+						<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+						Currently there is only Chinese version. (English via Google Translate)
+					</p>
+				</div>
 
 
 
@@ -452,28 +60,34 @@
 
 
 
-	<!-- 跳转卡片 -->
-	<div class="card">
-		<h2 class="card-title">目录</h2>
-		<p class="hero-description">*点击卡片可跳转</p>
-		<div class="grid">
+				<!-- 跳转卡片 -->
+				<div class="card">
+					<h2 class="card-title">目录</h2>
+					<p class="hero-description">
+						*点击卡片可跳转
+					</p>
+					<div class="grid">
 
 
 
 
-		<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/ContactInformation.html" data-title="联系方式" data-content="是否跳转到联系方式部分？https://director4168.github.io/ContactInformation.html">
-			<span class="material-icons list-icon">contacts</span>
-			<div class="list-content">
-				<div class="list-title">联系方式</div>
-				<div class="list-subtitle">我的各个联系方式，如QQ、B站、YouTube</div>
-			</div>
-		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-		</a>
+						<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/ContactInformation.html" data-title="联系方式" data-content="是否跳转到联系方式部分？https://director4168.github.io/ContactInformation.html">
+							<span class="material-icons list-icon">contacts</span>
+							<div class="list-content">
+								<div class="list-title">
+									联系方式
+								</div>
+								<div class="list-subtitle">
+									我的各个联系方式，如QQ、B站、YouTube
+								</div>
+							</div>
+							<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+						</a>
 
 
 
-<!--		</div>
-	</div> -->
+						<!--		</div>
+																															</div> -->
 
 
 
@@ -483,30 +97,38 @@
 
 
 
-	<!-- 其他 -->
-<!-- 	<div class="card"> -->
-		<h2 class="card-title">开源地址</h2>
-<!-- 		<div class="grid"> -->
+						<!-- 其他 -->
+						<!-- 	<div class="card"> -->
+						<h2 class="card-title">开源地址</h2>
+						<!-- 		<div class="grid"> -->
 
 
 
-		<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？Github链接，您可能需要挂机子能访问(注: 网站使用并遵守MPL-2.0开源协议）另外，如果感兴趣的话可以给我的这个项目加一个星标⭐️来支持我">
-		<span class="material-icons list-icon">code</span>
-			<div class="list-content">
-				<div class="list-title">网站开源地址</div>
-				<div class="list-subtitle">该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码。</div>
-				<div class="list-subtitle">该网站使用MPL-2.0开源协议。</div>
-				<div class="list-subtitle">给个星⭐️吧</div>
-			</div>
-		<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-		</a>
+						<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？Github链接，您可能需要挂机子能访问(注: 网站使用并遵守MPL-2.0开源协议）另外，如果感兴趣的话可以给我的这个项目加一个星标⭐️来支持我">
+							<span class="material-icons list-icon">code</span>
+							<div class="list-content">
+								<div class="list-title">
+									网站开源地址
+								</div>
+								<div class="list-subtitle">
+									该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码。
+								</div>
+								<div class="list-subtitle">
+									该网站使用MPL-2.0开源协议。
+								</div>
+								<div class="list-subtitle">
+									给个星⭐️吧
+								</div>
+							</div>
+							<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+						</a>
 
 
 
 
 
-		</div>
-	</div>
+					</div>
+				</div>
 
 
 
@@ -517,12 +139,18 @@
 
 
 
-	<!-- 页尾 -->
-	<div class="footer">
-	  <p>Version: v26.03.23.1232</p>
-		<p>&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。</p>
-		<p>&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.</p>
-	</div>
+				<!-- 页尾 -->
+				<div class="footer">
+					<p>
+						Version: v26.03.23.1921
+					</p>
+					<p>
+						&copy; <span id="chinese-copyright-year">2025</span> director_Carter 版权所有。
+					</p>
+					<p>
+						&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+					</p>
+				</div>
 
 
 
@@ -533,10 +161,10 @@
 
 
 
-	<!-- 主题切换按钮 -->
-	<div class="theme-toggle" id="themeToggle">
-		<span class="material-icons">dark_mode</span>
-	</div>
+				<!-- 主题切换按钮 -->
+				<div class="theme-toggle" id="themeToggle">
+					<span class="material-icons">dark_mode</span>
+				</div>
 
 
 
@@ -547,193 +175,207 @@
 
 
 
-	<!-- MD3对话框 -->
-	<div class="md3-dialog" id="md3Dialog">
-		<div class="md3-dialog-content">
-			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
-			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
-			<div class="md3-dialog-actions">
-				<button class="md3-button text" id="md3DialogCancel">取消</button>
-				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
-			</div>
-		</div>
-	</div>
+				<!-- MD3对话框 -->
+				<div class="md3-dialog" id="md3Dialog">
+					<div class="md3-dialog-content">
+						<div class="md3-dialog-header" id="md3DialogHeader">
+							标题
+						</div>
+						<div class="md3-dialog-body" id="md3DialogBody">
+							内容
+						</div>
+						<div class="md3-dialog-actions">
+							<button class="md3-button text" id="md3DialogCancel">取消</button>
+							<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+						</div>
+					</div>
+				</div>
 
-	<div class="md3-dialog">
-		<div class="md3-dialog-content">
-			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
-			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
-			<div class="md3-dialog-actions">
-				<button class="md3-button text" id="md3DialogCancel">确定</button>
-			</div>
-		</div>
-	</div>
+				<div class="md3-dialog">
+					<div class="md3-dialog-content">
+						<div class="md3-dialog-header" id="md3DialogHeader">
+							标题
+						</div>
+						<div class="md3-dialog-body" id="md3DialogBody">
+							内容
+						</div>
+						<div class="md3-dialog-actions">
+							<button class="md3-button text" id="md3DialogCancel">确定</button>
+						</div>
+					</div>
+				</div>
 
 
 
-<script>
-// 主题切换功能
-document.addEventListener('DOMContentLoaded', function() {
-	const themeToggle = document.getElementById('themeToggle');
-	const themeIcon = themeToggle.querySelector('.material-icons');
+				<script>
+					// 主题切换功能
+					document.addEventListener('DOMContentLoaded', function() {
+						const themeToggle = document.getElementById('themeToggle');
+						const themeIcon = themeToggle.querySelector('.material-icons');
 
-	// 检测系统主题偏好
-	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+						// 检测系统主题偏好
+						const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-	// 根据系统主题设置初始样式
-	if (prefersDarkScheme.matches) {
-		document.body.classList.add('dark-theme');
-		themeIcon.textContent = 'light_mode';
-	} else {
-		document.body.classList.remove('dark-theme');
-		themeIcon.textContent = 'dark_mode';
-	}
+						// 根据系统主题设置初始样式
+						if (prefersDarkScheme.matches) {
+							document.body.classList.add('dark-theme');
+							themeIcon.textContent = 'light_mode';
+						} else {
+							document.body.classList.remove('dark-theme');
+							themeIcon.textContent = 'dark_mode';
+						}
 
-	// 监听系统主题变化
-	prefersDarkScheme.addEventListener('change', e => {
-		if (e.matches) {
-			document.body.classList.add('dark-theme');
-			themeIcon.textContent = 'light_mode';
-		} else {
-			document.body.classList.remove('dark-theme');
-			themeIcon.textContent = 'dark_mode';
-		}
-	});
+						// 监听系统主题变化
+						prefersDarkScheme.addEventListener('change', e => {
+							if (e.matches) {
+								document.body.classList.add('dark-theme');
+								themeIcon.textContent = 'light_mode';
+							} else {
+								document.body.classList.remove('dark-theme');
+								themeIcon.textContent = 'dark_mode';
+							}
+						});
 
-	// 手动切换主题
-	themeToggle.addEventListener('click', function() {
-		if (document.body.classList.contains('dark-theme')) {
-			document.body.classList.remove('dark-theme');
-			themeIcon.textContent = 'dark_mode';
-		} else {
-			document.body.classList.add('dark-theme');
-			themeIcon.textContent = 'light_mode';
-		}
-	});
+						// 手动切换主题
+						themeToggle.addEventListener('click',
+							function() {
+								if (document.body.classList.contains('dark-theme')) {
+									document.body.classList.remove('dark-theme');
+									themeIcon.textContent = 'dark_mode';
+								} else {
+									document.body.classList.add('dark-theme');
+									themeIcon.textContent = 'light_mode';
+								}
+							});
 
 
 
 
 
-// 更新页脚年份
-	const currentYear = new Date().getFullYear();
+						// 更新页脚年份
+						const currentYear = new Date().getFullYear();
 
-// 获取中英文版权的元素
-	const chineseYearElement = document.getElementById('chinese-copyright-year');
-	const englishYearElement = document.getElementById('english-copyright-year');
+						// 获取中英文版权的元素
+						const chineseYearElement = document.getElementById('chinese-copyright-year');
+						const englishYearElement = document.getElementById('english-copyright-year');
 
-// 统一的年份更新逻辑
-function updateYearDisplay(yearElement) {
-	if (currentYear > 2025) {
-		yearElement.textContent = `2025-${currentYear}`;
-	} else {
-		yearElement.textContent = '2025';
-	}
-}
+						// 统一的年份更新逻辑
+						function updateYearDisplay(yearElement) {
+							if (currentYear > 2025) {
+								yearElement.textContent = `2025-${currentYear}`;
+							} else {
+								yearElement.textContent = '2025';
+							}
+						}
 
-// 分别更新两个元素
-updateYearDisplay(chineseYearElement);
-updateYearDisplay(englishYearElement);
+						// 分别更新两个元素
+						updateYearDisplay(chineseYearElement);
+						updateYearDisplay(englishYearElement);
 
 
 
 
 
-// 修复列表项点击动画问题
-	const listItems = document.querySelectorAll('.list-item');
-	let activeItem = null;
+						// 修复列表项点击动画问题
+						const listItems = document.querySelectorAll('.list-item');
+						let activeItem = null;
 
-	// 点击文档其他地方时移除所有激活状态
-	document.addEventListener('click', function(e) {
-		// 检查点击的是否是列表项
-		const isListItem = e.target.closest('.list-item');
+						// 点击文档其他地方时移除所有激活状态
+						document.addEventListener('click', function(e) {
+							// 检查点击的是否是列表项
+							const isListItem = e.target.closest('.list-item');
 
-		if (!isListItem && activeItem) {
-			// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
-			activeItem.classList.remove('active');
-			activeItem = null;
-		}
-	});
+							if (!isListItem && activeItem) {
+								// 如果点击的不是列表项，且有激活的列表项，则移除激活状态
+								activeItem.classList.remove('active');
+								activeItem = null;
+							}
+						});
 
 
 
 
 
-// MD3对话框功能
-	const md3Dialog = document.getElementById('md3Dialog');
-	const md3DialogHeader = document.getElementById('md3DialogHeader');
-	const md3DialogBody = document.getElementById('md3DialogBody');
-	const md3DialogCancel = document.getElementById('md3DialogCancel');
-	const md3DialogConfirm = document.getElementById('md3DialogConfirm');
+						// MD3对话框功能
+						const md3Dialog = document.getElementById('md3Dialog');
+						const md3DialogHeader = document.getElementById('md3DialogHeader');
+						const md3DialogBody = document.getElementById('md3DialogBody');
+						const md3DialogCancel = document.getElementById('md3DialogCancel');
+						const md3DialogConfirm = document.getElementById('md3DialogConfirm');
 
-	let currentHref = '';
+						let currentHref = '';
 
-	// 显示对话框函数
-	function showDialog(title, content, href) {
-		md3DialogHeader.textContent = title;
-		md3DialogBody.textContent = content;
-		currentHref = href;
-		md3Dialog.classList.add('show');
-	}
+						// 显示对话框函数
+						function showDialog(title,
+							content,
+							href) {
+							md3DialogHeader.textContent = title;
+							md3DialogBody.textContent = content;
+							currentHref = href;
+							md3Dialog.classList.add('show');
+						}
 
-	// 隐藏对话框函数
-	function hideDialog() {
-		md3Dialog.classList.remove('show');
-	}
+						// 隐藏对话框函数
+						function hideDialog() {
+							md3Dialog.classList.remove('show');
+						}
 
-	// 对话框按钮事件
-	md3DialogCancel.addEventListener('click', function() {
-		hideDialog();
-	});
+						// 对话框按钮事件
+						md3DialogCancel.addEventListener('click',
+							function() {
+								hideDialog();
+							});
 
-	md3DialogConfirm.addEventListener('click', function() {
-		window.open(currentHref, '_blank');
-		hideDialog();
-	});
+						md3DialogConfirm.addEventListener('click',
+							function() {
+								window.open(currentHref, '_blank');
+								hideDialog();
+							});
 
-	// 点击对话框外部关闭
-	md3Dialog.addEventListener('click', function(e) {
-		if (e.target === md3Dialog) {
-			hideDialog();
-		}
-	});
+						// 点击对话框外部关闭
+						md3Dialog.addEventListener('click',
+							function(e) {
+								if (e.target === md3Dialog) {
+									hideDialog();
+								}
+							});
 
 
 
 
 
-// 为每个列表项添加点击事件
-	listItems.forEach(item => {
-		item.addEventListener('click', function(e) {
-			// 阻止事件冒泡，避免触发document的点击事件
-			e.stopPropagation();
+						// 为每个列表项添加点击事件
+						listItems.forEach(item => {
+							item.addEventListener('click', function(e) {
+								// 阻止事件冒泡，避免触发document的点击事件
+								e.stopPropagation();
 
-			// 如果已经有激活的项，先移除其激活状态
-			if (activeItem && activeItem !== this) {
-				activeItem.classList.remove('active');
-			}
+								// 如果已经有激活的项，先移除其激活状态
+								if (activeItem && activeItem !== this) {
+									activeItem.classList.remove('active');
+								}
 
-			// 切换当前项的激活状态
-			this.classList.toggle('active');
+								// 切换当前项的激活状态
+								this.classList.toggle('active');
 
-			// 更新当前激活的项
-			if (this.classList.contains('active')) {
-				activeItem = this;
-			} else {
-				activeItem = null;
-			}
+								// 更新当前激活的项
+								if (this.classList.contains('active')) {
+									activeItem = this;
+								} else {
+									activeItem = null;
+								}
 
-			// 获取链接数据并显示对话框
-			const href = this.getAttribute('data-href');
-			const title = this.getAttribute('data-title');
-			const content = this.getAttribute('data-content');
+								// 获取链接数据并显示对话框
+								const href = this.getAttribute('data-href');
+								const title = this.getAttribute('data-title');
+								const content = this.getAttribute('data-content');
 
-			if (href && title && content) {
-				showDialog(title, content, href);
-			}
-		});
-	});
-});
-</script>
-</body>
-</html>
+								if (href && title && content) {
+									showDialog(title, content, href);
+								}
+							});
+						});
+					});
+				</script>
+			</body>
+		</html>
