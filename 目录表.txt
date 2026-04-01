@@ -1,0 +1,21 @@
+/
+┣━/css
+ ▏ ┗━/CoreStyles.css
+ ▏
+┣━/EasterEgg
+ ▏ ┣━/css
+ ▏  ▏ ┗━/EasterEggPop-upWindow.css
+ ▏  ▏
+ ▏ ┗━/js
+ ▏     ┗━/EasterEgg.js
+ ▏
+┣━/jpg
+ ▏ ┗━/avatar.jpg
+ ▏
+┣━/js
+ ▏ ┗━/CoreLogic.js
+ ▏
+┣━/ContactInformation.html
+┣━/index.html
+┣━/LICENSE
+┗━/README.md

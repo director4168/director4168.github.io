@@ -2,10 +2,11 @@
  (C) 2026 director_Carter All Rights Reserved.
  https://director4168.github.io/
  本CSS与网站一同开源，开源协议MPL-2.0
- 核心css
+ 核心css样式，包括网站的日夜间配色，弹窗样式等以及过渡动画时长，不包含彩蛋弹窗
 */
 
 
+/* 网站底层日间模式亮色配色 */
 :root {
 	--md-primary: #6750A4;
 	--md-on-primary: #FFFFFF;
@@ -18,6 +19,7 @@
 	--md-outline: #79747E;
 }
 
+/* 底层夜间模式暗色配色 */
 body.dark-theme {
 	--md-primary: #D0BCFF;
 	--md-on-primary: #381E72;
@@ -81,6 +83,7 @@ body {
 	margin-bottom: 32px;
 }
 
+/* 头像 */
 .avatar {
 	width: 120px;
 	height: 120px;

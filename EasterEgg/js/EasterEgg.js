@@ -3,6 +3,8 @@
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责处理彩蛋
 
+// 因为将此js分离出来造成一些bug（个人测试），此js已重新加进ContactInformation.html中，暂时不使用此文件
+
 // 引入彩蛋弹窗css样式
 const link = document.createElement('link');
 link.rel = 'stylesheet';
