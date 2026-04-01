@@ -21,7 +21,7 @@ let lastClickTime = 0;
 // 彩蛋触发逻辑
 avatar.addEventListener('click', function() {
 	const now = new Date().getTime();
-	if (now - lastClickTime > 500) {
+	if (now - lastClickTime > 300) {
 		clickCount = 0;
 	}
 	clickCount++;
