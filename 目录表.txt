@@ -13,7 +13,8 @@
  ▏ ┗━/avatar.jpg
  ▏
 ┣━/js
- ▏ ┗━/CoreLogic.js
+ ▏ ┣━/CoreLogic.js
+ ▏ ┗━Protect.js
  ▏
 ┣━/ContactInformation.html
 ┣━/index.html
