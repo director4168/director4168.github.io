@@ -102,13 +102,14 @@ function initCoreLogic() {
 	const hideDialog = () => dialog.classList.remove('show');
 
 	cancelBtn?.addEventListener('click', hideDialog);
-confirmBtn?.addEventListener('click', () => {
-    if (currentHref) {
-        window.location.href = currentHref;
-    }
-    hideDialog();
-});
-	dialog.addEventListener('click', e => e.target === dialog && hideDialog());
+	confirmBtn?.addEventListener('click', () => {
+		if (currentHref) {
+			window.location.href = currentHref;
+		}
+		hideDialog();
+	});
+	dialog.addEventListener('click',
+		e => e.target === dialog && hideDialog());
 
 
 
