@@ -3,6 +3,7 @@
  https://director4168.github.io
  本CSS与网站一同开源，开源协议MPL-2.0
  负责处理彩蛋弹窗的样式，包括弹窗样式和过渡动画时长
+ 配色由项目根目录 "/css/" 下 "/MainColorStyle_Default.css" 控制
 */
 
 .easter-egg-modal {

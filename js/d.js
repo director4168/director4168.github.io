@@ -1,0 +1,1 @@
+window.__ANTIDEBUG_LOADED = true;

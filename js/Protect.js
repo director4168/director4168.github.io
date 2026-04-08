@@ -39,5 +39,5 @@ document.addEventListener('DOMContentLoaded', function() {
 		characterDataOldValue: true,
 		subtree: true
 	});
-    window.__PROTECT_LOADED = true;
+	window.__PROTECT_LOADED = true;
 });

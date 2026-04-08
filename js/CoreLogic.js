@@ -4,22 +4,30 @@
 
 (function() {
 	'use strict';
-	const PROTECT_SRC = './js/Protect.js';
+	const REQUIRED_SCRIPTS = [
+		'./js/Protect.js',
+		//'./js/d.js',
+	];
 	let coreInitialized = false;
-	function isProtectReallyLoaded() {
-		const scripts = document.querySelectorAll('script[src]');
-		let scriptFound = false;
-		for (let s of scripts) {
-			const src = s.src || '';
-			if (src.includes('Protect.js') || src.endsWith('Protect.js')) {
-				scriptFound = true;
-				break;
+	function areAllScriptsLoaded() {
+		const loadedScripts = new Set();
+		document.querySelectorAll('script[src]').forEach(script => {
+			const src = script.src || '';
+			if (src) {
+				const filename = src.split('/').pop().split('?')[0];
+				loadedScripts.add(filename);
+			}
+		});
+		for (let required of REQUIRED_SCRIPTS) {
+			const requiredName = required.split('/').pop().split('?')[0];
+			if (!loadedScripts.has(requiredName)) {
+				return false;
 			}
 		}
-		const flagSet = window.__PROTECT_LOADED === true;
-		return scriptFound && flagSet;
+		return window.__PROTECT_LOADED === true &&
+		window.__ANTIDEBUG_LOADED === true;
 	}
-	function runCoreFeatures() {
+	function CoreFeatures() {
 		if (coreInitialized) return;
 		coreInitialized = true;
 
@@ -112,22 +120,25 @@
 		if (coreInitialized) return;
 		let attempts = 0;
 		const maxAttempts = 20;
-
 		const checker = setInterval(() => {
 			attempts++;
 
-			if (isProtectReallyLoaded()) {
+			if (areAllScriptsLoaded()) {
 				clearInterval(checker);
-				runCoreFeatures();
+				CoreFeatures();
 				return;
 			}
 			if (attempts >= maxAttempts) {
 				clearInterval(checker);
-				console.warn('[ERROR] ERROR');
+				console.warn('[ERROR] No specified JS detected!\n                      -----By director_Carter');
 				const warnDiv = document.createElement('div');
 				warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#d32f2f;color:#fff;padding:14px;text-align:center;z-index:99999;font-size:15px;';
 				warnDiv.textContent = 'ERROR';
 				document.body.prepend(warnDiv);
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.href = '/css/MainColorStyle_ERROR.css';
+				document.head.appendChild(link);
 			}
 		},
 			100);
@@ -138,4 +149,5 @@
 		checkAndRun();
 	}
 	window.__CORE_READY = true;
+	window.__ANTIDEBUG_LOADED = true;
 })();

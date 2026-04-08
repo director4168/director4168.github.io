@@ -1,22 +1,23 @@
 /
-┣━/css
- ▏ ┗━/CoreStyles.css
+┣━/css/
+ ▏ ┣━/CoreStyles.css
+ ▏ ┗━/Protect_CoreStyle.css
  ▏
-┣━/EasterEgg
- ▏ ┣━/css
+┣━/EasterEgg/
+ ▏ ┣━/css/
  ▏  ▏ ┗━/EasterEggPop-upWindow.css
  ▏  ▏
- ▏ ┗━/js
+ ▏ ┗━/js/
  ▏     ┗━/EasterEgg.js
  ▏
-┣━/jpg
+┣━/jpg/
  ▏ ┗━/avatar.jpg
  ▏
-┣━/js
+┣━/js/
  ▏ ┣━/CoreLogic.js
  ▏ ┗━/Protect.js
  ▏
-┗━/About-director_Carter.html
+┣━/About-director_Carter.html
 ┣━/ContactInformation.html
 ┣━/index.html
 ┣━/LICENSE
