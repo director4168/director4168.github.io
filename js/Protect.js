@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		writable: false,
 		configurable: false
 	});
-
 	document.onkeydown = function(e) {
 		if (
 			e.key === 'F12' ||
@@ -15,13 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			return false;
 		}
 	};
-
 	document.oncontextmenu = function(e) {
 		if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
 			return false;
 		}
 	};
-
 	const observer = new MutationObserver(function(mutations) {
 		mutations.forEach(function(mutation) {
 			if (mutation.type === 'characterData') {
@@ -36,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	});
-
 	observer.observe(document.body, {
 		childList: true,
 		characterData: true,
 		characterDataOldValue: true,
 		subtree: true
 	});
+    window.__PROTECT_LOADED = true;
 });

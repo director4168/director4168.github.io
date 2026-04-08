@@ -14,8 +14,9 @@
  ▏
 ┣━/js
  ▏ ┣━/CoreLogic.js
- ▏ ┗━Protect.js
+ ▏ ┗━/Protect.js
  ▏
+┗━/About-director_Carter.html
 ┣━/ContactInformation.html
 ┣━/index.html
 ┣━/LICENSE
