@@ -111,7 +111,7 @@
 			window.outerHeight - window.innerHeight > 200;
 			if (devtools) {
 				console.clear();
-				document.body.innerHTML = '<h1 style="color:red;text-align:center;padding:50px;">ERROR</h1>';
+				document.body.innerHTML = '<h1 style="color:red;text-align:center;padding:50px;">WARN</h1>';
 			}
 		},
 			600);
@@ -130,10 +130,10 @@
 			}
 			if (attempts >= maxAttempts) {
 				clearInterval(checker);
-				console.warn('[ERROR] No specified JS detected!\n                      -----By director_Carter');
+				console.warn('%c[核心逻辑JS] 检测到部分资源未被加载', 'color: #FFC900;');
 				const warnDiv = document.createElement('div');
-				warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#d32f2f;color:#fff;padding:14px;text-align:center;z-index:99999;font-size:15px;';
-				warnDiv.textContent = 'ERROR';
+				warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:14px;text-align:center;z-index:99999;font-size:15px;';
+				warnDiv.textContent = 'WARN: Missing resources';
 				document.body.prepend(warnDiv);
 				const link = document.createElement('link');
 				link.rel = 'stylesheet';

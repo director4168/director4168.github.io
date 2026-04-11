@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
 
 
 </head>
+
 <body>
 	<!-- 顶栏 -->
 	<div class="top-app-bar">
@@ -45,11 +47,11 @@
 			<h1 class="hero-title">主称</h1>
 			<p class="hero-description">
 				介绍
-				<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
-					<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-					温馨提示
-				</p>
-			</div>
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+				温馨提示
+			</p>
+		</div>
 
 
 
@@ -60,11 +62,11 @@
 
 
 
-			<!-- 返回卡片 -->
-			<div class="card">
-				<h2 class="card-title">返回</h2>
-				<p class="hero-description"></p>
-				*点击卡片返回首页
+		<!-- 返回卡片 -->
+		<div class="card">
+			<h2 class="card-title">返回</h2>
+			<p class="hero-description"></p>
+			*点击卡片返回首页
 			</p>
 			<div class="grid">
 
@@ -162,7 +164,11 @@
 
 
 
-		<!-- 主题切换按钮 -->
+		<!-- 语言切换&主题切换按钮 -->
+		<a href="要跳转的URL" class="theme-toggle" id="languageToggle" style="right: 96px;">
+			<span class="material-icons">language</span>
+		</a>
+
 		<div class="theme-toggle" id="themeToggle">
 			<span class="material-icons">dark_mode</span>
 		</div>
@@ -212,7 +218,7 @@
 			const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
 			let clickCount = 0;
 			let lastClickTime = 0;
-
+			
 			// 彩蛋触发逻辑
 			avatar.addEventListener('click', function() {
 				const now = new Date().getTime();
@@ -221,25 +227,25 @@
 				}
 				clickCount++;
 				lastClickTime = now;
-
+			
 				if (clickCount >= 10) {
 					console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
 					easterEggModal.classList.add('show');
 					clickCount = 0;
 				}
 			});
-
+			
 			// 修改关闭彩蛋逻辑
 			easterEggClose.addEventListener('click', function() {
 				easterEggModal.classList.remove('show');
 				easterEggCloseDialog.classList.add('show');
 			});
-
+			
 			// 专用关闭对话框确认按钮事件
 			easterEggCloseDialogConfirm.addEventListener('click', function() {
 				easterEggCloseDialog.classList.remove('show');
 			});
-
+			
 			// 点击对话框外部关闭专用关闭对话框
 			easterEggCloseDialog.addEventListener('click', function(e) {
 				if (e.target === easterEggCloseDialog) {
@@ -293,5 +299,6 @@
 		<script src="./js/Protect.js"></script>
 		<!-- 彩蛋 -->
 		<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
-	</body>
+</body>
+
 </html>

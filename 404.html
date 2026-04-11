@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
-	<title>director_Carter的主页-首页</title>
+	<title>404</title>
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,16 +14,19 @@
 	<link rel="stylesheet" href="./css/MainColorStyle_Default.css">
 	<!-- 引入附加CSS样式 -->
 	<link rel="stylesheet" href="./css/AdditionalStyles.css">
+
+
+	<!-- 五秒后自动跳转 -->
+	<meta http-equiv="refresh" content="5;url=./index.html">
+
 </head>
 
 <body>
 	<!-- 顶栏 -->
 	<div class="top-app-bar">
 		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
-		<h1 class="app-bar-title">director_Carter</h1>
+		<h1 class="app-bar-title">director_Carte</h1>
 	</div>
-
-
 
 
 	<!-- 主要内容区域 -->
@@ -31,17 +34,16 @@
 		<!-- 介绍 -->
 		<div class="hero-section">
 
-			<!-- 头像 -->
 
-
-
-			<h1 class="hero-title">主页-首页</h1>
+			<h1 class="hero-title"></h1>
 			<p class="hero-description">
-				director_Carter的网站，MD3风格，由Github的Github Pages提供托管服务。
-			<p>
+				没有有效内容！ | No valid content!
+				<p class="hero-description">
+					5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.
+				</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-				本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
+				The English part is translated by Google Translate and may differ from the actual content.
 			</p>
 		</div>
 
@@ -54,70 +56,32 @@
 
 
 
-		<!-- 跳转卡片 -->
+		<!-- 返回卡片 -->
 		<div class="card">
-			<h2 class="card-title">目录</h2>
+			<h2 class="card-title">返回 | Return</h2>
 			<p class="hero-description">
-				*点击卡片可跳转
+			没有有效内容，请返回 | No valid content, please return
+			</p>
+			<p class="hero-description">
+				5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.
 			</p>
 			<div class="grid">
 
 
 
 
-				<a class="list-item" href="javascript:void(0);" data-href="./ContactInformation.html" data-title="联系方式" data-content="是否跳转到联系方式页？">
-					<span class="material-icons list-icon">contacts</span>
+				<a class="list-item" href="javascript:void(0);" data-href="./index.html" data-title="返回首页 | Return to homepage" data-content="是否返回首页？">
+					<span class="material-icons list-icon">home</span>
 					<div class="list-content">
 						<div class="list-title">
-							联系方式
+							返回首页 | Return to homepage
 						</div>
 						<div class="list-subtitle">
-							我的各个联系方式，如QQ、B站、YouTube
+							返回到首页 | Return to homepage
 						</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
 				</a>
-
-
-
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-		<!-- 其他 -->
-		<div class="card">
-			<h2 class="card-title">开源地址</h2>
-			<div class="grid">
-
-
-
-				<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？Github链接，您可能需要挂机子能访问(注: 网站使用并遵守MPL-2.0开源协议）另外，如果感兴趣的话可以给我的这个项目加一个星标⭐️来支持我">
-					<span class="material-icons list-icon">code</span>
-					<div class="list-content">
-						<div class="list-title">
-							网站开源地址
-						</div>
-						<div class="list-subtitle">
-							该网站的源代码可以在我的GitHub中找到，也可以通过邮箱向我索要源码。
-						</div>
-						<div class="list-subtitle">
-							该网站使用MPL-2.0开源协议。
-						</div>
-						<div class="list-subtitle">
-							给个星⭐️吧
-						</div>
-					</div>
-					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-				</a>
-
-
 
 
 
@@ -136,7 +100,7 @@
 		<!-- 页尾 -->
 		<div class="footer">
 			<p>
-				Version: v26.04.11.2011 | zh_CN
+				Version: v26.04.11.2025 | zh_CN, en_US
 			</p>
 			<p>
 				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -155,15 +119,10 @@
 
 
 
-		<!-- 语言切换主题切换按钮 -->
-		<a href="./en_US/index_en_US.html" class="theme-toggle" id="languageToggle" style="right: 96px;">
-			<span class="material-icons">translate</span>
-		</a>
-
+		<!-- 主题切换按钮 -->
 		<div class="theme-toggle" id="themeToggle">
 			<span class="material-icons">dark_mode</span>
 		</div>
-
 
 
 
@@ -208,7 +167,6 @@
 		<!-- 引入核心JS -->
 		<script src="./js/CoreLogic.js"></script>
 		<script src="./js/Protect.js"></script>
-		<!-- <script src="./js/d.js"></script> -->
 </body>
 
 </html>

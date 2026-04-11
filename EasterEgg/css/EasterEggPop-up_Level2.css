@@ -1,0 +1,66 @@
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 负责处理彩蛋弹窗的样式，包括弹窗样式和过渡动画时长
+ 此为一级弹窗
+*/
+
+.easter-egg-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	/* 彩蛋弹窗一级弹窗 */
+	/* 和通用弹窗一样 */
+	transition: opacity 0.4s, visibility 0.4s;
+}
+
+.easter-egg-modal.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.easter-egg-content {
+	background-color: var(--egg-surface);
+	color: var(--egg-on-surface);
+	padding: 30px;
+	border-radius: 16px;
+	text-align: center;
+	max-width: 80%;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.easter-egg-content h2 {
+	font-size: 24px;
+	margin-bottom: 16px;
+	color: var(--egg-primary);
+}
+
+.easter-egg-content p {
+	margin-bottom: 2px;
+}
+
+.easter-egg-close {
+	background-color: var(--egg-primary);
+	color: var(--egg-on-primary);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background-color 0.4s;
+}
+
+.easter-egg-close:hover {
+	background-color: var(--egg-primary-container);
+	color: var(--egg-on-primary-container);
+}

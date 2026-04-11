@@ -1,24 +1,36 @@
-/
-┣━/css/
- ▏ ┣━/CoreStyles.css
- ▏ ┗━/Protect_CoreStyle.css
- ▏
-┣━/EasterEgg/
- ▏ ┣━/css/
- ▏  ▏ ┗━/EasterEggPop-upWindow.css
- ▏  ▏
- ▏ ┗━/js/
- ▏     ┗━/EasterEgg.js
- ▏
-┣━/jpg/
- ▏ ┗━/avatar.jpg
- ▏
-┣━/js/
- ▏ ┣━/CoreLogic.js
- ▏ ┗━/Protect.js
- ▏
-┣━/About-director_Carter.html
-┣━/ContactInformation.html
-┣━/index.html
-┣━/LICENSE
-┗━/README.md
+📁 V15v26.04.11.2011
+│   📁 css
+│   ├── 📄 .gitkeep
+│   ├── 🎨 AdditionalStyles.css
+│   ├── 🎨 MainColorStyle_Default.css
+│   └── 🎨 MainColorStyle_ERROR.css
+│   📁 EasterEgg
+│   │   📁 css
+│   │   ├── 📄 .gitkeep
+│   │   ├── 🎨 EasterEggPop-up_Level1.css
+│   │   ├── 🎨 EasterEggPop-up_Level2.css
+│   │   └── 🎨 EasterEggStyle.css
+│   │   📁 js
+│   │   ├── 📄 .gitkeep
+│   │   └── 💻 EasterEgg.js
+│   └── 📄 .gitkeep
+│   📁 en_US
+│   ├── 🌐 ContactInformation_en_US.html
+│   └── 🌐 index_en_US.html
+│   📁 jpg
+│   ├── 📄 .gitkeep
+│   └── 🖼 avatar.jpg
+│   📁 js
+│   ├── 📄 .gitkeep
+│   ├── 💻 CoreLogic.js
+│   ├── 💻 d.js
+│   └── 💻 Protect.js
+├── 🌐 404.html
+├── 🌐 About-director_Carter.html
+├── 🌐 Basic.html
+├── 🌐 ContactInformation.html
+├── 🌐 index.html
+├── 📜 index.html.bak
+├── 📜 LICENSE
+├── 📄 README.md
+└── 📄 目录表.txt
