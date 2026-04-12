@@ -36,19 +36,19 @@
 /* 底层夜间模式暗色调配色 */
 body.dark-theme {
 /* 顶栏文本、亮色暗色切换控件矢量图图标、弹窗部分文本 */
-	--md-primary: #90CAF9;
+	--md-primary: #88BDE8;
 /* 顶栏文字配色 */
 	--md-on-primary: #381E72;
 /* 介绍栏基本背景配色 */
-	--md-primary-container: #1A237E;
+	--md-primary-container: #14467C;
 /* 介绍栏基本文字配色 */
 	--md-on-primary-container: #EADDFF;
 /* 基本背景配色 */
-	--md-surface: #141218;
+	--md-surface: #1A202C;
 /* 卡片主名称配色、栏的介绍配色 */
 	--md-on-surface: #E6E1E5;
 /* 分栏基本背景配色 */
-	--md-surface-variant: #49454F;
+	--md-surface-variant: #2D3748;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
 	--md-on-surface-variant: #CAC4D0;
 /* 卡片右侧矢量图图标配色 */
