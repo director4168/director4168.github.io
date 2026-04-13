@@ -25,13 +25,6 @@
 </head>
 
 <body>
-	<!-- 顶栏 -->
-	<div class="top-app-bar">
-		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
-		<h1 class="app-bar-title">director_Carte</h1>
-	</div>
-
-
 	<!-- 主要内容区域 -->
 	<div class="main-content">
 		<!-- 介绍 -->
@@ -47,7 +40,7 @@
 			<h1 class="hero-title">主称</h1>
 			<p class="hero-description">
 				介绍
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 12px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 				温馨提示
 			</p>
@@ -145,7 +138,7 @@
 		<!-- 页尾 -->
 		<div class="footer">
 			<p>
-				Version: v26.04.10.1829
+				Version: v26.04.13.1333
 			</p>
 			<p>
 				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -165,12 +158,16 @@
 
 
 		<!-- 语言切换&主题切换按钮 -->
-		<a href="要跳转的URL" class="theme-toggle" id="languageToggle" style="right: 96px;">
-			<span class="material-icons">language</span>
-		</a>
+		<div class="bottom-actions">
+			<!-- 语言切换 -->
+			<a href="404.html" class="btn" id="languageToggle">
+				<span class="material-icons">translate</span>
+			</a>
 
-		<div class="theme-toggle" id="themeToggle">
-			<span class="material-icons">dark_mode</span>
+			<!-- 主题切换 -->
+			<div class="btn" id="themeToggle">
+				<span class="material-icons">dark_mode</span>
+			</div>
 		</div>
 
 

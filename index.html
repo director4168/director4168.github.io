@@ -17,15 +17,6 @@
 </head>
 
 <body>
-	<!-- 顶栏 -->
-	<div class="top-app-bar">
-		<span class="material-icons" style="color: var(--md-on-primary);">person</span>
-		<h1 class="app-bar-title">director_Carter</h1>
-	</div>
-
-
-
-
 	<!-- 主要内容区域 -->
 	<div class="main-content">
 		<!-- 介绍 -->
@@ -39,7 +30,7 @@
 			<p class="hero-description">
 				director_Carter的网站，MD3风格，由Github的Github Pages提供托管服务。
 			<p>
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant);">
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 12px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 				本网站开源，遵循并使用MPL-2.0开源协议，您若使用本网站源码，请遵守MPL-2.0开源协议
 			</p>
@@ -136,7 +127,7 @@
 		<!-- 页尾 -->
 		<div class="footer">
 			<p>
-				Version: v26.04.12.0415 | zh_CN
+				Version: v26.04.13.1333 | zh_CN
 			</p>
 			<p>
 				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -156,12 +147,16 @@
 
 
 		<!-- 语言切换主题切换按钮 -->
-		<a href="./en_US/index_en_US.html" class="theme-toggle" id="languageToggle" style="right: 96px;">
-			<span class="material-icons">translate</span>
-		</a>
+		<div class="bottom-actions">
+			<!-- 语言切换 -->
+			<a href="./en_US/index_en_US.html" class="btn" id="languageToggle">
+				<span class="material-icons">translate</span>
+			</a>
 
-		<div class="theme-toggle" id="themeToggle">
-			<span class="material-icons">dark_mode</span>
+			<!-- 主题切换 -->
+			<div class="btn" id="themeToggle">
+				<span class="material-icons">dark_mode</span>
+			</div>
 		</div>
 
 
