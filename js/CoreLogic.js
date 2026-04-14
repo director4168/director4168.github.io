@@ -9,6 +9,7 @@
 		//'./js/d.js',
 	];
 	let coreInitialized = false;
+
 	function areAllScriptsLoaded() {
 		const loadedScripts = new Set();
 		document.querySelectorAll('script[src]').forEach(script => {
@@ -25,11 +26,15 @@
 			}
 		}
 		return window.__PROTECT_LOADED === true &&
-		window.__ANTIDEBUG_LOADED === true;
+			window.__ANTIDEBUG_LOADED === true;
 	}
+
 	function CoreFeatures() {
 		if (coreInitialized) return;
 		coreInitialized = true;
+
+
+
 
 
 		const body = document.body;
@@ -42,7 +47,7 @@
 
 			const setTheme = (dark) => {
 				body.classList.toggle('dark-theme', dark);
-				if (icon) icon.textContent = dark ? 'light_mode': 'dark_mode';
+				if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
 			};
 
 			setTheme(prefersDark.matches);
@@ -53,10 +58,11 @@
 		// 更新版权年份
 		const year = new Date().getFullYear();
 		['chinese-copyright-year',
-			'english-copyright-year'].forEach(id => {
-				const el = document.getElementById(id);
-				if (el) el.textContent = year > 2025 ? `2025-${year}`: '2025';
-			});
+			'english-copyright-year'
+		].forEach(id => {
+			const el = document.getElementById(id);
+			if (el) el.textContent = year > 2025 ? `2025-${year}` : '2025';
+		});
 
 		// MD3 对话框&列表项点击
 		const dialog = document.getElementById('md3Dialog');
@@ -68,15 +74,33 @@
 		const confirmBtn = document.getElementById('md3DialogConfirm');
 
 		let currentHref = '';
+		let scrollPosition = 0;
 
 		const showDialog = (title, content, href) => {
 			if (header) header.textContent = title || '提示';
-			if (bodyEl) bodyEl.textContent = content || '';
+			if (bodyEl) bodyEl.innerHTML = (content || '').replace(/\\n/g, '<br>');
 			currentHref = href || '';
+
+
+			// 禁止在弹窗开启时能够滑动页面
+			scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+			document.body.style.position = 'fixed';
+			document.body.style.top = `-${scrollPosition}px`;
+			document.body.style.width = '100%';
+			document.body.style.overflow = 'hidden';
+
+
 			dialog.classList.add('show');
 		};
 
-		const hideDialog = () => dialog.classList.remove('show');
+		const hideDialog = () => {
+			dialog.classList.remove('show');
+			document.body.style.position = '';
+			document.body.style.top = '';
+			document.body.style.width = '';
+			document.body.style.overflow = '';
+			window.scrollTo(0, scrollPosition);
+		};
 
 		if (cancelBtn) cancelBtn.onclick = hideDialog;
 		if (confirmBtn) confirmBtn.onclick = () => {
@@ -84,9 +108,10 @@
 			hideDialog();
 		};
 
-		dialog.addEventListener('click', e => {
-			if (e.target === dialog) hideDialog();
-		});
+		// 点击空白处关闭弹窗
+		// dialog.addEventListener('click', e => {
+		//	if (e.target === dialog) hideDialog();
+		// });
 
 		// 列表项点击
 		document.querySelectorAll('.list-item').forEach(item => {
@@ -103,44 +128,49 @@
 		});
 
 
+
+
+
 		startAntiDebug();
 	}
+
 	function startAntiDebug() {
 		setInterval(() => {
-			const devtools = window.outerWidth - window.innerWidth > 200 ||
-			window.outerHeight - window.innerHeight > 200;
-			if (devtools) {
-				console.clear();
-				document.body.innerHTML = '<h1 style="color:red;text-align:center;padding:50px;">WARN</h1>';
-			}
-		},
+				const devtools = window.outerWidth - window.innerWidth > 200 ||
+					window.outerHeight - window.innerHeight > 200;
+				if (devtools) {
+					console.clear();
+					document.body.innerHTML = '<h1 style="color:red;text-align:center;padding:50px;">WARN</h1>';
+				}
+			},
 			600);
 	}
+
 	function checkAndRun() {
 		if (coreInitialized) return;
 		let attempts = 0;
 		const maxAttempts = 20;
 		const checker = setInterval(() => {
-			attempts++;
+				attempts++;
 
-			if (areAllScriptsLoaded()) {
-				clearInterval(checker);
-				CoreFeatures();
-				return;
-			}
-			if (attempts >= maxAttempts) {
-				clearInterval(checker);
-				console.warn('%c[核心逻辑JS] 检测到部分资源未被加载', 'color: #FFC900;');
-				const warnDiv = document.createElement('div');
-				warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:14px;text-align:center;z-index:99999;font-size:15px;';
-				warnDiv.textContent = 'WARN: Missing resources';
-				document.body.prepend(warnDiv);
-				const link = document.createElement('link');
-				link.rel = 'stylesheet';
-				link.href = '/css/MainColorStyle_ERROR.css';
-				document.head.appendChild(link);
-			}
-		},
+				if (areAllScriptsLoaded()) {
+					clearInterval(checker);
+					CoreFeatures();
+					return;
+				}
+				if (attempts >= maxAttempts) {
+					clearInterval(checker);
+					console.warn('%c[核心逻辑JS] 检测到部分资源未被加载', 'color: #FFC900;');
+					const warnDiv = document.createElement('div');
+					warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:14px;text-align:center;z-index:99999;font-size:15px;';
+					warnDiv.textContent = 'WARN: Missing resources';
+					document.body.prepend(warnDiv);
+					const link = document.createElement('link');
+					link.rel = 'stylesheet';
+					link.href = '/css/MainColorStyle_ERROR.css';
+					document.head.appendChild(link);
+				}
+			},
 			100);
 	}
 	if (document.readyState === 'loading') {

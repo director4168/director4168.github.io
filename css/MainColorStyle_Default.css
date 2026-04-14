@@ -13,9 +13,9 @@
 	--md-primary: #1976D2;
 /* 顶栏文字配色 */
 	--md-on-primary: #FFFFFF;
-/* 主基本背景配色 */
+/* 主栏基本背景配色 */
 	--md-primary-container: #DAE1FF;
-/* 主基本文字配色 */
+/* 主栏基本文字配色 */
 	--md-on-primary-container: #001849;
 /* 基本背景配色 */
 	--md-surface: #FAF8FF;
@@ -25,8 +25,11 @@
 	--md-surface-variant: #ECEDFB;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
 	--md-on-surface-variant: #555555;
-/* 卡片右侧矢量图图标配色 */
-	--md-outline: #C6C6C8;
+/* 卡片右侧矢量图图标配色，分栏（含跳转卡片）描边 */
+	--md-outline: #48484A;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #5095FF
 }
 
 
@@ -51,6 +54,9 @@ body.dark-theme {
 	--md-surface-variant: #272A34;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
 	--md-on-surface-variant: #A0A0A8;
-/* 卡片右侧矢量图图标配色 */
-	--md-outline: #48484A;
+/* 卡片右侧矢量图图标配色、分栏（含跳转卡片）描边 */
+	--md-outline: #C6C6C8;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #003FA4
 }
