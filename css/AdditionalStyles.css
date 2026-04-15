@@ -9,14 +9,24 @@
 	box-sizing: border-box;
 }
 
+
+
+
+
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+	/* 使用提前加载的Material Icons字体库宋体字体 */
+	font-family: "Noto Serif SC", serif;
+
 	background-color: var(--md-surface);
 	color: var(--md-on-surface);
 	line-height: 1.6;
-	/* 下一行background-color切换日夜间模式的过渡动画时长 */
+	/* 过渡动画时长 */
 	transition: background-color 0.6s, color 0.6s;
 }
+
+
+
+
 
 /* 顶部应用栏 */
 .top-app-bar {
@@ -34,12 +44,20 @@ body {
 	margin-left: 16px;
 }
 
+
+
+
+
 /* 主内容区域 */
 .main-content {
 	max-width: 640px;
 	margin: 0 auto;
 	padding: 20px 16px 120px;
 }
+
+
+
+
 
 /* 头像 */
 .avatar {
@@ -79,6 +97,10 @@ body {
 	opacity: 0.9;
 }
 
+
+
+
+
 /* 主栏 */
 .hero-section {
 	text-align: center;
@@ -109,6 +131,10 @@ body.dark-theme .info-note {
 	border-color: #334D7A;
 }
 
+
+
+
+
 /* 卡片 */
 .card {
 	background-color: var(--md-surface-variant);
@@ -125,6 +151,10 @@ body.dark-theme .info-note {
 	font-weight: 600;
 	margin-bottom: 16px;
 }
+
+
+
+
 
 /* 列表项 */
 .grid {
@@ -159,7 +189,6 @@ body.dark-theme .info-note {
 	color: var(--md-primary);
 	margin-right: 16px;
 	margin-top: 3px;
-	/* 偏左上角 */
 }
 
 .list-content {
@@ -177,6 +206,10 @@ body.dark-theme .info-note {
 	margin-top: 2px;
 }
 
+
+
+
+
 /* 底部区域 */
 .footer {
 	text-align: center;
@@ -188,28 +221,31 @@ body.dark-theme .info-note {
 	padding-bottom: 80px;
 }
 
-/* 胶囊按钮 */
+
+
+
+
+/* 切换按钮 */
 .bottom-actions {
 	position: fixed;
 	bottom: 24px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
-	background-color: rgba(255, 255, 255, 0.85);
+	background-color: rgba(255, 255, 255, 0.01);
 	backdrop-filter: blur(20px);
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	border: 1.5px solid #87878F; 
 	border-radius: 32px;
 	padding: 8px 16px;
 	display: flex;
 	align-items: center;
-	/* 间距 */
-	gap: 12px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	gap: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 body.dark-theme .bottom-actions {
-	background-color: rgba(30, 30, 30, 0.85);
-	border-color: rgba(255, 255, 255, 0.12);
+	background-color: rgba(30, 30, 30, 0.01);
+	border-color: #C6C6C8; 
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -234,19 +270,13 @@ body.dark-theme .bottom-actions .btn:hover {
 	background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* 分割线 */
-.bottom-actions::after {
-	content: '';
-	width: 1px;
-	height: 28px;
-	background-color: rgba(0, 0, 0, 0.15);
-	margin: 0 4px;
-	flex-shrink: 0;
-}
-
 body.dark-theme .bottom-actions::after {
 	background-color: rgba(255, 255, 255, 0.18);
 }
+
+
+
+
 
 /* MD3弹窗 */
 .md3-dialog {
@@ -324,6 +354,10 @@ body.dark-theme .bottom-actions::after {
 .md3-button.contained:hover {
 	background-color: #1565C0;
 }
+
+
+
+
 
 /* 响应式调整 */
 @media (max-width: 768px) {

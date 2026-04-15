@@ -24,6 +24,7 @@
 ├── 🌐 About-director_Carter.html
 ├── 🌐 Basic.html
 ├── 🌐 ContactInformation.html
+├── 🌐 Goodbye.html
 ├── 🌐 index.html
 ├── 📜 index.html.bak
 ├── 📜 LICENSE
