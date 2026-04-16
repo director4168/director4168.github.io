@@ -10,7 +10,7 @@
 │   │   └── 🎨 EasterEggStyle.css
 │   │   📁 js
 │   │   └── 💻 EasterEgg.js
-│   └── 📄 .gitkeep
+│   └── 📄 .placeholder
 │   📁 en_US
 │   ├── 🌐 ContactInformation_en_US.html
 │   └── 🌐 index_enUS.html

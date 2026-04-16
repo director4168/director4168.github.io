@@ -149,7 +149,7 @@
 	function checkAndRun() {
 		if (coreInitialized) return;
 		let attempts = 0;
-		const maxAttempts = 20;
+		const maxAttempts = 10;
 		const checker = setInterval(() => {
 				attempts++;
 
@@ -159,16 +159,13 @@
 					return;
 				}
 				if (attempts >= maxAttempts) {
+					CoreFeatures();
 					clearInterval(checker);
-					console.warn('%c[核心逻辑JS] 检测到部分资源未被加载', 'color: #FFC900;');
+					console.warn('%c[主JS] 检测到疑似部分资源缺失', 'color: #FFC900;');
 					const warnDiv = document.createElement('div');
-					warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:14px;text-align:center;z-index:99999;font-size:15px;';
-					warnDiv.textContent = 'WARN: Missing resources';
+					warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:2px;text-align:center;z-index:99999;font-size:15px;';
+					warnDiv.textContent = '警告: 疑似资源缺失！';
 					document.body.prepend(warnDiv);
-					const link = document.createElement('link');
-					link.rel = 'stylesheet';
-					link.href = '/css/MainColorStyle_ERROR.css';
-					document.head.appendChild(link);
 				}
 			},
 			100);

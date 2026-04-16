@@ -13,13 +13,13 @@
 	/* 顶栏文字配色 */
 	--egg-on-primary: #000000;
 	/* 弹窗按钮配色 */
-	--egg-primary-container: #1A237E;
+	--egg-primary-container: #FFD3EC;
 	/* 介绍栏基本文字配色 */
 	--egg-on-primary-container: #FF84C9;
 	/* 基本背景配色 */
 	--egg-surface: #FEE8EB;
 	/* 卡片主名称配色、栏的介绍配色 */
-	--egg-on-surface: #FF84C9;
+	--egg-on-surface: #FF46AE;
 	/* 分栏基本背景配色 */
 	--egg-surface-variant: #E7E0EC;
 	/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
@@ -37,15 +37,15 @@ body.dark-theme {
 	/* 顶栏文本、亮色暗色切换控件矢量图图标、弹窗部分文本 */
 	--egg-primary: #FFB6DF;
 	/* 顶栏文字配色 */
-	--egg-on-primary: #381E72;
+	--egg-on-primary: #000000;
 	/* 弹窗按钮配色 */
-	--egg-primary-container: #1A237E;
+	--egg-primary-container: #FFD3EC;
 	/* 介绍栏基本文字配色 */
 	--egg-on-primary-container: #FF84C9;
 	/* 基本背景配色 */
 	--egg-surface: #FEE8ED;
 	/* 卡片主名称配色、栏的介绍配色 */
-	--egg-on-surface: #FF84C9;
+	--egg-on-surface: #FF46AE;
 	/* 分栏基本背景配色 */
 	--egg-surface-variant: #49454F;
 	/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
