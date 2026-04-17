@@ -6,6 +6,7 @@
 // 过时版本
 // 过时版本
 // 过时版本
+// Version: v26.04.16.1909
 
 // 因为将此js分离出来造成一些bug（个人测试），此js已重新加进ContactInformation.html中，暂时不使用此文件
 
