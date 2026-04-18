@@ -40,6 +40,7 @@
 			<h1 class="hero-title">director_Carter’s contact information</h1>
 			<p class="hero-description">
 				The page is the contact information page of director_Carter, including my domestic QQ, BiliBili, MT forum..., international YouTube, X (Twitter), and the open source address of the website
+			</p>
 			<p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
@@ -299,23 +300,51 @@
 
 
 
+	</div>
 
 
 
 
 
-		<!-- End of page -->
-		<div class="footer">
-			<p>
-				Version: v26.04.17.1154 | en_US
-			</p>
-			<p>
-				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-			</p>
-			<p>
-				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-			</p>
+
+
+
+
+
+	<!-- End of page -->
+	<div class="footer">
+		<p>
+			Version: v26.04.18.2117 | en_US
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- Language switching & theme switching button -->
+	<div class="bottom-actions">
+		<!-- language switch -->
+		<a href="../ContactInformation.html" class="btn" id="languageToggle">
+			<span class="material-icons">translate</span>
+		</a>
+
+		<!-- theme switching -->
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
 		</div>
+	</div>
 
 
 
@@ -326,98 +355,76 @@
 
 
 
-		<!-- Language switching & theme switching button -->
-		<div class="bottom-actions">
-			<!-- language switch -->
-			<a href="../ContactInformation.html" class="btn" id="languageToggle">
-				<span class="material-icons">translate</span>
-			</a>
+	<!-- Easter egg pop-up window level one pop-up window -->
+	<div class="easter-egg-modal" id="easterEggModal">
+		<div class="easter-egg-content">
+			<h2>Easter eggs</h2>
+			<p>
+				Congratulations, you found a little easter egg I buried, so why are you poking my head?
+			</p>
+			<button class="easter-egg-close" id="easterEggClose">Click me to close，小雑魚~</button>
+		</div>
+	</div>
 
-			<!-- theme switching -->
-			<div class="btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
+	<!-- Easter egg pop-up window secondary closing confirmation dialog box -->
+	<div class="egg-dialog" id="easterEggCloseDialog">
+		<div class="egg-dialog-content">
+			<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
+				雑魚雑魚~
+			</div>
+			<div class="egg-dialog-body" id="easterEggCloseDialogBody">
+				雑魚雑魚、小さな雑魚ちゃん～
+			</div>
+			<div class="egg-dialog-actions">
+				<button class="egg-button contained" id="easterEggCloseDialogConfirm">Sure</button>
 			</div>
 		</div>
+	</div>
 
-
-
-
-
-
-
-
-
-
-		<!-- Easter egg pop-up window level one pop-up window -->
-		<div class="easter-egg-modal" id="easterEggModal">
-			<div class="easter-egg-content">
-				<h2>Easter eggs</h2>
-				<p>
-					Congratulations, you found a little easter egg I buried, so why are you poking my head?
-				</p>
-				<button class="easter-egg-close" id="easterEggClose">Click me to close，小雑魚~</button>
-			</div>
-		</div>
-
-		<!-- Easter egg pop-up window secondary closing confirmation dialog box -->
-		<div class="egg-dialog" id="easterEggCloseDialog">
-			<div class="egg-dialog-content">
-				<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
-					雑魚雑魚~
-				</div>
-				<div class="egg-dialog-body" id="easterEggCloseDialogBody">
-					雑魚雑魚、小さな雑魚ちゃん～
-				</div>
-				<div class="egg-dialog-actions">
-					<button class="egg-button contained" id="easterEggCloseDialogConfirm">Sure</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- The logic of each part of the Easter egg -->
-		<script>
-			const avatar = document.getElementById('avatar');
-			const easterEggModal = document.getElementById('easterEggModal');
-			const easterEggClose = document.getElementById('easterEggClose');
-			const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
-			const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
-			let clickCount = 0;
-			let lastClickTime = 0;
-			
-			// Easter egg trigger logic
-			avatar.addEventListener('click', function() {
-				const now = new Date().getTime();
-				if (now - lastClickTime > 300) {
-					clickCount = 0;
-				}
-				clickCount++;
-				lastClickTime = now;
-			
-				if (clickCount >= 10) {
-					console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
-					easterEggModal.classList.add('show');
-					clickCount = 0;
-				}
-			});
-			
-			// Modify the logic of closing easter eggs
-			easterEggClose.addEventListener('click', function() {
-				easterEggModal.classList.remove('show');
-				easterEggCloseDialog.classList.add('show');
-			});
-			
-			// Dedicated close dialog box confirmation button event
-			easterEggCloseDialogConfirm.addEventListener('click', function() {
+	<!-- The logic of each part of the Easter egg -->
+	<script>
+		const avatar = document.getElementById('avatar');
+		const easterEggModal = document.getElementById('easterEggModal');
+		const easterEggClose = document.getElementById('easterEggClose');
+		const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
+		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
+		let clickCount = 0;
+		let lastClickTime = 0;
+		
+		// Easter egg trigger logic
+		avatar.addEventListener('click', function() {
+			const now = new Date().getTime();
+			if (now - lastClickTime > 300) {
+				clickCount = 0;
+			}
+			clickCount++;
+			lastClickTime = now;
+		
+			if (clickCount >= 10) {
+				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
+				easterEggModal.classList.add('show');
+				clickCount = 0;
+			}
+		});
+		
+		// Modify the logic of closing easter eggs
+		easterEggClose.addEventListener('click', function() {
+			easterEggModal.classList.remove('show');
+			easterEggCloseDialog.classList.add('show');
+		});
+		
+		// Dedicated close dialog box confirmation button event
+		easterEggCloseDialogConfirm.addEventListener('click', function() {
+			easterEggCloseDialog.classList.remove('show');
+		});
+		
+		// Click outside the dialog box to close the dedicated close dialog box
+		easterEggCloseDialog.addEventListener('click', function(e) {
+			if (e.target === easterEggCloseDialog) {
 				easterEggCloseDialog.classList.remove('show');
-			});
-			
-			// Click outside the dialog box to close the dedicated close dialog box
-			easterEggCloseDialog.addEventListener('click', function(e) {
-				if (e.target === easterEggCloseDialog) {
-					easterEggCloseDialog.classList.remove('show');
-				}
-			});
-		</script>
+			}
+		});
+	</script>
 
 
 
@@ -427,43 +434,43 @@
 
 
 
-		<!-- MD3 dialog box -->
-		<div class="md3-dialog" id="md3Dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					title
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					content
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">Cancel</button>
-					<button class="md3-button contained" id="md3DialogConfirm">Sure</button>
-				</div>
+	<!-- MD3 dialog box -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">Cancel</button>
+				<button class="md3-button contained" id="md3DialogConfirm">Sure</button>
 			</div>
 		</div>
+	</div>
 
-		<div class="md3-dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					title
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					content
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">Sure</button>
-				</div>
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">Sure</button>
 			</div>
 		</div>
+	</div>
 
 
 
-		<!-- Introduce core JS -->
-		<script src="../js/CoreLogic.js"></script>
-		<script src="../js/Protect.js"></script>
-		<!-- Easter eggs -->
-		<!-- <script src="../EasterEgg/js/EasterEgg.js"></script> -->
+	<!-- Introduce core JS -->
+	<script src="../js/CoreLogic.js"></script>
+	<script src="../js/Protect.js"></script>
+	<!-- Easter eggs -->
+	<!-- <script src="../EasterEgg/js/EasterEgg.js"></script> -->
 </body>
 
 </html>

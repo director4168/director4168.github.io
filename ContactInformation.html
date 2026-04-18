@@ -40,7 +40,7 @@
 			<h1 class="hero-title">director_Carter的联系方式</h1>
 			<p class="hero-description">
 				本页为director_Carter的联系方式页，包含我的国内QQ、B站、MT论坛……，国际YouTube、X(Twitter)，以及该网站的开源地址
-			<p>
+			</p>
 		</div>
 
 
@@ -295,23 +295,51 @@
 
 
 
+	</div>
 
 
 
 
 
-		<!-- 页尾 -->
-		<div class="footer">
-			<p>
-				Version: v26.04.17.1154 | zh_CN
-			</p>
-			<p>
-				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-			</p>
-			<p>
-				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-			</p>
+
+
+
+
+
+	<!-- 页尾 -->
+	<div class="footer">
+		<p>
+			Version: v26.04.18.2126 | zh_CN
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 语言切换&主题切换按钮 -->
+	<div class="bottom-actions">
+		<!-- 语言切换 -->
+		<a href="./en_US/ContactInformation_enUS.html" class="btn" id="languageToggle">
+			<span class="material-icons">translate</span>
+		</a>
+
+		<!-- 主题切换 -->
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
 		</div>
+	</div>
 
 
 
@@ -322,98 +350,76 @@
 
 
 
-		<!-- 语言切换&主题切换按钮 -->
-		<div class="bottom-actions">
-			<!-- 语言切换 -->
-			<a href="./en_US/ContactInformation_enUS.html" class="btn" id="languageToggle">
-				<span class="material-icons">translate</span>
-			</a>
+	<!-- 彩蛋弹窗一级弹窗 -->
+	<div class="easter-egg-modal" id="easterEggModal">
+		<div class="easter-egg-content">
+			<h2>彩蛋</h2>
+			<p>
+				恭喜你发现了我埋的一个小彩蛋呢，所以你一直戳我头干什么呀？
+			</p>
+			<button class="easter-egg-close" id="easterEggClose">点我关闭，小雑魚~</button>
+		</div>
+	</div>
 
-			<!-- 主题切换 -->
-			<div class="btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
+	<!-- 彩蛋弹窗二级关闭确认对话框 -->
+	<div class="egg-dialog" id="easterEggCloseDialog">
+		<div class="egg-dialog-content">
+			<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
+				雑魚雑魚~
+			</div>
+			<div class="egg-dialog-body" id="easterEggCloseDialogBody">
+				雑魚雑魚、小さな雑魚ちゃん～
+			</div>
+			<div class="egg-dialog-actions">
+				<button class="egg-button contained" id="easterEggCloseDialogConfirm">确定</button>
 			</div>
 		</div>
+	</div>
 
-
-
-
-
-
-
-
-
-
-		<!-- 彩蛋弹窗一级弹窗 -->
-		<div class="easter-egg-modal" id="easterEggModal">
-			<div class="easter-egg-content">
-				<h2>彩蛋</h2>
-				<p>
-					恭喜你发现了我埋的一个小彩蛋呢，所以你一直戳我头干什么呀？
-				</p>
-				<button class="easter-egg-close" id="easterEggClose">点我关闭，小雑魚~</button>
-			</div>
-		</div>
-
-		<!-- 彩蛋弹窗二级关闭确认对话框 -->
-		<div class="egg-dialog" id="easterEggCloseDialog">
-			<div class="egg-dialog-content">
-				<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
-					雑魚雑魚~
-				</div>
-				<div class="egg-dialog-body" id="easterEggCloseDialogBody">
-					雑魚雑魚、小さな雑魚ちゃん～
-				</div>
-				<div class="egg-dialog-actions">
-					<button class="egg-button contained" id="easterEggCloseDialogConfirm">确定</button>
-				</div>
-			</div>
-		</div>
-
-		<!-- 彩蛋各部分逻辑 -->
-		<script>
-			const avatar = document.getElementById('avatar');
-			const easterEggModal = document.getElementById('easterEggModal');
-			const easterEggClose = document.getElementById('easterEggClose');
-			const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
-			const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
-			let clickCount = 0;
-			let lastClickTime = 0;
-			
-			// 彩蛋触发逻辑
-			avatar.addEventListener('click', function() {
-				const now = new Date().getTime();
-				if (now - lastClickTime > 300) {
-					clickCount = 0;
-				}
-				clickCount++;
-				lastClickTime = now;
-			
-				if (clickCount >= 10) {
-					console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
-					easterEggModal.classList.add('show');
-					clickCount = 0;
-				}
-			});
-			
-			// 修改关闭彩蛋逻辑
-			easterEggClose.addEventListener('click', function() {
-				easterEggModal.classList.remove('show');
-				easterEggCloseDialog.classList.add('show');
-			});
-			
-			// 专用关闭对话框确认按钮事件
-			easterEggCloseDialogConfirm.addEventListener('click', function() {
+	<!-- 彩蛋各部分逻辑 -->
+	<script>
+		const avatar = document.getElementById('avatar');
+		const easterEggModal = document.getElementById('easterEggModal');
+		const easterEggClose = document.getElementById('easterEggClose');
+		const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
+		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
+		let clickCount = 0;
+		let lastClickTime = 0;
+		
+		// 彩蛋触发逻辑
+		avatar.addEventListener('click', function() {
+			const now = new Date().getTime();
+			if (now - lastClickTime > 300) {
+				clickCount = 0;
+			}
+			clickCount++;
+			lastClickTime = now;
+		
+			if (clickCount >= 10) {
+				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
+				easterEggModal.classList.add('show');
+				clickCount = 0;
+			}
+		});
+		
+		// 修改关闭彩蛋逻辑
+		easterEggClose.addEventListener('click', function() {
+			easterEggModal.classList.remove('show');
+			easterEggCloseDialog.classList.add('show');
+		});
+		
+		// 专用关闭对话框确认按钮事件
+		easterEggCloseDialogConfirm.addEventListener('click', function() {
+			easterEggCloseDialog.classList.remove('show');
+		});
+		
+		// 点击对话框外部关闭专用关闭对话框
+		easterEggCloseDialog.addEventListener('click', function(e) {
+			if (e.target === easterEggCloseDialog) {
 				easterEggCloseDialog.classList.remove('show');
-			});
-			
-			// 点击对话框外部关闭专用关闭对话框
-			easterEggCloseDialog.addEventListener('click', function(e) {
-				if (e.target === easterEggCloseDialog) {
-					easterEggCloseDialog.classList.remove('show');
-				}
-			});
-		</script>
+			}
+		});
+	</script>
 
 
 
@@ -423,43 +429,43 @@
 
 
 
-		<!-- MD3对话框 -->
-		<div class="md3-dialog" id="md3Dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					标题
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					内容
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">取消</button>
-					<button class="md3-button contained" id="md3DialogConfirm">确定</button>
-				</div>
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
 			</div>
 		</div>
+	</div>
 
-		<div class="md3-dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					标题
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					内容
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">确定</button>
-				</div>
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">确定</button>
 			</div>
 		</div>
+	</div>
 
 
 
-		<!-- 引入核心JS -->
-		<script src="./js/CoreLogic.js"></script>
-		<script src="./js/Protect.js"></script>
-		<!-- 彩蛋 -->
-		<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
+	<!-- 引入核心JS -->
+	<script src="./js/CoreLogic.js"></script>
+	<script src="./js/Protect.js"></script>
+	<!-- 彩蛋 -->
+	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
 </body>
 
 </html>

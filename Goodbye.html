@@ -29,6 +29,7 @@
 			<h1 class="hero-title">网站和您Goodbye</h1>
 			<p class="hero-description">
 				再见，项目暂时停止开发
+			</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 				这个的网站暂时停止开发
@@ -47,7 +48,7 @@
 		<!-- 返回卡片 -->
 		<div class="card">
 			<h2 class="card-title">百度</h2>
-			<p class="hero-description"></p>
+			<p class="hero-description">
 			*点击卡片跳转到百度
 			</p>
 			<div class="grid">
@@ -77,22 +78,46 @@
 
 
 
+	</div>
 
 
 
 
 
-		<!-- 页尾 -->
-		<div class="footer">
-			<p>
-				Version: Goodbye | zh_CN
-			</p>
-				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-			</p>
-			<p>
-				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-			</p>
+
+
+
+
+
+	<!-- 页尾 -->
+	<div class="footer">
+		<p>
+			Version: Goodbye | zh_CN
+		</p>
+		<p>
+		&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 语言切换&主题切换按钮 -->
+	<div class="bottom-actions">
+		<!-- 主题切换 -->
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
 		</div>
+	</div>
 
 
 
@@ -102,42 +127,25 @@
 
 
 
-
-		<!-- 语言切换&主题切换按钮 -->	
-		<div class="bottom-actions">
-			<!-- 主题切换 -->
-			<div class="btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
 			</div>
 		</div>
+	</div>
 
 
-
-
-
-
-
-
-
-		<!-- MD3对话框 -->
-		<div class="md3-dialog" id="md3Dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					标题
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					内容
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button contained" id="md3DialogConfirm">确定</button>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- 引入核心JS -->
-		<script src="./js/CoreLogic.js"></script>
-		<script src="./js/Protect.js"></script>
+	<!-- 引入核心JS -->
+	<script src="./js/CoreLogic.js"></script>
+	<script src="./js/Protect.js"></script>
 </body>
 
 </html>

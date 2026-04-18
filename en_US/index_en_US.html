@@ -32,7 +32,7 @@
 			<h1 class="hero-title">Home-Home page</h1>
 			<p class="hero-description">
 				director_Carter's website, hosted by Github Pages or InfinityFree.
-			<p>
+			</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 				This website is open source and follows and uses the MPL-2.0 open source agreement. If you use the source code of this website, please abide by the MPL-2.0 open source agreement.
@@ -144,23 +144,51 @@
 
 
 
+	</div>
 
 
 
 
 
-		<!-- End of page -->
-		<div class="footer">
-			<p>
-				Version: v26.04.18.0703 | en_US
-			</p>
-			<p>
-				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-			</p>
-			<p>
-				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-			</p>
+
+
+
+
+
+	<!-- End of page -->
+	<div class="footer">
+		<p>
+			Version: v26.04.18.2119 | en_US
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- Language switching & theme switching button -->
+	<div class="bottom-actions">
+		<!-- language switch -->
+		<a href="../index.html" class="btn" id="languageToggle">
+			<span class="material-icons">translate</span>
+		</a>
+
+		<!-- theme switching -->
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
 		</div>
+	</div>
 
 
 
@@ -171,64 +199,42 @@
 
 
 
-		<!-- Language switching & theme switching button -->
-		<div class="bottom-actions">
-			<!-- language switch -->
-			<a href="../index.html" class="btn" id="languageToggle">
-				<span class="material-icons">translate</span>
-			</a>
-
-			<!-- theme switching -->
-			<div class="btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
+	<!-- MD3 dialog box -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">Cancel</button>
+				<button class="md3-button contained" id="md3DialogConfirm">Sure</button>
 			</div>
 		</div>
+	</div>
 
-
-
-
-
-
-
-
-
-
-		<!-- MD3 dialog box -->
-		<div class="md3-dialog" id="md3Dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					title
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					content
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">Cancel</button>
-					<button class="md3-button contained" id="md3DialogConfirm">Sure</button>
-				</div>
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">Sure</button>
 			</div>
 		</div>
-
-		<div class="md3-dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					title
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					content
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">Sure</button>
-				</div>
-			</div>
-		</div>
+	</div>
 
 
 
-		<!-- Introduce core JS -->
-		<script src="../js/CoreLogic.js"></script>
-		<script src="../js/Protect.js"></script>
-		<!-- <script src="../js/d.js"></script> -->
+	<!-- Introduce core JS -->
+	<script src="../js/CoreLogic.js"></script>
+	<script src="../js/Protect.js"></script>
+	<!-- <script src="../js/d.js"></script> -->
 </body>
 
 </html>

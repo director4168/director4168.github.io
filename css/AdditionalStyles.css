@@ -3,7 +3,7 @@
  https://director4168.github.io/
  本CSS与网站一同开源，开源协议MPL-2.0
  附加CSS样式，包括弹窗样式等以及过渡动画时长，不包含彩蛋弹窗
- Version: v26.04.16.1542
+ Version: v26.04.18.2120
 */
 
 * {
@@ -237,7 +237,7 @@ body.dark-theme .info-note {
 	z-index: 100;
 	background-color: rgba(255, 255, 255, 0.01);
 	backdrop-filter: blur(20px);
-	border: 1.5px solid #87878F; 
+	border: 1.5px solid #87878F;
 	border-radius: 32px;
 	padding: 8px 16px;
 	display: flex;
@@ -248,7 +248,7 @@ body.dark-theme .info-note {
 
 body.dark-theme .bottom-actions {
 	background-color: rgba(30, 30, 30, 0.01);
-	border-color: #C6C6C8; 
+	border-color: #C6C6C8;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -263,6 +263,16 @@ body.dark-theme .bottom-actions {
 	font-size: 24px;
 	background: transparent;
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* 移除可能导致切换按钮底部出现横线 */
+	/*text-decoration: none !important;
+	border: none;
+	outline: none;*/
+}
+
+.bottom-actions .btn .material-icons {
+	text-decoration: none;
+	display: inline-block;
 }
 
 .bottom-actions .btn:hover {
@@ -356,6 +366,84 @@ body.dark-theme .bottom-actions::after {
 
 .md3-button.contained:hover {
 	background-color: #1565C0;
+}
+
+
+
+
+
+/* 折叠系统过渡动画 */
+#version-details summary {
+	list-style: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#version-details summary::-webkit-details-marker {
+	display: none;
+}
+
+.details-animated-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-in-out;
+    overflow: hidden;
+    will-change: grid-template-rows;
+    contain: layout;
+}
+
+#version-details[open] .details-animated-wrapper {
+	grid-template-rows: 1fr;
+}
+
+.details-content-inner {
+    min-height: 0;
+    padding: 0 0 16px 0;
+}
+
+
+.collapse-wrapper {
+  border: 1px solid var(--md-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.collapse-header {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--md-on-surface-variant);
+}
+
+.collapse-header .arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.collapse-header[aria-expanded="true"] .arrow {
+  transform: rotate(180deg);
+}
+
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 16px;
+  background: inherit;
+}
+
+/* 展开状态 */
+.collapse-wrapper.expanded .collapse-content {
+  max-height: 200px;
+  padding: 12px 16px;
 }
 
 

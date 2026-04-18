@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
 
 
 </head>
+
 <body>
 	<!-- 主要内容区域 -->
 	<div class="main-content">
@@ -33,11 +35,11 @@
 			<h1 class="hero-title">关于本站</h1>
 			<p class="hero-description">
 				介绍
-				<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
-					<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-					滑动到本页底部可返回
-				</p>
-			</div>
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+				滑动到本页底部可返回
+			</p>
+		</div>
 
 
 
@@ -48,11 +50,11 @@
 
 
 
-			<!-- 返回卡片 -->
-			<div class="card">
-				<h2 class="card-title">返回</h2>
-				<p class="hero-description"></p>
-				*点击卡片返回首页
+		<!-- 返回卡片 -->
+		<div class="card">
+			<h2 class="card-title">返回</h2>
+			<p class="hero-description"></p>
+			*点击卡片返回首页
 			</p>
 			<div class="grid">
 
@@ -81,23 +83,51 @@
 
 
 
+	</div>
 
 
 
 
 
-		<!-- 页尾 -->
-		<div class="footer">
-			<p>
-				Version: v26.04.16.1606 | zh_CN
-			</p>
-			<p>
-				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-			</p>
-			<p>
-				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-			</p>
+
+
+
+
+
+	<!-- 页尾 -->
+	<div class="footer">
+		<p>
+			Version: v26.04.18.2124 | zh_CN
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 语言切换主题切换按钮 -->
+	<div class="bottom-actions">
+		<!-- 语言切换 -->
+		<a href="./404.html" class="btn" id="languageToggle">
+			<span class="material-icons">translate</span>
+		</a>
+
+		<!-- 主题切换 -->
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
 		</div>
+	</div>
 
 
 
@@ -107,64 +137,43 @@
 
 
 
-
-		<!-- 语言切换主题切换按钮 -->
-		<div class="bottom-actions">
-			<!-- 语言切换 -->
-			<a href="./404.html" class="btn" id="languageToggle">
-				<span class="material-icons">translate</span>
-			</a>
-
-			<!-- 主题切换 -->
-			<div class="btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
 			</div>
 		</div>
+	</div>
 
-
-
-
-
-
-
-
-
-		<!-- MD3对话框 -->
-		<div class="md3-dialog" id="md3Dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					标题
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					内容
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">取消</button>
-					<button class="md3-button contained" id="md3DialogConfirm">确定</button>
-				</div>
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">确定</button>
 			</div>
 		</div>
-
-		<div class="md3-dialog">
-			<div class="md3-dialog-content">
-				<div class="md3-dialog-header" id="md3DialogHeader">
-					标题
-				</div>
-				<div class="md3-dialog-body" id="md3DialogBody">
-					内容
-				</div>
-				<div class="md3-dialog-actions">
-					<button class="md3-button text" id="md3DialogCancel">确定</button>
-				</div>
-			</div>
-		</div>
+	</div>
 
 
 
-		<!-- 引入核心JS -->
-		<script src="./js/CoreLogic.js"></script>
-		<script src="./js/Protect.js"></script>
-		<!-- 彩蛋 -->
-		<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
-	</body>
+	<!-- 引入核心JS -->
+	<script src="./js/CoreLogic.js"></script>
+	<script src="./js/Protect.js"></script>
+	<!-- 彩蛋 -->
+	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
+</body>
+
 </html>

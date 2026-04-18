@@ -21,6 +21,7 @@
 │   📁 js
 │   ├── 💻 CoreLogic.js
 │   ├── 💻 d.js
+│   ├── 💻 details_animation.js
 │   └── 💻 Protect.js
 ├── 🌐 404.html
 ├── 🌐 About-director_Carter.html

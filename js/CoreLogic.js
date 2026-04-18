@@ -1,7 +1,8 @@
 // (C) 2026 director_Carter All Rights Reserved.
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
-// Version: v26.04.16.1633
+// 负责本网站几乎所有逻辑处理
+// Version: v26.04.18.2036
 
 (function() {
 	'use strict';
