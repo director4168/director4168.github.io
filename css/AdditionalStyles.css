@@ -384,12 +384,12 @@ body.dark-theme .bottom-actions::after {
 }
 
 .details-animated-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s ease-in-out;
-    overflow: hidden;
-    will-change: grid-template-rows;
-    contain: layout;
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.5s ease-in-out;
+	overflow: hidden;
+	will-change: grid-template-rows;
+	contain: layout;
 }
 
 #version-details[open] .details-animated-wrapper {
@@ -397,53 +397,53 @@ body.dark-theme .bottom-actions::after {
 }
 
 .details-content-inner {
-    min-height: 0;
-    padding: 0 0 16px 0;
+	min-height: 0;
+	padding: 0 0 16px 0;
 }
 
 
 .collapse-wrapper {
-  border: 1px solid var(--md-primary);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+	border: 1px solid var(--md-primary);
+	border-radius: 16px;
+	overflow: hidden;
+	transition: all 0.3s ease;
 }
 
 .collapse-header {
-  width: 100%;
-  padding: 12px 16px;
-  background: transparent;
-  border: none;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--md-on-surface-variant);
+	width: 100%;
+	padding: 12px 16px;
+	background: transparent;
+	border: none;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	color: var(--md-on-surface-variant);
 }
 
 .collapse-header .arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
+	margin-left: auto;
+	transition: transform 0.3s ease;
 }
 
 .collapse-header[aria-expanded="true"] .arrow {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .collapse-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-  padding: 0 16px;
-  background: inherit;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.35s ease;
+	padding: 0 16px;
+	background: inherit;
 }
 
 /* 展开状态 */
 .collapse-wrapper.expanded .collapse-content {
-  max-height: 200px;
-  padding: 12px 16px;
+	max-height: 200px;
+	padding: 12px 16px;
 }
 
 
