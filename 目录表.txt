@@ -19,17 +19,18 @@
 │   📁 jpg
 │   └── 🖼 avatar.jpg
 │   📁 js
+│   ├── 💻 Cookie.js
 │   ├── 💻 CoreLogic.js
-│   ├── 💻 d.js
-│   ├── 💻 details_animation.js
+│   ├── 💻 Details_Animation.js
 │   └── 💻 Protect.js
 ├── 🌐 404.html
 ├── 🌐 About-director_Carter.html
+├── 🌐 AboutTheWebsite.html
+├── 🌐 Agreement.html
 ├── 🌐 Basic.html
 ├── 🌐 ContactInformation.html
 ├── 🌐 Goodbye.html
 ├── 🌐 index.html
-├── 📜 index.html.bak
 ├── 📜 LICENSE
 ├── 📄 README.md
 ├── 🌐 Version.html

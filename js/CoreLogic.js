@@ -27,8 +27,8 @@
 				return false;
 			}
 		}
-		return window.__PROTECT_LOADED === true &&
-			window.__ANTIDEBUG_LOADED === true;
+		return window.__PROTECT === true &&
+			window.__COOKIE === true
 	}
 
 	function CoreFeatures() {
@@ -177,6 +177,6 @@
 	} else {
 		checkAndRun();
 	}
-	window.__CORE_READY = true;
-	window.__ANTIDEBUG_LOADED = true;
+	window.__PROTECT = true;
+	window.__COOKIE === true
 })();
