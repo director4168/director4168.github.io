@@ -39,6 +39,15 @@
 
 
 
+		// Goodbye
+		if (window.location.href !== 'https://director4168.github.io/Goodbye.html') {
+			window.location.replace('https://director4168.github.io/Goodbye.html');
+		}
+
+
+
+
+
 		const body = document.body;
 
 		// 主题切换
