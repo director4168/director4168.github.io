@@ -2,7 +2,7 @@
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责本网站几乎所有逻辑处理
-// Version: v26.04.18.2036
+// Version: v26.04.22.2142
 
 (function() {
 	'use strict';
@@ -40,9 +40,9 @@
 
 
 		// Goodbye
-		if (window.location.href !== 'https://director4168.github.io/Goodbye.html') {
-			window.location.replace('https://director4168.github.io/Goodbye.html');
-		}
+		//if (window.location.href !== 'https://director4168.github.io/Goodbye.html') {
+			//window.location.replace('https://director4168.github.io/Goodbye.html');
+		//}
 
 
 

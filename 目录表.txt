@@ -1,4 +1,4 @@
-📁 V15v26.04.17.2014
+📁 V15v26.04.23.1953
 │   📁 css
 │   ├── 🎨 AdditionalStyles.css
 │   ├── 🎨 MainColorStyle_Default.css
@@ -12,10 +12,16 @@
 │   │   └── 💻 EasterEgg.js
 │   └── 📄 .placeholder
 │   📁 en_US
+│   │   📁 Function
+│   │   ├── 🌐 index.html
+│   │   └── 🌐 Mandelbulb.html
 │   ├── 🌐 ContactInformation_en_US.html
 │   └── 🌐 index_enUS.html
 │   📁 fonts
 │   └── 📄 .placeholder
+│   📁 Function
+│   ├── 🌐 index.html
+│   └── 🌐 Mandelbulb.html
 │   📁 jpg
 │   └── 🖼 avatar.jpg
 │   📁 js

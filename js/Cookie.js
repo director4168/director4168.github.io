@@ -2,9 +2,9 @@
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责处理用户是否已同意协议
-// Version: v26.04.22.1404
+// Version: v26.04.23.2047
 
-(function () {
+(function() {
 	'use strict';
 
 	// 获取Cookie
@@ -15,6 +15,8 @@
 		return null;
 	}
 
+
+
 	// 设置Cookie
 	function setPermanentCookie() {
 		const days = 365 * 2;
@@ -24,31 +26,50 @@
 		document.cookie = `cookie_agreement=agreed${expires}; path=/; SameSite=Lax`;
 	}
 
+
+
+
+
 	// 同意协议后跳转首页
-	window.agreeAndContinue = function () {
+	window.agreeAndContinue = function() {
 		setPermanentCookie();
 		console.log('已同意');
 		window.location.href = './index.html';
 	};
+
+
 
 	// 根据数据判断是否跳转
 	function checkAgreementConsent() {
 		const hasAgreed = getCookie('cookie_agreement') === 'agreed';
 		const currentPath = (window.location.pathname || '').toLowerCase();
 
+
 		// 如果已经同意协议但还在Agreement.html则跳转到index.html
-/*		if (hasAgreed && currentPath.indexOf('agreement.html') !== -1) {
-			window.location.href = './index.html';
-			return;
-		}*/
+		/*		if (hasAgreed && currentPath.indexOf('agreement.html') !== -1) {
+					window.location.href = './index.html';
+					return;
+				}*/
+
 
 		// 如果没有同意协议并且不在Agreement.html，则跳转到Agreement.html
 		if (!hasAgreed && currentPath.indexOf('agreement.html') === -1) {
-			const isEnglishDir = currentPath.includes('/en_us/');
-			const redirectUrl = isEnglishDir ? '../Agreement.html' : './Agreement.html';
-			window.location.href = redirectUrl;
+			// 适配非真根目录
+			const pathSegments = currentPath.split('/').filter(Boolean);
+			let depth = pathSegments.length;
+
+			if (currentPath.endsWith('.html') || currentPath.endsWith('.htm')) {
+				depth--;
+			}
+
+			const prefix = depth > 0 ? '../'.repeat(depth) : './';
+			window.location.href = prefix + 'Agreement.html';
 		}
 	}
+
+
+
+
 
 	// 页面加载后自动执行检测
 	if (document.readyState === 'loading') {
