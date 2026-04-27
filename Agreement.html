@@ -7,6 +7,12 @@
 	<title>director_Carter的站点 - 用户协议</title>
 </head>
 
+<style>
+	body {
+	background-color: #EFF0FE;
+	}
+</style>
+
 <body>
 	<header>
 		<h1>本网站用户协议</h1>
@@ -39,7 +45,7 @@
 	<main>
 		<section id="S1">
 			<h2>Ⅰ. 站点开源声明</h2>
-			<p><small>更新时间：2026年4月22日 13时40分</small></p>
+			<p><small>更新时间：2026年4月27日 20时51分</small></p>
 
 
 			<article>
@@ -59,7 +65,9 @@
 					<dd>
 						3) 虽然 MPL-2.0 并不强制要求您使用了我的源代码后通知我，但如果您方便的话还请您通知我。
 						<ul>
-							<li><strong>邮箱Email：2705722903@qq.com</strong></li>
+							<li><strong><a href="mailto:2705722903@qq.com">邮箱Email：2705722903@qq.com</a></strong></li>
+							若您通过上述邮箱并未与我取得联系可通过备用邮箱联系我
+							<li><strong><a href="mailto:3623293903@qq.com">邮箱Email：3623293903@qq.com</a></strong></li>
 						</ul>
 					</dd>
 
@@ -69,8 +77,8 @@
 					</dd><br>
 
 
-				<dt><strong>2. 使用限制</strong></dt>
-				<dd>1) 在不违反 MPL-2.0 的前提下，我不会对您的合法使用进行任何限制。</dd>
+					<dt><strong>2. 使用限制</strong></dt>
+					<dd>1) 在不违反 MPL-2.0 的前提下，我不会对您的合法使用进行任何限制。</dd>
 
 
 				</article>
@@ -183,14 +191,7 @@
 					<button id="clear_cookie_agreement" type="button">Clear cookie_agreement</button>
 
 
-					<!-- <br><br>
 
-
-					<input type="password" id="CodePwd" placeholder="Password">
-					<br>
-					<textarea id="CodeCode" placeholder="JavaScript" style="width:100%;height:86px;"></textarea>
-					<br>
-					<button onclick="CodeYes()">YES</button> -->
 
 
 				</details>
@@ -213,7 +214,7 @@
 
 	<footer>
 		<address style="font-style: normal; text-align: center;">
-			<p>Version: v26.04.22.1421 | 用户协议</p>
+			<p>Version: v26.04.27.2051 | 用户协议</p>
 			<p>&copy; <span id="copyright-year">2026</span> director_Carter. All Rights Reserved. 保留所有权利。</p>
 			<p>&copy; <span id="english-copyright-year">2026</span> director_Carter All Rights Reserved.</p>
 		</address>
@@ -263,32 +264,6 @@
 		document.getElementById('MyMtForumAccount').addEventListener('click', () => {
 			window.location.href = 'https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2';
 		});
-		// Code
-		// const PWD_SHA256 = "b56e59e3e3ea61711b844fd3410e00ee164ed39b78807a2ec6fc6ac136240940";
-		//async function sha256(str) {
-			//const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-			//return Array.from(new Uint8Array(buf))
-		//.map(b => b.toString(16).padStart(2, "0"))
-		//.join("");
-		//}
-		//async function CodeYes() {
-			//const pwdVal = document.getElementById("CodePwd").value;
-			//const codeVal = document.getElementById("CodeCode").value.trim();
-			//const inputSha = await sha256(pwdVal);
-			//if (inputSha !== PWD_SHA256) {
-		//alert("Incorrect password");
-		//return;
-			//}
-			//if (!codeVal) {
-		//alert("No JavaScript code");
-		//return;
-			//}
-			//try {
-		//eval(codeVal);
-			//} catch (err) {
-		//alert("Error：" + err.message + "\n===============\nCode:\n" + codeVal);
-			//}
-		//}
 	</script>
 </body>
 

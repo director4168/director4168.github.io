@@ -1,0 +1,47 @@
+/* 
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 负责搜索框的样式
+ Version: v26.04.27.1712
+*/
+
+
+
+
+
+.search-wrapper {
+	margin: 0 0 24px 0;
+}
+
+
+
+
+
+.search-stroke {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background: var(--md-surface-variant);
+	border: 1px solid var(--md-outline);
+	/* 描边 */
+	border-radius: 28px;
+	padding: 0 16px;
+	height: 56px;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+
+
+.search-InputBox {
+	flex: 1;
+	border: none;
+	background: transparent;
+	color: var(--md-on-surface);
+	font-size: 16px;
+	outline: none;
+	font-family: inherit;
+}

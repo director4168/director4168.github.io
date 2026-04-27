@@ -2,7 +2,8 @@
 │   📁 css
 │   ├── 🎨 AdditionalStyles.css
 │   ├── 🎨 MainColorStyle_Default.css
-│   └── 🎨 MainColorStyle_ERROR.css
+│   ├── 🎨 MainColorStyle_ERROR.css
+│   └── 🎨 Search.css
 │   📁 EasterEgg
 │   │   📁 css
 │   │   ├── 🎨 EasterEggPop-up_Level1.css
@@ -28,7 +29,8 @@
 │   ├── 💻 Cookie.js
 │   ├── 💻 CoreLogic.js
 │   ├── 💻 Details_Animation.js
-│   └── 💻 Protect.js
+│   ├── 💻 Protect.js
+│   └── 💻 Search.js
 ├── 🌐 404.html
 ├── 🌐 About-director_Carter.html
 ├── 🌐 AboutTheWebsite.html

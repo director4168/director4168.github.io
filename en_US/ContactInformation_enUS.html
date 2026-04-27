@@ -17,6 +17,9 @@
 	<!-- Introduce additional CSS styles -->
 	<link rel="stylesheet" href="../css/AdditionalStyles.css">
 
+	<!-- Introducing search CSS styles -->
+	<link rel="stylesheet" href="../css/Search.css">
+
 	<!-- Introducing Easter egg CSS style -->
 	<link rel="stylesheet" href="../EasterEgg/css/EasterEggStyle.css">
 	<link rel="stylesheet" href="../EasterEgg/css/EasterEggPop-up_Level1.css">
@@ -28,7 +31,7 @@
 	<!-- main content area -->
 	<div class="main-content">
 		<!-- introduce -->
-		<div class="hero-section">
+		<div class="MainColumn-section">
 
 
 			<div class="avatar" id="avatar">
@@ -37,8 +40,8 @@
 			</div>
 
 
-			<h1 class="hero-title">director_Carter’s contact information</h1>
-			<p class="hero-description">
+			<h1 class="MainColumn-title">director_Carter’s contact information</h1>
+			<p class="MainColumn-description">
 				The page is the contact information page of director_Carter, including my domestic QQ, BiliBili, MT forum..., international YouTube, X (Twitter), and the open source address of the website
 			</p>
 			<p>
@@ -60,7 +63,7 @@
 		<!-- Return card -->
 		<div class="card">
 			<h2 class="card-title">return</h2>
-			<p class="hero-description"></p>
+			<p class="MainColumn-description"></p>
 			*Click on the card to return to the homepage
 			</p>
 			<div class="grid">
@@ -95,10 +98,26 @@
 
 
 
+		<div class="search-wrapper">
+			<div class="search-stroke" id="searchContainer">
+				<span class="material-icons">search</span>
+				<input type="text" class="search-InputBox" id="SearchInput" placeholder="Search content">
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
 		<!-- social account card -->
 		<div class="card">
 			<h2 class="card-title">My social account</h2>
-			<p class="hero-description">
+			<p class="MainColumn-description">
 				*Click on the card to jump
 			</p>
 			<div class="grid">
@@ -179,6 +198,28 @@
 
 
 
+				<a class="list-item" href="javascript:void(0);" data-href="mailto:2705722903@qq.com" data-title="Mail" data-content="Send me an email? By default, an email will be sent to the primary mailbox after confirmation. <br>Primary email: 2705722903@qq.com<brBackup email: 3623293903@qq.com">
+					<span class="material-icons list-icon">email</span>
+					<div class="list-content">
+						<div class="list-title">
+							QQ mailbox
+						</div>
+						<div class="list-subtitle">
+							Welcome to send me a message via email~
+						</div>
+						<div class="list-subtitle">
+							Primary email: 2705722903@qq.com
+						</div>
+						<div class="list-subtitle">
+							Alternate email: 3623293903@qq.com
+						</div>
+					</div>
+					<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
+				</a>
+
+
+
+
 				<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168" data-title="Github" data-content="Do you want to jump to director_Carter's GitHub homepage?<br>Account name: director4168">
 					<span class="material-icons list-icon">code</span>
 					<div class="list-content">
@@ -193,25 +234,6 @@
 						</div>
 					</div>
 					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-				</a>
-
-
-
-
-				<a class="list-item" href="javascript:void(0);" data-href="mailto:2705722903@qq.com" data-title="Mail" data-content="Send me an email?<br>Mail: 2705722903@qq.com">
-					<span class="material-icons list-icon">email</span>
-					<div class="list-content">
-						<div class="list-title">
-							QQ Mail
-						</div>
-						<div class="list-subtitle">
-							Welcome to send me a message via email~
-						</div>
-						<div class="list-subtitle">
-							Mail: 2705722903@qq.com
-						</div>
-					</div>
-					<span class="material-icons" style="color: var(--md-outline);">forward_to_inbox</span>
 				</a>
 
 
@@ -265,7 +287,7 @@
 		<!-- other -->
 		<div class="card">
 			<h2 class="card-title">other</h2>
-			<!-- 		<p class="hero-description">other.</p> -->
+			<!-- 		<p class="MainColumn-description">other.</p> -->
 			<div class="grid">
 
 
@@ -314,7 +336,7 @@
 	<!-- End of page -->
 	<div class="footer">
 		<p>
-			Version: v26.04.18.2117 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement (Chinese)</a>
+			Version: v26.04.27.2026 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement (Chinese)</a>
 		</p>
 		<p>
 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -467,6 +489,8 @@
 
 
 	<script src="../js/Cookie.js"></script>
+	<!-- Search JS -->
+	<script src="../js/Search.js"></script>
 	<!-- Introduce core JS -->
 	<script src="../js/CoreLogic.js"></script>
 	<script src="../js/Protect.js"></script>
