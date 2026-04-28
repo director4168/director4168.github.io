@@ -2,7 +2,7 @@
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责本网站几乎所有逻辑处理
-// Version: v26.04.22.2142
+// Version: v26.04.28.1510
 
 (function() {
 	'use strict';
@@ -41,7 +41,7 @@
 
 		// Goodbye
 		//if (window.location.href !== 'https://director4168.github.io/Goodbye.html') {
-			//window.location.replace('https://director4168.github.io/Goodbye.html');
+		//window.location.replace('https://director4168.github.io/Goodbye.html');
 		//}
 
 
@@ -89,9 +89,26 @@
 
 		const showDialog = (title, content, href) => {
 			if (header) header.textContent = title || '提示';
-			if (bodyEl) bodyEl.innerHTML = (content || '').replace(/\\n/g, '<br>');
-			currentHref = href || '';
 
+			// 使弹窗能够支持/适配一些功能
+			if (bodyEl) {
+				bodyEl.innerHTML = (content || '')
+					.replace(/\\n/g, '<br>')
+					.replace(/\\r\\n/g, '<br>');
+
+				// 让弹窗中如果有图片，使其样式相同且不会撑破弹窗
+				setTimeout(() => {
+					const images = bodyEl.querySelectorAll('img');
+					images.forEach(img => {
+						img.style.maxWidth = '100%';
+						img.style.height = 'auto';
+						img.style.borderRadius = '8px';
+						img.style.margin = '12px 0';
+					});
+				}, 10);
+			}
+
+			currentHref = href || '';
 
 			// 禁止在弹窗开启时能够滑动页面
 			scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -120,9 +137,10 @@
 		};
 
 		// 点击空白处关闭弹窗
-		// dialog.addEventListener('click', e => {
-		//	if (e.target === dialog) hideDialog();
-		// });
+		dialog.addEventListener('click', e => {
+			if (e.target === dialog) hideDialog();
+		 });
+
 
 		// 列表项点击
 		document.querySelectorAll('.list-item').forEach(item => {
@@ -187,5 +205,5 @@
 		checkAndRun();
 	}
 	window.__PROTECT = true;
-	window.__COOKIE === true
+	window.__COOKIE = true
 })();

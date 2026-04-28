@@ -1,4 +1,4 @@
-📁 V15v26.04.23.1953
+📁 V18v26.04.27.1708
 │   📁 css
 │   ├── 🎨 AdditionalStyles.css
 │   ├── 🎨 MainColorStyle_Default.css
@@ -24,7 +24,9 @@
 │   ├── 🌐 index.html
 │   └── 🌐 Mandelbulb.html
 │   📁 jpg
-│   └── 🖼 avatar.jpg
+│   └── ❌ .nomedia
+│   ├── 🖼 avatar.jpg
+│   └── 🖼 WeChat_Sponsorship.jpeg
 │   📁 js
 │   ├── 💻 Cookie.js
 │   ├── 💻 CoreLogic.js

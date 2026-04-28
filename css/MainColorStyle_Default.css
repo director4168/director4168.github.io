@@ -19,13 +19,13 @@
 /* 主栏基本文字配色 */
 	--md-on-primary-container: #001849;
 /* 基本背景配色 */
-	--md-surface: #FAF8FF;
+	--md-surface: #ECEDFB;
 /* 卡片主名称配色、栏的介绍配色 */
-	--md-on-surface: #1C1C1E;
+	--md-on-surface: #181B25;
 /* 分栏基本背景配色 */
-	--md-surface-variant: #ECEDFB;
+	--md-surface-variant: #FAF8FF;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
-	--md-on-surface-variant: #555555;
+	--md-on-surface-variant: #434654;
 /* 卡片右侧矢量图图标配色，分栏（含跳转卡片）描边 */
 	--md-outline: #48484A;
 
@@ -44,19 +44,19 @@ body.dark-theme {
 /* 顶栏文字配色 */
 	--md-on-primary: #1F113F;
 /* 主栏基本背景配色 */
-	--md-primary-container: #003FA4;
+	--md-primary-container: #2C3140;
 /* 主栏基本文字配色 */
-	--md-on-primary-container: #EADDFF;
+	--md-on-primary-container: #F7F1FF;
 /* 基本背景配色 */
-	--md-surface: #10131C;
+	--md-surface: #1C1F29;
 /* 卡片主名称配色、栏的介绍配色 */
-	--md-on-surface: #E6E1E5;
+	--md-on-surface: #E0E2EF;
 /* 分栏基本背景配色 */
-	--md-surface-variant: #272A34;
+	--md-surface-variant: #363943;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
-	--md-on-surface-variant: #A0A0A8;
+	--md-on-surface-variant: #C3C6D6;
 /* 卡片右侧矢量图图标配色、分栏（含跳转卡片）描边 */
-	--md-outline: #C6C6C8;
+	--md-outline: #8B8A8A;
 
 /* MD3弹窗顶栏配色 */
 	--md-dialog-header-color: #003FA4;
