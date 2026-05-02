@@ -3,7 +3,7 @@
  https://director4168.github.io/
  本CSS与网站一同开源，开源协议MPL-2.0
  附加CSS样式，包括弹窗样式等以及过渡动画时长，不包含彩蛋弹窗
- Version: v26.04.27.1720
+ Version: v26.05.02.2307
 */
 
 * {
@@ -53,10 +53,12 @@ body {
 
 /* 主内容区域 */
 .main-content {
-	max-width: 640px;
+	/* 最大宽度，可用于控制一行最多可显示多少个卡片 */
+	max-width: 1024px;
 	margin: 0 auto;
 	padding: 20px 16px 120px;
 }
+
 
 
 
@@ -161,10 +163,11 @@ body.dark-theme .info-note {
 
 /* 列表项 */
 .grid {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 	gap: 12px;
 }
+
 
 .list-item {
 	display: flex;
@@ -444,28 +447,4 @@ body.dark-theme .bottom-actions::after {
 .collapse-wrapper.expanded .collapse-content {
 	max-height: 200px;
 	padding: 12px 16px;
-}
-
-
-
-
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-	.grid {
-		grid-template-columns: 1fr;
-	}
-
-	.main-content {
-		padding: 16px;
-	}
-
-	.MainColumn-section {
-		padding: 32px 16px;
-	}
-
-	.avatar {
-		width: 100px;
-		height: 100px;
-	}
 }
