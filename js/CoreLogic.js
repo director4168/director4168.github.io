@@ -2,7 +2,7 @@
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责本网站几乎所有逻辑处理
-// Version: v26.04.28.1510
+// Version: v26.05.03.0026
 
 (function() {
 	'use strict';
@@ -96,17 +96,16 @@
 					.replace(/\\n/g, '<br>')
 					.replace(/\\r\\n/g, '<br>');
 
-				// 让弹窗中如果有图片，使其样式相同且不会撑破弹窗
+				// 让弹窗中如果有图片，使其样式相同且不会撑破弹窗，默认优先使用img标签内样式
 				setTimeout(() => {
 					const images = bodyEl.querySelectorAll('img');
 					images.forEach(img => {
-						img.style.maxWidth = '100%';
-						img.style.height = 'auto';
-						img.style.borderRadius = '8px';
-						img.style.margin = '12px 0';
+						img.classList.add('md3-dialog-img');
 					});
 				}, 10);
+
 			}
+
 
 			currentHref = href || '';
 
@@ -139,7 +138,7 @@
 		// 点击空白处关闭弹窗
 		dialog.addEventListener('click', e => {
 			if (e.target === dialog) hideDialog();
-		 });
+		});
 
 
 		// 列表项点击
