@@ -332,7 +332,7 @@
 	<!-- End of page -->
 	<div class="footer">
 		<p>
-			Version: v26.05.03.0035 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement (Chinese)</a>
+			Version: v26.05.03.1528 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement (Chinese)</a>
 		</p>
 		<p>
 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -408,7 +408,6 @@
 		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
 		let clickCount = 0;
 		let lastClickTime = 0;
-		
 		// Easter egg trigger logic
 		avatar.addEventListener('click', function() {
 			const now = new Date().getTime();
@@ -417,25 +416,27 @@
 			}
 			clickCount++;
 			lastClickTime = now;
-		
+		// Disable the ability to slide the page when the pop-up window is open
+			scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+			document.body.style.position = 'fixed';
+			document.body.style.top = `-${scrollPosition}px`;
+			document.body.style.width = '100%';
+			document.body.style.overflow = 'hidden';
 			if (clickCount >= 10) {
 				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
 				easterEggModal.classList.add('show');
 				clickCount = 0;
 			}
 		});
-		
 		// Modify the logic of closing easter eggs
 		easterEggClose.addEventListener('click', function() {
 			easterEggModal.classList.remove('show');
 			easterEggCloseDialog.classList.add('show');
 		});
-		
 		// Dedicated close dialog box confirmation button event
 		easterEggCloseDialogConfirm.addEventListener('click', function() {
 			easterEggCloseDialog.classList.remove('show');
 		});
-		
 		// Click outside the dialog box to close the dedicated close dialog box
 		easterEggCloseDialog.addEventListener('click', function(e) {
 			if (e.target === easterEggCloseDialog) {

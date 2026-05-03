@@ -20,6 +20,9 @@
 	<!-- 引入搜索CSS样式 -->
 	<link rel="stylesheet" href="./css/Search.css">
 
+	<!-- 引入code代码复制Css样式 -->
+	<link href="./css/Code.css" rel="stylesheet">
+
 	<!-- 引入彩蛋CSS样式 -->
 	<link rel="stylesheet" href="./EasterEgg/css/EasterEggStyle.css">
 	<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css">
@@ -165,6 +168,35 @@
 
 
 
+				<h2 class="card-title">Test</h2>
+				<div class="code-container">
+					<div class="code-header">
+						<span class="code-header-name">TestReplication.txt</span>
+						<button class="copy-btn" onclick="copyCode(this)">复制</button>
+					</div>
+
+					<div class="code-content">
+						<div class="line-numbers"></div>
+
+						<div class="code-wrapper">
+							<pre><code>测试单行长文本：
+喜欢的女生吗，硬要说的话，身高160+体重50kg左右带点小肉肉，小扔，喜欢黏着你，有点小抽象，三观正，爱分享，有占有欲，宅但是可以为了你和你一起出去玩，爱看动漫，有时温柔的抱住你说没事的，有时又像小女孩一样蹦蹦跳跳调皮可爱，对别人冷淡但是对你很热情温柔有耐心软萌可爱 +温柔治愈日系软妹偏爱浅色系、宽松软糯 待人温和，说话轻声细语，自带安抚情绪的buff，熟了之后会撒娇，反差萌拉满偶尔小迷糊，笨拙又可爱生气时会鼓腮帮子，哄两句就心软，很好哄拍照喜欢比耶、歪头，走路慢悠悠，被牵手时会不自觉贴紧，安全感满满说话会带“呀、呢、啦”等语气词，软乎乎超讨喜，最后纯爱！
+测试出现标签
+<a href="https://director4168.github.io">director_Carter的网站</a>
+<h1>H标签</h1>
+
+测试\\
+\/
+\
+测试换行\n换行</code></pre>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
 			</div>
 		</div>
 
@@ -263,7 +295,6 @@
 		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
 		let clickCount = 0;
 		let lastClickTime = 0;
-		
 		// 彩蛋触发逻辑
 		avatar.addEventListener('click', function() {
 			const now = new Date().getTime();
@@ -272,25 +303,21 @@
 			}
 			clickCount++;
 			lastClickTime = now;
-		
 			if (clickCount >= 10) {
 				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
 				easterEggModal.classList.add('show');
 				clickCount = 0;
 			}
 		});
-		
 		// 修改关闭彩蛋逻辑
 		easterEggClose.addEventListener('click', function() {
 			easterEggModal.classList.remove('show');
 			easterEggCloseDialog.classList.add('show');
 		});
-		
 		// 专用关闭对话框确认按钮事件
 		easterEggCloseDialogConfirm.addEventListener('click', function() {
 			easterEggCloseDialog.classList.remove('show');
 		});
-		
 		// 点击对话框外部关闭专用关闭对话框
 		easterEggCloseDialog.addEventListener('click', function(e) {
 			if (e.target === easterEggCloseDialog) {
@@ -339,12 +366,20 @@
 
 
 
-	<script src="./js/Cookie.js"></script>
-	<!-- 搜索JS -->
-	<script src="./js/Search.js"></script>
+
 	<!-- 引入核心JS -->
 	<script src="./js/CoreLogic.js"></script>
 	<script src="./js/Protect.js"></script>
+
+	<!-- 引用Cookie处理 -->
+	<script src="./js/Cookie.js"></script>
+
+	<!-- 搜索JS -->
+	<script src="./js/Search.js"></script>
+
+	<!-- Code复制功能 -->
+	<script src="./js/Code.js"></script>
+
 	<!-- 彩蛋 -->
 	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
 </body>

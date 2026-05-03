@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			return false;
 		}
 	};
-	document.oncontextmenu = function(e) {
-		if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-			return false;
-		}
-	};
+	/*document.oncontextmenu = function(e) {
+	if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+	return false;
+	}
+	};*/
 	const observer = new MutationObserver(function(mutations) {
 		mutations.forEach(function(mutation) {
 			if (mutation.type === 'characterData') {

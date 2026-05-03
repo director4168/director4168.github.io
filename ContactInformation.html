@@ -316,7 +316,7 @@
 	<!-- 页尾 -->
 	<div class="footer">
 		<p>
-			Version: v26.05.03.0030 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
+			Version: v26.05.03.1527 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
 		</p>
 		<p>
 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -392,7 +392,6 @@
 		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
 		let clickCount = 0;
 		let lastClickTime = 0;
-		
 		// 彩蛋触发逻辑
 		avatar.addEventListener('click', function() {
 			const now = new Date().getTime();
@@ -401,25 +400,21 @@
 			}
 			clickCount++;
 			lastClickTime = now;
-		
 			if (clickCount >= 10) {
 				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
 				easterEggModal.classList.add('show');
 				clickCount = 0;
 			}
 		});
-		
 		// 修改关闭彩蛋逻辑
 		easterEggClose.addEventListener('click', function() {
 			easterEggModal.classList.remove('show');
 			easterEggCloseDialog.classList.add('show');
 		});
-		
 		// 专用关闭对话框确认按钮事件
 		easterEggCloseDialogConfirm.addEventListener('click', function() {
 			easterEggCloseDialog.classList.remove('show');
 		});
-		
 		// 点击对话框外部关闭专用关闭对话框
 		easterEggCloseDialog.addEventListener('click', function(e) {
 			if (e.target === easterEggCloseDialog) {

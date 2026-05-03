@@ -66,18 +66,15 @@ body {
 
 /* 头像 */
 .avatar {
-	width: 120px;
-	height: 120px;
-	border-radius: 60px;
+	width: 96px;
+	height: 96px;
+	border-radius: 24px; /* MD3 偏向 Squircle 或大圆角 */
 	background-color: var(--md-primary);
-	color: var(--md-on-primary);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 	cursor: pointer;
-	transition: transform 0.4s;
+	transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .avatar img {
@@ -316,7 +313,8 @@ body.dark-theme .bottom-actions::after {
 .md3-dialog-content {
 	background-color: var(--md-surface-variant);
 	color: var(--md-on-surface);
-	border-radius: 20px;
+	/* 弹窗圆角 */
+	border-radius: 32px;
 	width: 90%;
 	max-width: 380px;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
@@ -349,7 +347,8 @@ body.dark-theme .bottom-actions::after {
 
 .md3-button {
 	padding: 10px 24px;
-	border-radius: 12px;
+	/* 弹窗内确认按键圆角 */
+	border-radius: 64px;
 	font-weight: 500;
 	font-size: 16px;
 	cursor: pointer;
