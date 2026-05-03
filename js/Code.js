@@ -6,17 +6,17 @@
 
 function initLineNumbers() {
 	const codeBlocks = document.querySelectorAll('.code-container');
-	
+
 	codeBlocks.forEach(container => {
 		const codeElement = container.querySelector('code');
 		const lineNumContainer = container.querySelector('.line-numbers');
-		
+
 		if (!lineNumContainer || !codeElement) return;
 
 		// 获取代码文本&按行分割
 		const text = codeElement.innerText.replace(/\n$/, '');
 		const lines = text.split('\n');
-		
+
 		let lineNumbersHTML = '';
 		for (let i = 1; i <= lines.length; i++) {
 			lineNumbersHTML += `<span>${i}</span><br>`;
