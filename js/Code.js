@@ -1,38 +1,76 @@
 // (C) 2026 director_Carter All Rights Reserved.
 // https://director4168.github.io
-// 本JS与网站一同开源，开源协议MPL-2.0
-// 负责处理Code代码复制功能
-// Version: v26.05.03.1407
+// Version: v26.05.03.1945
+
+// 反转义
+function unescapeHtml(text) {
+	const map = {
+		'&lt;': '<',
+		'&gt;': '>',
+		'&amp;': '&',
+		'&quot;': '"',
+		'&#039;': "'",
+		'&#39;': "'",
+		'&nbsp;': ' '
+	};
+	return text.replace(/&lt;|&gt;|&amp;|&quot;|&#039;|&#39;|&nbsp;/g, matched => map[matched]);
+}
 
 function initLineNumbers() {
-	const codeBlocks = document.querySelectorAll('.code-container');
+	const containers = document.querySelectorAll('.code-container');
 
-	codeBlocks.forEach(container => {
-		const codeElement = container.querySelector('code');
+	containers.forEach(container => {
+		const source = container.querySelector('#code-source');
+		const displayCode = container.querySelector('#display-code');
 		const lineNumContainer = container.querySelector('.line-numbers');
 
-		if (!lineNumContainer || !codeElement) return;
+		if (!source || !displayCode) return;
 
-		// 获取代码文本&按行分割
-		const text = codeElement.innerText.replace(/\n$/, '');
-		const lines = text.split('\n');
+		// 获取原始内容
+		let rawText = source.textContent;
 
+		// 反转义
+		let codeText = unescapeHtml(rawText.trim());
+
+		// 显示代码
+		displayCode.innerHTML = escapeHtml(codeText);
+
+		// 生成行号
+		const lines = codeText.split('\n');
 		let lineNumbersHTML = '';
 		for (let i = 1; i <= lines.length; i++) {
 			lineNumbersHTML += `<span>${i}</span><br>`;
 		}
 		lineNumContainer.innerHTML = lineNumbersHTML;
+
+		// 触发高亮
+		if (window.hljs) {
+			hljs.highlightElement(displayCode);
+		}
 	});
 }
 
-// 页面加载完成后初始化
-window.addEventListener('DOMContentLoaded', initLineNumbers);
+
+
+
+
+// 转义
+function escapeHtml(unsafe) {
+	return unsafe
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
+}
 
 // 复制功能
 function copyCode(btn) {
 	const container = btn.closest('.code-container');
-	const codeElement = container.querySelector("code");
-	const codeText = codeElement.innerText;
+	const source = container.querySelector('#code-source');
+
+	let codeText = source ? source.textContent : '';
+	codeText = unescapeHtml(codeText.trim()); // 反转义后复制
 
 	navigator.clipboard.writeText(codeText).then(() => {
 		const originalText = btn.innerText;
@@ -44,3 +82,6 @@ function copyCode(btn) {
 		}, 1500);
 	});
 }
+
+// 初始化
+window.addEventListener('DOMContentLoaded', initLineNumbers);

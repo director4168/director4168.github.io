@@ -36,8 +36,6 @@
 │   ├── 💻 Protect.js
 │   └── 💻 Search.js
 ├── 🌐 404.html
-├── 🌐 About-director_Carter.html
-├── 🌐 AboutTheWebsite.html
 ├── 🌐 Agreement.html
 ├── 🌐 Basic.html
 ├── 🌐 ContactInformation.html

@@ -20,6 +20,10 @@
 	<!-- 引入搜索CSS样式 -->
 	<link rel="stylesheet" href="./css/Search.css">
 
+
+	<!-- 高亮 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+
 	<!-- 引入code代码复制Css样式 -->
 	<link href="./css/Code.css" rel="stylesheet">
 
@@ -171,7 +175,7 @@
 				<h2 class="card-title">Test</h2>
 				<div class="code-container">
 					<div class="code-header">
-						<span class="code-header-name">TestReplication.txt</span>
+						<span class="code-header-name">TestReplication.html | HTML</span>
 						<button class="copy-btn" onclick="copyCode(this)">复制</button>
 					</div>
 
@@ -179,15 +183,28 @@
 						<div class="line-numbers"></div>
 
 						<div class="code-wrapper">
-							<pre><code>测试单行长文本：
-喜欢的女生吗，硬要说的话，身高160+体重50kg左右带点小肉肉，小扔，喜欢黏着你，有点小抽象，三观正，爱分享，有占有欲，宅但是可以为了你和你一起出去玩，爱看动漫，有时温柔的抱住你说没事的，有时又像小女孩一样蹦蹦跳跳调皮可爱，对别人冷淡但是对你很热情温柔有耐心软萌可爱 +温柔治愈日系软妹偏爱浅色系、宽松软糯 待人温和，说话轻声细语，自带安抚情绪的buff，熟了之后会撒娇，反差萌拉满偶尔小迷糊，笨拙又可爱生气时会鼓腮帮子，哄两句就心软，很好哄拍照喜欢比耶、歪头，走路慢悠悠，被牵手时会不自觉贴紧，安全感满满说话会带“呀、呢、啦”等语气词，软乎乎超讨喜，最后纯爱！
-测试出现标签
-<a href="https://director4168.github.io">director_Carter的网站</a>
-<h1 style="color: #FF0000;">H1标签FF0000</h1>
-测试换行\n换行
+							<script type="text/plain" id="code-source">&lt;!-- 测试单行极多内容 --&gt;
+&lt;!-- 喜欢的女生吗，硬要说的话，身高160+体重50kg左右带点小肉肉，小扔，喜欢黏着你，有点小抽象，三观正，爱分享，有占有欲，宅但是可以为了你和你一起出去玩，爱看动漫，有时温柔的抱住你说没事的，有时又像小女孩一样蹦蹦跳跳调皮可爱，对别人冷淡但是对你很热情温柔有耐心软萌可爱 +温柔治愈日系软妹偏爱浅色系、宽松软糯 待人温和，说话轻声细语，自带安抚情绪的buff，熟了之后会撒娇，反差萌拉满偶尔小迷糊，笨拙又可爱生气时会鼓腮帮子，哄两句就心软，很好哄拍照喜欢比耶、歪头，走路慢悠悠，被牵手时会不自觉贴紧，安全感满满说话会带“呀、呢、啦”等语气词，软乎乎超讨喜，最后纯爱！ --&gt;
 
-测试br换行
-这是测试<br>换行</code></pre>
+&lt;!-- 测试完整HTML，代码部分为转义，如&amp;lt;、&amp;gt; --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+	&lt;title&gt;测试页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;Hello World&lt;/h1&gt;
+	&lt;script&gt;
+		console.log(&quot;测试转义，以实现完整显示HTML&quot;);
+		alert(&#39;测试转义，以实现完整显示HTML&#39;);
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+				</script>
+
+							<pre><code id="display-code" class="language-html"></code></pre>
 						</div>
 					</div>
 				</div>
@@ -378,6 +395,10 @@
 
 	<!-- Code复制功能 -->
 	<script src="./js/Code.js"></script>
+
+
+	<!-- 高亮 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
 	<!-- 彩蛋 -->
 	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
