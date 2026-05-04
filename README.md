@@ -64,7 +64,7 @@ https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
 
 ----
 
-<a name='license'>
+<a name='license'></a>
 ## 许可证 (License)
 
 本项目源码采用 [MPL-2.0](LICENSE) 协议开源。

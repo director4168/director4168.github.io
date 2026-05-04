@@ -15,7 +15,7 @@
 │   └── 📄 .placeholder
 │   📁 en_US
 │   │   📁 Function
-│   │   ├── 🌐 index.html
+│   │   ├── 🌐 index_en_US.html
 │   │   └── 🌐 Mandelbulb.html
 │   ├── 🌐 ContactInformation_en_US.html
 │   └── 🌐 index_enUS.html
@@ -43,6 +43,7 @@
 ├── 🌐 Goodbye.html
 ├── 🌐 index.html
 ├── 📜 LICENSE
+├── 📜 NOTICE
 ├── 📄 README.md
 ├── 🌐 Version.html
 └── 📄 目录表.txt
