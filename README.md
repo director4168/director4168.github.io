@@ -11,11 +11,6 @@
 - 本项目整体源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
 
-### English
-- This copyright statement applies to the [**https://github.com/director4168/director4168.github.io**] and [**https://director4168.github.io**] website/repository as a whole and all accompanying distributed files (unless otherwise specifically stated in an individual file).  
-- The entire source code of this project is subject to the terms of the Mozilla Public License (MPL) v2.0. If a copy of the MPL is not distributed with this document, you may obtain one at:  
-http://mozilla.org/MPL/2.0/  
-
 ---
 
 <a name='TableOfContents_cn'></a>
@@ -25,16 +20,7 @@ http://mozilla.org/MPL/2.0/
 ### [目录](#TableOfContents_cn)
 ### [联系方式](#ContactInformation_cn)
 ### [温馨提示](#WarmReminder_cn)
-
-
-<a name='TableOfContents_en'></a>
-## Table of contents | English
-
-### [Copyright statement](#CopyrightStatement)
-### [Table of contents](#TableOfContents_en)
-### [Contact Information](#ContactInformation_en)
-### [Kind tips](#WarmReminder_en)
-- English via **Google Translate**
+### [许可证](#license)
 
 ---
 
@@ -78,43 +64,16 @@ https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
 
 ----
 
-<a name='ContactInformation_en'></a>
-## Contact Information
+<a name='license'>
+## 许可证 (License)
 
-### Personal website
-- **Personal website:**  
-http://director4168.github.io
+本项目源码采用 [MPL-2.0](LICENSE) 协议开源。
 
-### 哔哩哔哩
-- **Name:** director_Carter
-- **UID:** 1113918991
-- **Home page:**  
-https://b23.tv/tk7CcWA
-
-### MT Forum
-- **Name:** director_mark
-- **UID:** 134138
-- **Home page:**  
-https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
-
-### QQ(**China**)
-- 2705722903
-- 3623293903
-
-### Email
-- 2705722903@qq.com
-- 3623293903@qq.com
+### 第三方组件声明
+本项目使用了以下第三方资源：
+- **Material Design Icons**: 遵循 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)。版权归 Google 所有。
 
 ---
 
-<a name='WarmReminder_en'></a>
-## Warm Reminder
-
-- The original author **has no obligation** to assume **any risks and responsibilities** caused by your use of this program.
-- **All files** adopt the **MPL-2.0** open source license (see the `LICENSE` and `NOTICE.md` files in the project for details).
-- If modified and used, please **strictly comply** with the terms of the **MPL-2.0** open source agreement.
-- This program is for entertainment, learning, and reference purposes only.
-- The **English** part of this MarkDown document is translated by **Google Translate**, and there may be deviations from the actual content!
-----
 > (C) 2025 director_Carter 保留所有权利  
 > (C) 2025 director_Carter All Rights Reserved.

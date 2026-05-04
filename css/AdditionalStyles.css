@@ -54,7 +54,7 @@ body {
 /* 主内容区域 */
 .main-content {
 	/* 最大宽度，可用于控制一行最多可显示多少个卡片 */
-	max-width: 1536px;
+	max-width: 640px;
 	margin: 0 auto;
 	padding: 20px 16px 120px;
 }
@@ -68,7 +68,7 @@ body {
 .avatar {
 	width: 96px;
 	height: 96px;
-	border-radius: 24px; /* MD3 偏向 Squircle 或大圆角 */
+	border-radius: 24px;
 	background-color: var(--md-primary);
 	margin: 0 auto 20px;
 	cursor: pointer;

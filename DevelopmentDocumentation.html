@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
-	<title>director_Carter的站点-XXX</title>
+	<title>director_Carter的站点-开发文档</title>
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,18 +42,14 @@
 		<div class="MainColumn-section">
 
 
-			<div class="avatar" id="avatar">
-				<!-- 头像 -->
-				<img src="./jpg/avatar.jpg" alt="头像-主头像">
-			</div>
-
-
-			<h1 class="MainColumn-title">主栏-主称</h1>
+			<h1 class="MainColumn-title">开发文档</h1>
 			<p class="MainColumn-description">
-				主栏-介绍
+				本站点开源，并提供本站点的基本源码开发文档
+				<br>
+				基本框架：内容过多请前往Github<a href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html">此处开源Basic基本框架文件</a>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-				主栏-温馨提示
+				仅供学习，代码部分如果为空请刷新页面
 			</p>
 		</div>
 
@@ -126,9 +122,166 @@
 
 
 
-		<!-- 社交账号卡片 -->
 		<div class="card">
-			<h2 class="card-title">分栏-主称</h2>
+			<div class="grid">
+
+
+
+				<h2 style="text-align: center;">主栏（不带头像）</h2>
+				<p style="text-align: center;">
+					需放到主框架<u>body</u>中<u>.main-content</u>容器内
+					<br>
+					主栏维持最基本功能至少需要： <br><u>AdditionalStyles.css</u><br><u>MainColorStyle_Default.css</u><br><u>Material Icons</u>
+				</p>
+				<div class="code-container">
+					<div class="code-header">
+						<span class="code-header-name">Main Column | HTML</span>
+						<button class="copy-btn" onclick="copyCode(this)">复制</button>
+					</div>
+
+					<div class="code-content">
+						<div class="line-numbers"></div>
+
+						<div class="code-wrapper">
+							<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;&lt;h1 class=&quot;MainColumn-title&quot;&gt;主栏-主称&lt;/h1&gt;
+&lt;p class=&quot;MainColumn-description&quot;&gt;
+	主栏-介绍
+&lt;p style=&quot;margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;&quot;&gt;
+	&lt;span class=&quot;material-icons&quot; style=&quot;font-size: 14px; vertical-align: middle;&quot;&gt;info&lt;/span&gt;
+		主栏-温馨提示
+	&lt;/p&gt;
+&lt;/div&gt;
+				</script>
+
+							<pre><code id="display-code" class="language-html"></code></pre>
+						</div>
+					</div>
+				</div>
+
+				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+							点我折叠或展开效果图<b></b><br>
+						</h6>
+					</summary>
+
+
+					<div class="details-animated-wrapper">
+						<div class="details-content-inner">
+							<h2 style="text-align: center;">效果：</2>
+
+								<div class="MainColumn-section">
+									<h1 class='MainColumn-title'>主栏-主称</h1>
+									<p class='MainColumn-description'>
+										主栏-介绍
+									<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
+										<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
+										主栏-温馨提示
+									</p>
+								</div>
+						</div>
+					</div>
+				</details>
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+		<div class="card">
+			<div class="grid">
+
+
+
+				<h2 style="text-align: center;">主栏（带头像）</h2>
+				<p style="text-align: center;">
+					需放到主框架<u>body</u>中<u>.main-content</u>容器内，头像文件路径在<b><u>/jpg/avatar.jpg</u></b>
+					<br>
+					主栏维持最基本功能至少需要：<br> <u>/css/AdditionalStyles.css</u><br><u>/css/MainColorStyle_Default.css</u><br><u>Material Icons</u><br><u>/jpg/avatar.jpg</u>
+				</p>
+				<div class="code-container">
+					<div class="code-header">
+						<span class="code-header-name">Main Column | HTML</span>
+						<button class="copy-btn" onclick="copyCode(this)">复制</button>
+					</div>
+
+					<div class="code-content">
+						<div class="line-numbers"></div>
+
+						<div class="code-wrapper">
+							<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;
+&lt;div class=&quot;avatar&quot; id=&quot;avatar&quot;&gt;
+	&lt;!-- 头像 --&gt;
+	&lt;img src=&quot;./jpg/avatar.jpg&quot; alt=&quot;头像-主头像&quot;&gt;
+&lt;/div&gt;
+	&lt;h1 class=&quot;MainColumn-title&quot;&gt;主栏-主称&lt;/h1&gt;
+	&lt;p class=&quot;MainColumn-description&quot;&gt;
+		主栏-介绍
+	&lt;p style=&quot;margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;&quot;&gt;
+		&lt;span class=&quot;material-icons&quot; style=&quot;font-size: 14px; vertical-align: middle;&quot;&gt;info&lt;/span&gt;
+		主栏-温馨提示
+	&lt;/p&gt;
+&lt;/div&gt;
+				</script>
+
+							<pre><code id="display-code" class="language-html"></code></pre>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+							点我折叠或展开效果图<br>
+						</h6>
+					</summary>
+
+
+					<div class="details-animated-wrapper">
+						<div class="details-content-inner">
+							<div class="avatar" id="avatar">
+								<!-- 头像 -->
+								<img src="./jpg/avatar.jpg" alt="头像-主头像">
+							</div>
+
+							<h2 style="text-align: center;">效果：</2>
+
+								<div class="MainColumn-section">
+									<h1 class='MainColumn-title'>主栏-主称</h1>
+									<p class='MainColumn-description'>
+										主栏-介绍
+									<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
+										<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
+										主栏-温馨提示
+									</p>
+								</div>
+						</div>
+					</div>
+				</details>
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<div class="card">
+			<h2 class="card-title">1.开</h2>
 			<p class="MainColumn-description">
 				分栏-介绍
 			</p>
@@ -171,71 +324,6 @@
 
 
 
-
-				<h2 class="card-title">Test</h2>
-				<div class="code-container">
-					<div class="code-header">
-						<span class="code-header-name">TestReplication.html | HTML</span>
-						<button class="copy-btn" onclick="copyCode(this)">复制</button>
-					</div>
-
-					<div class="code-content">
-						<div class="line-numbers"></div>
-
-						<div class="code-wrapper">
-							<script type="text/plain" id="code-source">&lt;!-- 测试单行极多内容 --&gt;
-&lt;!-- 喜欢的女生吗，硬要说的话，身高160+体重50kg左右带点小肉肉，小扔，喜欢黏着你，有点小抽象，三观正，爱分享，有占有欲，宅但是可以为了你和你一起出去玩，爱看动漫，有时温柔的抱住你说没事的，有时又像小女孩一样蹦蹦跳跳调皮可爱，对别人冷淡但是对你很热情温柔有耐心软萌可爱 +温柔治愈日系软妹偏爱浅色系、宽松软糯 待人温和，说话轻声细语，自带安抚情绪的buff，熟了之后会撒娇，反差萌拉满偶尔小迷糊，笨拙又可爱生气时会鼓腮帮子，哄两句就心软，很好哄拍照喜欢比耶、歪头，走路慢悠悠，被牵手时会不自觉贴紧，安全感满满说话会带“呀、呢、啦”等语气词，软乎乎超讨喜，最后纯爱！ --&gt;
-
-&lt;!-- 测试完整HTML，代码部分为转义，如&amp;lt;、&amp;gt; --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh-CN&quot;&gt;
-&lt;head&gt;
-	&lt;meta charset=&quot;UTF-8&quot;&gt;
-	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-	&lt;title&gt;测试页面&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;Hello World&lt;/h1&gt;
-	&lt;script&gt;
-		console.log(&quot;测试转义，以实现完整显示HTML&quot;);
-		alert(&#39;测试转义，以实现完整显示HTML&#39;);
-	&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-				</script>
-
-							<pre><code id="display-code" class="language-html"></code></pre>
-						</div>
-					</div>
-				</div>
-
-
-
-				<div class="code-container">
-					<div class="code-header">
-						<span class="code-header-name">MarkDownTest.md | markdown</span>
-						<button class="copy-btn" onclick="copyCode(this)">复制</button>
-					</div>
-
-					<div class="code-content">
-						<div class="line-numbers"></div>
-
-						<div class="code-wrapper">
-							<script type="text/plain" id="code-source"> **MD测试**
-### 3
-## 2
-# 1
-- 1.
-[URL](https://director4168.github.io)
-				</script>
-
-							<pre><code id="display-code" class="language-markdown"></code></pre>
-						</div>
-					</div>
-				</div>
-
-
-
 			</div>
 		</div>
 
@@ -257,7 +345,7 @@
 	<!-- 页尾 -->
 	<div class="footer">
 		<p>
-			Version: v26.04.18.2125 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
+			Version: v26.05.04.1010 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
 		</p>
 		<p>
 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -421,7 +509,6 @@
 
 	<!-- 引入折叠系统动画 -->
 	<script src="./js/Details_Animation.js"></script>
-
 
 	<!-- 高亮 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
