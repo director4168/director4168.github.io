@@ -9,29 +9,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	allDetails.forEach(details => {
 		const wrapper = details.querySelector('.details-animated-wrapper');
-		if (!wrapper) return;
-
-		details.open = false;
-		wrapper.style.gridTemplateRows = '0fr';
-
 		const summary = details.querySelector('summary');
-		if (!summary) return;
+
+		if (!wrapper || !summary) return;
+
+		// 初始化状态
+		details.open = false;
+		wrapper.style.display = 'grid';
+		wrapper.style.gridTemplateRows = '0fr';
+		wrapper.style.transition = 'grid-template-rows 0.4s ease-out';
 
 		summary.addEventListener('click', (e) => {
 			e.preventDefault();
 
 			if (!details.open) {
+				// 打开逻辑
 				details.open = true;
-				void wrapper.offsetHeight;
 				requestAnimationFrame(() => {
-					wrapper.style.gridTemplateRows = '1fr';
+					requestAnimationFrame(() => {
+						wrapper.style.gridTemplateRows = '1fr';
+					});
 				});
 			} else {
+				// 关闭逻辑
 				wrapper.style.gridTemplateRows = '0fr';
 
 				const transitionEndHandler = () => {
 					details.open = false;
-					wrapper.removeEventListener('transitionend', transitionEndHandler);
 				};
 
 				wrapper.addEventListener('transitionend', transitionEndHandler, {
