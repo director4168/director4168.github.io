@@ -4,7 +4,7 @@
  本CSS与网站一同开源，开源协议MPL-2.0
  本网页的主要配色，负责亮色调和暗色调的弹窗内文字配色、网站基本文字配色、矢量图基本配色等
  彩蛋弹窗配色也由此CSS控制
- Version: v26.04.17.1915
+ Version: v26.05.10.2059
 */
 
 
@@ -26,6 +26,8 @@
 	--md-surface-variant: #FAF8FF;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
 	--md-on-surface-variant: #434654;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #1976D2;
 /* 卡片右侧矢量图图标配色，分栏（含跳转卡片）描边 */
 	--md-outline: #48484A;
 
@@ -55,6 +57,8 @@ body.dark-theme {
 	--md-surface-variant: #363943;
 /* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
 	--md-on-surface-variant: #C3C6D6;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #23292E;
 /* 卡片右侧矢量图图标配色、分栏（含跳转卡片）描边 */
 	--md-outline: #8B8A8A;
 

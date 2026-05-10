@@ -6,6 +6,14 @@
  Version: v26.05.03.0017
 */
 
+:root {
+	--border-radius-basic: 16px
+}
+
+
+
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -74,7 +82,7 @@ body {
 	cursor: pointer;
 	transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 	overflow: hidden;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .avatar img {
@@ -105,11 +113,11 @@ body {
 
 /* 主栏 */
 .MainColumn-section {
-	text-align: center;
+	text-align: left;
 	padding: 40px 20px 32px;
 	background: var(--md-primary-container);
 	/* 主栏圆角 */
-	border-radius: 32px;
+	border-radius: var(--border-radius-basic);
 	margin-bottom: 24px;
 	color: var(--md-on-primary-container);
 }
@@ -141,7 +149,7 @@ body.dark-theme .info-note {
 .card {
 	background-color: var(--md-surface-variant);
 	/* 分栏边框圆角 */
-	border-radius: 32px;
+	border-radius: var(--border-radius-basic);
 	padding: 20px;
 	margin-bottom: 24px;
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
@@ -160,8 +168,8 @@ body.dark-theme .info-note {
 
 /* 列表项 */
 .grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	display: flex;
+	flex-direction: column;
 	gap: 12px;
 }
 
@@ -172,7 +180,7 @@ body.dark-theme .info-note {
 	padding: 16px 20px;
 	background-color: var(--md-surface-variant);
 	/* 分栏跳转卡片圆角 */
-	border-radius: 16px;
+	border-radius: var(--border-radius-basic);
 	text-decoration: none;
 	color: inherit;
 	/* 分栏跳转卡片过渡动画 */
@@ -184,14 +192,22 @@ body.dark-theme .info-note {
 .list-item:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 8px 20px rgba(25, 118, 210, 0.12);
+	border-color: transparent;
+	padding-left: 28px;
 }
 
 .list-icon {
-	font-size: 28px;
-	width: 32px;
-	color: var(--md-primary);
-	margin-right: 16px;
-	margin-top: 3px;
+	width: 48px;
+	height: 48px;
+	border-radius: var(--border-radius-basic);
+	background-color: var(--md-icon-background);
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+	font-size: 20px;
+	flex-shrink: 0;
 }
 
 .list-content {
@@ -238,7 +254,7 @@ body.dark-theme .info-note {
 	background-color: rgba(255, 255, 255, 0.01);
 	backdrop-filter: blur(20px);
 	border: 1.5px solid #87878F;
-	border-radius: 32px;
+	border-radius: var(--border-radius-basic);
 	padding: 8px 16px;
 	display: flex;
 	align-items: center;
@@ -258,7 +274,7 @@ body.dark-theme .bottom-actions {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
+	border-radius: 16%;
 	color: var(--md-primary);
 	font-size: 24px;
 	background: transparent;
@@ -314,7 +330,7 @@ body.dark-theme .bottom-actions::after {
 	background-color: var(--md-surface-variant);
 	color: var(--md-on-surface);
 	/* 弹窗圆角 */
-	border-radius: 32px;
+	border-radius: var(--border-radius-basic);
 	width: 90%;
 	max-width: 380px;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
@@ -348,7 +364,7 @@ body.dark-theme .bottom-actions::after {
 .md3-button {
 	padding: 10px 24px;
 	/* 弹窗内确认按键圆角 */
-	border-radius: 64px;
+	border-radius: var(--border-radius-basic);
 	font-weight: 500;
 	font-size: 16px;
 	cursor: pointer;
@@ -375,7 +391,7 @@ body.dark-theme .bottom-actions::after {
 .md3-dialog-img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: var(--border-radius-basic);
 	margin: 12px 0;
 }
 
@@ -415,7 +431,7 @@ body.dark-theme .bottom-actions::after {
 
 .collapse-wrapper {
 	border: 1px solid var(--md-primary);
-	border-radius: 16px;
+	border-radius: var(--border-radius-basic);
 	overflow: hidden;
 	transition: all 0.3s ease;
 }
@@ -455,4 +471,19 @@ body.dark-theme .bottom-actions::after {
 .collapse-wrapper.expanded .collapse-content {
 	max-height: 200px;
 	padding: 12px 16px;
+}
+
+
+
+
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+
+	.main-content {
+		padding: 16px;
+	}
 }
