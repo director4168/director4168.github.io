@@ -1,10 +1,11 @@
-📁 V18v26.05.03.1634
+📁 V19v26.05.13.2051
 │   📁 Audio
 │   └── 🎶 38089198798-1-16.mp3
 │   📁 css
 │   ├── 🎨 AdditionalStyles.css
 │   ├── 🎨 Audio_A.css
 │   ├── 🎨 Code.css
+│   ├── 🎨 Document.css
 │   ├── 🎨 MainColorStyle_Default.css
 │   ├── 🎨 MainColorStyle_ERROR.css
 │   └── 🎨 Search.css
@@ -39,6 +40,7 @@
 │   ├── 💻 Cookie.js
 │   ├── 💻 CoreLogic.js
 │   ├── 💻 Details_Animation.js
+│   ├── 💻 Document.js
 │   ├── 💻 Protect.js
 │   └── 💻 Search.js
 ├── 🌐 404.html

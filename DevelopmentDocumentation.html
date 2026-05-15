@@ -4,8 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ -->
-	<title>director_Carter的站点-开发文档</title>
+	<title>帮助文档</title>
 	<!-- Material Icons -->
 	<!-- 官网 https://material.io/resources/icons/ -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,192 +31,263 @@
 	<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css">
 	<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level2.css">
 
+	<!-- 引入标准文档CSS样式 -->
+	<link href="./css/Document.css" rel="stylesheet">
+
 
 </head>
 
-<body class="dark-theme">
-	<!-- 主要内容区域 -->
-	<div class="main-content">
-		<!-- 介绍 -->
-		<div class="MainColumn-section">
+<body>
+	<!-- 顶栏 -->
+	<div class="top-header">
+		<div class="menu-btn" id="menuBtn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="header-title">开发文档</div>
 
 
-			<h1 class="MainColumn-title">开发文档</h1>
-			<p class="MainColumn-description">
-				本站点开源，并提供本站点的基本源码开发文档
+
+
+
+		<!-- 右侧按钮组 -->
+		<div class="header-right">
+			<!-- 返回首页 -->
+			<a href="./index.html" class="home-btn" title="返回首页">
+				<span class="material-icons">home</span>
+			</a>
+			<!-- 语言切换 -->
+			<a href="#" class="language-btn" id="languageToggle">
+				<span class="material-icons">translate</span>
+			</a>
+			<!-- 日夜切换 -->
+			<div class="theme-btn" id="themeToggle">
+				<span class="material-icons">dark_mode</span>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 遮罩 -->
+	<div class="mask" id="mask"></div>
+
+
+	<!-- 侧滑栏 -->
+	<div class="sidebar" id="sidebar">
+		<h3>文档目录</h3>
+		<ul>
+			<li><a onclick="window.scrollTo(0,0);return false;"><b>#页眉</b></a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">介绍</h4>
+			<li><a href="#Introduction">介绍</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">基本框架</h4>
+			<li><a href="#Basic">基本框架</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">顶栏</h4>
+			<li><a href="#TopBar">顶栏</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">主栏</h4>
+			<li><a href="#MainColumn-NoAvatar">主栏-无头像</a></li>
+			<nr>
+				<li><a href="#MainColumn-Avatar">头像控件</a></li>
 				<br>
-				基本框架：内容过多请前往Github<a href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html">此处开源Basic基本框架文件</a>
+				<hr>
+				<li><a href="javascript:window.scrollTo(0,document.body.scrollHeight)"><b>#页尾</b></a></li>
+				<br>
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- 正文内容 -->
+	<div class="main-wrap">
+		<div class="article">
+			<h1 id="Header">开发文档</h1>
+
+			<br>
+			<hr><br>
+			<h2 id="Introduction" class="anchor">介绍</h2>
+			<h3>一. 代码版本</h3>
+			<p>本站基于<b>HTML 5、JS ES6(ECMAScript 2015)、CSS 3 (Level 3)</b>的前端开发，纯静态网站，但是<span style="color: #FF0000;"><strong>几乎不支持IE系列内核</strong></span></p>
+			<br>
+
+			<h3>二. 可用控件</h3>
+			<p>提供如下内容：</p>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li>顶栏（取消，但仍可用）</li>
+				<li>主栏（可选是否包含头像）</li>
+				<li>基本头像（点击含动画，可选功能）</li>
+				<li>分栏</li>
+				<li>跳转卡片（含动画）</li>
+				<li>代码框（有复制、高亮(基于highlight)功能）</li>
+				<li>音乐 播放/暂停</li>
+				<li>弹窗系统（含动画）</li>
+				<li>主题切换系统（含动画）</li>
+				<li>折叠系统（含动画）</li>
+				<li>语言切换系统（a标签跳转页面）</li>
+				<li>底部固态塑料按钮悬停系统</li>
+				<li>……</li>
+			</ul>
+			<br>
+
+			<u>Index.html v26.05.13.2051</u>开始，添加主题记忆功（位于<u>/CoreLogic.js</u>主题切换模块），记忆有效时间为十分钟（10*60*1000），记忆时间内将直接使用记忆的主题而非浏览器主题
+			<br>
+
+			<br>
+			<p><strong>--项目开发者: director_Carter</strong></p>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><strong><a href="mailto:2705722903@qq.com">邮箱Email：2705722903@qq.com</a></strong><button onclick="copy('2705722903@qq.com')">Copy</button>
+					<br>
+					<strong><a href="mailto:3623293903@qq.com">备用邮箱：3623293903@qq.com</a></strong><button onclick="copy('3623293903@qq.com')">Copy</button>
+				</li>
+			</ul><br>
+
+			<b>
+				<p>--项目仓库(MPL-2.0)</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://github.com/director4168/director4168.github.io" style="word-wrap: break-word;">https://github.com/director4168/director4168.github.io</a><button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li>
+			</ul><br>
+
+			<b>
+				<p>--已部署</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://director4168.github.io" style="word-wrap: break-word;">https://director4168.github.io</a><button onclick="copy('https://director4168.github.io')">Copy</button></li>
+			</ul><br>
+			<hr><br>
+
+
+
+
+
+			<h2 id="Basic" class="anchor">基本框架</h2>
+			<p>标准基本框架，完整的HTML框架，但可能没有引入全部Js/CSS，仅供参考</p>
 			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-				仅供学习，代码部分如果为空请刷新页面
+				框架所有代码内容过多，所以使用跳转卡片
 			</p>
-		</div>
-
-
-
-
-
-
-
-
-
-
-		<!-- 返回卡片 -->
-		<div class="card">
-			<h2 class="card-title">返回</h2>
-			<p class="MainColumn-description">
-			*点击卡片返回首页
-			</p>
-			<div class="grid">
-
-
-
-
-
-
-
-
-
-
-				<a class="list-item" href="javascript:void(0);" data-href="./index.html" data-title="返回首页" data-content="是否返回首页？">
-					<span class="material-icons list-icon">first_page</span>
-					<div class="list-content">
-						<div class="list-title">
-							返回首页
-						</div>
-						<div class="list-subtitle">
-							返回到网站首页目录页
-						</div>
+			<br>
+			<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html" data-title="查看基本框架代码" data-content="查看基本框架代码（<b>Github链接</b>）">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">code</span>
+				<div class="list-content">
+					<div class="list-title">
+						查看代码
 					</div>
-					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-				</a>
-
-
-
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-
-		<div class="search-wrapper">
-			<div class="search-stroke" id="searchContainer">
-				<span class="material-icons">search</span>
-				<input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索内容">
-			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-
-		<div class="card">
-			<div class="grid">
-
-
-
-				<h2 style="text-align: center;">主栏（不带头像）</h2>
-				<p style="text-align: center;">
-					需放到主框架<u>body</u>中<u>.main-content</u>容器内
-					<br>
-					主栏维持最基本功能至少需要： <br><u>AdditionalStyles.css</u><br><u>MainColorStyle_Default.css</u><br><u>Material Icons</u>
-				</p>
-				<div class="code-container">
-					<div class="code-header">
-						<span class="code-header-name">Main Column | HTML</span>
-						<button class="copy-btn" onclick="copyCode(this)">复制</button>
+					<div class="list-subtitle">
+						前往查看基本框架代码
 					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-outline);">preview</span>
+			</a>
+			<br>
+			<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="前往预览" data-content="前往预览基本框架效果">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">preview</span>
+				<div class="list-content">
+					<div class="list-title">
+						预览
+					</div>
+					<div class="list-subtitle">
+						前往预览基本框架效果
+					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+			</a>
+		</div>
+		<br>
+		<hr><br>
 
-					<div class="code-content">
-						<div class="line-numbers"></div>
 
-						<div class="code-wrapper">
-							<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;&lt;h1 class=&quot;MainColumn-title&quot;&gt;主栏-主称&lt;/h1&gt;
-&lt;p class=&quot;MainColumn-description&quot;&gt;
-	主栏-介绍
-&lt;p style=&quot;margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;&quot;&gt;
-	&lt;span class=&quot;material-icons&quot; style=&quot;font-size: 14px; vertical-align: middle;&quot;&gt;info&lt;/span&gt;
-		主栏-温馨提示
-	&lt;/p&gt;
+
+
+
+		<h2 id="TopBar" class="anchor">顶栏</h2>
+		<p>顶栏，在页面最顶部添加一个不可点击的栏，会随页面滑动而滑动，并不会像底部按钮那样固定在一个位置
+			<br>
+			直接放到主框架<u>body</u>中
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Top bar | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">复制</button>
+				</div>
+
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source">&lt;div class=&quot;top-app-bar&quot;&gt;
+	&lt;span class=&quot;material-icons&quot; style=&quot;color: var(--md-on-primary);&quot;&gt;person&lt;/span&gt;
+	&lt;h1 class=&quot;app-bar-title&quot;&gt;顶栏文字&lt;/h1&gt;
 &lt;/div&gt;
 				</script>
 
-							<pre><code id="display-code" class="language-html"></code></pre>
-						</div>
+						<pre><code id="display-code" class="language-html"></code></pre>
 					</div>
 				</div>
-
-				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
-					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
-						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
-							点我折叠或展开效果图<b></b><br>
-						</h6>
-					</summary>
-
-
-					<div class="details-animated-wrapper">
-						<div class="details-content-inner">
-							<h2 style="text-align: center;">效果：</h2>
-
-								<div class="MainColumn-section">
-									<h1 class='MainColumn-title'>主栏-主称</h1>
-									<p class='MainColumn-description'>
-										主栏-介绍
-									<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
-										<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
-										主栏-温馨提示
-									</p>
-								</div>
-						</div>
-					</div>
-				</details>
-
-
-
 			</div>
-		</div>
 
-
-
-
-
-		<div class="card">
-			<div class="grid">
-
-
-
-				<h2 style="text-align: center;">主栏（带头像）</h2>
-				<p style="text-align: center;">
-					需放到主框架<u>body</u>中<u>.main-content</u>容器内，头像文件路径在<b><u>/jpg/avatar.jpg</u></b>
-					<br>
-					主栏维持最基本功能至少需要：<br> <u>/css/AdditionalStyles.css</u><br><u>/css/MainColorStyle_Default.css</u><br><u>Material Icons</u><br><u>/jpg/avatar.jpg</u>
-				</p>
-				<div class="code-container">
-					<div class="code-header">
-						<span class="code-header-name">Main Column | HTML</span>
-						<button class="copy-btn" onclick="copyCode(this)">复制</button>
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+						点我折叠或展开效果图<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">效果：</h2>
+						<div class="top-app-bar">
+							<span class="material-icons" style="color: var(--md-on-primary);">person</span>
+							<h1 class="app-bar-title">顶栏文字</h1>
+						</div>
+						<br>
 					</div>
+				</div>
+			</details>
+		</div>
+		<br>
+		<hr><br>
 
-					<div class="code-content">
-						<div class="line-numbers"></div>
 
-						<div class="code-wrapper">
-							<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;
-&lt;div class=&quot;avatar&quot; id=&quot;avatar&quot;&gt;
-	&lt;!-- 头像 --&gt;
-	&lt;img src=&quot;./jpg/avatar.jpg&quot; alt=&quot;头像-主头像&quot;&gt;
-&lt;/div&gt;
+
+
+
+		<h2 id="MainColumn-NoAvatar" class="anchor">主栏（无头像）</h2>
+		<p>标准主栏应包含 标题、介绍 ，可选择 头像、温馨提示 ，一般不添加跳转按钮
+			<br>
+			需放到主框架<u>body</u>中<u>.main-content</u>容器内
+			<br>
+			通常放在.main-content容器内第一位置
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Main Column | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">复制</button>
+				</div>
+
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;
 	&lt;h1 class=&quot;MainColumn-title&quot;&gt;主栏-主称&lt;/h1&gt;
 	&lt;p class=&quot;MainColumn-description&quot;&gt;
 		主栏-介绍
@@ -228,45 +298,88 @@
 &lt;/div&gt;
 				</script>
 
-							<pre><code id="display-code" class="language-html"></code></pre>
+						<pre><code id="display-code" class="language-html"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+						点我折叠或展开效果图<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">效果：</h2>
+
+						<div class="MainColumn-section">
+							<h1 class='MainColumn-title'>主栏-主称</h1>
+							<p class='MainColumn-description'>
+								主栏-介绍
+							<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
+								<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
+								主栏-温馨提示
+							</p>
 						</div>
 					</div>
 				</div>
+			</details>
+		</div>
+		<br>
+		<hr><br>
 
 
 
 
-				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
-					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
-						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
-							点我折叠或展开效果图<br>
-						</h6>
-					</summary>
 
+		<h2 id="MainColumn-Avatar" class="anchor">头像控件</h2>
+		<p>主栏可选添加本控件，本控件为<u>头像</u>控件，含点击动画，可选是否含功能，<u>默认彩蛋功能</u>
+			<br>
+			一般放到主栏容器<u>.main-content</u>中的<u>MainColumn-section</u>容器内
+			<br>
+			默认使用<u>根目录</u>下<u>avatar.jpg</u>作为显示图片，您可以自己选择
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Main Column | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">复制</button>
+				</div>
 
-					<div class="details-animated-wrapper">
-						<div class="details-content-inner">
-							<h2 style="text-align: center;">效果：</h2>
-								<div class="avatar" id="avatar">
-									<!-- 头像 -->
-									<img src="./jpg/avatar.jpg" alt="头像-主头像">
-								</div>
-								<div class="MainColumn-section">
-									<h1 class='MainColumn-title'>主栏-主称</h1>
-									<p class='MainColumn-description'>
-										主栏-介绍
-									<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
-										<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
-										主栏-温馨提示
-									</p>
-								</div>
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source">&lt;div class=&quot;avatar&quot; id=&quot;avatar&quot;&gt;
+	&lt;img src=&quot;./jpg/avatar.jpg&quot; alt=&quot;头像-主头像&quot;&gt;
+&lt;/div&gt;
+				</script>
+
+						<pre><code id="display-code" class="language-html"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+						点我折叠或展开效果图<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">效果：</h2>
+
+						<div class="MainColumn-section">
+							<div class="avatar" id="avatar">
+								<img src="./jpg/avatar.jpg" alt="头像-主头像">
+							</div>
 						</div>
 					</div>
-				</details>
-
-
-
-			</div>
+				</div>
+			</details>
+			<hr>
 		</div>
 
 
@@ -275,60 +388,7 @@
 
 
 
-
-
-
-		<div class="card">
-			<h2 class="card-title">1.开</h2>
-			<p class="MainColumn-description">
-				分栏-介绍
-			</p>
-			<div class="grid">
-
-
-
-
-				<a class="list-item" href="javascript:void(0);" data-href="URL" data-title="顶栏" data-content="说明">
-					<span class="material-icons list-icon">forum</span>
-					<div class="list-content">
-						<div class="list-title">
-							主称
-						</div>
-						<div class="list-subtitle">
-							介绍
-						</div>
-						<div class="list-subtitle">
-							第……行介绍
-						</div>
-					</div>
-					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-				</a>
-
-
-
-
-				<a class="list-item" href="javascript:void(0);" data-href="URL" data-title="弹窗内部插入图片" data-content="图片<br>第二行<br><img src='./jpg/avatar.jpg' alt='头像-测试'>">
-					<span class="material-icons list-icon">forum</span>
-					<div class="list-content">
-						<div class="list-title">
-							弹窗内部插入图片
-						</div>
-						<div class="list-subtitle">
-							测试弹窗内部插入图片显示
-						</div>
-					</div>
-					<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-				</a>
-
-
-
-			</div>
-		</div>
-
-
-
-
-
+	</div>
 	</div>
 
 
@@ -341,9 +401,9 @@
 
 
 	<!-- 页尾 -->
-	<div class="footer">
+	<div style="text-align: center; padding: 24px; color: var(--md-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-outline); margin-top: 40px; padding-bottom: 100px;">
 		<p>
-			Version: v26.05.04.1010 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
+			Version: v26.05.15.1531 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
 		</p>
 		<p>
 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
@@ -351,28 +411,6 @@
 		<p>
 			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
 		</p>
-	</div>
-
-
-
-
-
-
-
-
-
-
-	<!-- 语言切换&主题切换按钮 -->
-	<div class="bottom-actions">
-		<!-- 语言切换 -->
-		<a href="./en_US/DevelopmentDocumentation_enUS.html" class="btn" id="languageToggle">
-			<span class="material-icons">translate</span>
-		</a>
-
-		<!-- 主题切换 -->
-		<div class="btn" id="themeToggle">
-			<span class="material-icons">dark_mode</span>
-		</div>
 	</div>
 
 
@@ -449,6 +487,11 @@
 				easterEggCloseDialog.classList.remove('show');
 			}
 		});
+		// 复制
+		async function copy(str) {
+			await navigator.clipboard.writeText(str);
+			alert("已复制");
+		}
 	</script>
 
 
@@ -492,6 +535,9 @@
 
 
 
+
+
+
 	<!-- 引入核心JS -->
 	<script src="./js/CoreLogic.js"></script>
 	<script src="./js/Protect.js"></script>
@@ -511,8 +557,13 @@
 	<!-- 高亮 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
+	<!-- 标准文档JS -->
+	<script src="./js/Document.js"></script>
+
 	<!-- 彩蛋 -->
 	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
+	<!-- 引入文档Js -->
+	<script src="./js/Document.js"></script>
 </body>
 
 </html>

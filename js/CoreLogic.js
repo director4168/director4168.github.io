@@ -2,7 +2,7 @@
 // https://director4168.github.io
 // 本JS与网站一同开源，开源协议MPL-2.0
 // 负责本网站几乎所有逻辑处理
-// Version: v26.05.03.0026
+// Version: v26.05.12.1247
 
 (function() {
 	'use strict';
@@ -56,14 +56,62 @@
 			const icon = themeToggle.querySelector('.material-icons');
 			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-			const setTheme = (dark) => {
-				body.classList.toggle('dark-theme', dark);
-				if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
+			const setTheme = (isDark) => {
+				body.classList.toggle('dark-theme', isDark);
+				if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
 			};
 
-			setTheme(prefersDark.matches);
-			prefersDark.addEventListener('change', e => setTheme(e.matches));
-			themeToggle.addEventListener('click', () => setTheme(!body.classList.contains('dark-theme')));
+			const saveUserPreference = (isDark) => {
+				const data = {
+					theme: isDark ? 'dark' : 'light',
+					timestamp: Date.now()
+				};
+				localStorage.setItem('userTheme', JSON.stringify(data));
+			};
+
+			const getUserPreference = () => {
+				const saved = localStorage.getItem('userTheme');
+				if (!saved) return null;
+
+				try {
+					const data = JSON.parse(saved);
+					const now = Date.now();
+					const tenMinutes = 10 * 60 * 1000;
+
+					if (now - data.timestamp > tenMinutes) {
+						localStorage.removeItem('userTheme');
+						return null;
+					}
+					return data.theme === 'dark';
+				} catch (e) {
+					localStorage.removeItem('userTheme');
+					return null;
+				}
+			};
+
+			// 初始化
+			const userPref = getUserPreference();
+			if (userPref !== null) {
+				setTheme(userPref);
+			} else {
+				setTheme(prefersDark.matches);
+			}
+
+			// 监听系统主题变化
+			prefersDark.addEventListener('change', e => {
+				if (getUserPreference() === null) {
+					setTheme(e.matches);
+				}
+			});
+
+			// 点击切换主题
+			themeToggle.addEventListener('click', () => {
+				const currentIsDark = body.classList.contains('dark-theme');
+				const newIsDark = !currentIsDark;
+
+				setTheme(newIsDark);
+				saveUserPreference(newIsDark);
+			});
 		}
 
 		// 更新版权年份
