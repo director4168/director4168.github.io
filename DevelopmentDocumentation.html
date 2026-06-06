@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -37,34 +36,18 @@
 
 </head>
 
-<body>
+<body class="dark-theme">
 	<!-- 顶栏 -->
 	<div class="top-header">
-		<div class="menu-btn" id="menuBtn">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
+		<div class="menu-btn" id="menuBtn"><span class="material-icons">menu</span></div>
 		<div class="header-title">开发文档</div>
-
-
-
-
-
-		<!-- 右侧按钮组 -->
 		<div class="header-right">
 			<!-- 返回首页 -->
 			<a href="./index.html" class="home-btn" title="返回首页">
 				<span class="material-icons">home</span>
 			</a>
-			<!-- 语言切换 -->
-			<a href="./en_US/DevelopmentDocumentation_enUS.html" class="language-btn" id="languageToggle">
-				<span class="material-icons">translate</span>
-			</a>
-			<!-- 日夜切换 -->
-			<div class="theme-btn" id="themeToggle">
-				<span class="material-icons">dark_mode</span>
-			</div>
+
+			<div class="theme-btn" id="themeToggle" aria-label="切换日夜间模式"><span class="material-icons" id="themeToggleIcon">dark_mode</span></div>
 		</div>
 	</div>
 
@@ -78,59 +61,67 @@
 
 	<!-- 侧滑栏 -->
 	<div class="sidebar" id="sidebar">
-		<h3>文档目录</h3>
-		<ul>
-			<li><a onclick="window.scrollTo(0,0);return false;"><b>#页眉</b></a></li>
-			<br>
-			<hr>
-			<h4 style="text-align: center;">介绍</h4>
-			<li><a href="#Introduction">介绍</a></li>
-			<br>
-			<hr>
-			<h4 style="text-align: center;">基本框架</h4>
-			<li><a href="#Basic">基本框架</a></li>
-			<br>
-			<hr>
-			<h4 style="text-align: center;">顶栏</h4>
-			<li><a href="#TopBar">顶栏</a></li>
-			<br>
-			<hr>
-			<h4 style="text-align: center;">主栏</h4>
-			<li><a href="#MainColumn-NoAvatar">主栏-无头像</a></li>
-			<nr>
-				<li><a href="#MainColumn-Avatar">头像控件</a></li>
-				<br>
-				<hr>
-				<li><a href="javascript:window.scrollTo(0,document.body.scrollHeight)"><b>#页尾</b></a></li>
-				<br>
-		</ul>
+
+		<!-- <div class="sidebar-section">
+			<ul>
+				<li><a href="#Introduction">介绍<span class="tag hot">test: tag hot</span></a></li>
+				<li><a href="#Basic">基本框架<span class="tag">test: tag</span></a></li>
+			</ul>
+		</div> -->
+
+
+		<!-- <br> -->
+		<div class="sidebar-section">
+			<div class="sidebar-group">
+
+				<div class="group-header"><span>基础</span><span class="arrow">▼</span></div>
+				<ul class="group-items">
+					<li><a href="#Introduction">介绍</a></li>
+
+					<li><a href="#Basic">基本框架<span class="tag">test: tag</span><span class="tag hot">最基本</span></a></li>
+
+					<li><a href="https://director4168.github.io/Basic.html">基本框架<span class="tag hot">URL链接</span><span class="material-icons" style="color: var(--md-outline);">insert_link</span></a></li>
+				</ul>
+
+			</div>
+		</div>
+
+
+		<!-- 页尾 -->
+		<div style="text-align: center; padding: 24px; color: var(--md-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-outline); margin-top: 40px; padding-bottom: 100px;">
+			<p>
+				<a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a> | <a href="https://github.com/director4168/director4168.github.io" class="list-subtitle">开源地址</a>
+			</p>
+			<p>
+				&copy; <span id="chinese-copyright-year">2026</span> director_Carter 保留所有权利。
+			</p>
+			<p>
+				&copy; <span id="english-copyright-year">2026</span> director_Carter All Rights Reserved.
+			</p>
+		</div>
 	</div>
 
 
 
 
 
+	<div class="main-wrap" id="mainWrap">
 
 
 
 
 
-	<!-- 正文内容 -->
-	<div class="main-wrap">
-		<div class="article">
-			<h1 id="Header">开发文档</h1>
-
-			<br>
-			<hr><br>
-			<h2 id="Introduction" class="anchor">介绍</h2>
-			<h3>一. 代码版本</h3>
+		<!-- intro -->
+		<div class="doc-section active" id="sec-Introduction">
+			<h2 class="anchor">介绍</h2>
+			<h3 id="Introduction_CodeVersion">代码版本</h3>
 			<p>本站基于<b>HTML 5、JS ES6(ECMAScript 2015)、CSS 3 (Level 3)</b>的前端开发，纯静态网站，但是<span style="color: #FF0000;"><strong>几乎不支持IE系列内核</strong></span></p>
 			<br>
 
-			<h3>二. 可用控件</h3>
-			<p>提供如下内容：</p>
+			<h3>可用控件</h3>
+			<p>至26.05.23.1406(按index.html)，提供如下内容：</p>
 			<ul style="all: revert !important; margin-block: 0 !important;">
-				<li>顶栏（取消，但仍可用）</li>
+				<li>顶栏（默认不使用）</li>
 				<li>主栏（可选是否包含头像）</li>
 				<li>基本头像（点击含动画，可选功能）</li>
 				<li>分栏</li>
@@ -149,14 +140,16 @@
 			<u>Index.html v26.05.13.2051</u>开始，添加主题记忆功（位于<u>/CoreLogic.js</u>主题切换模块），记忆有效时间为十分钟（10*60*1000），记忆时间内将直接使用记忆的主题而非浏览器主题
 			<br>
 
+
 			<br>
-			<p><strong>--项目开发者: director_Carter</strong></p>
+			<h3 id="Introduction_developer"><strong>项目开发者: director_Carter</strong></h3>
 			<ul style="all: revert !important; margin-block: 0 !important;">
 				<li><strong><a href="mailto:2705722903@qq.com">邮箱Email：2705722903@qq.com</a></strong><button onclick="copy('2705722903@qq.com')">Copy</button>
 					<br>
 					<strong><a href="mailto:3623293903@qq.com">备用邮箱：3623293903@qq.com</a></strong><button onclick="copy('3623293903@qq.com')">Copy</button>
 				</li>
 			</ul><br>
+
 
 			<b>
 				<p>--项目仓库(MPL-2.0)</p>
@@ -165,292 +158,188 @@
 				<li><a href="https://github.com/director4168/director4168.github.io" style="word-wrap: break-word;">https://github.com/director4168/director4168.github.io</a><button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li>
 			</ul><br>
 
+
 			<b>
 				<p>--已部署</p>
 			</b>
 			<ul style="all: revert !important; margin-block: 0 !important;">
 				<li><a href="https://director4168.github.io" style="word-wrap: break-word;">https://director4168.github.io</a><button onclick="copy('https://director4168.github.io')">Copy</button></li>
 			</ul><br>
-			<hr><br>
 
 
+			<h3 id="Introduction_OtherProjects"><strong>本项目使用了其他项目</strong></h3>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li>1. Material Icons
+					<br>来源： <a href="https://fonts.google.com/icons">https://fonts.google.com/icons</a><button onclick="copy('https://fonts.google.com/icons')">Copy</button>
+					<br><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a><button onclick="copy('http://www.apache.org/licenses/LICENSE-2.0)">Copy</button>
+				</li>
 
-
-
-			<h2 id="Basic" class="anchor">基本框架</h2>
-			<p>标准基本框架，完整的HTML框架，但可能没有引入全部Js/CSS，仅供参考</p>
-			<p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;">
-				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
-				框架所有代码内容过多，所以使用跳转卡片
-			</p>
-			<br>
-			<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html" data-title="查看基本框架代码" data-content="查看基本框架代码（<b>Github链接</b>）">
-				<span class="material-icons list-icon" style="color: #FFFFFF;">code</span>
-				<div class="list-content">
-					<div class="list-title">
-						查看代码
-					</div>
-					<div class="list-subtitle">
-						前往查看基本框架代码
-					</div>
-				</div>
-				<span class="material-icons" style="color: var(--md-outline);">preview</span>
-			</a>
-			<br>
-			<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="前往预览" data-content="前往预览基本框架效果">
-				<span class="material-icons list-icon" style="color: #FFFFFF;">preview</span>
-				<div class="list-content">
-					<div class="list-title">
-						预览
-					</div>
-					<div class="list-subtitle">
-						前往预览基本框架效果
-					</div>
-				</div>
-				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
-			</a>
-		</div>
-		<br>
-		<hr><br>
-
-
-
-
-
-		<h2 id="TopBar" class="anchor">顶栏</h2>
-		<p>顶栏，在页面最顶部添加一个不可点击的栏，会随页面滑动而滑动，并不会像底部按钮那样固定在一个位置
-			<br>
-			直接放到主框架<u>body</u>中
-		</p>
-		<div class="grid">
-			<div class="code-container">
-				<div class="code-header">
-					<span class="code-header-name">Top bar | HTML</span>
-					<button class="copy-btn" onclick="copyCode(this)">复制</button>
-				</div>
-
-				<div class="code-content">
-					<div class="line-numbers"></div>
-
-					<div class="code-wrapper">
-						<script type="text/plain" id="code-source">&lt;div class=&quot;top-app-bar&quot;&gt;
-	&lt;span class=&quot;material-icons&quot; style=&quot;color: var(--md-on-primary);&quot;&gt;person&lt;/span&gt;
-	&lt;h1 class=&quot;app-bar-title&quot;&gt;顶栏文字&lt;/h1&gt;
-&lt;/div&gt;
-				</script>
-
-						<pre><code id="display-code" class="language-html"></code></pre>
-					</div>
-				</div>
-			</div>
-
-			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
-				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
-					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
-						点我折叠或展开效果图<b></b><br>
-					</h6>
-				</summary>
-				<div class="details-animated-wrapper">
-					<div class="details-content-inner">
-						<h2 style="text-align: center;">效果：</h2>
-						<div class="top-app-bar">
-							<span class="material-icons" style="color: var(--md-on-primary);">person</span>
-							<h1 class="app-bar-title">顶栏文字</h1>
-						</div>
-						<br>
-					</div>
-				</div>
-			</details>
-		</div>
-		<br>
-		<hr><br>
-
-
-
-
-
-		<h2 id="MainColumn-NoAvatar" class="anchor">主栏（无头像）</h2>
-		<p>标准主栏应包含 标题、介绍 ，可选择 头像、温馨提示 ，一般不添加跳转按钮
-			<br>
-			需放到主框架<u>body</u>中<u>.main-content</u>容器内
-			<br>
-			通常放在.main-content容器内第一位置
-		</p>
-		<div class="grid">
-			<div class="code-container">
-				<div class="code-header">
-					<span class="code-header-name">Main Column | HTML</span>
-					<button class="copy-btn" onclick="copyCode(this)">复制</button>
-				</div>
-
-				<div class="code-content">
-					<div class="line-numbers"></div>
-
-					<div class="code-wrapper">
-						<script type="text/plain" id="code-source">&lt;div class=&quot;MainColumn-section&quot;&gt;
-	&lt;h1 class=&quot;MainColumn-title&quot;&gt;主栏-主称&lt;/h1&gt;
-	&lt;p class=&quot;MainColumn-description&quot;&gt;
-		主栏-介绍
-	&lt;p style=&quot;margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;&quot;&gt;
-		&lt;span class=&quot;material-icons&quot; style=&quot;font-size: 14px; vertical-align: middle;&quot;&gt;info&lt;/span&gt;
-		主栏-温馨提示
-	&lt;/p&gt;
-&lt;/div&gt;
-				</script>
-
-						<pre><code id="display-code" class="language-html"></code></pre>
-					</div>
-				</div>
-			</div>
-
-			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
-				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
-					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
-						点我折叠或展开效果图<b></b><br>
-					</h6>
-				</summary>
-				<div class="details-animated-wrapper">
-					<div class="details-content-inner">
-						<h2 style="text-align: center;">效果：</h2>
-
-						<div class="MainColumn-section">
-							<h1 class='MainColumn-title'>主栏-主称</h1>
-							<p class='MainColumn-description'>
-								主栏-介绍
-							<p style='margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;'>
-								<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
-								主栏-温馨提示
-							</p>
-						</div>
-					</div>
-				</div>
-			</details>
-		</div>
-		<br>
-		<hr><br>
-
-
-
-
-
-		<h2 id="MainColumn-Avatar" class="anchor">头像控件</h2>
-		<p>主栏可选添加本控件，本控件为<u>头像</u>控件，含点击动画，可选是否含功能，<u>默认彩蛋功能</u>
-			<br>
-			一般放到主栏容器<u>.main-content</u>中的<u>MainColumn-section</u>容器内
-			<br>
-			默认使用<u>根目录</u>下<u>avatar.jpg</u>作为显示图片，您可以自己选择
-		</p>
-		<div class="grid">
-			<div class="code-container">
-				<div class="code-header">
-					<span class="code-header-name">Avatar | HTML</span>
-					<button class="copy-btn" onclick="copyCode(this)">复制</button>
-				</div>
-
-				<div class="code-content">
-					<div class="line-numbers"></div>
-
-					<div class="code-wrapper">
-						<script type="text/plain" id="code-source">&lt;div class=&quot;avatar&quot; id=&quot;avatar&quot;&gt;
-	&lt;img src=&quot;./jpg/avatar.jpg&quot; alt=&quot;头像-主头像&quot;&gt;
-&lt;/div&gt;
-				</script>
-
-						<pre><code id="display-code" class="language-html"></code></pre>
-					</div>
-				</div>
-			</div>
-
-			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
-				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
-					<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
-						点我折叠或展开效果图<b></b><br>
-					</h6>
-				</summary>
-				<div class="details-animated-wrapper">
-					<div class="details-content-inner">
-						<h2 style="text-align: center;">效果：</h2>
-
-						<div class="MainColumn-section">
-							<div class="avatar" id="avatar">
-								<img src="./jpg/avatar.jpg" alt="头像-主头像">
-							</div>
-						</div>
-					</div>
-				</div>
-			</details>
-			<hr>
+				<li>2. MUI
+					<br>来源： <a href="https://mui.dcloud.net.cn/">https://mui.dcloud.net.cn/</a><button onclick="copy('https://mui.dcloud.net.cn/')">Copy</button>
+					<br><a href="https://spdx.org/licenses/MIT.html">The MIT License</a><button onclick="copy('https://spdx.org/licenses/MIT.html')">Copy</button>
+				</li>
+			</ul>
 		</div>
 
 
 
 
+		<div class="doc-section" id="sec-Basic">
+			<h2 id="Basic" class="anchor">基本框架<span class="tag hot">最基本</span></h2>
+			<p>基本框架，本项目基本比较完整的标准HTML框架，可能没有引入本项目全部Js/CSS</p>
 
-
-
-	</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-	<!-- 页尾 -->
-	<div style="text-align: center; padding: 24px; color: var(--md-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-outline); margin-top: 40px; padding-bottom: 100px;">
-		<p>
-			Version: v26.05.15.1531 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
-		</p>
-		<p>
-			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-		</p>
-		<p>
-			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-		</p>
-	</div>
-
-
-
-
-
-
-
-
-
-
-	<!-- 彩蛋弹窗一级弹窗 -->
-
-	<div class="easter-egg-modal" id="easterEggModal">
-		<div class="easter-egg-content">
-			<h2>彩蛋</h2>
-			<p>
+			<div class="grid">
+				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+							点我折叠或展开框架代码<b></b><br>
+						</h6>
+					</summary>
+					<div class="details-animated-wrapper">
+						<div class="details-content-inner">
+							<div class="code-container">
+								<div class="code-header"><span class="code-header-name">Basic framework | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+								<div class="code-content">
+									<div class="line-numbers"></div>
+									<div class="code-wrapper">
+										<script type="text/plain" class="code-source">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	&lt;!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ --&gt;
+	&lt;title&gt;XXX的站点-XXX&lt;/title&gt;
+	&lt;!-- Material Icons --&gt;
+	&lt;!-- 官网 https://material.io/resources/icons/ --&gt;
+	&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+	&lt;!-- 字体库-思源宋体 --&gt;
+	&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"&gt;
+	&lt;!-- 引入主配色CSS --&gt;
+	&lt;link rel="stylesheet" href="./css/MainColorStyle_Default.css"&gt;
+	&lt;!-- 引入附加CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./css/AdditionalStyles.css"&gt;
+	&lt;!-- 引入搜索CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./css/Search.css"&gt;
+	&lt;!-- 高亮 --&gt;
+	&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"&gt;
+	&lt;!-- 引入code代码复制Css样式 --&gt;
+	&lt;link href="./css/Code.css" rel="stylesheet"&gt;
+	&lt;!-- 引入彩蛋CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggStyle.css"&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css"&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level2.css"&gt;
+&lt;/head&gt;&lt;body class="dark-theme"&gt;
+	&lt;!-- 主要内容区域 --&gt;
+	&lt;div class="main-content"&gt;
+		&lt;!-- 介绍 --&gt;
+		&lt;div class="MainColumn-section"&gt;
+			&lt;div class="avatar" id="avatar"&gt;
+				&lt;!-- 头像 --&gt;
+				&lt;img src="./jpg/avatar.jpg" alt="头像-主头像"&gt;
+			&lt;/div&gt;
+			&lt;h1 class="MainColumn-title"&gt;主栏-主称&lt;/h1&gt;
+			&lt;p class="MainColumn-description"&gt;
+				主栏-介绍
+			&lt;p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;"&gt;
+				&lt;span class="material-icons" style="font-size: 14px; vertical-align: middle;"&gt;info&lt;/span&gt;
+				主栏-温馨提示
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;!-- 返回卡片 --&gt;
+		&lt;div class="card"&gt;
+			&lt;h2 class="card-title"&gt;返回&lt;/h2&gt;
+			&lt;p class="MainColumn-description"&gt;
+				*点击卡片返回首页
+			&lt;/p&gt;
+			&lt;div class="grid"&gt;
+				&lt;a class="list-item" href="javascript:void(0);" data-href="./index.html" data-title="返回首页" data-content="是否返回首页？"&gt;
+					&lt;span class="material-icons list-icon"&gt;first_page&lt;/span&gt;
+					&lt;div class="list-content"&gt;
+						&lt;div class="list-title"&gt;
+							返回首页
+						&lt;/div&gt;
+						&lt;div class="list-subtitle"&gt;
+							返回到网站首页目录页
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;span class="material-icons" style="color: var(--md-outline);"&gt;insert_link&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="search-wrapper"&gt;
+			&lt;div class="search-stroke" id="searchContainer"&gt;
+				&lt;span class="material-icons"&gt;search&lt;/span&gt;
+				&lt;input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索内容"&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- 社交账号卡片 --&gt;
+		&lt;div class="card"&gt;
+			&lt;h2 class="card-title"&gt;分栏-主称&lt;/h2&gt;
+			&lt;p class="MainColumn-description"&gt;
+				分栏-介绍
+			&lt;/p&gt;
+			&lt;div class="grid"&gt;
+				&lt;a class="list-item" href="javascript:void(0);" data-href="URL" data-title="顶栏" data-content="说明"&gt;
+					&lt;span class="material-icons list-icon"&gt;forum&lt;/span&gt;
+					&lt;div class="list-content"&gt;
+						&lt;div class="list-title"&gt;
+							主称
+						&lt;/div&gt;
+						&lt;div class="list-subtitle"&gt;
+							介绍
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;span class="material-icons" style="color: var(--md-outline);"&gt;insert_link&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 页尾 --&gt;
+	&lt;div class="footer"&gt;
+		&lt;p&gt;
+			Version: v26.04.18.2125 | &lt;a href="https://director4168.github.io/Agreement.html" class="list-subtitle"&gt;用户协议&lt;/a&gt;
+		&lt;/p&gt;
+		&lt;p&gt;
+			&copy; &lt;span id="chinese-copyright-year"&gt;2025&lt;/span&gt; director_Carter 保留所有权利。
+		&lt;/p&gt;
+		&lt;p&gt;
+			&copy; &lt;span id="english-copyright-year"&gt;2025&lt;/span&gt; director_Carter All Rights Reserved.
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;!-- 语言切换&主题切换按钮 --&gt;
+	&lt;div class="bottom-actions"&gt;
+		&lt;!-- 语言切换 --&gt;
+		&lt;a href="./404.html" class="btn" id="languageToggle"&gt;
+			&lt;span class="material-icons"&gt;translate&lt;/span&gt;
+		&lt;/a&gt;
+		&lt;!-- 主题切换 --&gt;
+		&lt;div class="btn" id="themeToggle"&gt;
+			&lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 彩蛋弹窗一级弹窗 --&gt;	&lt;div class="easter-egg-modal" id="easterEggModal"&gt;
+		&lt;div class="easter-egg-content"&gt;
+			&lt;h2&gt;彩蛋&lt;/h2&gt;
+			&lt;p&gt;
 				恭喜你发现了我埋的一个小彩蛋呢，所以你一直戳我头干什么呀？
-			</p>
-			<button class="easter-egg-close" id="easterEggClose">点我关闭，小雑魚~</button>
-		</div>
-	</div>
-
-	<!-- 彩蛋弹窗二级关闭确认对话框 -->
-	<div class="egg-dialog" id="easterEggCloseDialog">
-		<div class="egg-dialog-content">
-			<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
+			&lt;/p&gt;
+			&lt;button class="easter-egg-close" id="easterEggClose"&gt;点我关闭，小雑魚~&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	&lt;!-- 彩蛋弹窗二级关闭确认对话框 --&gt;
+	&lt;div class="egg-dialog" id="easterEggCloseDialog"&gt;
+		&lt;div class="egg-dialog-content"&gt;
+			&lt;div class="egg-dialog-header" id="easterEggCloseDialogHeader"&gt;
 				雑魚雑魚~
-			</div>
-			<div class="egg-dialog-body" id="easterEggCloseDialogBody">
+			&lt;/div&gt;
+			&lt;div class="egg-dialog-body" id="easterEggCloseDialogBody"&gt;
 				雑魚雑魚、小さな雑魚ちゃん～
-			</div>
-			<div class="egg-dialog-actions">
-				<button class="egg-button contained" id="easterEggCloseDialogConfirm">确定</button>
-			</div>
-		</div>
-	</div>
-
-	<!-- 彩蛋各部分逻辑 -->
-	<script>
+			&lt;/div&gt;
+			&lt;div class="egg-dialog-actions"&gt;
+				&lt;button class="egg-button contained" id="easterEggCloseDialogConfirm"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 彩蛋各部分逻辑 --&gt;
+	&lt;script&gt;
 		const avatar = document.getElementById('avatar');
 		const easterEggModal = document.getElementById('easterEggModal');
 		const easterEggClose = document.getElementById('easterEggClose');
@@ -461,12 +350,12 @@
 		// 彩蛋触发逻辑
 		avatar.addEventListener('click', function() {
 			const now = new Date().getTime();
-			if (now - lastClickTime > 300) {
+			if (now - lastClickTime &gt; 300) {
 				clickCount = 0;
 			}
 			clickCount++;
 			lastClickTime = now;
-			if (clickCount >= 10) {
+			if (clickCount &gt;= 10) {
 				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
 				easterEggModal.classList.add('show');
 				clickCount = 0;
@@ -487,7 +376,90 @@
 				easterEggCloseDialog.classList.remove('show');
 			}
 		});
-		// 复制
+	&lt;/script&gt;	&lt;!-- MD3对话框 --&gt;
+	&lt;div class="md3-dialog" id="md3Dialog"&gt;
+		&lt;div class="md3-dialog-content"&gt;
+			&lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;
+				标题
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-body" id="md3DialogBody"&gt;
+				内容
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-actions"&gt;
+				&lt;button class="md3-button text" id="md3DialogCancel"&gt;取消&lt;/button&gt;
+				&lt;button class="md3-button contained" id="md3DialogConfirm"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	&lt;div class="md3-dialog"&gt;
+		&lt;div class="md3-dialog-content"&gt;
+			&lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;
+				标题
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-body" id="md3DialogBody"&gt;
+				内容
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-actions"&gt;
+				&lt;button class="md3-button text" id="md3DialogCancel"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 引入核心JS --&gt;
+	&lt;script src="./js/CoreLogic.js"&gt;&lt;/script&gt;
+	&lt;script src="./js/Protect.js"&gt;&lt;/script&gt;
+	&lt;!-- 引用Cookie处理 --&gt;
+	&lt;script src="./js/Cookie.js"&gt;&lt;/script&gt;
+	&lt;!-- 搜索JS --&gt;
+	&lt;script src="./js/Search.js"&gt;&lt;/script&gt;
+	&lt;!-- Code复制功能 --&gt;
+	&lt;script src="./js/Code.js"&gt;&lt;/script&gt;
+	&lt;!-- 引入折叠系统动画 --&gt;
+	&lt;script src="./js/Details_Animation.js"&gt;&lt;/script&gt;
+	&lt;!-- 高亮 --&gt;
+	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"&gt;&lt;/script&gt;
+	&lt;!-- 彩蛋 --&gt;
+	&lt;!-- &lt;script src="./EasterEgg/js/EasterEgg.js"&gt;&lt;/script&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</script>
+										<pre><code class="display-code language-html"></code></pre>
+									</div>
+
+								</div>
+							</div>
+				</details>
+				<br>
+			</div>
+
+			<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="前往预览" data-content="前往预览基本框架效果">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">preview</span>
+				<div class="list-content">
+					<div class="list-title">
+						预览
+					</div>
+					<div class="list-subtitle">
+						前往预览基本框架效果
+					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+			</a>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script>
 		async function copy(str) {
 			await navigator.clipboard.writeText(str);
 			alert("已复制");
@@ -534,10 +506,6 @@
 
 
 
-
-
-
-
 	<!-- 引入核心JS -->
 	<script src="./js/CoreLogic.js"></script>
 	<script src="./js/Protect.js"></script>
@@ -548,21 +516,10 @@
 	<!-- 搜索JS -->
 	<script src="./js/Search.js"></script>
 
-	<!-- Code复制功能 -->
-	<script src="./js/Code.js"></script>
-
-	<!-- 引入折叠系统动画 -->
-	<script src="./js/Details_Animation.js"></script>
-
 	<!-- 高亮 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
 	<!-- 标准文档JS -->
-	<script src="./js/Document.js"></script>
-
-	<!-- 彩蛋 -->
-	<!-- <script src="./EasterEgg/js/EasterEgg.js"></script> -->
-	<!-- 引入文档Js -->
 	<script src="./js/Document.js"></script>
 </body>
 

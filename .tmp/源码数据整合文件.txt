@@ -1,0 +1,2550 @@
+================================================================================
+【项目树形结构】
+================================================================================
+📁 .tmp
+│   📁 css
+│   ├── 📄 AdditionalStyles.css
+│   ├── 📄 Audio_A.css
+│   ├── 📄 Code.css
+│   ├── 📄 Document.css
+│   ├── 📄 MainColorStyle_Default.css
+│   ├── 📄 MainColorStyle_ERROR.css
+│   └── 📄 Search.css
+│   📁 js
+│   ├── 📄 Audio.js
+│   ├── 📄 Code.js
+│   ├── 📄 Cookie.js
+│   ├── 📄 CoreLogic.js
+│   ├── 📄 Details_Animation.js
+│   ├── 📄 Document.js
+│   ├── 📄 Protect.js
+│   └── 📄 Search.js
+└── 📄 侧滑.html
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/Code.css
+项目内路径：/css/Code.css
+文件名：Code.css
+文件大小：2106 字节
+================================================================================
+文件内容：
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https:director4168.github.io
+ 本JS与网站一同开源，开源协议MPL-2.0
+ 负责处理code代码标签代码复制样式
+ Version: v26.05.03.1916
+*/
+
+/* 总容器 */
+.code-container {
+	background: #2d2d2d;
+	border-radius: 8px;
+	margin: 16px 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #3d3d3d;
+}
+
+
+
+
+
+/* 顶栏 */
+.code-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 16px;
+	background: #383838;
+	border-bottom: 1px solid #252525;
+}
+
+.code-header-name {
+	color: #aaa;
+	font-size: 13px;
+	font-family: sans-serif;
+	user-select: none;
+}
+
+.copy-btn {
+	border: none;
+	background: #48484A;
+	color: #fff;
+	padding: 4px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 12px;
+	transition: background 0.2s;
+}
+
+.copy-btn:hover {
+	background: #606063;
+}
+
+
+
+
+
+/* 代码滚动区 */
+.code-content {
+	display: flex;
+	overflow-x: auto;
+	padding: 0;
+	background: #2d2d2d;
+	will-change: scroll-position;
+	transform: translateZ(0);
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+/* 行数栏 */
+.line-numbers {
+	padding: 12px 8px;
+	border-right: 1px solid #444;
+	background: #333; 
+	color: #888;
+	text-align: right;
+	min-width: 35px;
+	user-select: none;
+	font-family: "Consolas", monospace;
+	font-size: 14px;
+	line-height: 1.5;
+	flex-shrink: 0; 
+	line-height: 1.5;
+}
+
+
+
+
+
+.code-wrapper {
+	padding: 12px 16px;
+	flex-shrink: 0; 
+	line-height: 1.5;
+}
+
+
+
+
+
+pre {
+	margin: 0;
+	white-space: pre;
+}
+
+
+code {
+	font-family: "Consolas", "Monaco", monospace;
+	color: #fff;
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+/* 高亮样式 */
+.code-wrapper code {
+	background: transparent !important;
+	padding: 0 !important;
+}
+
+
+
+
+
+/* 滚动条样式-高度 */
+.code-content::-webkit-scrollbar {
+	height: 16px;
+}
+
+/* 滚动条轨道 */
+.code-content::-webkit-scrollbar-track {
+	background: #2d2d2d;
+}
+
+
+/* 滑块 */
+.code-content::-webkit-scrollbar-thumb {
+	background: #4a4a4a;
+	border-radius: 5px;
+	border: 2px solid #2d2d2d;
+}
+
+
+.code-content::-webkit-scrollbar-thumb:hover {
+	background: #606063;
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/Audio_A.css
+项目内路径：/css/Audio_A.css
+文件名：Audio_A.css
+文件大小：789 字节
+================================================================================
+文件内容：
+.audio-controls {display: flex;justify-content: center;gap: 16px;margin: 20px 0;padding: 10px;}.audio-controls .md3-button {display: inline-flex;align-items: center;justify-content: center;transition: transform 0.2s, background-color 0.4s, box-shadow 0.4s;}.audio-controls .md3-button:active {transform: scale(0.95);}.audio-controls .md3-button.contained {box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}.audio-controls .md3-button.contained:hover {box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);filter: brightness(1.1);}.audio-controls .md3-button.text {border: 1px solid var(--md-outline);}.audio-controls .md3-button.text:hover {background-color: rgba(0, 0, 0, 0.04);}body.dark-theme .audio-controls .md3-button.text:hover {background-color: rgba(255, 255, 255, 0.08);}#StartAudio {display: none;}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/AdditionalStyles.css
+项目内路径：/css/AdditionalStyles.css
+文件名：AdditionalStyles.css
+文件大小：8545 字节
+================================================================================
+文件内容：
+/* 
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 附加CSS样式，包括弹窗样式等以及过渡动画时长，不包含彩蛋弹窗
+ Version: v26.05.22.2055
+*/
+
+:root {
+	--border-radius-basic: 16px
+}
+
+
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+/* 防止点击高亮事件 */
+	-webkit-tap-highlight-color: transparent !important;
+	outline: none !important;
+}
+
+
+
+
+
+body {
+	/* 使用提前加载的Material Icons字体库宋体字体 */
+	font-family: "Noto Serif SC", serif;
+
+	background-color: var(--md-surface);
+	color: var(--md-on-surface);
+	line-height: 1.6;
+	/* 过渡动画时长 */
+	transition: background-color 0.6s, color 0.6s;
+}
+
+
+
+
+
+/* 顶部应用栏 */
+.top-app-bar {
+	display: flex;
+	align-items: center;
+	padding: 16px 24px;
+	background-color: var(--md-primary);
+	color: var(--md-on-primary);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-bar-title {
+	font-size: 22px;
+	font-weight: 500;
+	margin-left: 16px;
+}
+
+
+
+
+
+/* 主内容区域 */
+.main-content {
+	/* 最大宽度，可用于控制一行最多可显示多少个卡片 */
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 20px 16px 120px;
+}
+
+
+
+
+
+
+/* 头像 */
+.avatar {
+	width: 96px;
+	height: 96px;
+	border-radius: 24px;
+	background-color: var(--md-primary);
+	margin: 0 auto 20px;
+	cursor: pointer;
+	transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.avatar:active {
+	transform: scale(0.95);
+}
+
+.MainColumn-title {
+	font-size: 28px;
+	font-weight: 500;
+	margin-bottom: 12px;
+}
+
+.MainColumn-description {
+	font-size: 16px;
+	max-width: 600px;
+	opacity: 0.9;
+}
+
+
+
+
+
+/* 主栏 */
+.MainColumn-section {
+	text-align: left;
+	padding: 40px 20px 32px;
+	background: var(--md-primary-container);
+	/* 主栏圆角 */
+	border-radius: var(--border-radius-basic);
+	margin-bottom: 24px;
+	color: var(--md-on-primary-container);
+}
+
+.MainColumn-title {
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: var(--md-on-surface);
+}
+
+.MainColumn-description {
+	font-size: 17px;
+	max-width: 512px;
+	margin: 0 auto 16px;
+}
+
+body.dark-theme .info-note {
+	background: #1E3A5F;
+	color: #88BDE8;
+	border-color: #334D7A;
+}
+
+
+
+
+
+/* 卡片 */
+.card {
+	background-color: var(--md-surface-variant);
+	/* 分栏边框圆角 */
+	border-radius: var(--border-radius-basic);
+	padding: 20px;
+	margin-bottom: 24px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+	border: 1px solid var(--md-outline);
+}
+
+.card-title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+
+
+
+
+/* 列表项 */
+.grid {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+
+.list-item {
+	display: flex;
+	align-items: flex-start;
+	padding: 16px 20px;
+	background-color: var(--md-surface-variant);
+	/* 分栏跳转卡片圆角 */
+	border-radius: var(--border-radius-basic);
+	text-decoration: none;
+	color: inherit;
+	/* 分栏跳转卡片过渡动画 */
+	transition: all 0.6s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	border: 1px solid var(--md-outline);
+}
+
+.list-item:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(25, 118, 210, 0.12);
+	border-color: transparent;
+	padding-left: 28px;
+}
+
+.list-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: var(--border-radius-basic);
+	background-color: var(--md-icon-background);
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+	font-size: 20px;
+	flex-shrink: 0;
+}
+
+.list-content {
+	flex: 1;
+}
+
+.list-title {
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.list-subtitle {
+	font-size: 15px;
+	color: var(--md-on-surface-variant);
+	margin-top: 2px;
+}
+
+
+
+
+
+/* 底部区域 */
+.footer {
+	text-align: center;
+	padding: 24px;
+	color: var(--md-on-surface-variant);
+	font-size: 14px;
+	border-top: 1px solid var(--md-outline);
+	margin-top: 40px;
+	padding-bottom: 100px;
+}
+
+
+
+
+
+/* 切换按钮 */
+.bottom-actions {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+	background-color: rgba(255, 255, 255, 0.01);
+	backdrop-filter: blur(20px);
+	border: 1.5px solid #87878F;
+	border-radius: var(--border-radius-basic);
+	padding: 8px 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme .bottom-actions {
+	background-color: rgba(30, 30, 30, 0.01);
+	border-color: #C6C6C8;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.bottom-actions .btn {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 16%;
+	color: var(--md-primary);
+	font-size: 24px;
+	background: transparent;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* 移除可能导致切换按钮底部出现横线 */
+	/*text-decoration: none !important;
+	border: none;
+	outline: none;*/
+}
+
+.bottom-actions .btn .material-icons {
+	text-decoration: none;
+	display: inline-block;
+}
+
+.bottom-actions .btn:hover {
+	background-color: rgba(0, 0, 0, 0.06);
+}
+
+body.dark-theme .bottom-actions .btn:hover {
+	background-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .bottom-actions::after {
+	background-color: rgba(255, 255, 255, 0.18);
+}
+
+
+
+
+
+/* MD3弹窗 */
+.md3-dialog {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.65);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1001;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.4s, visibility 0.4s;
+}
+
+.md3-dialog.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.md3-dialog-content {
+	background-color: var(--md-surface-variant);
+	color: var(--md-on-surface);
+	/* 弹窗圆角 */
+	border-radius: var(--border-radius-basic);
+	width: 90%;
+	max-width: 380px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	border: 1px solid var(--md-outline);
+}
+
+.md3-dialog-header {
+	background-color: var(--md-dialog-header-color);
+	color: var(--md-on-primary-container);
+	padding: 20px 24px;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.md3-dialog-body {
+	padding: 24px;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.md3-dialog-actions {
+	padding: 16px 24px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+	border-top: 1px solid var(--md-outline);
+}
+
+.md3-button {
+	padding: 10px 24px;
+	/* 弹窗内确认按键圆角 */
+	border-radius: var(--border-radius-basic);
+	font-weight: 500;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	transition: all 0.4s;
+}
+
+.md3-button.text {
+	background: transparent;
+	color: var(--md-primary);
+}
+
+.md3-button.contained {
+	background-color: var(--md-primary);
+	color: var(--md-on-primary);
+}
+
+.md3-button.contained:hover {
+	background-color: #1565C0;
+}
+
+
+/* 弹窗内img图片 */
+.md3-dialog-img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-basic);
+	margin: 12px 0;
+}
+
+
+
+
+
+/* 折叠系统过渡动画 */
+#version-details summary {
+	list-style: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#version-details summary::-webkit-details-marker {
+	display: none;
+}
+
+.details-animated-wrapper {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.5s ease-in-out;
+	overflow: hidden;
+	will-change: grid-template-rows;
+	contain: layout;
+}
+
+#version-details[open] .details-animated-wrapper {
+	grid-template-rows: 1fr;
+}
+
+.details-content-inner {
+	overflow: hidden;
+}
+
+/* 添加淡入效果 */
+#version-details[open] .details-content-inner {
+	animation: fadeIn 0.3s ease-out 0.2s both;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+.collapse-wrapper {
+	border: 1px solid var(--md-primary);
+	border-radius: var(--border-radius-basic);
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.collapse-header {
+	width: 100%;
+	padding: 12px 16px;
+	background: transparent;
+	border: none;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	color: var(--md-on-surface-variant);
+}
+
+.collapse-header .arrow {
+	margin-left: auto;
+	transition: transform 0.3s ease;
+}
+
+.collapse-header[aria-expanded="true"] .arrow {
+	transform: rotate(180deg);
+}
+
+.collapse-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.35s ease;
+	padding: 0 16px;
+	background: inherit;
+}
+
+/* 展开状态 */
+.collapse-wrapper.expanded .collapse-content {
+	max-height: 200px;
+	padding: 12px 16px;
+}
+
+
+
+
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+
+	.main-content {
+		padding: 16px;
+	}
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/Document.css
+项目内路径：/css/Document.css
+文件名：Document.css
+文件大小：4949 字节
+================================================================================
+文件内容：
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 文档样式 
+ Version: v26.05.24.2005
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+.top-header,
+.sidebar,
+.sidebar li a,
+.group-header,
+.theme-btn,
+.menu-btn,
+hr,
+.tag {
+	transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+body {
+	font-family: "Noto Serif SC", serif;
+	background-color: var(--md-surface);
+	color: var(--md-on-surface);
+	line-height: 1.6;
+}
+
+.top-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
+	background: var(--md-surface);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+}
+
+.menu-btn {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 6px;
+	background: transparent;
+	border: none;
+	color: var(--md-on-surface);
+}
+
+.menu-btn:hover {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme .menu-btn:hover {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.header-title {
+	font-weight: 600;
+	font-size: 18px;
+	margin-left: 8px;
+	color: var(--md-on-surface);
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-left: auto;
+}
+
+.home-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: var(--md-on-surface);
+	text-decoration: none;
+	transition: background 0.3s;
+}
+
+.home-btn:hover {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.theme-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	color: var(--md-on-surface);
+}
+
+.theme-btn:hover {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme .theme-btn:hover {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.material-icons {
+	font-size: 24px;
+}
+
+.mask {
+	position: fixed;
+	top: 56px;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 56px);
+	background: rgba(0, 0, 0, .45);
+	z-index: 100;
+	display: none;
+	transition: background-color 0.6s ease;
+}
+
+.mask.show {
+	display: block;
+}
+
+.sidebar {
+	position: fixed;
+	top: 56px;
+	left: 0;
+	width: 260px;
+	height: calc(100vh - 56px);
+	background: var(--md-surface);
+	box-shadow: 2px 0 8px rgba(0, 0, 0, .15);
+	z-index: 101;
+	overflow-y: auto;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease, background-color 0.6s ease, border-color 0.6s ease;
+	padding: 20px 0;
+}
+
+.sidebar.open {
+	transform: translateX(0);
+}
+
+.sidebar h3 {
+	padding: 0 20px 12px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	color: var(--md-on-surface-variant);
+	margin-block: 0 !important;
+}
+
+.sidebar ul {
+	list-style: none;
+}
+
+.sidebar li a {
+	display: block;
+	padding: 11px 25px;
+	color: var(--md-on-surface-variant);
+	text-decoration: none;
+	font-size: 14px;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.sidebar li a:hover {
+	background: var(--md-surface-variant);
+	color: var(--md-primary);
+}
+
+.sidebar li a.active {
+	background: var(--md-primary-container);
+	color: var(--md-on-primary-container);
+	border-right: 3px solid var(--md-primary);
+}
+
+.group-header {
+	padding: 8px 25px;
+	font-size: 13px;
+	font-weight: bold;
+	color: var(--md-on-surface);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: background-color 0.3s;
+}
+
+.group-header:hover {
+	background: var(--md-surface-variant);
+}
+
+.group-header .arrow {
+	font-size: 10px;
+	transition: transform 0.2s;
+	color: var(--md-outline);
+}
+
+.group-header.collapsed .arrow {
+	transform: rotate(-90deg);
+}
+
+.group-items {
+	margin-left: 8px;
+	overflow: hidden;
+}
+
+.group-items.collapsed {
+	display: none;
+}
+
+.tag {
+	font-size: 10px;
+	padding: 2px 6px;
+	border-radius: 12px;
+	background: var(--md-primary-container);
+	color: var(--md-on-primary-container);
+	margin-left: 8px;
+}
+
+.tag.hot {
+	background: #ffe0b3;
+	color: #c2410c;
+}
+
+body.dark-theme .tag.hot {
+	background: #3b2a2a;
+	color: #f97316;
+}
+
+.main-wrap {
+	max-width: 900px;
+	margin: 70px auto 40px;
+	padding: 0 20px;
+	transition: margin-left 0.3s, color 0.6s, background-color 0.6s;
+}
+
+.main-wrap h1 {
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	color: var(--md-on-surface);
+}
+
+.main-wrap h2 {
+	font-size: 20px;
+	font-weight: 500;
+	margin: 28px 0 12px 0;
+	color: var(--md-on-surface);
+}
+
+.main-wrap p {
+	color: var(--md-on-surface-variant);
+	margin-bottom: 16px;
+	line-height: 1.6;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--md-outline);
+	margin: 32px 0;
+}
+
+.doc-section {
+	display: none;
+}
+
+.doc-section.active {
+	display: block;
+}
+
+@media (min-width: 768px) {
+
+	.menu-btn,
+	.mask {
+		display: none !important;
+	}
+
+	.sidebar {
+		transform: translateX(0) !important;
+		top: 56px;
+		height: calc(100vh - 56px);
+		box-shadow: none;
+		border-right: 1px solid var(--md-outline);
+	}
+
+	.main-wrap {
+		margin-left: 280px;
+		max-width: calc(100% - 300px);
+	}
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/MainColorStyle_ERROR.css
+项目内路径：/css/MainColorStyle_ERROR.css
+文件名：MainColorStyle_ERROR.css
+文件大小：5084 字节
+================================================================================
+文件内容：
+/* (C) 2026 director_Carter All Rights Reserved. https://director4168.github.io/ 本CSS与网站一同开源，开源协议MPL-2.0 核心css样式，但是保护模式 Version: v26.04.17.1920*/:root {--md-primary: #FF0000;--md-on-primary: #FF0000;--md-primary-container: #FF0000;--md-on-primary-container: #FF0000;--md-surface: #FF0000;--md-on-surface: #FF0000;--md-surface-variant: #FF0000;--md-on-surface-variant: #FF0000;--md-outline: #FF0000;}body.dark-theme {--md-primary: #FF0000;--md-on-primary: #FF0000;--md-primary-container: #FF0000;--md-on-primary-container: #FF0000;--md-surface: #FF0000;--md-on-surface: #FF0000;--md-surface-variant: #FF0000;--md-on-surface-variant: #FF0000;--md-outline: #FF0000;}* {margin: 0;padding: 0;box-sizing: border-box;}body {font-family: 'Roboto', 'Noto Sans SC', sans-serif;background-color: var(--md-surface);color: var(--md-on-surface);line-height: 1.6;transition: background-color 0.1s, color 0.1s;}.top-app-bar {display: flex;align-items: center;padding: 1px 1px;background-color: var(--md-primary);color: var(--md-on-primary);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);}.app-bar-title {font-size: 1px;font-weight: 500;margin-left: 1px;}.main-content {padding: 1px;max-width: 1px;margin: 0 auto;}.MainColumn-section {display: flex;flex-direction: column;align-items: center;text-align: center;padding: 1px 1px;background-color: var(--md-primary-container);color: var(--md-on-primary-container);border-radius: 1px;margin-bottom: 1px;}.avatar {width: 1px;height: 1px;border-radius: 1px;background-color: var(--md-primary);color: var(--md-on-primary);display: flex;align-items: center;justify-content: center;margin-bottom: 1px;cursor: pointer;transition: transform 0.1s;overflow: hidden;}.avatar img {width: 100%;height: 100%;object-fit: cover;}.avatar:active {transform: scale(0.95);}.MainColumn-title {font-size: 1px;font-weight: 500;margin-bottom: 1px;}.MainColumn-description {font-size: 1px;max-width: 1px;opacity: 0.9;}.card {background-color: var(--md-surface-variant);border-radius: 1px;padding: 1px;margin-bottom: 1px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);}.card-title {font-size: 1px;font-weight: 500;margin-bottom: 1px;color: var(--md-on-surface-variant);}.grid {display: grid;grid-template-columns: repeat(auto-fill, minmax(1px, 1fr));gap: 1px;margin-top: 1px;}.list-item {display: flex;align-items: center;padding: 1px;border-radius: 1px;background-color: var(--md-surface);color: var(--md-on-surface);cursor: pointer;transition: all 0.1s ease;text-decoration: none;margin-bottom: 1px;border: 1px solid transparent;position: relative;outline: none;}.list-item:hover {background-color: rgba(0, 0, 0, 0.04);}.list-item.active {background-color: rgba(0, 0, 0, 0.08);transform: translateY(-1px);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);border-color: var(--md-primary);}.list-item:focus {border-color: var(--md-primary);}.list-icon {margin-right: 1px;color: var(--md-primary);font-size: 1px;}.list-content {flex: 1;}.list-title {font-weight: 500;margin-bottom: 1px;}.list-subtitle {font-size: 1px;color: var(--md-on-surface-variant);line-height: 1.4;}.footer {text-align: center;padding: 1px;color: var(--md-on-surface-variant);font-size: 1px;border-top: 1px solid var(--md-outline);margin-top: 1px;}.theme-toggle {position: fixed;bottom: 1px;right: 1px;width: 1px;height: 1px;border-radius: 1px;background-color: var(--md-primary);color: var(--md-on-primary);display: flex;align-items: center;justify-content: center;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);cursor: pointer;z-index: 100;transition: transform 0.1s;}.theme-toggle:hover {transform: scale(1.1);}.theme-toggle:active {transform: scale(0.95);}.md3-dialog {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);display: flex;justify-content: center;align-items: center;z-index: 1001;opacity: 0;visibility: hidden;transition: opacity 0.1s, visibility 0.1s;}.md3-dialog.show {opacity: 1;visibility: visible;}.md3-dialog-content {background-color: var(--md-surface);color: var(--md-on-surface);border-radius: 1px;width: 90%;max-width: 1px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);overflow: hidden;}.md3-dialog-header {background-color: var(--md-primary);color: var(--md-on-primary);padding: 1px 1px;font-size: 1px;font-weight: 500;}.md3-dialog-body {padding: 1px 1px;font-size: 1px;line-height: 1.5;}.md3-dialog-actions {display: flex;justify-content: flex-end;padding: 1px 1px;gap: 1px;}.md3-button {padding: 1px 1px;border-radius: 1px;font-weight: 500;font-size: 1px;cursor: pointer;border: none;transition: background-color 0.1s;}.md3-button.text {background-color: transparent;color: var(--md-primary);}.md3-button.text:hover {background-color: rgba(0, 0, 0, 0.04);}.md3-button.contained {background-color: var(--md-primary);color: var(--md-on-primary);}.md3-button.contained:hover {background-color: var(--md-primary-container);color: var(--md-on-primary-container);}@media (max-width: 1px) {.grid {grid-template-columns: 1fr;}.main-content {padding: 1px;}.MainColumn-section {padding: 1px 1px;}.avatar {width: 1px;height: 1px;}}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/MainColorStyle_Default.css
+项目内路径：/css/MainColorStyle_Default.css
+文件名：MainColorStyle_Default.css
+文件大小：2208 字节
+================================================================================
+文件内容：
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 本网页的主要配色，负责亮色调和暗色调的弹窗内文字配色、网站基本文字配色、矢量图基本配色等
+ 彩蛋弹窗配色也由此CSS控制
+ Version: v26.05.10.2059
+*/
+
+
+/* 网站底层日间模式亮色调配色 */
+:root {
+/* 顶栏文本、亮色暗色切换控件矢量图图标、卡片左侧矢量图图标配色、弹窗部分文本 */
+	--md-primary: #1976D2;
+/* 顶栏文字配色 */
+	--md-on-primary: #FFFFFF;
+/* 主栏基本背景配色 */
+	--md-primary-container: #DAE1FF;
+/* 主栏基本文字配色 */
+	--md-on-primary-container: #001849;
+/* 基本背景配色 */
+	--md-surface: #ECEDFB;
+/* 卡片主名称配色、栏的介绍配色 */
+	--md-on-surface: #181B25;
+/* 分栏基本背景配色 */
+	--md-surface-variant: #FAF8FF;
+/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
+	--md-on-surface-variant: #434654;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #1976D2;
+/* 卡片右侧矢量图图标配色，分栏（含跳转卡片）描边 */
+	--md-outline: #48484A;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #5095FF;
+}
+
+
+
+
+
+/* 底层夜间模式暗色调配色 */
+body.dark-theme {
+/* 顶栏文本、亮色暗色切换控件矢量图图标、卡片左侧矢量图图标配色、弹窗部分文本 */
+	--md-primary: #88BDE8;
+/* 顶栏文字配色 */
+	--md-on-primary: #1F113F;
+/* 主栏基本背景配色 */
+	--md-primary-container: #2C3140;
+/* 主栏基本文字配色 */
+	--md-on-primary-container: #F7F1FF;
+/* 基本背景配色 */
+	--md-surface: #1C1F29;
+/* 卡片主名称配色、栏的介绍配色 */
+	--md-on-surface: #E0E2EF;
+/* 分栏基本背景配色 */
+	--md-surface-variant: #363943;
+/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
+	--md-on-surface-variant: #C3C6D6;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #23292E;
+/* 卡片右侧矢量图图标配色、分栏（含跳转卡片）描边 */
+	--md-outline: #8B8A8A;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #003FA4;
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/css/Search.css
+项目内路径：/css/Search.css
+文件名：Search.css
+文件大小：688 字节
+================================================================================
+文件内容：
+/* 
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 负责搜索框的样式
+ Version: v26.04.27.1712
+*/
+
+
+
+
+
+.search-wrapper {
+	margin: 0 0 24px 0;
+}
+
+
+
+
+
+.search-stroke {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background: var(--md-surface-variant);
+	border: 1px solid var(--md-outline);
+	/* 描边 */
+	border-radius: 28px;
+	padding: 0 16px;
+	height: 56px;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+
+
+.search-InputBox {
+	flex: 1;
+	border: none;
+	background: transparent;
+	color: var(--md-on-surface);
+	font-size: 16px;
+	outline: none;
+	font-family: inherit;
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Audio.js
+项目内路径：/js/Audio.js
+文件名：Audio.js
+文件大小：154 字节
+================================================================================
+文件内容：
+const audio = document.getElementById('StartAudio');
+
+// Start
+function StartAudio() {
+	audio.play();
+}
+// Pause
+function PauseAudio() {
+	audio.pause();
+}
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Code.js
+项目内路径：/js/Code.js
+文件名：Code.js
+文件大小：2050 字节
+================================================================================
+文件内容：
+// (C) 2026 director_Carter All Rights Reserved.
+// https://director4168.github.io
+// Version: v26.05.03.1945
+
+// 反转义
+function unescapeHtml(text) {
+	const map = {
+		'&lt;': '<',
+		'&gt;': '>',
+		'&amp;': '&',
+		'&quot;': '"',
+		'&#039;': "'",
+		'&#39;': "'",
+		'&nbsp;': ' '
+	};
+	return text.replace(/&lt;|&gt;|&amp;|&quot;|&#039;|&#39;|&nbsp;/g, matched => map[matched]);
+}
+
+function initLineNumbers() {
+	const containers = document.querySelectorAll('.code-container');
+
+	containers.forEach(container => {
+		const source = container.querySelector('#code-source');
+		const displayCode = container.querySelector('#display-code');
+		const lineNumContainer = container.querySelector('.line-numbers');
+
+		if (!source || !displayCode) return;
+
+		// 获取原始内容
+		let rawText = source.textContent;
+
+		// 反转义
+		let codeText = unescapeHtml(rawText.trim());
+
+		// 显示代码
+		displayCode.innerHTML = escapeHtml(codeText);
+
+		// 生成行号
+		const lines = codeText.split('\n');
+		let lineNumbersHTML = '';
+		for (let i = 1; i <= lines.length; i++) {
+			lineNumbersHTML += `<span>${i}</span><br>`;
+		}
+		lineNumContainer.innerHTML = lineNumbersHTML;
+
+		// 触发高亮
+		if (window.hljs) {
+			hljs.highlightElement(displayCode);
+		}
+	});
+}
+
+
+
+
+
+// 转义
+function escapeHtml(unsafe) {
+	return unsafe
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
+}
+
+// 复制功能
+function copyCode(btn) {
+	const container = btn.closest('.code-container');
+	const source = container.querySelector('#code-source');
+
+	let codeText = source ? source.textContent : '';
+	codeText = unescapeHtml(codeText.trim()); // 反转义后复制
+
+	navigator.clipboard.writeText(codeText).then(() => {
+		const originalText = btn.innerText;
+		btn.innerText = "已复制";
+		btn.style.background = "#28a745";
+		setTimeout(() => {
+			btn.innerText = originalText;
+			btn.style.background = "";
+		}, 1500);
+	});
+}
+
+// 初始化
+window.addEventListener('DOMContentLoaded', initLineNumbers);
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Cookie.js
+项目内路径：/js/Cookie.js
+文件名：Cookie.js
+文件大小：2166 字节
+================================================================================
+文件内容：
+// (C) 2026 director_Carter All Rights Reserved.
+// https://director4168.github.io
+// 本JS与网站一同开源，开源协议MPL-2.0
+// 负责处理用户是否已同意协议
+// Version: v26.04.23.2047
+
+(function() {
+	'use strict';
+
+	// 获取Cookie
+	function getCookie(name) {
+		const value = `; ${document.cookie}`;
+		const parts = value.split(`; ${name}=`);
+		if (parts.length === 2) return parts.pop().split(';').shift();
+		return null;
+	}
+
+
+
+	// 设置Cookie
+	function setPermanentCookie() {
+		const days = 365 * 2;
+		const date = new Date();
+		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		const expires = `; expires=${date.toUTCString()}`;
+		document.cookie = `cookie_agreement=agreed${expires}; path=/; SameSite=Lax`;
+	}
+
+
+
+
+
+	// 同意协议后跳转首页
+	window.agreeAndContinue = function() {
+		setPermanentCookie();
+		console.log('已同意');
+		window.location.href = './index.html';
+	};
+
+
+
+	// 根据数据判断是否跳转
+	function checkAgreementConsent() {
+		const hasAgreed = getCookie('cookie_agreement') === 'agreed';
+		const currentPath = (window.location.pathname || '').toLowerCase();
+
+
+		// 如果已经同意协议但还在Agreement.html则跳转到index.html
+		/*		if (hasAgreed && currentPath.indexOf('agreement.html') !== -1) {
+					window.location.href = './index.html';
+					return;
+				}*/
+
+
+		// 如果没有同意协议并且不在Agreement.html，则跳转到Agreement.html
+		if (!hasAgreed && currentPath.indexOf('agreement.html') === -1) {
+			// 适配非真根目录
+			const pathSegments = currentPath.split('/').filter(Boolean);
+			let depth = pathSegments.length;
+
+			if (currentPath.endsWith('.html') || currentPath.endsWith('.htm')) {
+				depth--;
+			}
+
+			const prefix = depth > 0 ? '../'.repeat(depth) : './';
+			window.location.href = prefix + 'Agreement.html';
+		}
+	}
+
+
+
+
+
+	// 页面加载后自动执行检测
+	if (document.readyState === 'loading') {
+		if (typeof document.addEventListener === 'function') {
+			document.addEventListener('DOMContentLoaded', checkAgreementConsent);
+		} else {
+			checkAgreementConsent();
+		}
+	} else {
+		checkAgreementConsent();
+	}
+
+	window.__COOKIE = true;
+})();
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/CoreLogic.js
+项目内路径：/js/CoreLogic.js
+文件名：CoreLogic.js
+文件大小：6667 字节
+================================================================================
+文件内容：
+// (C) 2026 director_Carter All Rights Reserved.
+// https://director4168.github.io
+// 本JS与网站一同开源，开源协议MPL-2.0
+// 负责本网站几乎所有逻辑处理
+// Version: v26.05.12.1247
+
+(function() {
+	'use strict';
+	const REQUIRED_SCRIPTS = [
+		'./js/Protect.js',
+		//'./js/d.js',
+	];
+	let coreInitialized = false;
+
+	function areAllScriptsLoaded() {
+		const loadedScripts = new Set();
+		document.querySelectorAll('script[src]').forEach(script => {
+			const src = script.src || '';
+			if (src) {
+				const filename = src.split('/').pop().split('?')[0];
+				loadedScripts.add(filename);
+			}
+		});
+		for (let required of REQUIRED_SCRIPTS) {
+			const requiredName = required.split('/').pop().split('?')[0];
+			if (!loadedScripts.has(requiredName)) {
+				return false;
+			}
+		}
+		return window.__PROTECT === true &&
+			window.__COOKIE === true
+	}
+
+	function CoreFeatures() {
+		if (coreInitialized) return;
+		coreInitialized = true;
+
+
+
+
+
+		// Goodbye
+		//if (window.location.href !== 'https://director4168.github.io/Goodbye.html') {
+		//window.location.replace('https://director4168.github.io/Goodbye.html');
+		//}
+
+
+
+
+
+		const body = document.body;
+
+		// 主题切换
+		const themeToggle = document.getElementById('themeToggle');
+		if (themeToggle) {
+			const icon = themeToggle.querySelector('.material-icons');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+			const setTheme = (isDark) => {
+				body.classList.toggle('dark-theme', isDark);
+				if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+			};
+
+			const saveUserPreference = (isDark) => {
+				const data = {
+					theme: isDark ? 'dark' : 'light',
+					timestamp: Date.now()
+				};
+				localStorage.setItem('userTheme', JSON.stringify(data));
+			};
+
+			const getUserPreference = () => {
+				const saved = localStorage.getItem('userTheme');
+				if (!saved) return null;
+
+				try {
+					const data = JSON.parse(saved);
+					const now = Date.now();
+					const tenMinutes = 10 * 60 * 1000;
+
+					if (now - data.timestamp > tenMinutes) {
+						localStorage.removeItem('userTheme');
+						return null;
+					}
+					return data.theme === 'dark';
+				} catch (e) {
+					localStorage.removeItem('userTheme');
+					return null;
+				}
+			};
+
+			// 初始化
+			const userPref = getUserPreference();
+			if (userPref !== null) {
+				setTheme(userPref);
+			} else {
+				setTheme(prefersDark.matches);
+			}
+
+			// 监听系统主题变化
+			prefersDark.addEventListener('change', e => {
+				if (getUserPreference() === null) {
+					setTheme(e.matches);
+				}
+			});
+
+			// 点击切换主题
+			themeToggle.addEventListener('click', () => {
+				const currentIsDark = body.classList.contains('dark-theme');
+				const newIsDark = !currentIsDark;
+
+				setTheme(newIsDark);
+				saveUserPreference(newIsDark);
+			});
+		}
+
+		// 更新版权年份
+		const year = new Date().getFullYear();
+		['chinese-copyright-year',
+			'english-copyright-year'
+		].forEach(id => {
+			const el = document.getElementById(id);
+			if (el) el.textContent = year > 2025 ? `2025-${year}` : '2025';
+		});
+
+		// MD3 对话框&列表项点击
+		const dialog = document.getElementById('md3Dialog');
+		if (!dialog) return;
+
+		const header = document.getElementById('md3DialogHeader');
+		const bodyEl = document.getElementById('md3DialogBody');
+		const cancelBtn = document.getElementById('md3DialogCancel');
+		const confirmBtn = document.getElementById('md3DialogConfirm');
+
+		let currentHref = '';
+		let scrollPosition = 0;
+
+		const showDialog = (title, content, href) => {
+			if (header) header.textContent = title || '提示';
+
+			// 使弹窗能够支持/适配一些功能
+			if (bodyEl) {
+				bodyEl.innerHTML = (content || '')
+					.replace(/\\n/g, '<br>')
+					.replace(/\\r\\n/g, '<br>');
+
+				// 让弹窗中如果有图片，使其样式相同且不会撑破弹窗，默认优先使用img标签内样式
+				setTimeout(() => {
+					const images = bodyEl.querySelectorAll('img');
+					images.forEach(img => {
+						img.classList.add('md3-dialog-img');
+					});
+				}, 10);
+
+			}
+
+
+			currentHref = href || '';
+
+			// 禁止在弹窗开启时能够滑动页面
+			scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+			document.body.style.position = 'fixed';
+			document.body.style.top = `-${scrollPosition}px`;
+			document.body.style.width = '100%';
+			document.body.style.overflow = 'hidden';
+
+
+			dialog.classList.add('show');
+		};
+
+		const hideDialog = () => {
+			dialog.classList.remove('show');
+			document.body.style.position = '';
+			document.body.style.top = '';
+			document.body.style.width = '';
+			document.body.style.overflow = '';
+			window.scrollTo(0, scrollPosition);
+		};
+
+		if (cancelBtn) cancelBtn.onclick = hideDialog;
+		if (confirmBtn) confirmBtn.onclick = () => {
+			if (currentHref) window.location.href = currentHref;
+			hideDialog();
+		};
+
+		// 点击空白处关闭弹窗
+		dialog.addEventListener('click', e => {
+			if (e.target === dialog) hideDialog();
+		});
+
+
+		// 列表项点击
+		document.querySelectorAll('.list-item').forEach(item => {
+			item.addEventListener('click', e => {
+				e.stopPropagation();
+				const href = item.dataset.href;
+				const title = item.dataset.title;
+				const content = item.dataset.content;
+
+				if (href && title && content) {
+					showDialog(title, content, href);
+				}
+			});
+		});
+
+
+
+
+
+		startAntiDebug();
+	}
+
+	function startAntiDebug() {
+		setInterval(() => {
+				const devtools = window.outerWidth - window.innerWidth > 200 ||
+					window.outerHeight - window.innerHeight > 200;
+				if (devtools) {
+					console.clear();
+					document.body.innerHTML = '<h1 style="color:red;text-align:center;padding:50px;">WARN</h1>';
+				}
+			},
+			600);
+	}
+
+	function checkAndRun() {
+		if (coreInitialized) return;
+		let attempts = 0;
+		const maxAttempts = 10;
+		const checker = setInterval(() => {
+				attempts++;
+
+				if (areAllScriptsLoaded()) {
+					clearInterval(checker);
+					CoreFeatures();
+					return;
+				}
+				if (attempts >= maxAttempts) {
+					CoreFeatures();
+					clearInterval(checker);
+					console.warn('%c[主JS] 检测到疑似部分资源缺失', 'color: #FFC900;');
+					const warnDiv = document.createElement('div');
+					warnDiv.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#FFC900;color:#FF0000;padding:2px;text-align:center;z-index:99999;font-size:15px;';
+					warnDiv.textContent = '警告: 疑似资源缺失！';
+					document.body.prepend(warnDiv);
+				}
+			},
+			100);
+	}
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', checkAndRun);
+	} else {
+		checkAndRun();
+	}
+	window.__PROTECT = true;
+	window.__COOKIE = true
+})();
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Details_Animation.js
+项目内路径：/js/Details_Animation.js
+文件名：Details_Animation.js
+文件大小：1235 字节
+================================================================================
+文件内容：
+// (C) 2026 director_Carter All Rights Reserved.
+// https://director4168.github.io
+// 本JS与网站一同开源，开源协议MPL-2.0
+// 对折叠系统添加平滑过渡动画
+// Version: v26.04.21.2025
+
+document.addEventListener('DOMContentLoaded', () => {
+	const allDetails = document.querySelectorAll('details');
+
+	allDetails.forEach(details => {
+		const wrapper = details.querySelector('.details-animated-wrapper');
+		const summary = details.querySelector('summary');
+
+		if (!wrapper || !summary) return;
+
+		// 初始化状态
+		details.open = false;
+		wrapper.style.display = 'grid';
+		wrapper.style.gridTemplateRows = '0fr';
+		wrapper.style.transition = 'grid-template-rows 0.4s ease-out';
+
+		summary.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			if (!details.open) {
+				// 打开逻辑
+				details.open = true;
+				requestAnimationFrame(() => {
+					requestAnimationFrame(() => {
+						wrapper.style.gridTemplateRows = '1fr';
+					});
+				});
+			} else {
+				// 关闭逻辑
+				wrapper.style.gridTemplateRows = '0fr';
+
+				const transitionEndHandler = () => {
+					details.open = false;
+				};
+
+				wrapper.addEventListener('transitionend', transitionEndHandler, {
+					once: true
+				});
+			}
+		});
+	});
+});
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Protect.js
+项目内路径：/js/Protect.js
+文件名：Protect.js
+文件大小：1080 字节
+================================================================================
+文件内容：
+document.addEventListener('DOMContentLoaded', function() {
+	Object.defineProperty(document, 'designMode', {
+		value: 'off',
+		writable: false,
+		configurable: false
+	});
+	document.onkeydown = function(e) {
+		if (
+			e.key === 'F12' ||
+			(e.ctrlKey && e.shiftKey && e.key === 'I') ||
+			(e.ctrlKey && e.shiftKey && e.key === 'J') ||
+			(e.ctrlKey && e.key === 'u')
+		) {
+			return false;
+		}
+	};
+	/*document.oncontextmenu = function(e) {
+	if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+	return false;
+	}
+	};*/
+	const observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.type === 'characterData') {
+				mutation.target.textContent = mutation.oldValue;
+			}
+			if (mutation.type === 'childList') {
+				mutation.removedNodes.forEach(node => {
+					if (node.parentNode) {
+						node.parentNode.appendChild(node);
+					}
+				});
+			}
+		});
+	});
+	observer.observe(document.body, {
+		childList: true,
+		characterData: true,
+		characterDataOldValue: true,
+		subtree: true
+	});
+	window.__PROTECT = true;
+});
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Document.js
+项目内路径：/js/Document.js
+文件名：Document.js
+文件大小：5152 字节
+================================================================================
+文件内容：
+(function() {
+	'use strict';
+
+	// 工具函数
+	function unescapeHtml(text) {
+		const map = {
+			'&lt;': '<',
+			'&gt;': '>',
+			'&amp;': '&',
+			'&quot;': '"',
+			'&#039;': "'",
+			'&#39': "'",
+			'&nbsp': ' '
+		};
+		return text.replace(/&lt;|&gt;|&amp;|&quot;|&#039;|&#39;|&nbsp;/g, m => map[m] || m);
+	}
+
+	function escapeHtml(unsafe) {
+		return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+	}
+
+	// 初始化当前可见区块中的所有代码块
+	function initCodeBlocks() {
+		document.querySelectorAll('.doc-section.active .code-container').forEach(function(container) {
+			if (container.dataset.codeInited === 'true') return;
+			container.dataset.codeInited = 'true';
+			var source = container.querySelector('.code-source');
+			var displayCode = container.querySelector('.display-code');
+			var lineNum = container.querySelector('.line-numbers');
+			if (!source || !displayCode) return;
+			var raw = source.textContent;
+			var code = unescapeHtml(raw.trim());
+			displayCode.innerHTML = escapeHtml(code);
+			var lines = code.split('\n');
+			var html = '';
+			for (var i = 1; i <= lines.length; i++) {
+				html += '<span>' + i + '</span><br>';
+			}
+			if (lineNum) lineNum.innerHTML = html;
+			if (window.hljs) {
+				try {
+					hljs.highlightElement(displayCode);
+				} catch (e) {}
+			}
+		});
+	}
+
+	// 复制功能
+	window.copyCode = function(btn) {
+		var container = btn.closest('.code-container');
+		var source = container.querySelector('.code-source');
+		var txt = source ? unescapeHtml(source.textContent.trim()) : '';
+		navigator.clipboard.writeText(txt).then(function() {
+			var orig = btn.innerText;
+			btn.innerText = "已复制";
+			btn.style.background = "#28a745";
+			setTimeout(function() {
+				btn.innerText = orig;
+				btn.style.background = "";
+			}, 1500);
+		});
+	};
+
+
+	// 侧滑栏
+	var menuBtn = document.getElementById('menuBtn');
+	var sidebar = document.getElementById('sidebar');
+	var mask = document.getElementById('mask');
+
+	function openS() {
+		sidebar.classList.add('open');
+		mask.classList.add('show');
+		document.documentElement.style.overflow = 'hidden';
+	}
+
+	function closeS() {
+		sidebar.classList.remove('open');
+		mask.classList.remove('show');
+		document.documentElement.style.overflow = '';
+	}
+	if (menuBtn) menuBtn.addEventListener('click', openS);
+	if (mask) mask.addEventListener('click', closeS);
+	document.querySelectorAll('.sidebar-group').forEach(function(g) {
+		var h = g.querySelector('.group-header');
+		var i = g.querySelector('.group-items');
+		if (h && i) {
+			h.addEventListener('click', function(e) {
+				e.stopPropagation();
+				i.classList.toggle('collapsed');
+				h.classList.toggle('collapsed');
+			});
+		}
+	});
+
+	// 区块切换
+	var sections = document.querySelectorAll('.doc-section');
+	var links = document.querySelectorAll('.sidebar a[href^="#"]');
+
+	function showSection(hash) {
+		var id = hash.replace('#', '');
+		if (!id) return;
+		sections.forEach(function(s) {
+			s.classList.remove('active');
+		});
+		var t = document.getElementById('sec-' + id);
+		if (t) t.classList.add('active');
+		else {
+			var f = document.querySelector('.doc-section');
+			if (f) f.classList.add('active');
+		}
+		links.forEach(function(l) {
+			l.classList.remove('active');
+		});
+		var al = document.querySelector('.sidebar a[href="' + hash + '"]');
+		if (al) al.classList.add('active');
+		if (location.hash !== hash) history.pushState(null, '', hash);
+		setTimeout(initCodeBlocks, 80);
+	}
+	links.forEach(function(l) {
+		l.addEventListener('click', function(e) {
+			e.preventDefault();
+			showSection(this.getAttribute('href'));
+			if (window.innerWidth < 768) closeS();
+		});
+	});
+	window.addEventListener('hashchange', function() {
+		showSection(location.hash || '#intro');
+	});
+	showSection(location.hash || '#intro');
+
+	// 折叠动画
+	function initDetails() {
+		document.querySelectorAll('details').forEach(function(d) {
+			if (d.dataset.detailsInited === 'true') return;
+			d.dataset.detailsInited = 'true';
+			var w = d.querySelector('.details-animated-wrapper');
+			var s = d.querySelector('summary');
+			if (!w || !s) return;
+			d.open = false;
+			w.style.display = 'grid';
+			w.style.gridTemplateRows = '0fr';
+			w.style.transition = 'grid-template-rows 0.4s ease-out';
+			s.addEventListener('click', function(e) {
+				e.preventDefault();
+				if (!d.open) {
+					d.open = true;
+					requestAnimationFrame(function() {
+						requestAnimationFrame(function() {
+							w.style.gridTemplateRows = '1fr';
+						});
+					});
+				} else {
+					w.style.gridTemplateRows = '0fr';
+					w.addEventListener('transitionend', function() {
+						d.open = false;
+					}, {
+						once: true
+					});
+				}
+			});
+		});
+	}
+	initDetails();
+	new MutationObserver(function(mutations) {
+		let needsInit = false;
+		mutations.forEach(function(m) {
+			m.addedNodes.forEach(function(n) {
+				if (n.nodeType === 1 && (n.tagName === 'DETAILS' || n.querySelector('details'))) {
+					needsInit = true;
+				}
+			});
+		});
+		if (needsInit) initDetails();
+	}).observe(document.getElementById('mainWrap'), {
+		childList: true,
+		subtree: true
+	});
+
+})();
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/js/Search.js
+项目内路径：/js/Search.js
+文件名：Search.js
+文件大小：1104 字节
+================================================================================
+文件内容：
+// Version: v26.04.27.1708
+
+document.addEventListener('DOMContentLoaded', function() {
+	const searchInput = document.getElementById('SearchInput');
+
+	if (searchInput) {
+		searchInput.addEventListener('input', function(e) {
+			const searchTerm = e.target.value.toLowerCase().trim();
+			const listItems = document.querySelectorAll('.list-item');
+
+			listItems.forEach(item => {
+				const title = item.querySelector('.list-title').textContent.toLowerCase();
+				const subtitle = item.querySelector('.list-subtitle')?.textContent.toLowerCase() || "";
+
+				if (title.includes(searchTerm) || subtitle.includes(searchTerm)) {
+					item.style.display = 'flex';
+
+				} else {
+					item.style.display = 'none';
+				}
+			});
+
+			document.querySelectorAll('.card').forEach(card => {
+				const visibleItems = card.querySelectorAll('.list-item[style*="display: flex"]');
+				const allItems = card.querySelectorAll('.list-item');
+
+				if (allItems.length > 0 && visibleItems.length === 0 && searchTerm !== "") {
+					card.style.display = 'none';
+				} else {
+					card.style.display = 'block';
+				}
+			});
+		});
+	}
+});
+
+【该文件结束】
+
+================================================================================
+【文件信息】
+完整路径：/storage/emulated/0/1/1/-工程/Github个人主页/V20v26.05.23.1406/.tmp/侧滑.html
+项目内路径：/侧滑.html
+文件名：侧滑.html
+文件大小：19641 字节
+================================================================================
+文件内容：
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>开发文档</title>
+	<!-- Material Icons -->
+	<!-- 官网 https://material.io/resources/icons/ -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- 字体库-思源宋体 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+	<!-- 引入主配色CSS -->
+	<link rel="stylesheet" href="./css/MainColorStyle_Default.css">
+	<!-- 引入附加CSS样式 -->
+	<link rel="stylesheet" href="./css/AdditionalStyles.css">
+
+	<!-- 引入搜索CSS样式 -->
+	<link rel="stylesheet" href="./css/Search.css">
+
+
+	<!-- 高亮 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+
+	<!-- 引入code代码复制Css样式 -->
+	<link href="./css/Code.css" rel="stylesheet">
+
+	<!-- 引入彩蛋CSS样式 -->
+	<link rel="stylesheet" href="./EasterEgg/css/EasterEggStyle.css">
+	<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css">
+	<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level2.css">
+
+	<!-- 引入标准文档CSS样式 -->
+	<link href="./css/Document.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<!-- 顶栏 -->
+	<div class="top-header">
+		<div class="menu-btn" id="menuBtn"><span class="material-icons">menu</span></div>
+		<div class="header-title">开发文档</div>
+		<div class="header-right">
+			<!-- 返回首页 -->
+			<a href="./index.html" class="home-btn" title="返回首页">
+				<span class="material-icons">home</span>
+			</a>
+
+			<div class="theme-btn" id="themeToggle" aria-label="切换日夜间模式"><span class="material-icons" id="themeToggleIcon">dark_mode</span></div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- 遮罩 -->
+	<div class="mask" id="mask"></div>
+
+
+	<!-- 侧滑栏 -->
+	<div class="sidebar" id="sidebar">
+
+		<!-- <div class="sidebar-section">
+			<ul>
+				<li><a href="#Introduction">介绍<span class="tag hot">test: tag hot</span></a></li>
+				<li><a href="#Basic">基本框架<span class="tag">test: tag</span></a></li>
+			</ul>
+		</div> -->
+
+
+		<!-- <br> -->
+		<div class="sidebar-section">
+			<div class="sidebar-group">
+
+				<div class="group-header"><span>基础</span><span class="arrow">▼</span></div>
+				<ul class="group-items">
+					<div class="group-header"><span>介绍</span><span class="arrow">▼</span></div>
+					<ul class="group-items">
+						<li><a href="#Introduction_CodeVersion">介绍</li>
+					</ul>
+
+					<li><a href="#Basic">基本框架<span class="tag">test: tag</span><span class="tag hot">最基本</span></a></li>
+					<li><a href="https://director4168.github.io/Basic.html">基本框架<span class="tag hot">URL链接</span><span class="material-icons" style="color: var(--md-outline);">insert_link</span></a></li>
+				</ul>
+
+			</div>
+		</div>
+
+
+		<!-- 页尾 -->
+		<div style="text-align: center; padding: 24px; color: var(--md-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-outline); margin-top: 40px; padding-bottom: 100px;">
+			<p>
+				<a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a> | <a href="https://github.com/director4168/director4168.github.io" class="list-subtitle">开源地址</a>
+			</p>
+			<p>
+				&copy; <span id="chinese-copyright-year">2026</span> director_Carter 保留所有权利。
+			</p>
+			<p>
+				&copy; <span id="english-copyright-year">2026</span> director_Carter All Rights Reserved.
+			</p>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="main-wrap" id="mainWrap">
+
+
+
+
+
+		<!-- intro -->
+		<div class="doc-section active" id="sec-Introduction">
+			<h2 class="anchor">介绍</h2>
+			<h3 id="Introduction_CodeVersion">代码版本</h3>
+			<p>本站基于<b>HTML 5、JS ES6(ECMAScript 2015)、CSS 3 (Level 3)</b>的前端开发，纯静态网站，但是<span style="color: #FF0000;"><strong>几乎不支持IE系列内核</strong></span></p>
+			<br>
+
+			<h3>可用控件</h3>
+			<p>至26.05.23.1406(按index.html)，提供如下内容：</p>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li>顶栏（默认不使用）</li>
+				<li>主栏（可选是否包含头像）</li>
+				<li>基本头像（点击含动画，可选功能）</li>
+				<li>分栏</li>
+				<li>跳转卡片（含动画）</li>
+				<li>代码框（有复制、高亮(基于highlight)功能）</li>
+				<li>音乐 播放/暂停</li>
+				<li>弹窗系统（含动画）</li>
+				<li>主题切换系统（含动画）</li>
+				<li>折叠系统（含动画）</li>
+				<li>语言切换系统（a标签跳转页面）</li>
+				<li>底部固态塑料按钮悬停系统</li>
+				<li>……</li>
+			</ul>
+			<br>
+
+			<u>Index.html v26.05.13.2051</u>开始，添加主题记忆功（位于<u>/CoreLogic.js</u>主题切换模块），记忆有效时间为十分钟（10*60*1000），记忆时间内将直接使用记忆的主题而非浏览器主题
+			<br>
+
+
+			<br>
+			<h3 id="Introduction_developer"><strong>项目开发者: director_Carter</strong></h3>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><strong><a href="mailto:2705722903@qq.com">邮箱Email：2705722903@qq.com</a></strong><button onclick="copy('2705722903@qq.com')">Copy</button>
+					<br>
+					<strong><a href="mailto:3623293903@qq.com">备用邮箱：3623293903@qq.com</a></strong><button onclick="copy('3623293903@qq.com')">Copy</button>
+				</li>
+			</ul><br>
+
+
+			<b>
+				<p>--项目仓库(MPL-2.0)</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://github.com/director4168/director4168.github.io" style="word-wrap: break-word;">https://github.com/director4168/director4168.github.io</a><button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li>
+			</ul><br>
+
+
+			<b>
+				<p>--已部署</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://director4168.github.io" style="word-wrap: break-word;">https://director4168.github.io</a><button onclick="copy('https://director4168.github.io')">Copy</button></li>
+			</ul><br>
+
+
+			<h3 id="Introduction_OtherProjects"><strong>本项目使用了其他项目</strong></h3>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li>1. Material Icons
+					<br>来源： <a href="https://fonts.google.com/icons">https://fonts.google.com/icons</a><button onclick="copy('https://fonts.google.com/icons')">Copy</button>
+					<br><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a><button onclick="copy('http://www.apache.org/licenses/LICENSE-2.0)">Copy</button>
+				</li>
+
+				<li>2. MUI
+					<br>来源： <a href="https://mui.dcloud.net.cn/">https://mui.dcloud.net.cn/</a><button onclick="copy('https://mui.dcloud.net.cn/')">Copy</button>
+					<br><a href="https://spdx.org/licenses/MIT.html">The MIT License</a><button onclick="copy('https://spdx.org/licenses/MIT.html')">Copy</button>
+				</li>
+			</ul>
+		</div>
+
+
+
+
+		<div class="doc-section" id="sec-Basic">
+			<h2 id="Basic" class="anchor">基本框架<span class="tag hot">最基本</span></h2>
+			<p>基本框架，本项目基本比较完整的标准HTML框架，可能没有引入本项目全部Js/CSS</p>
+
+			<div class="grid">
+				<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 0 16px;">
+					<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+						<h6 class="MainColumn-description" style="display:inline;color: var(--md-on-surface);">
+							点我折叠或展开框架代码<b></b><br>
+						</h6>
+					</summary>
+					<div class="details-animated-wrapper">
+						<div class="details-content-inner">
+							<div class="code-container">
+								<div class="code-header"><span class="code-header-name">Basic framework | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+								<div class="code-content">
+									<div class="line-numbers"></div>
+									<div class="code-wrapper">
+										<script type="text/plain" class="code-source">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	&lt;!-- 网站开源 https://github.com/director4168/director4168.github.io/blob/main/ --&gt;
+	&lt;title&gt;XXX的站点-XXX&lt;/title&gt;
+	&lt;!-- Material Icons --&gt;
+	&lt;!-- 官网 https://material.io/resources/icons/ --&gt;
+	&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+	&lt;!-- 字体库-思源宋体 --&gt;
+	&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"&gt;
+	&lt;!-- 引入主配色CSS --&gt;
+	&lt;link rel="stylesheet" href="./css/MainColorStyle_Default.css"&gt;
+	&lt;!-- 引入附加CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./css/AdditionalStyles.css"&gt;
+	&lt;!-- 引入搜索CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./css/Search.css"&gt;
+	&lt;!-- 高亮 --&gt;
+	&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"&gt;
+	&lt;!-- 引入code代码复制Css样式 --&gt;
+	&lt;link href="./css/Code.css" rel="stylesheet"&gt;
+	&lt;!-- 引入彩蛋CSS样式 --&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggStyle.css"&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css"&gt;
+	&lt;link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level2.css"&gt;
+&lt;/head&gt;&lt;body class="dark-theme"&gt;
+	&lt;!-- 主要内容区域 --&gt;
+	&lt;div class="main-content"&gt;
+		&lt;!-- 介绍 --&gt;
+		&lt;div class="MainColumn-section"&gt;
+			&lt;div class="avatar" id="avatar"&gt;
+				&lt;!-- 头像 --&gt;
+				&lt;img src="./jpg/avatar.jpg" alt="头像-主头像"&gt;
+			&lt;/div&gt;
+			&lt;h1 class="MainColumn-title"&gt;主栏-主称&lt;/h1&gt;
+			&lt;p class="MainColumn-description"&gt;
+				主栏-介绍
+			&lt;p style="margin-top: 12px; font-size: 14px; color: var(--md-on-surface-variant); border: 1px solid var(--md-primary); border-radius: 16px; padding: 12px 16px;"&gt;
+				&lt;span class="material-icons" style="font-size: 14px; vertical-align: middle;"&gt;info&lt;/span&gt;
+				主栏-温馨提示
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;!-- 返回卡片 --&gt;
+		&lt;div class="card"&gt;
+			&lt;h2 class="card-title"&gt;返回&lt;/h2&gt;
+			&lt;p class="MainColumn-description"&gt;
+				*点击卡片返回首页
+			&lt;/p&gt;
+			&lt;div class="grid"&gt;
+				&lt;a class="list-item" href="javascript:void(0);" data-href="./index.html" data-title="返回首页" data-content="是否返回首页？"&gt;
+					&lt;span class="material-icons list-icon"&gt;first_page&lt;/span&gt;
+					&lt;div class="list-content"&gt;
+						&lt;div class="list-title"&gt;
+							返回首页
+						&lt;/div&gt;
+						&lt;div class="list-subtitle"&gt;
+							返回到网站首页目录页
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;span class="material-icons" style="color: var(--md-outline);"&gt;insert_link&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="search-wrapper"&gt;
+			&lt;div class="search-stroke" id="searchContainer"&gt;
+				&lt;span class="material-icons"&gt;search&lt;/span&gt;
+				&lt;input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索内容"&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- 社交账号卡片 --&gt;
+		&lt;div class="card"&gt;
+			&lt;h2 class="card-title"&gt;分栏-主称&lt;/h2&gt;
+			&lt;p class="MainColumn-description"&gt;
+				分栏-介绍
+			&lt;/p&gt;
+			&lt;div class="grid"&gt;
+				&lt;a class="list-item" href="javascript:void(0);" data-href="URL" data-title="顶栏" data-content="说明"&gt;
+					&lt;span class="material-icons list-icon"&gt;forum&lt;/span&gt;
+					&lt;div class="list-content"&gt;
+						&lt;div class="list-title"&gt;
+							主称
+						&lt;/div&gt;
+						&lt;div class="list-subtitle"&gt;
+							介绍
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;span class="material-icons" style="color: var(--md-outline);"&gt;insert_link&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 页尾 --&gt;
+	&lt;div class="footer"&gt;
+		&lt;p&gt;
+			Version: v26.04.18.2125 | &lt;a href="https://director4168.github.io/Agreement.html" class="list-subtitle"&gt;用户协议&lt;/a&gt;
+		&lt;/p&gt;
+		&lt;p&gt;
+			&copy; &lt;span id="chinese-copyright-year"&gt;2025&lt;/span&gt; director_Carter 保留所有权利。
+		&lt;/p&gt;
+		&lt;p&gt;
+			&copy; &lt;span id="english-copyright-year"&gt;2025&lt;/span&gt; director_Carter All Rights Reserved.
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;!-- 语言切换&主题切换按钮 --&gt;
+	&lt;div class="bottom-actions"&gt;
+		&lt;!-- 语言切换 --&gt;
+		&lt;a href="./404.html" class="btn" id="languageToggle"&gt;
+			&lt;span class="material-icons"&gt;translate&lt;/span&gt;
+		&lt;/a&gt;
+		&lt;!-- 主题切换 --&gt;
+		&lt;div class="btn" id="themeToggle"&gt;
+			&lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 彩蛋弹窗一级弹窗 --&gt;	&lt;div class="easter-egg-modal" id="easterEggModal"&gt;
+		&lt;div class="easter-egg-content"&gt;
+			&lt;h2&gt;彩蛋&lt;/h2&gt;
+			&lt;p&gt;
+				恭喜你发现了我埋的一个小彩蛋呢，所以你一直戳我头干什么呀？
+			&lt;/p&gt;
+			&lt;button class="easter-egg-close" id="easterEggClose"&gt;点我关闭，小雑魚~&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	&lt;!-- 彩蛋弹窗二级关闭确认对话框 --&gt;
+	&lt;div class="egg-dialog" id="easterEggCloseDialog"&gt;
+		&lt;div class="egg-dialog-content"&gt;
+			&lt;div class="egg-dialog-header" id="easterEggCloseDialogHeader"&gt;
+				雑魚雑魚~
+			&lt;/div&gt;
+			&lt;div class="egg-dialog-body" id="easterEggCloseDialogBody"&gt;
+				雑魚雑魚、小さな雑魚ちゃん～
+			&lt;/div&gt;
+			&lt;div class="egg-dialog-actions"&gt;
+				&lt;button class="egg-button contained" id="easterEggCloseDialogConfirm"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 彩蛋各部分逻辑 --&gt;
+	&lt;script&gt;
+		const avatar = document.getElementById('avatar');
+		const easterEggModal = document.getElementById('easterEggModal');
+		const easterEggClose = document.getElementById('easterEggClose');
+		const easterEggCloseDialog = document.getElementById('easterEggCloseDialog');
+		const easterEggCloseDialogConfirm = document.getElementById('easterEggCloseDialogConfirm');
+		let clickCount = 0;
+		let lastClickTime = 0;
+		// 彩蛋触发逻辑
+		avatar.addEventListener('click', function() {
+			const now = new Date().getTime();
+			if (now - lastClickTime &gt; 300) {
+				clickCount = 0;
+			}
+			clickCount++;
+			lastClickTime = now;
+			if (clickCount &gt;= 10) {
+				console.log('%c[彩蛋] 彩蛋彩蛋\~是彩蛋诶\~小杂鱼\~', 'color: #FFB6C1;');
+				easterEggModal.classList.add('show');
+				clickCount = 0;
+			}
+		});
+		// 修改关闭彩蛋逻辑
+		easterEggClose.addEventListener('click', function() {
+			easterEggModal.classList.remove('show');
+			easterEggCloseDialog.classList.add('show');
+		});
+		// 专用关闭对话框确认按钮事件
+		easterEggCloseDialogConfirm.addEventListener('click', function() {
+			easterEggCloseDialog.classList.remove('show');
+		});
+		// 点击对话框外部关闭专用关闭对话框
+		easterEggCloseDialog.addEventListener('click', function(e) {
+			if (e.target === easterEggCloseDialog) {
+				easterEggCloseDialog.classList.remove('show');
+			}
+		});
+	&lt;/script&gt;	&lt;!-- MD3对话框 --&gt;
+	&lt;div class="md3-dialog" id="md3Dialog"&gt;
+		&lt;div class="md3-dialog-content"&gt;
+			&lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;
+				标题
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-body" id="md3DialogBody"&gt;
+				内容
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-actions"&gt;
+				&lt;button class="md3-button text" id="md3DialogCancel"&gt;取消&lt;/button&gt;
+				&lt;button class="md3-button contained" id="md3DialogConfirm"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	&lt;div class="md3-dialog"&gt;
+		&lt;div class="md3-dialog-content"&gt;
+			&lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;
+				标题
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-body" id="md3DialogBody"&gt;
+				内容
+			&lt;/div&gt;
+			&lt;div class="md3-dialog-actions"&gt;
+				&lt;button class="md3-button text" id="md3DialogCancel"&gt;确定&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- 引入核心JS --&gt;
+	&lt;script src="./js/CoreLogic.js"&gt;&lt;/script&gt;
+	&lt;script src="./js/Protect.js"&gt;&lt;/script&gt;
+	&lt;!-- 引用Cookie处理 --&gt;
+	&lt;script src="./js/Cookie.js"&gt;&lt;/script&gt;
+	&lt;!-- 搜索JS --&gt;
+	&lt;script src="./js/Search.js"&gt;&lt;/script&gt;
+	&lt;!-- Code复制功能 --&gt;
+	&lt;script src="./js/Code.js"&gt;&lt;/script&gt;
+	&lt;!-- 引入折叠系统动画 --&gt;
+	&lt;script src="./js/Details_Animation.js"&gt;&lt;/script&gt;
+	&lt;!-- 高亮 --&gt;
+	&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"&gt;&lt;/script&gt;
+	&lt;!-- 彩蛋 --&gt;
+	&lt;!-- &lt;script src="./EasterEgg/js/EasterEgg.js"&gt;&lt;/script&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</script>
+										<pre><code class="display-code language-html"></code></pre>
+									</div>
+
+								</div>
+							</div>
+				</details>
+				<br>
+			</div>
+
+			<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="前往预览" data-content="前往预览基本框架效果">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">preview</span>
+				<div class="list-content">
+					<div class="list-title">
+						预览
+					</div>
+					<div class="list-subtitle">
+						前往预览基本框架效果
+					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-outline);">insert_link</span>
+			</a>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script>
+		async function copy(str) {
+			await navigator.clipboard.writeText(str);
+			alert("已复制");
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+	<!-- MD3对话框 -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				标题
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				内容
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">确定</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- 引入核心JS -->
+	<script src="./js/CoreLogic.js"></script>
+	<script src="./js/Protect.js"></script>
+
+	<!-- 引用Cookie处理 -->
+	<script src="./js/Cookie.js"></script>
+
+	<!-- 搜索JS -->
+	<script src="./js/Search.js"></script>
+
+	<!-- 高亮 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+	<!-- 标准文档JS -->
+	<script src="./js/Document.js"></script>
+</body>
+
+</html>
+
+【该文件结束】
+
+整合完成！总共处理 16 个文件。

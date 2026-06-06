@@ -1,0 +1,67 @@
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 本网页的主要配色，负责亮色调和暗色调的弹窗内文字配色、网站基本文字配色、矢量图基本配色等
+ 彩蛋弹窗配色也由此CSS控制
+ Version: v26.05.10.2059
+*/
+
+
+/* 网站底层日间模式亮色调配色 */
+:root {
+/* 顶栏文本、亮色暗色切换控件矢量图图标、卡片左侧矢量图图标配色、弹窗部分文本 */
+	--md-primary: #1976D2;
+/* 顶栏文字配色 */
+	--md-on-primary: #FFFFFF;
+/* 主栏基本背景配色 */
+	--md-primary-container: #DAE1FF;
+/* 主栏基本文字配色 */
+	--md-on-primary-container: #001849;
+/* 基本背景配色 */
+	--md-surface: #ECEDFB;
+/* 卡片主名称配色、栏的介绍配色 */
+	--md-on-surface: #181B25;
+/* 分栏基本背景配色 */
+	--md-surface-variant: #FAF8FF;
+/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
+	--md-on-surface-variant: #434654;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #1976D2;
+/* 卡片右侧矢量图图标配色，分栏（含跳转卡片）描边 */
+	--md-outline: #48484A;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #5095FF;
+}
+
+
+
+
+
+/* 底层夜间模式暗色调配色 */
+body.dark-theme {
+/* 顶栏文本、亮色暗色切换控件矢量图图标、卡片左侧矢量图图标配色、弹窗部分文本 */
+	--md-primary: #88BDE8;
+/* 顶栏文字配色 */
+	--md-on-primary: #1F113F;
+/* 主栏基本背景配色 */
+	--md-primary-container: #2C3140;
+/* 主栏基本文字配色 */
+	--md-on-primary-container: #F7F1FF;
+/* 基本背景配色 */
+	--md-surface: #1C1F29;
+/* 卡片主名称配色、栏的介绍配色 */
+	--md-on-surface: #E0E2EF;
+/* 分栏基本背景配色 */
+	--md-surface-variant: #363943;
+/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
+	--md-on-surface-variant: #C3C6D6;
+/* 卡片左侧矢量图图标背景配色 */
+	--md-icon-background: #23292E;
+/* 卡片右侧矢量图图标配色、分栏（含跳转卡片）描边 */
+	--md-outline: #8B8A8A;
+
+/* MD3弹窗顶栏配色 */
+	--md-dialog-header-color: #003FA4;
+}
