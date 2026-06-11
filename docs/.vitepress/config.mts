@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   base: '/docs',
   srcDir: 'docs',
+  outDir: 'docs/.vitepress/dist',
 
   title: "测试",
   description: "测试",
