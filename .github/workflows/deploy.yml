@@ -38,10 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+          path: docs/.vitepress/dist     # ← 对应 VitePress 部署到 /docs/
 
   deploy:
     environment:
