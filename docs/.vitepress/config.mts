@@ -1,8 +1,11 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/docs/',
-  srcDir: 'docs',
+
+  base: '/docs/', 
+
+  srcDir: '.', 
+
   outDir: 'docs/.vitepress/dist',
 
   title: "测试4",
@@ -10,16 +13,16 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: 'VitePress 示例', link: '/docs/' }
+      { text: '回到主页', link: '/' }, 
+      { text: '文档首页', link: '/' } 
     ],
 
     sidebar: [
       {
         text: '示例',
         items: [
-          { text: 'Markdown 示例', link: '/docs/markdown-examples' },
-          { text: 'API 示例', link: '/docs/api-examples' }
+          { text: 'Markdown 示例', link: '/markdown-examples' },
+          { text: 'API 示例', link: '/api-examples' }
         ]
       }
     ]
