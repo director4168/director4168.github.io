@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/docs/',
-
   srcDir: 'docs',
   outDir: 'docs/.vitepress/dist',
 
@@ -11,7 +10,7 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: '家', link: '/' },
+      { text: '首页', link: '/' },
       { text: '示例', link: '/docs/markdown-examples' }
     ],
 
@@ -20,7 +19,7 @@ export default defineConfig({
         text: '示例',
         items: [
           { text: 'Markdown 示例', link: '/docs/markdown-examples' },
-          { text: 'API 示例', link: '/docs/api-examples' }
+          { text: '运行时 API 示例', link: '/docs/api-examples' }
         ]
       }
     ]
