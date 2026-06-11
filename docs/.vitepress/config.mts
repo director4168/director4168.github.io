@@ -1,27 +1,31 @@
 import { defineConfig } from 'vitepress'
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/docs/',
-  srcDir: 'docs',
-  outDir: 'docs/.vitepress/dist',
+  base: '/',
 
   title: "测试",
   description: "测试",
 
   themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: '首页', link: '/' },
-      { text: '示例', link: '/docs/markdown-examples' }
+      { text: '家', link: '/' },
+      { text: '示例', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
         text: '示例',
         items: [
-          { text: 'Markdown 示例', link: '/docs/markdown-examples' },
-          { text: '运行时 API 示例', link: '/docs/api-examples' }
+          { text: '降价示例', link: '/markdown-examples' },
+          { text: '运行时 API 示例', link: '/api-examples' }
         ]
       }
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/director4168/director4168.github.io' }
     ]
   }
 })
