@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "测试"
-  text: "测试2"
+  text: "测试3"
   tagline: 我伟大的项目口号
   actions:
     - theme: 品牌
