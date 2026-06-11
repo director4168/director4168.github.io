@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 
-  base: '/docs/', 
+  base: '/docs/',
 
-  srcDir: '.', 
+  srcDir: '.',
 
   outDir: 'docs/.vitepress/dist',
 
@@ -13,8 +13,8 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: '回到主页', link: '/' }, 
-      { text: '文档首页', link: '/' } 
+      { text: '回到主页', link: '/' },
+      { text: '文档首页', link: '/' }
     ],
 
     sidebar: [
