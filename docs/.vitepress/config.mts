@@ -6,7 +6,7 @@ export default defineConfig({
   srcDir: 'docs',
   outDir: 'docs/.vitepress/dist',
 
-  title: "测试",
+  title: "Test",
   description: "测试",
 
   themeConfig: {
