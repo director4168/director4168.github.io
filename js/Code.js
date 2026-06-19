@@ -26,16 +26,12 @@ function initLineNumbers() {
 
 		if (!source || !displayCode) return;
 
-		// 获取原始内容
 		let rawText = source.textContent;
 
-		// 反转义
 		let codeText = unescapeHtml(rawText.trim());
 
-		// 显示代码
 		displayCode.innerHTML = escapeHtml(codeText);
 
-		// 生成行号
 		const lines = codeText.split('\n');
 		let lineNumbersHTML = '';
 		for (let i = 1; i <= lines.length; i++) {
@@ -43,7 +39,6 @@ function initLineNumbers() {
 		}
 		lineNumContainer.innerHTML = lineNumbersHTML;
 
-		// 触发高亮
 		if (window.hljs) {
 			hljs.highlightElement(displayCode);
 		}
@@ -70,7 +65,7 @@ function copyCode(btn) {
 	const source = container.querySelector('#code-source');
 
 	let codeText = source ? source.textContent : '';
-	codeText = unescapeHtml(codeText.trim()); // 反转义后复制
+	codeText = unescapeHtml(codeText.trim());
 
 	navigator.clipboard.writeText(codeText).then(() => {
 		const originalText = btn.innerText;
@@ -83,5 +78,4 @@ function copyCode(btn) {
 	});
 }
 
-// 初始化
 window.addEventListener('DOMContentLoaded', initLineNumbers);
