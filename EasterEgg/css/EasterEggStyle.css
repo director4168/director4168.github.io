@@ -1,0 +1,8 @@
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ 负责处理彩蛋弹窗的颜色样式
+*/
+
+:root {--egg-primary: #FFB6C1;--egg-on-primary: #000000;--egg-primary-container: #FFD3EC;--egg-on-primary-container: #FF84C9;--egg-surface: #FEE8EB;--egg-on-surface: #FF46AE;--egg-surface-variant: #E7E0EC;--egg-on-surface-variant: #49454F;--egg-outline: #79747E;}body.dark-theme {--egg-primary: #FFB6DF;--egg-on-primary: #000000;--egg-primary-container: #FFD3EC;--egg-on-primary-container: #FF84C9;--egg-surface: #FEE8ED;--egg-on-surface: #FF46AE;--egg-surface-variant: #49454F;--egg-on-surface-variant: #CAC4D0;--egg-outline: #938F99;}

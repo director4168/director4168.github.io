@@ -1,0 +1,3700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开发文档</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/MainColorStyle_Default.css">
+<link rel="stylesheet" href="./css/AdditionalStyles.css">
+<link rel="stylesheet" href="./css/Search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+<link href="./css/Code.css" rel="stylesheet">
+<link rel="stylesheet" href="./EasterEgg/css/EasterEggStyle.css">
+<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level1.css">
+<link rel="stylesheet" href="./EasterEgg/css/EasterEggPop-up_Level2.css">
+<link href="./css/Document.css" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<div class="top-header">
+<div class="menu-btn" id="menuBtn"><span class="material-icons">menu</span></div>
+<div class="header-title">开发文档</div>
+<div class="header-right">
+<a href="./index.html" class="home-btn" title="返回首页"><span class="material-icons">home</span></a>
+<div class="theme-btn" id="themeToggle" aria-label="切换日夜间模式"><span class="material-icons" id="themeToggleIcon">dark_mode</span></div>
+</div>
+</div>
+<div class="mask" id="mask"></div>
+<div class="sidebar" id="sidebar">
+<div class="sidebar-section">
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>概述</span></div>
+<ul class="group-items">
+<li><a href="#Overview">项目概述</a></li>
+<li><a href="#QuickStart">快速开始</a></li>
+<li><a href="#FileStructure">文件结构</a></li>
+</ul>
+</div>
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>页面布局</span></div>
+<ul class="group-items">
+<li><a href="#Layout-TopHeader">顶栏</a></li>
+<li><a href="#Layout-MainColumn">主栏</a></li>
+<li><a href="#Layout-Card">卡片与分栏</a></li>
+<li><a href="#Layout-ListItem">跳转卡片</a></li>
+<li><a href="#Layout-Footer">页尾</a></li>
+<li><a href="#Layout-BottomActions">底部按钮栏</a></li>
+</ul>
+</div>
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>交互组件</span></div>
+<ul class="group-items">
+<li><a href="#Comp-Dialog">MD3 弹窗系统</a></li>
+<li><a href="#Comp-Theme">主题切换系统</a></li>
+<li><a href="#Comp-Code">代码框</a></li>
+<li><a href="#Comp-Details">折叠系统</a></li>
+<li><a href="#Comp-Search">搜索系统</a></li>
+<li><a href="#Comp-Avatar">头像彩蛋</a></li>
+</ul>
+</div>
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>JS 模块</span></div>
+<ul class="group-items">
+<li><a href="#JS-CoreLogic">CoreLogic.js</a></li>
+<li><a href="#JS-Document">Document.js</a></li>
+<li><a href="#JS-Cookie">Cookie.js</a></li>
+<li><a href="#JS-Protect">Protect.js</a></li>
+<li><a href="#JS-Search">Search.js</a></li>
+<li><a href="#JS-Code">Code.js</a></li>
+</ul>
+</div>
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>开发文档编写<span class="tag hot">建议学习</span></span></div>
+<ul class="group-items">
+<li><a href="#DocWrite-Overview">文档页结构</a></li>
+<li><a href="#DocWrite-Sidebar">侧滑栏配置</a></li>
+<li><a href="#DocWrite-Section">区块编写</a></li>
+<li><a href="#DocWrite-Text">文本与内联元素</a></li>
+<li><a href="#DocWrite-Table">表格编写</a></li>
+<li><a href="#DocWrite-CodeBlock">代码块嵌入</a></li>
+<li><a href="#DocWrite-Escape">HTML 转义参考</a></li>
+<li>
+<div class="sidebar-group">
+<div class="group-header"><span class="arrow">▼</span><span>侧滑栏系统</span></div>
+<ul class="group-items">
+<li><a href="#Sidebar-Basic">基本结构</a></li>
+<li><a href="#Sidebar-Group">折叠分组</a></li>
+<li><a href="#Sidebar-Nested">嵌套折叠</a></li>
+<li><a href="#Sidebar-Standalone">独立链接</a></li>
+<li><a href="#Sidebar-Tag">标签 Tag</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sidebar-group" data-collapsed="true">
+<div class="group-header"><span class="arrow">▼</span><span>CSS 变量参考</span></div>
+<ul class="group-items">
+<li><a href="#CSS-Vars-Naming">命名规则</a></li>
+<li><a href="#CSS-Vars-Table">色值变量表<span class="tag">建议了解</span></a></li>
+<li><a href="#CSS-BorderRadius">全局圆角</a></li>
+</ul>
+</div>
+</div>
+<div style="text-align: center; padding: 24px; color: var(--md-color-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-color-outline); margin-top: 40px; padding-bottom: 100px;">
+<p><a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a> | <a href="https://github.com/director4168/director4168.github.io" class="list-subtitle">开源地址</a></p>
+<p>&copy; <span id="chinese-copyright-year">2026</span> director_Carter 保留所有权利。</p>
+<p>&copy; <span id="english-copyright-year">2026</span> director_Carter All Rights Reserved.</p>
+</div>
+</div>
+<div class="main-wrap" id="mainWrap">
+<div class="doc-section active" id="sec-Overview">
+<h2 class="anchor" id="Overview">项目概述</h2>
+<p>本站基于 <b>HTML5、JS ES6 (ECMAScript 2015)、CSS3</b> 的纯静态前端网站，<strong style="color:#FF0000;">几乎不支持 IE 系列内核</strong>。使用 <b>MPL-2.0</b> 开源协议。</p>
+<p style="margin-top: 12px; padding: 12px 16px; background: var(--md-color-error); color: #FFFFFF; border-radius: 8px; font-weight: 500;">
+语言切换按钮、主题切换按钮，请勿持续长按，这可能会导致锁定！
+</p>
+<p>核心依赖：<b>Material Icons</b>（图标）、<b>highlight.js</b>（代码高亮）、<b>思源宋体</b>（字体）。</p>
+<h3>技术栈详情</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">技术</th>
+<th style="padding:8px 12px;text-align:left;">版本</th>
+<th style="padding:8px 12px;text-align:left;">用途</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">HTML5</td>
+<td style="padding:8px 12px;">-</td>
+<td style="padding:8px 12px;">页面结构</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">CSS3</td>
+<td style="padding:8px 12px;">-</td>
+<td style="padding:8px 12px;">样式设计，使用 CSS 变量</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">JavaScript</td>
+<td style="padding:8px 12px;">ES6+</td>
+<td <td style="padding:8px 12px;">交互逻辑</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Material Icons</td>
+<td style="padding:8px 12px;">最新</td>
+<td style="padding:8px 12px;">图标库</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">highlight.js</td>
+<td style="padding:8px 12px;">11.11.1</td>
+<td style="padding:8px 12px;">代码高亮</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">思源宋体</td>
+<td style="padding:8px 12px;">-</td>
+<td style="padding:8px 12px;">中文字体</td>
+</tr>
+</table>
+<h3>项目特点</h3>
+<ul>
+<li><b>纯静态</b>：无需服务器，可直接部署到 GitHub Pages</li>
+<li><b>响应式设计</b>：适配移动端和桌面端</li>
+<li><b>主题切换</b>：支持亮色/暗色主题</li>
+<li><b>模块化设计</b>：CSS 和 JS 文件分离，便于维护</li>
+<li><b>开源协议</b>：MPL-2.0，可自由使用和修改</li>
+</ul>
+<h3>浏览器兼容性</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">浏览器</th>
+<th style="padding:8px 12px;text-align:left;">支持情况</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Chrome</td>
+<td style="padding:8px 12px;">支持</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Firefox</td>
+<td style="padding:8px 12px;">支持</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Safari</td>
+<td style="padding:8px 12px;">支持</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Edge</td>
+<td style="padding:8px 12px;">支持</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">IE</td>
+<td style="padding:8px 12px;">不支持</td>
+</tr>
+</table>
+<h3>可用控件一览</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">控件</th>
+<th style="padding:8px 12px;text-align:left;">CSS</th>
+<th style="padding:8px 12px;text-align:left;">JS</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">顶栏</td>
+<td style="padding:8px 12px;">Document.css</td>
+<td style="padding:8px 12px;">Document.js + CoreLogic.js</td>
+<td style="padding:8px 12px;">固定顶部：菜单按钮、标题、返回首页、主题切换</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">主栏</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">—</td>
+<td style="padding:8px 12px;">页面顶部介绍区，可选含头像</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">头像</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">(内联)</td>
+<td style="padding:8px 12px;">点击 10 次触发彩蛋弹窗</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">卡片 / 分栏</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">—</td>
+<td style="padding:8px 12px;">分组容器，含标题和跳转卡片列表</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">跳转卡片</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">CoreLogic.js</td>
+<td style="padding:8px 12px;">点击弹出 MD3 确认对话框后跳转</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">代码框</td>
+<td style="padding:8px 12px;">Code.css</td>
+<td style="padding:8px 12px;">Code.js</td>
+<td style="padding:8px 12px;">行号 + highlight.js 高亮 + 一键复制</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">MD3 弹窗</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">CoreLogic.js</td>
+<td style="padding:8px 12px;">标题/正文/按钮，支持图片，点空白关闭</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">主题切换</td>
+<td style="padding:8px 12px;">MainColorStyle_Default.css</td>
+<td style="padding:8px 12px;">CoreLogic.js</td>
+<td style="padding:8px 12px;">亮/暗双主题，localStorage 记忆 10 分钟</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">折叠系统</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">Details_Animation.js</td>
+<td style="padding:8px 12px;">&lt;details&gt; 平滑展开/收起动画</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">侧滑栏折叠</td>
+<td style="padding:8px 12px;">Document.css</td>
+<td style="padding:8px 12px;">Document.js</td>
+<td style="padding:8px 12px;">嵌套折叠组 + 左侧竖直连线</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">搜索</td>
+<td style="padding:8px 12px;">Search.css</td>
+<td style="padding:8px 12px;">Search.js</td>
+<td style="padding:8px 12px;">输入即过滤跳转卡片和空卡片</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">底部按钮栏</td>
+<td style="padding:8px 12px;">AdditionalStyles.css</td>
+<td style="padding:8px 12px;">CoreLogic.js</td>
+<td style="padding:8px 12px;">毛玻璃固定底栏，语言/主题切换</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Cookie 协议</td>
+<td style="padding:8px 12px;">—</td>
+<td style="padding:8px 12px;">Cookie.js</td>
+<td style="padding:8px 12px;">未同意协议自动跳转 Agreement.html</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">保护系统</td>
+<td style="padding:8px 12px;">—</td>
+<td style="padding:8px 12px;">Protect.js</td>
+<td style="padding:8px 12px;">禁用 F12/Ctrl+U</td>
+</tr>
+</table>
+<br>
+<h3>开发者</h3>
+<p><strong>director_Carter</strong></p>
+<ul>
+<li>邮箱：<a href="mailto:2705722903@qq.com">2705722903@qq.com</a> <button onclick="copy('2705722903@qq.com')">Copy</button></li>
+<li>仓库：<a href="https://github.com/director4168/director4168.github.io">GitHub</a> <button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li>
+<li>部署：<a href="https://director4168.github.io">director4168.github.io</a></li>
+</ul>
+</div>
+<div class="doc-section" id="sec-QuickStart">
+<h2 class="anchor" id="QuickStart">快速开始</h2>
+<p>复制以下最小模板即可新建页面。基础框架已包含所有核心 CSS/JS 引用。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">最小模板 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;页面标题&lt;/title&gt;
+  &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"&gt;
+  &lt;link rel="stylesheet" href="./css/MainColorStyle_Default.css"&gt;
+  &lt;link rel="stylesheet" href="./css/AdditionalStyles.css"&gt;
+&lt;/head&gt;&lt;body class="dark-theme"&gt;
+  &lt;div class="main-content"&gt;
+    &lt;div class="MainColumn-section"&gt;
+      &lt;h1 class="MainColumn-title"&gt;页面标题&lt;/h1&gt;
+      &lt;p class="MainColumn-description"&gt;页面描述&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+      &lt;h2 class="card-title"&gt;卡片标题&lt;/h2&gt;
+      &lt;div class="grid"&gt;
+        &lt;a class="list-item" href="javascript:void(0);" data-href="./index.html" data-title="跳转" data-content="确认跳转？"&gt;
+          &lt;span class="material-icons list-icon"&gt;home&lt;/span&gt;
+          &lt;div class="list-content"&gt;
+            &lt;div class="list-title"&gt;首页&lt;/div&gt;
+            &lt;div class="list-subtitle"&gt;返回首页&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;span class="material-icons" style="color:var(--md-color-outline);"&gt;insert_link&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="footer"&gt;
+    &lt;p&gt;Version: vX.X.X | &lt;a href="./Agreement.html"&gt;用户协议&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&amp;copy; &lt;span id="chinese-copyright-year"&gt;2025&lt;/span&gt; director_Carter&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="bottom-actions"&gt;
+    &lt;a href="./en_US/index.html" class="btn"&gt;&lt;span class="material-icons"&gt;translate&lt;/span&gt;&lt;/a&gt;
+    &lt;div class="btn" id="themeToggle"&gt;&lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="md3-dialog" id="md3Dialog"&gt;
+    &lt;div class="md3-dialog-content"&gt;
+      &lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;标题&lt;/div&gt;
+      &lt;div class="md3-dialog-body" id="md3DialogBody"&gt;内容&lt;/div&gt;
+      &lt;div class="md3-dialog-actions"&gt;
+        &lt;button class="md3-button text" id="md3DialogCancel"&gt;取消&lt;/button&gt;
+        &lt;button class="md3-button contained" id="md3DialogConfirm"&gt;确定&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="./js/Cookie.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/CoreLogic.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/Protect.js"&gt;&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<br>
+<h3>必需的 HTML 结构（每个页面都要有）</h3>
+<ol>
+<li><code>&lt;div class="md3-dialog" id="md3Dialog"&gt;</code> — 弹窗容器，CoreLogic.js 依赖此 id</li>
+<li><code>&lt;div class="btn" id="themeToggle"&gt;</code> — 主题切换按钮</li>
+<li><code>&lt;span id="chinese-copyright-year"&gt;</code> — 版权年份自动更新</li>
+</ol>
+<h3>必需的 JS 引入顺序</h3>
+<ol>
+<li><code>Cookie.js</code> — 最先加载，检查协议同意状态</li>
+<li><code>CoreLogic.js</code> — 核心逻辑（主题/弹窗/跳转）</li>
+<li><code>Protect.js</code> — 保护逻辑</li>
+</ol>
+<h3>页面类型说明</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">页面类型</th>
+<th style="padding:8px 12px;text-align:left;">特点</th>
+<th style="padding:8px 12px;text-align:left;">示例</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">普通页面</td>
+<td style="padding:8px 12px;">无顶栏、无侧滑栏，适合简单的信息展示页面</td>
+<td style="padding:8px 12px;">index.html、ContactInformation.html</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">文档页面</td>
+<td style="padding:8px 12px;">有顶栏、侧滑栏，适合长文档、技术文档</td>
+<td style="padding:8px 12px;">DevelopmentDocumentation.html</td>
+</tr>
+</table>
+<h3>快速创建新页面步骤</h3>
+<ol>
+<li><b>选择模板</b>：根据页面类型选择合适的模板</li>
+<li><b>复制文件</b>：复制现有页面作为模板</li>
+<li><b>修改内容</b>：修改标题、描述、链接等</li>
+<li><b>添加链接</b>：在首页或其他页面添加指向新页面的链接</li>
+<li><b>测试功能</b>：确保所有功能正常工作</li>
+</ol>
+<h3>常见问题解答</h3>
+<ul>
+<li><b>Q: 为什么我的页面没有样式？</b><br>A: 检查是否正确引入了 CSS 文件，特别是 <code>MainColorStyle_Default.css</code> 和 <code>AdditionalStyles.css</code></li>
+<li><b>Q: 为什么主题切换不工作？</b><br>A: 确保页面中有 <code>id="themeToggle"</code> 的元素，并且正确引入了 <code>CoreLogic.js</code></li>
+<li><b>Q: 为什么弹窗不显示？</b><br>A: 确保页面中有 <code>id="md3Dialog"</code> 的弹窗容器，并且正确引入了 <code>CoreLogic.js</code></li>
+</ul>
+</div>
+<div class="doc-section" id="sec-FileStructure">
+<h2 class="anchor" id="FileStructure">文件结构</h2>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">项目目录树</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">director4168.github.io/
+├── index.html                  # 首页
+├── Basic.html                  # 基本框架预览
+├── DevelopmentDocumentation.html # 开发文档（本页）
+├── Agreement.html              # 用户协议
+├── ContactInformation.html     # 联系方式
+├── Version.html                # 版本信息
+├── 404.html                    # 404 页面
+├── css/
+│   ├── MainColorStyle_Default.css  # 主配色（亮/暗 CSS 变量）
+│   ├── AdditionalStyles.css        # 布局组件样式
+│   ├── Document.css                # 文档页布局 + 侧滑栏
+│   ├── Code.css                    # 代码框样式
+│   ├── Search.css                  # 搜索框样式
+│   └── Audio_A.css                 # 音频控件样式
+├── js/
+│   ├── CoreLogic.js            # 核心：主题/弹窗/跳转/年份
+│   ├── Document.js             # 文档：侧滑栏/代码块/区块切换
+│   ├── Cookie.js               # Cookie 协议检查
+│   ├── Protect.js              # 防调试保护
+│   ├── Search.js               # 搜索过滤
+│   ├── Code.js                 # 代码行号/复制/高亮
+│   ├── Details_Animation.js    # details 折叠动画
+│   └── Audio.js                # 音频播放控制
+├── EasterEgg/                  # 彩蛋系统
+│   ├── css/                    # 彩蛋弹窗样式
+│   └── js/                     # 彩蛋逻辑
+├── jpg/                        # 图片资源
+├── Audio/                      # 音频资源
+├── fonts/                      # 字体文件
+└── mui/                        # MUI 库</script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+<br>
+<h3>CSS 引入关系</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">页面类型</th>
+<th style="padding:8px 12px;text-align:left;">必需 CSS</th>
+<th style="padding:8px 12px;text-align:left;">可选 CSS</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">普通页面</td>
+<td style="padding:8px 12px;">MainColorStyle_Default + AdditionalStyles</td>
+<td style="padding:8px 12px;">Code, ……</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">文档页面</td>
+<td style="padding:8px 12px;">以上 + Document.css</td>
+<td style="padding:8px 12px;">Code.css, ……</td>
+</tr>
+</table>
+<h3>JS 文件功能说明</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">文件名</th>
+<th style="padding:8px 12px;text-align:left;">功能</th>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">CoreLogic.js</td>
+<td style="padding:8px 12px;">核心逻辑：主题切换、MD3弹窗、跳转卡片、版权年份更新</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Document.js</td>
+<td style="padding:8px 12px;">文档页面逻辑：侧滑栏、折叠组、区块切换、代码块渲染</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Cookie.js</td>
+<td style="padding:8px 12px;">协议检查：检查用户是否同意协议，未同意则跳转</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Protect.js</td>
+<td style="padding:8px 12px;">保护系统：禁用F12、Ctrl+U</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Search.js</td>
+<td style="padding:8px 12px;">搜索功能：过滤跳转卡片和空卡片</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Code.js</td>
+<td style="padding:8px 12px;">代码框功能：行号、高亮、复制</td>
+<td style="padding:8px 12px;">highlight.js</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Details_Animation.js</td>
+<td style="padding:8px 12px;">折叠动画：details元素平滑展开/收起</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Audio.js</td>
+<td style="padding:8px 12px;">音频播放控制</td>
+<td style="padding:8px 12px;">无</td>
+</tr>
+</table>
+<h3>资源文件夹说明</h3>
+<ul>
+<li><b>jpg/</b>：图片资源，包括头像、赞赏码等</li>
+<li><b>Audio/</b>：音频资源</li>
+<li><b>fonts/</b>：字体文件</li>
+<li><b>mui/</b>：MUI 库文件</li>
+<li><b>EasterEgg/</b>：彩蛋系统相关文件</li>
+</ul>
+<h3>文件命名规范</h3>
+<ul>
+<li>HTML 文件：使用 PascalCase（如 <code>DevelopmentDocumentation.html</code>）</li>
+<li>CSS 文件：使用 PascalCase（如 <code>MainColorStyle_Default.css</code>）</li>
+<li>JS 文件：使用 PascalCase（如 <code>CoreLogic.js</code>）</li>
+<li>图片文件：使用小写字母和连字符（如 <code>WeChat_Sponsorship.jpeg</code>）</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Layout-TopHeader">
+<h2 class="anchor" id="Layout-TopHeader">顶栏 Top Header</h2>
+<p>固定在页面顶部的导航栏，仅在文档类型页面（引用了 <code>Document.css</code>）中出现。包含菜单按钮（移动端）、页面标题、返回首页按钮、主题切换按钮。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">顶栏 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="top-header"&gt;
+  &lt;!-- 菜单按钮：移动端点击打开侧滑栏 --&gt;
+  &lt;div class="menu-btn" id="menuBtn"&gt;
+    &lt;span class="material-icons"&gt;menu&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="header-title"&gt;页面标题&lt;/div&gt;
+  &lt;div class="header-right"&gt;
+    &lt;!-- 返回首页 --&gt;
+    &lt;a href="./index.html" class="home-btn" title="返回首页"&gt;
+      &lt;span class="material-icons"&gt;home&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;!-- 主题切换：CoreLogic.js 根据此 id 绑定切换逻辑 --&gt;
+    &lt;div class="theme-btn" id="themeToggle" aria-label="切换日夜间模式"&gt;
+      &lt;span class="material-icons" id="themeToggleIcon"&gt;dark_mode&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 遮罩：移动端侧滑栏背景 --&gt;
+&lt;div class="mask" id="mask"&gt;&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>关键 id 与 JS 绑定</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">元素</th>
+<th style="padding:6px 10px;text-align:left;">id</th>
+<th style="padding:6px 10px;text-align:left;">绑定的 JS</th>
+<th style="padding:6px 10px;text-align:left;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">菜单按钮</td>
+<td style="padding:6px 10px;"><code>menuBtn</code></td>
+<td style="padding:6px 10px;">Document.js</td>
+<td style="padding:6px 10px;">点击打开侧滑栏</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">遮罩</td>
+<td style="padding:6px 10px;"><code>mask</code></td>
+<td style="padding:6px 10px;">Document.js</td>
+<td style="padding:6px 10px;">点击关闭侧滑栏</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">主题按钮</td>
+<td style="padding:6px 10px;"><code>themeToggle</code></td>
+<td style="padding:6px 10px;">CoreLogic.js</td>
+<td style="padding:6px 10px;">亮/暗主题切换</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">主题图标</td>
+<td style="padding:6px 10px;"><code>themeToggleIcon</code></td>
+<td style="padding:6px 10px;">CoreLogic.js</td>
+<td style="padding:6px 10px;">切换 dark_mode ↔ light_mode</td>
+</tr>
+</table>
+<h3>响应式行为</h3>
+<ul>
+<li><b>移动端</b>（<768px）：菜单按钮 + 遮罩可见，点击或滑动菜单按钮滑出侧滑栏</li>
+<li><b>桌面端</b>（≥768px）：菜单按钮和遮罩隐藏（<code>display:none!important</code>），侧滑栏常驻</li>
+</ul>
+<h3>自定义顶栏</h3>
+<p>可以通过修改以下 CSS 变量来自定义顶栏样式：</p>
+<ul>
+<li><code>--md-color-primary</code>：顶栏背景色</li>
+<li><code>--md-color-on-primary</code>：顶栏文字颜色</li>
+</ul>
+<h3>添加自定义按钮</h3>
+<p>在顶栏中添加自定义按钮的示例：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">添加自定义按钮 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="top-header"&gt;
+  &lt;div class="menu-btn" id="menuBtn"&gt;
+    &lt;span class="material-icons"&gt;menu&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="header-title"&gt;页面标题&lt;/div&gt;
+  &lt;div class="header-right"&gt;
+    &lt;a href="./index.html" class="home-btn" title="返回首页"&gt;
+      &lt;span class="material-icons"&gt;home&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;!-- 自定义按钮 --&gt;
+    &lt;a href="./settings.html" class="settings-btn" title="设置"&gt;
+      &lt;span class="material-icons"&gt;settings&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;div class="theme-btn" id="themeToggle" aria-label="切换日夜间模式"&gt;
+      &lt;span class="material-icons" id="themeToggleIcon"&gt;dark_mode&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Layout-MainColumn">
+<h2 class="anchor" id="Layout-MainColumn">主栏 MainColumn-section</h2>
+<p>页面顶部的介绍区域。可包含头像（用于触发彩蛋）、标题和描述文字、以及一条提示信息。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">主栏结构 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="MainColumn-section"&gt;
+  &lt;!-- 可选：头像（点击10次触发彩蛋） --&gt;
+  &lt;div class="avatar" id="avatar"&gt;
+    &lt;img src="./jpg/avatar.jpg" alt="头像"&gt;
+  &lt;/div&gt;
+  &lt;h1 class="MainColumn-title"&gt;页面标题&lt;/h1&gt;
+  &lt;p class="MainColumn-description"&gt;页面描述文字&lt;/p&gt;
+  &lt;!-- 可选：提示信息 --&gt;
+  &lt;p style="margin-top:12px;font-size:14px;color:var(--md-color-on-surface-variant);
+            border:1px solid var(--md-color-primary);border-radius:16px;padding:12px 16px;"&gt;
+    &lt;span class="material-icons" style="font-size:14px;vertical-align:middle;"&gt;info&lt;/span&gt;
+    提示内容
+  &lt;/p&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">类名</th>
+<th style="padding:6px 10px;text-align:left;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.MainColumn-section</code></td>
+<td style="padding:6px 10px;">容器，圆角背景，使用 <code>--md-color-primary-container</code> 配色</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.MainColumn-title</code></td>
+<td style="padding:6px 10px;">标题，28px 粗体</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.MainColumn-description</code></td>
+<td style="padding:6px 10px;">描述文字，17px</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.avatar</code></td>
+<td style="padding:6px 10px;">96x96 圆角头像容器，点击缩小动画</td>
+</tr>
+</table>
+<h3>主栏使用场景</h3>
+<ul>
+<li><b>首页</b>：展示网站标题、描述和头像</li>
+<li><b>功能页</b>：展示功能分类和描述</li>
+<li><b>文档页</b>：展示文档标题和简介</li>
+</ul>
+<h3>自定义主栏样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义主栏样式：</p>
+<ul>
+<li><code>--md-color-primary-container</code>：主栏背景色</li>
+<li><code>--md-color-on-primary-container</code>：主栏文字颜色</li>
+</ul>
+<h3>头像彩蛋功能</h3>
+<p>头像组件支持点击彩蛋功能：</p>
+<ul>
+<li>点击头像 10 次触发彩蛋弹窗</li>
+<li>每次点击头像会有缩小动画</li>
+<li>彩蛋弹窗显示特殊内容</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Layout-Card">
+<h2 class="anchor" id="Layout-Card">卡片 Card</h2>
+<p>分组容器，用于包裹一组跳转卡片。每个 <code>.card</code> 内使用 <code>.grid</code> 作为弹性列布局。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">卡片结构 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="card"&gt;
+  &lt;h2 class="card-title"&gt;卡片标题&lt;/h2&gt;
+  &lt;p class="MainColumn-description"&gt;可选描述&lt;/p&gt;
+  &lt;div class="grid"&gt;
+    &lt;!-- 跳转卡片放在这里 --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>样式要点</h3>
+<ul>
+<li>圆角 <code>var(--border-radius-basic)</code>（默认 16px）</li>
+<li>背景色 <code>--md-color-surface-variant</code></li>
+<li>边框 <code>1px solid var(--md-color-outline)</code></li>
+<li><code>.grid</code> 使用 <code>display:flex; flex-direction:column; gap:12px</code></li>
+</ul>
+<h3>卡片使用场景</h3>
+<ul>
+<li><b>功能分类</b>：将相关功能卡片分组显示</li>
+<li><b>导航菜单</b>：作为页面导航的容器</li>
+<li><b>内容分组</b>：将相关内容分组显示</li>
+</ul>
+<h3>自定义卡片样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义卡片样式：</p>
+<ul>
+<li><code>--md-color-surface-variant</code>：卡片背景色</li>
+<li><code>--md-color-outline</code>：卡片边框颜色</li>
+<li><code>--border-radius-basic</code>：卡片圆角大小</li>
+</ul>
+<h3>卡片布局技巧</h3>
+<ul>
+<li>使用 <code>.grid</code> 类创建弹性布局</li>
+<li>卡片内可以包含标题、描述和跳转卡片</li>
+<li>可以通过 CSS 调整卡片间距和布局</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Layout-ListItem">
+<h2 class="anchor" id="Layout-ListItem">跳转卡片 List Item</h2>
+<p>有两种类型：<b>弹窗确认型</b>（点击后弹窗，确认后跳转）和<b>纯展示型</b>（无弹窗，仅涟漪+圆角动画）。两者共享相同的视觉交互效果。</p>
+<h3>链接修复</h3>
+<p>所有 <code>a.list-item</code> 的 <code>href</code> 属性在运行时由 CoreLogic.js 自动移除，以防止移动端浏览器的长按链接预览导致页面锁定。HTML 中仍需写 <code>href="javascript:void(0);"</code> 以保持语义。</p>
+<h3>涟漪效果</h3>
+<p>点击时从触点位置产生圆形涟漪向四周扩散，扩散期间保持浅蓝色（<code>--md-color-highlight</code>），松手后 0.3s 淡出消失。</p>
+<ul>
+<li>按下：涟漪从触点扩散，已扩散部分持续保持浅蓝色</li>
+<li>释放/移出：0.3s 淡出</li>
+<li>同时触发圆角变化（四角变圆润）</li>
+<li>内容层（图标、文字）始终显示在涟漪之上</li>
+</ul>
+<h3>CSS 关键属性</h3>
+<ul>
+<li><code>position: relative; overflow: hidden</code>：涟漪定位与裁切</li>
+<li><code>touch-action: manipulation</code>：禁止浏览器长按菜单</li>
+<li><code>-webkit-touch-callout: none</code>：禁止 iOS 链接预览</li>
+<li><code>transition: border-radius 0.1s</code>：精确属性过渡，不用 <code>all</code></li>
+</ul>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">跳转卡片 — 弹窗确认型 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 弹窗确认跳转 --&gt;
+&lt;a class="list-item" href="javascript:void(0);"
+   data-href="./target.html"
+   data-title="弹窗标题"
+   data-content="弹窗内容（支持 &lt;br&gt; 换行和 &lt;img&gt; 图片）"&gt;
+  &lt;span class="material-icons list-icon"&gt;home&lt;/span&gt;
+  &lt;div class="list-content"&gt;
+    &lt;div class="list-title"&gt;卡片标题&lt;/div&gt;
+    &lt;div class="list-subtitle"&gt;卡片副标题&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="material-icons" style="color:var(--md-color-outline);"&gt;insert_link&lt;/span&gt;
+&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">跳转卡片 — 纯展示型（无弹窗）| HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 无弹窗，仅有涟漪和圆角动画 --&gt;
+&lt;a class="list-item" href="javascript:void(0);"&gt;
+  &lt;span class="material-icons list-icon"&gt;info&lt;/span&gt;
+  &lt;div class="list-content"&gt;
+    &lt;div class="list-title"&gt;纯展示卡片&lt;/div&gt;
+    &lt;div class="list-subtitle"&gt;无弹窗，仅享受点击动画&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>两种类型对比</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">特性</th>
+<th style="padding:6px 10px;text-align:left;">弹窗确认型</th>
+<th style="padding:6px 10px;text-align:left;">纯展示型</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">涟漪扩散动画</td>
+<td style="padding:6px 10px;">✅</td>
+<td style="padding:6px 10px;">✅</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">圆角变化动画</td>
+<td style="padding:6px 10px;">✅</td>
+<td style="padding:6px 10px;">✅</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">点击弹窗</td>
+<td style="padding:6px 10px;">需要 <code>data-*</code> 三属性</td>
+<td style="padding:6px 10px;">❌</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">跳转功能</td>
+<td style="padding:6px 10px;">确认后跳转</td>
+<td style="padding:6px 10px;">❌</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">用途</td>
+<td style="padding:6px 10px;">导航、外链入口</td>
+<td style="padding:6px 10px;">纯信息展示、占位</td>
+</tr>
+</table>
+<h3>data-* 属性说明</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">属性</th>
+<th style="padding:6px 10px;text-align:left;">必需</th>
+<th style="padding:6px 10px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>data-href</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">确认后跳转的目标 URL</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>data-title</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">弹窗标题</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>data-content</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">弹窗正文，支持 HTML（<code>\n</code> 和 <code>\r\n</code> 自动转 <br>）</td>
+</tr>
+</table>
+<h3>跳转卡片使用场景</h3>
+<ul>
+<li><b>页面导航</b>：跳转到其他页面</li>
+<li><b>外部链接</b>：跳转到外部网站</li>
+<li><b>功能入口</b>：作为功能页面的入口</li>
+</ul>
+<h3>自定义跳转卡片样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义跳转卡片样式：</p>
+<ul>
+<li><code>--md-color-surface-variant</code>：卡片背景色</li>
+<li><code>--md-color-on-surface</code>：卡片文字颜色</li>
+<li><code>--md-color-highlight</code>：涟漪颜色</li>
+</ul>
+<h3>跳转卡片交互说明</h3>
+<ul>
+<li>点击卡片会弹出 MD3 确认对话框</li>
+<li>确认后跳转到目标 URL</li>
+<li>取消则关闭对话框，不跳转</li>
+<li>支持 HTML 内容，包括图片和换行</li>
+<li>按下时从触点产生涟漪，松手后淡出</li>
+<li>按下时圆角变为完全圆润（<code>var(--border-radius-basic)</code>）</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Layout-Footer">
+<h2 class="anchor" id="Layout-Footer">页尾 Footer</h2>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">页尾 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="footer"&gt;
+  &lt;p&gt;
+    Version: vX.X.X | &lt;a href="./Agreement.html" class="list-subtitle"&gt;用户协议&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &amp;copy; &lt;span id="chinese-copyright-year"&gt;2025&lt;/span&gt; director_Carter 保留所有权利。
+  &lt;/p&gt;
+  &lt;p&gt;
+    &amp;copy; &lt;span id="english-copyright-year"&gt;2025&lt;/span&gt; director_Carter All Rights Reserved.
+  &lt;/p&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p>版权年份由 <b>CoreLogic.js</b> 自动更新：<code>#chinese-copyright-year</code> 和 <code>#english-copyright-year</code>。当年份超过 2025 时显示为 <code>2025-当前年</code>。</p>
+<h3>页尾使用场景</h3>
+<ul>
+<li><b>版权信息</b>：显示网站版权信息</li>
+<li><b>版本信息</b>：显示网站版本号</li>
+<li><b>链接导航</b>：添加用户协议、开源地址等链接</li>
+</ul>
+<h3>自定义页尾样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义页尾样式：</p>
+<ul>
+<li><code>--md-color-on-surface-variant</code>：页尾文字颜色</li>
+<li><code>--md-color-outline</code>：页尾边框颜色</li>
+</ul>
+<h3>页尾最佳实践</h3>
+<ul>
+<li>保持页尾简洁，不要添加过多内容</li>
+<li>使用语义化标签，如 <code>&lt;footer&gt;</code></li>
+<li>确保页尾在不同设备上显示正常</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Layout-BottomActions">
+<h2 class="anchor" id="Layout-BottomActions">底部按钮栏 Bottom Actions</h2>
+<p>固定在页面底部的毛玻璃效果按钮栏，包含语言切换和主题切换。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">底部按钮栏 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="bottom-actions"&gt;
+  &lt;!-- 语言切换 --&gt;
+  &lt;a href="./en_US/index_en_US.html" class="btn" id="languageToggle"&gt;
+    &lt;span class="material-icons"&gt;translate&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;!-- 主题切换 --&gt;
+  &lt;div class="btn" id="themeToggle"&gt;
+    &lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p>效果：<code>position:fixed; bottom:24px</code>，<code>backdrop-filter:blur(32px) saturate(200%)</code> 毛玻璃，居中固定。</p>
+<h3>底部按钮栏使用场景</h3>
+<ul>
+<li><b>语言切换</b>：切换网站语言（中英文）</li>
+<li><b>主题切换</b>：切换亮色/暗色主题</li>
+<li><b>快速操作</b>：添加常用功能按钮</li>
+</ul>
+<h3>自定义底部按钮栏</h3>
+<p>可以通过修改以下 CSS 变量来自定义底部按钮栏样式：</p>
+<ul>
+<li><code>--md-color-surface-variant</code>：按钮栏背景色</li>
+<li><code>--md-color-on-surface</code>：按钮图标颜色</li>
+</ul>
+<h3>添加自定义按钮</h3>
+<p>在底部按钮栏中添加自定义按钮的示例：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">添加自定义按钮 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="bottom-actions"&gt;
+  &lt;!-- 语言切换 --&gt;
+  &lt;a href="./en_US/index_en_US.html" class="btn" id="languageToggle"&gt;
+    &lt;span class="material-icons"&gt;translate&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;!-- 自定义按钮 --&gt;
+  &lt;a href="./settings.html" class="btn" title="设置"&gt;
+    &lt;span class="material-icons"&gt;settings&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;!-- 主题切换 --&gt;
+  &lt;div class="btn" id="themeToggle"&gt;
+    &lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Comp-Dialog">
+<h2 class="anchor" id="Comp-Dialog">MD3 弹窗系统</h2>
+<p>CoreLogic.js 自动管理弹窗：点击 <code>.list-item</code> 时读取 <code>data-*</code> 属性填充弹窗内容。</p>
+<h3>链接修复</h3>
+<p>所有 <code>a.list-item</code> 的 <code>href</code> 属性在运行时被移除，以防止移动端浏览器的长按链接预览导致页面锁定。</p>
+<h3>涟漪效果</h3>
+<p>点击 <code>.list-item</code> 时，从点击/触摸位置产生一个圆形涟漪向四周扩散。扩散期间保持浅蓝色，松手后淡出消失。</p>
+<ul>
+<li>按下：涟漪从触点扩散，已扩散部分持续为 <code>--md-color-highlight</code></li>
+<li>释放：0.3s 淡出消失</li>
+<li>同时触发圆角变化（四角变圆润）</li>
+</ul>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">MD3 弹窗 HTML 模板（每个页面都需要）</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="md3-dialog" id="md3Dialog"&gt;
+  &lt;div class="md3-dialog-content"&gt;
+    &lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;标题&lt;/div&gt;
+    &lt;div class="md3-dialog-body" id="md3DialogBody"&gt;内容&lt;/div&gt;
+    &lt;div class="md3-dialog-actions"&gt;
+      &lt;button class="md3-button text" id="md3DialogCancel"&gt;取消&lt;/button&gt;
+      &lt;button class="md3-button contained" id="md3DialogConfirm"&gt;确定&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>弹窗行为</h3>
+<ul>
+<li>打开时锁定页面滚动（<code>body position:fixed</code>），关闭后恢复滚动位置</li>
+<li>点击遮罩空白处关闭</li>
+<li>正文中的 <code>\n</code> 自动转 <code>&lt;br&gt;</code></li>
+<li>正文中的 <code>&lt;img&gt;</code> 自动添加 <code>.md3-dialog-img</code> 类</li>
+<li>每 500ms 安全网检查：如果 body 被锁定但弹窗未显示，自动恢复</li>
+</ul>
+<h3>弹窗使用场景</h3>
+<ul>
+<li><b>确认操作</b>：跳转前确认、删除确认等</li>
+<li><b>信息提示</b>：显示重要信息或提示</li>
+<li><b>图片展示</b>：展示图片或赞赏码</li>
+</ul>
+<h3>自定义弹窗样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义弹窗样式：</p>
+<ul>
+<li><code>--md-color-dialog-header</code>：弹窗顶栏背景色</li>
+<li><code>--md-color-on-primary</code>：弹窗顶栏文字颜色</li>
+<li><code>--md-color-surface</code>：弹窗背景色</li>
+<li><code>--md-color-on-surface</code>：弹窗文字颜色</li>
+</ul>
+<h3>弹窗 API</h3>
+<p>CoreLogic.js 提供了以下弹窗 API：</p>
+<ul>
+<li><code>showDialog(title, content, href)</code>：显示弹窗</li>
+<li><code>hideDialog()</code>：隐藏弹窗</li>
+</ul>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">弹窗 API 使用示例 | JavaScript</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">// 显示弹窗
+showDialog('标题', '内容', 'https://example.com');
+// 显示带图片的弹窗
+showDialog('赞赏码', '<img src="./jpg/WeChat_Sponsorship.jpeg">', '');
+// 关闭弹窗
+hideDialog();</script>
+<pre><code class="display-code language-javascript"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Comp-Theme">
+<h2 class="anchor" id="Comp-Theme">主题切换系统</h2>
+<p>支持 <b>亮色 (light)</b> 和 <b>暗色 (dark)</b> 双主题。所有配色通过 <code>MainColorStyle_Default.css</code> 中的 CSS 变量控制。</p>
+<h3>工作机制</h3>
+<ol>
+<li>页面默认 <code>&lt;body class="dark-theme"&gt;</code>（暗色）</li>
+<li><b>CoreLogic.js</b> 检查 <code>localStorage.userTheme</code>：有记忆且在 10 分钟内 → 使用记忆主题</li>
+<li>无记忆 → 跟随系统 <code>prefers-color-scheme</code></li>
+<li>点击 <code>#themeToggle</code> 切换：保存到 localStorage + 同步切换图标（dark_mode ↔ light_mode）</li>
+</ol>
+<h3>CSS 变量体系</h3>
+<p>亮色变量定义在 <code>:root</code>，暗色覆盖在 <code>body.dark-theme</code>。详见 <a href="#CSS-Vars-Table">CSS 变量参考</a>。</p>
+<h3>主题切换使用场景</h3>
+<ul>
+<li><b>用户偏好</b>：让用户选择喜欢的主题</li>
+<li><b>环境适应</b>：根据环境光线自动切换</li>
+<li><b>无障碍访问</b>：提供高对比度主题</li>
+</ul>
+<h3>自定义主题</h3>
+<p>可以通过修改 <code>MainColorStyle_Default.css</code> 文件来自定义主题：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">自定义主题 | CSS</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">/* 亮色主题 */
+:root {
+  --md-color-primary: #1976D2;
+  --md-color-on-primary: #FFFFFF;
+  --md-color-surface: #ECEDFB;
+  /* 更多变量... */
+}
+/* 暗色主题 */
+body.dark-theme {
+  --md-color-primary: #88BDE8;
+  --md-color-on-primary: #1F113F;
+  --md-color-surface: #1C1F29;
+  /* 更多变量... */
+}</script>
+<pre><code class="display-code language-css"></code></pre>
+</div>
+</div>
+</div>
+<h3>主题切换 API</h3>
+<p>CoreLogic.js 提供了以下主题切换 API：</p>
+<ul>
+<li>点击 <code>#themeToggle</code> 元素切换主题</li>
+<li>主题状态保存在 <code>localStorage.userTheme</code></li>
+<li>10 分钟后自动清除记忆，跟随系统主题</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Comp-Code">
+<h2 class="anchor" id="Comp-Code">代码框 Code Container</h2>
+<p>支持行号、highlight.js 语法高亮、一键复制。代码内容放在 <code>&lt;script type="text/plain" class="code-source"&gt;</code> 中（需 HTML 转义）。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">代码框结构 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="code-container"&gt;
+  &lt;div class="code-header"&gt;
+    &lt;span class="code-header-name"&gt;文件名.后缀&lt;/span&gt;
+    &lt;button class="copy-btn" onclick="copyCode(this)"&gt;复制&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="code-content"&gt;
+    &lt;div class="line-numbers"&gt;&lt;/div&gt;
+    &lt;div class="code-wrapper"&gt;
+      &lt;script type="text/plain" class="code-source"&gt;
+        &amp;lt;div&amp;gt;你的代码（需HTML转义）&amp;lt;/div&amp;gt;
+      &lt;/script&gt;
+      &lt;pre&gt;&lt;code class="display-code language-html"&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>关键类名</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">类名</th>
+<th style="padding:6px 10px;text-align:left;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.code-source</code></td>
+<td style="padding:6px 10px;">原始代码（HTML 转义后），<code>type="text/plain"</code> 防止执行</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.display-code</code></td>
+<td style="padding:6px 10px;">高亮渲染目标，<code>language-xxx</code> 指定语言</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.line-numbers</code></td>
+<td style="padding:6px 10px;">行号容器，自动生成</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.copy-btn</code></td>
+<td style="padding:6px 10px;">复制按钮，<code>onclick="copyCode(this)"</code></td>
+</tr>
+</table>
+<h3>代码框使用场景</h3>
+<ul>
+<li><b>代码展示</b>：展示 HTML、CSS、JavaScript 等代码</li>
+<li><b>配置文件</b>：展示 JSON、YAML 等配置文件</li>
+<li><b>命令行</b>：展示 Shell 命令</li>
+</ul>
+<h3>支持的语言</h3>
+<p>highlight.js 支持多种语言，常用的包括：</p>
+<ul>
+<li><code>language-html</code>：HTML</li>
+<li><code>language-css</code>：CSS</li>
+<li><code>language-javascript</code>：JavaScript</li>
+<li><code>language-json</code>：JSON</li>
+<li><code>language-bash</code>：Bash/Shell</li>
+<li><code>language-python</code>：Python</li>
+<li><code>language-java</code>：Java</li>
+</ul>
+<h3>自定义代码框样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义代码框样式：</p>
+<ul>
+<li><code>--md-color-surface-variant</code>：代码框背景色</li>
+<li><code>--md-color-on-surface</code>：代码文字颜色</li>
+</ul>
+<h3>代码框 API</h3>
+<p>Code.js 提供了以下代码框 API：</p>
+<ul>
+<li><code>initLineNumbers()</code>：初始化行号和高亮</li>
+<li><code>copyCode(btn)</code>：复制代码到剪贴板</li>
+</ul>
+<h3>highlight.js 支持的语言 ID</h3>
+<p>以下是 highlight.js 支持的常用语言及其对应的 class ID（格式：<code>language-{id}</code>）：</p>
+<details style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+<span style="color: var(--md-color-on-surface); font-weight: bold;">点击展开/收起完整语言列表</span>
+</summary>
+<div class="details-animated-wrapper">
+<div class="details-content-inner">
+<table style="width:100%; margin-top: 12px;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">语言</th>
+<th style="padding:6px 10px;text-align:left;">ID</th>
+<th style="padding:6px 10px;text-align:left;">class 名称</th>
+</tr>
+<tr><td style="padding:6px 10px;">HTML</td><td style="padding:6px 10px;"><code>html</code></td><td style="padding:6px 10px;"><code>language-html</code></td></tr>
+<tr><td style="padding:6px 10px;">CSS</td><td style="padding:6px 10px;"><code>css</code></td><td style="padding:6px 10px;"><code>language-css</code></td></tr>
+<tr><td style="padding:6px 10px;">JavaScript</td><td style="padding:6px 10px;"><code>javascript</code></td><td style="padding:6px 10px;"><code>language-javascript</code></td></tr>
+<tr><td style="padding:6px 10px;">TypeScript</td><td style="padding:6px 10px;"><code>typescript</code></td><td style="padding:6px 10px;"><code>language-typescript</code></td></tr>
+<tr><td style="padding:6px 10px;">JSON</td><td style="padding:6px 10px;"><code>json</code></td><td style="padding:6px 10px;"><code>language-json</code></td></tr>
+<tr><td style="padding:6px 10px;">XML</td><td style="padding:6px 10px;"><code>xml</code></td><td style="padding:6px 10px;"><code>language-xml</code></td></tr>
+<tr><td style="padding:6px 10px;">YAML</td><td style="padding:6px 10px;"><code>yaml</code></td><td style="padding:6px 10px;"><code>language-yaml</code></td></tr>
+<tr><td style="padding:6px 10px;">Markdown</td><td style="padding:6px 10px;"><code>markdown</code></td><td style="padding:6px 10px;"><code>language-markdown</code></td></tr>
+<tr><td style="padding:6px 10px;">Python</td><td style="padding:6px 10px;"><code>python</code></td><td style="padding:6px 10px;"><code>language-python</code></td></tr>
+<tr><td style="padding:6px 10px;">Java</td><td style="padding:6px 10px;"><code>java</code></td><td style="padding:6px 10px;"><code>language-java</code></td></tr>
+<tr><td style="padding:6px 10px;">C</td><td style="padding:6px 10px;"><code>c</code></td><td style="padding:6px 10px;"><code>language-c</code></td></tr>
+<tr><td style="padding:6px 10px;">C++</td><td style="padding:6px 10px;"><code>cpp</code></td><td style="padding:6px 10px;"><code>language-cpp</code></td></tr>
+<tr><td style="padding:6px 10px;">C#</td><td style="padding:6px 10px;"><code>csharp</code></td><td style="padding:6px 10px;"><code>language-csharp</code></td></tr>
+<tr><td style="padding:6px 10px;">PHP</td><td style="padding:6px 10px;"><code>php</code></td><td style="padding:6px 10px;"><code>language-php</code></td></tr>
+<tr><td style="padding:6px 10px;">Ruby</td><td style="padding:6px 10px;"><code>ruby</code></td><td style="padding:6px 10px;"><code>language-ruby</code></td></tr>
+<tr><td style="padding:6px 10px;">Go</td><td style="padding:6px 10px;"><code>go</code></td><td style="padding:6px 10px;"><code>language-go</code></td></tr>
+<tr><td style="padding:6px 10px;">Rust</td><td style="padding:6px 10px;"><code>rust</code></td><td style="padding:6px 10px;"><code>language-rust</code></td></tr>
+<tr><td style="padding:6px 10px;">Swift</td><td style="padding:6px 10px;"><code>swift</code></td><td style="padding:6px 10px;"><code>language-swift</code></td></tr>
+<tr><td style="padding:6px 10px;">Kotlin</td><td style="padding:6px 10px;"><code>kotlin</code></td><td style="padding:6px 10px;"><code>language-kotlin</code></td></tr>
+<tr><td style="padding:6px 10px;">Scala</td><td style="padding:6px 10px;"><code>scala</code></td><td style="padding:6px 10px;"><code>language-scala</code></td></tr>
+<tr><td style="padding:6px 10px;">Bash/Shell</td><td style="padding:6px 10px;"><code>bash</code></td><td style="padding:6px 10px;"><code>language-bash</code></td></tr>
+<tr><td style="padding:6px 10px;">PowerShell</td><td style="padding:6px 10px;"><code>powershell</code></td><td style="padding:6px 10px;"><code>language-powershell</code></td></tr>
+<tr><td style="padding:6px 10px;">SQL</td><td style="padding:6px 10px;"><code>sql</code></td><td style="padding:6px 10px;"><code>language-sql</code></td></tr>
+<tr><td style="padding:6px 10px;">Lua</td><td style="padding:6px 10px;"><code>lua</code></td><td style="padding:6px 10px;"><code>language-lua</code></td></tr>
+<tr><td style="padding:6px 10px;">Perl</td><td style="padding:6px 10px;"><code>perl</code></td><td style="padding:6px 10px;"><code>language-perl</code></td></tr>
+<tr><td style="padding:6px 10px;">R</td><td style="padding:6px 10px;"><code>r</code></td><td style="padding:6px 10px;"><code>language-r</code></td></tr>
+<tr><td style="padding:6px 10px;">MATLAB</td><td style="padding:6px 10px;"><code>matlab</code></td><td style="padding:6px 10px;"><code>language-matlab</code></td></tr>
+<tr><td style="padding:6px 10px;">Dart</td><td style="padding:6px 10px;"><code>dart</code></td><td style="padding:6px 10px;"><code>language-dart</code></td></tr>
+<tr><td style="padding:6px 10px;">Elixir</td><td style="padding:6px 10px;"><code>elixir</code></td><td style="padding:6px 10px;"><code>language-elixir</code></td></tr>
+<tr><td style="padding:6px 10px;">Haskell</td><td style="padding:6px 10px;"><code>haskell</code></td><td style="padding:6px 10px;"><code>language-haskell</code></td></tr>
+<tr><td style="padding:6px 10px;">Clojure</td><td style="padding:6px 10px;"><code>clojure</code></td><td style="padding:6px 10px;"><code>language-clojure</code></td></tr>
+<tr><td style="padding:6px 10px;">Erlang</td><td style="padding:6px 10px;"><code>erlang</code></td><td style="padding:6px 10px;"><code>language-erlang</code></td></tr>
+<tr><td style="padding:6px 10px;">OCaml</td><td style="padding:6px 10px;"><code>ocaml</code></td><td style="padding:6px 10px;"><code>language-ocaml</code></td></tr>
+<tr><td style="padding:6px 10px;">F#</td><td style="padding:6px 10px;"><code>fsharp</code></td><td style="padding:6px 10px;"><code>language-fsharp</code></td></tr>
+<tr><td style="padding:6px 10px;">Groovy</td><td style="padding:6px 10px;"><code>groovy</code></td><td style="padding:6px 10px;"><code>language-groovy</code></td></tr>
+<tr><td style="padding:6px 10px;">CoffeeScript</td><td style="padding:6px 10px;"><code>coffeescript</code></td><td style="padding:6px 10px;"><code>language-coffeescript</code></td></tr>
+<tr><td style="padding:6px 10px;">Objective-C</td><td style="padding:6px 10px;"><code>objectivec</code></td><td style="padding:6px 10px;"><code>language-objectivec</code></td></tr>
+<tr><td style="padding:6px 10px;">VHDL</td><td style="padding:6px 10px;"><code>vhdl</code></td><td style="padding:6px 10px;"><code>language-vhdl</code></td></tr>
+<tr><td style="padding:6px 10px;">Verilog</td><td style="padding:6px 10px;"><code>verilog</code></td><td style="padding:6px 10px;"><code>language-verilog</code></td></tr>
+<tr><td style="padding:6px 10px;">Assembly</td><td style="padding:6px 10px;"><code>x86asm</code></td><td style="padding:6px 10px;"><code>language-x86asm</code></td></tr>
+<tr><td style="padding:6px 10px;">LLVM IR</td><td style="padding:6px 10px;"><code>llvm</code></td><td style="padding:6px 10px;"><code>language-llvm</code></td></tr>
+<tr><td style="padding:6px 10px;">Dockerfile</td><td style="padding:6px 10px;"><code>dockerfile</code></td><td style="padding:6px 10px;"><code>language-dockerfile</code></td></tr>
+<tr><td style="padding:6px 10px;">Makefile</td><td style="padding:6px 10px;"><code>makefile</code></td><td style="padding:6px 10px;"><code>language-makefile</code></td></tr>
+<tr><td style="padding:6px 10px;">CMake</td><td style="padding:6px 10px;"><code>cmake</code></td><td style="padding:6px 10px;"><code>language-cmake</code></td></tr>
+<tr><td style="padding:6px 10px;">Gradle</td><td style="padding:6px 10px;"><code>gradle</code></td><td style="padding:6px 10px;"><code>language-gradle</code></td></tr>
+<tr><td style="padding:6px 10px;">GraphQL</td><td style="padding:6px 10px;"><code>graphql</code></td><td style="padding:6px 10px;"><code>language-graphql</code></td></tr>
+<tr><td style="padding:6px 10px;">Protobuf</td><td style="padding:6px 10px;"><code>protobuf</code></td><td style="padding:6px 10px;"><code>language-protobuf</code></td></tr>
+<tr><td style="padding:6px 10px;">Nginx</td><td style="padding:6px 10px;"><code>nginx</code></td><td style="padding:6px 10px;"><code>language-nginx</code></td></tr>
+<tr><td style="padding:6px 10px;">Apache</td><td style="padding:6px 10px;"><code>apache</code></td><td style="padding:6px 10px;"><code>language-apache</code></td></tr>
+<tr><td style="padding:6px 10px;">Ini/TOML</td><td style="padding:6px 10px;"><code>ini</code></td><td style="padding:6px 10px;"><code>language-ini</code></td></tr>
+<tr><td style="padding:6px 10px;">Diff</td><td style="padding:6px 10px;"><code>diff</code></td><td style="padding:6px 10px;"><code>language-diff</code></td></tr>
+<tr><td style="padding:6px 10px;">纯文本</td><td style="padding:6px 10px;"><code>plaintext</code></td><td style="padding:6px 10px;"><code>language-plaintext</code></td></tr>
+</table>
+<br>
+</div>
+</div>
+</details>
+</div>
+<div class="doc-section" id="sec-Comp-Details">
+<h2 class="anchor" id="Comp-Details">折叠系统 Details</h2>
+<p>基于原生 <code>&lt;details&gt;</code> 元素的平滑展开/收起动画系统，使用 <code>grid-template-rows</code> 过渡实现丝滑的折叠效果。</p>
+<div class="doc-highlight">
+<b>核心原理：</b>通过 <code>grid-template-rows: 0fr ↔ 1fr</code> 过渡实现平滑动画，无需计算高度
+</div>
+<h3>基础折叠</h3>
+<h4>代码</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">基础折叠 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;details&gt;
+  &lt;summary&gt;点击展开/收起&lt;/summary&gt;
+  &lt;div class="details-animated-wrapper"&gt;
+    &lt;div class="details-content-inner"&gt;
+      &lt;p&gt;折叠内容...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h4>预览效果</h4>
+<details style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+<span style="color: var(--md-color-on-surface); font-weight: bold;">点击展开/收起基础折叠</span>
+</summary>
+<div class="details-animated-wrapper">
+<div class="details-content-inner">
+<div style="padding: 16px; background: var(--md-color-surface-variant); border-radius: 8px; margin-top: 8px;">
+<p style="margin: 0; color: var(--md-color-on-surface-variant);">
+这是基础折叠的预览效果。点击上方的文字可以展开或收起此内容。
+</p>
+<p style="margin: 8px 0 0 0; color: var(--md-color-on-surface-variant);">
+动画使用 <code>grid-template-rows</code> 实现平滑过渡，无需计算高度。
+</p>
+</div>
+<br>
+</div>
+</div>
+</details>
+<h3>带图标的折叠</h3>
+<h4>代码</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">带图标折叠 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;details style="border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;"&gt;
+  &lt;summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;"&gt;
+    &lt;h6 style="display:inline;color: var(--md-color-on-surface);"&gt;
+      &lt;span class="material-icons" style="font-size: 18px; vertical-align: middle;"&gt;expand_more&lt;/span&gt;
+      点我折叠或展开内容
+    &lt;/h6&gt;
+  &lt;/summary&gt;
+  &lt;div class="details-animated-wrapper"&gt;
+    &lt;div class="details-content-inner"&gt;
+      &lt;p style="border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;"&gt;
+        &lt;span class="material-icons" style="font-size: 14px; vertical-align: middle;"&gt;info&lt;/span&gt;
+        折叠内容...
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h4>预览效果</h4>
+<details style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+<h6 style="display:inline;color: var(--md-color-on-surface); margin: 0;">
+<span class="material-icons" style="font-size: 18px; vertical-align: middle;">expand_more</span>
+点我折叠或展开内容
+</h6>
+</summary>
+<div class="details-animated-wrapper">
+<div class="details-content-inner">
+<p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;">
+<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+这是带图标的折叠效果。
+<br>
+<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+可以在 summary 中使用任意 HTML 内容，包括图标、标题等。
+</p>
+<br>
+</div>
+</div>
+</details>
+<h3>嵌套折叠</h3>
+<h4>代码</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">嵌套折叠 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 外层折叠 --&gt;
+&lt;details&gt;
+  &lt;summary&gt;外层折叠&lt;/summary&gt;
+  &lt;div class="details-animated-wrapper"&gt;
+    &lt;div class="details-content-inner"&gt;
+      &lt;p&gt;外层内容...&lt;/p&gt;
+      &lt;!-- 内层折叠 --&gt;
+      &lt;details&gt;
+        &lt;summary&gt;内层折叠&lt;/summary&gt;
+        &lt;div class="details-animated-wrapper"&gt;
+          &lt;div class="details-content-inner"&gt;
+            &lt;p&gt;内层内容...&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/details&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h4>预览效果</h4>
+<details style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+<span style="color: var(--md-color-on-surface); font-weight: bold;">点击展开嵌套折叠</span>
+</summary>
+<div class="details-animated-wrapper">
+<div class="details-content-inner">
+<div style="padding: 16px; background: var(--md-color-surface-variant); border-radius: 8px; margin-top: 8px;">
+<p style="margin: 0 0 12px 0; color: var(--md-color-on-surface-variant);">
+这是外层折叠内容。
+</p>
+<details style="border: 1px solid var(--md-color-outline); border-radius: 8px; padding: 0 12px;">
+<summary style="padding: 8px 0; cursor: pointer; outline: none; list-style: none;">
+<span style="color: var(--md-color-on-surface); font-weight: bold;">点击展开内层折叠</span>
+</summary>
+<div class="details-animated-wrapper">
+<div class="details-content-inner">
+<div style="padding: 12px; background: var(--md-color-surface); border-radius: 8px; margin-top: 8px;">
+<p style="margin: 0; color: var(--md-color-on-surface-variant);">
+这是内层折叠内容。折叠系统支持任意层级嵌套。
+</p>
+</div>
+<br>
+</div>
+</div>
+</details>
+</div>
+<br>
+</div>
+</div>
+</details>
+<h3>依赖文件</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">文件</th>
+<th style="padding:6px 10px;text-align:left;">作用</th>
+<th style="padding:6px 10px;text-align:left;">必需</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>AdditionalStyles.css</code></td>
+<td style="padding:6px 10px;"><code>.details-animated-wrapper</code> 动画定义</td>
+<td style="padding:6px 10px;">是</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>Details_Animation.js</code></td>
+<td style="padding:6px 10px;">拦截 summary 点击，实现平滑动画</td>
+<td style="padding:6px 10px;">是</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>Document.js</code></td>
+<td style="padding:6px 10px;">文档页面中包含同逻辑的 initDetails()</td>
+<td style="padding:6px 10px;">文档页必需</td>
+</tr>
+</table>
+<h3>使用场景</h3>
+<ul>
+<li><b>版本信息</b>：隐藏详细的版本信息和项目结构（如 Version.html）</li>
+<li><b>FAQ 部分</b>：常见问题的展开/收起</li>
+<li><b>详细说明</b>：隐藏详细内容，点击展开</li>
+<li><b>代码示例</b>：隐藏长代码示例，点击展开</li>
+<li><b>设置面板</b>：隐藏高级设置选项</li>
+</ul>
+<h3>CSS 动画原理</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">折叠动画 CSS | CSS</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">/* 折叠动画包装器 */
+.details-animated-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;  /* 默认折叠 */
+  transition: grid-template-rows 0.4s ease-out;
+}
+/* 展开状态 */
+details[open] .details-animated-wrapper {
+  grid-template-rows: 1fr;  /* 展开 */
+}
+/* 内容容器必须设置 overflow: hidden */
+.details-content-inner {
+  overflow: hidden;
+}</script>
+<pre><code class="display-code language-css"></code></pre>
+</div>
+</div>
+</div>
+<h3>自定义样式</h3>
+<p>可以通过修改以下样式来自定义折叠系统：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">自定义样式 | CSS</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">/* 自定义折叠容器样式 */
+details {
+  border: 1px solid var(--md-color-primary);
+  border-radius: 16px;
+  padding: 0 16px;
+}
+/* 自定义 summary 样式 */
+summary {
+  padding: 12px 0;
+  cursor: pointer;
+  outline: none;
+  list-style: none;
+}
+/* 自定义动画速度 */
+.details-animated-wrapper {
+  transition: grid-template-rows 0.6s ease-in-out;  /* 更慢的动画 */
+}
+/* 自定义动画曲线 */
+.details-animated-wrapper {
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);  /* Material Design 曲线 */
+}</script>
+<pre><code class="display-code language-css"></code></pre>
+</div>
+</div>
+</div>
+<h3>注意事项</h3>
+<ul>
+<li><b>overflow: hidden</b>：<code>.details-content-inner</code> 必须设置 <code>overflow: hidden</code>，否则内容会溢出</li>
+<li><b>list-style: none</b>：建议在 <code>summary</code> 上设置 <code>list-style: none</code> 移除默认箭头</li>
+<li><b>outline: none</b>：建议在 <code>summary</code> 上设置 <code>outline: none</code> 移除焦点轮廓</li>
+<li><b>嵌套支持</b>：支持任意层级嵌套，每层独立运行动画</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Comp-Search">
+<h2 class="anchor" id="Comp-Search">搜索系统</h2>
+<p>实时过滤页面中的跳转卡片。匹配 <code>.list-title</code> 或 <code>.list-subtitle</code>，不匹配的项隐藏，卡片内无匹配项时整张卡片隐藏。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">搜索框 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="search-wrapper"&gt;
+  &lt;div class="search-stroke" id="searchContainer"&gt;
+    &lt;span class="material-icons"&gt;search&lt;/span&gt;
+    &lt;input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索内容"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p>依赖：<code>Search.css</code> + <code>Search.js</code>。Search.js 监听 <code>#SearchInput</code> 的 <code>input</code> 事件。</p>
+<h3>搜索系统使用场景</h3>
+<ul>
+<li><b>功能搜索</b>：快速查找功能页面</li>
+<li><b>内容搜索</b>：搜索页面内容</li>
+<li><b>导航搜索</b>：快速跳转到目标页面</li>
+</ul>
+<h3>搜索系统工作原理</h3>
+<ol>
+<li>监听搜索框的 <code>input</code> 事件</li>
+<li>获取搜索关键词</li>
+<li>匹配 <code>.list-title</code> 和 <code>.list-subtitle</code></li>
+<li>显示匹配的项，隐藏不匹配的项</li>
+<li>如果卡片内所有项都隐藏，则隐藏整张卡片</li>
+</ol>
+<h3>自定义搜索系统</h3>
+<p>可以通过修改 Search.js 来自定义搜索逻辑：</p>
+<ul>
+<li>修改匹配规则（如支持正则表达式）</li>
+<li>添加搜索结果高亮</li>
+<li>支持搜索历史记录</li>
+</ul>
+<h3>搜索系统 API</h3>
+<p>Search.js 提供了以下功能：</p>
+<ul>
+<li>自动监听搜索框输入</li>
+<li>实时过滤跳转卡片</li>
+<li>支持大小写不敏感匹配</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Comp-Avatar">
+<h2 class="anchor" id="Comp-Avatar">头像彩蛋</h2>
+<p>在 <b>300ms</b> 内连续点击头像 <b>10 次</b> 触发彩蛋弹窗，关闭弹窗时弹出二级确认对话框。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">头像 + 彩蛋 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 头像（放在 MainColumn-section 内） --&gt;
+&lt;div class="avatar" id="avatar"&gt;
+  &lt;img src="./jpg/avatar.jpg" alt="头像"&gt;
+&lt;/div&gt;
+&lt;!-- 一级彩蛋弹窗 --&gt;
+&lt;div class="easter-egg-modal" id="easterEggModal"&gt;
+  &lt;div class="easter-egg-content"&gt;
+    &lt;h2&gt;彩蛋&lt;/h2&gt;
+    &lt;p&gt;恭喜你发现了彩蛋！&lt;/p&gt;
+    &lt;button class="easter-egg-close" id="easterEggClose"&gt;关闭&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 二级确认对话框 --&gt;
+&lt;div class="egg-dialog" id="easterEggCloseDialog"&gt;
+  &lt;div class="egg-dialog-content"&gt;
+    &lt;div class="egg-dialog-header" id="easterEggCloseDialogHeader"&gt;标题&lt;/div&gt;
+    &lt;div class="egg-dialog-body" id="easterEggCloseDialogBody"&gt;内容&lt;/div&gt;
+    &lt;div class="egg-dialog-actions"&gt;
+      &lt;button class="egg-button contained" id="easterEggCloseDialogConfirm"&gt;确定&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p>彩蛋逻辑需要内联 <code>&lt;script&gt;</code>（监听头像点击计数 + 弹窗开关），依赖 <code>EasterEgg/css/*</code>。</p>
+<h3>头像彩蛋使用场景</h3>
+<ul>
+<li><b>隐藏功能</b>：隐藏特殊功能或页面</li>
+<li><b>趣味互动</b>：增加网站趣味性</li>
+<li><b>奖励机制</b>：发现彩蛋获得奖励</li>
+</ul>
+<h3>头像彩蛋工作原理</h3>
+<ol>
+<li>监听头像点击事件</li>
+<li>记录点击次数和时间戳</li>
+<li>在 300ms 内点击 10 次触发彩蛋</li>
+<li>显示彩蛋弹窗</li>
+<li>关闭弹窗时显示二级确认对话框</li>
+</ol>
+<h3>自定义头像彩蛋</h3>
+<p>可以通过修改彩蛋逻辑来自定义彩蛋：</p>
+<ul>
+<li>修改触发条件（如点击次数、时间间隔）</li>
+<li>修改彩蛋内容</li>
+<li>添加多个彩蛋</li>
+</ul>
+<h3>彩蛋系统 API</h3>
+<p>彩蛋系统提供了以下功能：</p>
+<ul>
+<li>点击计数和时间戳管理</li>
+<li>彩蛋弹窗显示和隐藏</li>
+<li>二级确认对话框</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Sidebar-Basic">
+<h2 class="anchor" id="Sidebar-Basic">侧滑栏：基本结构</h2>
+<p>侧滑栏由以下部分构成：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">侧滑栏 HTML 骨架</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 遮罩（移动端点击关闭侧滑栏） --&gt;
+&lt;div class="mask" id="mask"&gt;&lt;/div&gt;
+&lt;div class="sidebar" id="sidebar"&gt;
+  &lt;div class="sidebar-section"&gt;
+    &lt;!-- 折叠组或独立链接 --&gt;
+  &lt;/div&gt;
+  &lt;!-- 页尾（版权等） --&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>响应式行为</h3>
+<ul>
+<li><b>移动端</b>（&lt;768px）：侧滑栏默认隐藏，点菜单按钮或滑动菜单按钮滑出 + 遮罩</li>
+<li><b>桌面端</b>（≥768px）：侧滑栏常驻显示，主内容区 <code>margin-left:280px</code></li>
+</ul>
+<h3>菜单按钮交互</h3>
+<ul>
+<li><b>点击</b>：切换侧滑栏打开/关闭</li>
+<li><b>水平滑动</b>：在 ≡ 上水平滑动，侧滑栏跟随，图标同步旋转（0°~90°）。松手后吸附到打开/关闭。</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-Sidebar-Group">
+<h2 class="anchor" id="Sidebar-Group">侧滑栏：折叠分组</h2>
+<p>每个 <code>.sidebar-group</code> 包含一个可点击的 header 和一个可折叠的 items 列表。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">折叠分组 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="sidebar-group"&gt;
+  &lt;!-- header：箭头 ▼ 在左，文字在右 --&gt;
+  &lt;div class="group-header"&gt;
+    &lt;span class="arrow"&gt;▼&lt;/span&gt;
+    &lt;span&gt;分组名&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- items：展开时左侧有竖直连线 │ --&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#section1"&gt;项目一&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#section2"&gt;项目二&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>竖直连线原理</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">元素</th>
+<th style="padding:6px 10px;text-align:left;">CSS</th>
+<th style="padding:6px 10px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">箭头 ▼</td>
+<td style="padding:6px 10px;"><code>width:16px; text-align:center</code></td>
+<td style="padding:6px 10px;">固定宽度，中心在 <code>padding-left(20px) + 8px = 28px</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">竖直连线 │</td>
+<td style="padding:6px 10px;"><code>.group-items { border-left:2px; margin-left:28px }</code></td>
+<td style="padding:6px 10px;">连线从箭头正下方 28px 处开始</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">水平连线 ─</td>
+<td style="padding:6px 10px;"><code>.group-items > li::before</code></td>
+<td style="padding:6px 10px;">伪元素画水平短线，从竖线连到文字</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">折叠</td>
+<td style="padding:6px 10px;"><code>.collapsed { max-height:0; opacity:0 }</code></td>
+<td style="padding:6px 10px;">箭头旋转 -90°，连线和内容一同消失</td>
+</tr>
+</table>
+<h3>默认折叠状态</h3>
+<p>默认情况下，所有折叠组都处于展开状态。如需让某个折叠组默认折叠，可在 <code>.sidebar-group</code> 元素上添加 <code>data-collapsed="true"</code> 属性：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">默认折叠 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 默认折叠的分组 --&gt;
+&lt;div class="sidebar-group" data-collapsed="true"&gt;
+  &lt;div class="group-header"&gt;
+    &lt;span class="arrow"&gt;▼&lt;/span&gt;
+    &lt;span&gt;高级功能&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#advanced1"&gt;高级功能1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#advanced2"&gt;高级功能2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Sidebar-Nested">
+<h2 class="anchor" id="Sidebar-Nested">侧滑栏：嵌套折叠</h2>
+<p>在 <code>&lt;li&gt;</code> 内部再放一个 <code>.sidebar-group</code> 即可实现任意层级嵌套。每层自动缩进 + 独立竖直连线。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">嵌套折叠 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="sidebar-group"&gt;
+  &lt;div class="group-header"&gt;&lt;span class="arrow"&gt;▼&lt;/span&gt;&lt;span&gt;父级&lt;/span&gt;&lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#a"&gt;普通项&lt;/a&gt;&lt;/li&gt;
+    &lt;!-- 嵌套子组：放在 &lt;li&gt; 内 --&gt;
+    &lt;li&gt;
+      &lt;div class="sidebar-group"&gt;
+        &lt;div class="group-header"&gt;&lt;span class="arrow"&gt;▼&lt;/span&gt;&lt;span&gt;子级&lt;/span&gt;&lt;/div&gt;
+        &lt;ul class="group-items"&gt;
+          &lt;li&gt;&lt;a href="#b"&gt;子项1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#c"&gt;子项2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p>JS 使用 <code>:scope &gt; .group-header</code> 选择直接子元素，确保点击子组不会误触发父级折叠。嵌套组的 header 字体自动缩小（12px），<code>.group-items</code> 缩进 20px。</p>
+<h3>视觉效果</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">嵌套渲染示意</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">▼ 父级
+│  普通项
+│  ▼ 子级
+│  │  子项1
+│  │  子项2</script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Sidebar-Standalone">
+<h2 class="anchor" id="Sidebar-Standalone">侧滑栏：独立链接</h2>
+<p>不属于任何折叠组的链接，使用 <code>.sidebar-link-standalone</code> 类。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">独立链接 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;a href="#section" class="sidebar-link-standalone"&gt;链接文字&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-Sidebar-Tag">
+<h2 class="anchor" id="Sidebar-Tag">侧滑栏：标签 Tag</h2>
+<p>用于在侧滑栏链接中显示状态、分类或标记信息的小型标签组件。支持普通标签和热点标签两种样式。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">标签 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 普通标签 --&gt;
+&lt;span class="tag"&gt;tag&lt;/span&gt;
+&lt;!-- 热点标签 --&gt;
+&lt;span class="tag hot"&gt;tag hot&lt;/span&gt;
+&lt;!-- 在侧滑栏链接中使用 --&gt;
+&lt;a href="#section"&gt;
+  功能名称
+  &lt;span class="tag hot"&gt;hot&lt;/span&gt;
+&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>标签样式说明</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">类名</th>
+<th style="padding:6px 10px;text-align:left;">说明</th>
+<th style="padding:6px 10px;text-align:left;">效果</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.tag</code></td>
+<td style="padding:6px 10px;">普通标签</td>
+<td style="padding:6px 10px;">主色背景，圆角胶囊形状</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.tag.hot</code></td>
+<td style="padding:6px 10px;">热点标签</td>
+<td style="padding:6px 10px;">橙色背景，表示热门或重要</td>
+</tr>
+</table>
+<h3>实际效果预览</h3>
+<div style="padding: 16px; background: var(--md-color-surface-variant); border-radius: 12px; margin: 12px 0;">
+<span class="tag">tag</span>&nbsp;&nbsp;
+<span class="tag hot">tag hot</span>
+</div>
+<h3>标签使用场景</h3>
+<ul>
+<li><b>状态标记</b>：标记功能状态（如"新"、"热门"、"推荐"）</li>
+<li><b>分类标签</b>：标记内容分类</li>
+<li><b>版本标记</b>：标记版本号或更新状态</li>
+</ul>
+<h3>自定义标签样式</h3>
+<p>可以通过修改以下 CSS 变量来自定义标签样式：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">自定义标签 | CSS</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">/* 普通标签 */
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background: var(--md-color-primary-container);
+  color: var(--md-color-on-primary-container);
+  margin-left: 8px;
+}
+/* 热点标签 */
+.tag.hot {
+  background: #ffe0b3;
+  color: #c2410c;
+}
+body.dark-theme .tag.hot {
+  background: #3b2a2a;
+  color: #f97316;
+}</script>
+<pre><code class="display-code language-css"></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="doc-section" id="sec-DocWrite-Overview">
+<h2 class="anchor" id="DocWrite-Overview">文档页结构</h2>
+<p>开发文档页面由三部分组成：<b>侧滑栏</b>（导航目录）、<b>主内容区</b>（区块容器）、<b>Document.js</b>（驱动引擎）。页面加载后 Document.js 解析 URL hash，匹配并显示对应区块。</p>
+<div class="doc-highlight">
+<b>核心原理：</b>侧滑栏链接 <code>href="#Foo"</code> → Document.js 查找 <code>id="sec-Foo"</code> → 显示该区块
+</div>
+<h3>完整文档页骨架</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">完整文档页骨架 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;开发文档&lt;/title&gt;
+  &lt;!-- Material Icons 图标 --&gt;
+  &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+  &lt;!-- 思源宋体字体 --&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"&gt;
+  &lt;!-- 必需 CSS --&gt;
+  &lt;link rel="stylesheet" href="./css/MainColorStyle_Default.css"&gt;
+  &lt;link rel="stylesheet" href="./css/AdditionalStyles.css"&gt;
+  &lt;link rel="stylesheet" href="./css/Document.css"&gt;
+  &lt;link rel="stylesheet" href="./css/Code.css"&gt;
+  &lt;!-- highlight.js 代码高亮主题 --&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"&gt;
+&lt;/head&gt;
+&lt;body class="dark-theme"&gt;
+  &lt;!-- ═══ 顶栏 ═══ --&gt;
+  &lt;div class="top-header"&gt;
+    &lt;div class="menu-btn" id="menuBtn"&gt;
+      &lt;span class="material-icons"&gt;menu&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="header-title"&gt;开发文档&lt;/div&gt;
+    &lt;div class="header-right"&gt;
+      &lt;a href="./index.html" class="home-btn" title="返回首页"&gt;
+        &lt;span class="material-icons"&gt;home&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="theme-btn" id="themeToggle"&gt;
+        &lt;span class="material-icons"&gt;dark_mode&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- 遮罩层（移动端点击关闭侧滑栏） --&gt;
+  &lt;div class="mask" id="mask"&gt;&lt;/div&gt;
+  &lt;!-- ═══ 侧滑栏 ═══ --&gt;
+  &lt;div class="sidebar" id="sidebar"&gt;
+    &lt;div class="sidebar-section"&gt;
+      &lt;div class="sidebar-group"&gt;
+        &lt;div class="group-header"&gt;
+          &lt;span class="arrow"&gt;▼&lt;/span&gt;
+          &lt;span&gt;分组名&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;ul class="group-items"&gt;
+          &lt;li&gt;&lt;a href="#SectionA"&gt;章节A&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#SectionB"&gt;章节B&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 页尾版权信息 --&gt;
+    &lt;div style="text-align:center;padding:24px;color:var(--md-color-on-surface-variant);font-size:14px;border-top:1px solid var(--md-color-outline);margin-top:40px;"&gt;
+      &lt;p&gt;&amp;copy; 2025 director_Carter&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- ═══ 主内容区 ═══ --&gt;
+  &lt;div class="main-wrap" id="mainWrap"&gt;
+    &lt;!-- 首个章节必须加 .active 类 --&gt;
+    &lt;div class="doc-section active" id="sec-SectionA"&gt;
+      &lt;h2 class="anchor" id="SectionA"&gt;章节A标题&lt;/h2&gt;
+      &lt;p&gt;章节A的内容...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="doc-section" id="sec-SectionB"&gt;
+      &lt;h2 class="anchor" id="SectionB"&gt;章节B标题&lt;/h2&gt;
+      &lt;p&gt;章节B的内容...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- MD3 弹窗容器 --&gt;
+  &lt;div class="md3-dialog" id="md3Dialog"&gt;
+    &lt;div class="md3-dialog-content"&gt;
+      &lt;div class="md3-dialog-header" id="md3DialogHeader"&gt;标题&lt;/div&gt;
+      &lt;div class="md3-dialog-body" id="md3DialogBody"&gt;内容&lt;/div&gt;
+      &lt;div class="md3-dialog-actions"&gt;
+        &lt;button class="md3-button text" id="md3DialogCancel"&gt;取消&lt;/button&gt;
+        &lt;button class="md3-button contained" id="md3DialogConfirm"&gt;确定&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- 必需 JS（顺序重要） --&gt;
+  &lt;script src="./js/CoreLogic.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/Protect.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/Cookie.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/Search.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"&gt;&lt;/script&gt;
+  &lt;script src="./js/Document.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>核心映射规则</h3>
+<p>每个章节需要两个 id，形成映射关系：</p>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">元素</th>
+<th style="padding:6px 10px;">必要 id</th>
+<th style="padding:6px 10px;">说明</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.doc-section</code></td>
+<td style="padding:6px 10px;"><code>sec-XXX</code></td>
+<td style="padding:6px 10px;">区块容器，Document.js 通过此 id 查找并切换显示</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>h2.anchor</code></td>
+<td style="padding:6px 10px;"><code>XXX</code></td>
+<td style="padding:6px 10px;">标题锚点，侧滑栏 <code>href="#XXX"</code> 的目标</td>
+</tr>
+</table>
+<div class="doc-highlight">
+<b>示例：</b>侧滑栏 <code>href="#Overview"</code> → 查找 <code>id="sec-Overview"</code> → 显示该区块
+</div>
+<h3>必要文件清单</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">文件</th>
+<th style="padding:6px 10px;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>css/MainColorStyle_Default.css</code></td>
+<td style="padding:6px 10px;">双主题 CSS 变量（亮色/暗色）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>css/AdditionalStyles.css</code></td>
+<td style="padding:6px 10px;">通用布局组件样式（卡片、弹窗等）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>css/Document.css</code></td>
+<td style="padding:6px 10px;">文档页专属：顶栏/侧滑栏/折叠组/表格</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>css/Code.css</code></td>
+<td style="padding:6px 10px;">代码框 + 内联 code 样式</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>js/Document.js</code></td>
+<td style="padding:6px 10px;">侧滑栏/区块切换/代码块初始化</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>js/CoreLogic.js</code></td>
+<td style="padding:6px 10px;">主题切换/MD3弹窗/版权年份</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>js/Cookie.js</code></td>
+<td style="padding:6px 10px;">协议检查（未同意跳转到协议页）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>js/Protect.js</code></td>
+<td style="padding:6px 10px;">防调试保护（禁用F12等）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>highlight.js</code></td>
+<td style="padding:6px 10px;">代码语法高亮（CDN引入）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>Material Icons</code></td>
+<td style="padding:6px 10px;">图标字体（CDN引入）</td>
+</tr>
+</table>
+<h3>开发流程</h3>
+<ol>
+<li><b>创建 HTML 文件</b>：复制上述骨架代码</li>
+<li><b>配置侧滑栏</b>：添加导航分组和链接</li>
+<li><b>编写章节内容</b>：创建 <code>.doc-section</code> 容器</li>
+<li><b>添加代码示例</b>：使用代码块组件</li>
+<li><b>测试功能</b>：验证导航、主题切换、代码高亮等</li>
+</ol>
+<h3>常见问题</h3>
+<ul>
+<li><b>Q: 点击侧滑栏链接无反应？</b><br>A: 检查 <code>href="#XXX"</code> 和 <code>id="sec-XXX"</code> 是否匹配</li>
+<li><b>Q: 页面加载后空白？</b><br>A: 确保首个章节有 <code>class="active"</code></li>
+<li><b>Q: 代码块不显示高亮？</b><br>A: 检查是否引入了 highlight.js 和对应的 CSS 主题</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-Sidebar">
+<h2 class="anchor" id="DocWrite-Sidebar">侧滑栏配置</h2>
+<p>侧滑栏使用响应式布局：移动端（<768px）默认隐藏，桌面端常驻左侧。导航链接通过 <code>href="#id"</code> 与主内容区块关联。</p>
+<h3>响应式行为</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">设备</th>
+<th style="padding:6px 10px;">行为</th>
+<th style="padding:6px 10px;">触发方式</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">移动端（&lt;768px）</td>
+<td style="padding:6px 10px;">默认隐藏，滑出显示</td>
+<td style="padding:6px 10px;">点击/滑动菜单按钮、点击遮罩关闭</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">桌面端（≥768px）</td>
+<td style="padding:6px 10px;">常驻左侧，菜单按钮隐藏</td>
+<td style="padding:6px 10px;">始终显示</td>
+</tr>
+</table>
+<h3>菜单按钮交互</h3>
+<p>菜单按钮（≡）支持两种操作：</p>
+<ul>
+<li><b>点击</b>：切换侧滑栏打开/关闭</li>
+<li><b>水平滑动</b>：在按钮上触摸/鼠标水平滑动，侧滑栏跟随滑动距离实时展开，菜单图标同步旋转（0°~90°）。松手后根据进度吸附到打开或关闭状态。</li>
+</ul>
+<p>动画关键点：</p>
+<ul>
+<li>侧滑栏位移和图标旋转角度跟随进度实时更新</li>
+<li>拖动时 CSS <code>transition</code> 临时禁用，松手后恢复</li>
+<li>遮罩透明度跟随展开进度</li>
+<li>进度阈值 0.5：大于则吸附打开，否则吸附关闭</li>
+</ul>
+<h3>折叠分组</h3>
+<p>使用 <code>.sidebar-group</code> 创建可折叠的导航分组。箭头 ▼ 在文字左侧，展开时子项左侧自动显示竖直连线。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">折叠分组 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 基本折叠分组 --&gt;
+&lt;div class="sidebar-group"&gt;
+  &lt;div class="group-header"&gt;
+    &lt;span class="arrow"&gt;▼&lt;/span&gt;
+    &lt;span&gt;分组名&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#SectionA"&gt;章节A&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#SectionB"&gt;章节B&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- 默认折叠的分组（添加 data-collapsed="true"） --&gt;
+&lt;div class="sidebar-group" data-collapsed="true"&gt;
+  &lt;div class="group-header"&gt;
+    &lt;span class="arrow"&gt;▼&lt;/span&gt;
+    &lt;span&gt;高级功能&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#Advanced1"&gt;高级功能1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#Advanced2"&gt;高级功能2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>嵌套分组</h3>
+<p>在 <code>&lt;li&gt;</code> 内嵌套 <code>.sidebar-group</code> 实现无限层级折叠，每层自动缩进 + 独立竖直连线。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">嵌套分组 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;div class="sidebar-group"&gt;
+  &lt;div class="group-header"&gt;
+    &lt;span class="arrow"&gt;▼&lt;/span&gt;
+    &lt;span&gt;父级分组&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#A"&gt;普通项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;!-- 嵌套子组 --&gt;
+      &lt;div class="sidebar-group"&gt;
+        &lt;div class="group-header"&gt;
+          &lt;span class="arrow"&gt;▼&lt;/span&gt;
+          &lt;span&gt;子分组&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;ul class="group-items"&gt;
+          &lt;li&gt;&lt;a href="#Sub1"&gt;子项1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#Sub2"&gt;子项2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>独立链接</h3>
+<p>不属于任何折叠组的链接，使用 <code>.sidebar-link-standalone</code> 类，无箭头、无连线。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">独立链接 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 独立链接（不属于任何折叠组） --&gt;
+&lt;a href="#SectionX" class="sidebar-link-standalone"&gt;链接文字&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>标签 Tag</h3>
+<p>在侧滑栏链接中添加标签，用于标记状态或分类。</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">带标签的链接 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 普通标签 --&gt;
+&lt;a href="#section"&gt;
+  功能名称
+  &lt;span class="tag"&gt;新&lt;/span&gt;
+&lt;/a&gt;
+&lt;!-- 热点标签 --&gt;
+&lt;a href="#section"&gt;
+  功能名称
+  &lt;span class="tag hot"&gt;hot&lt;/span&gt;
+&lt;/a&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>折叠组关键类名</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">类名</th>
+<th style="padding:6px 10px;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.sidebar-group</code></td>
+<td style="padding:6px 10px;">折叠组容器</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.group-header</code></td>
+<td style="padding:6px 10px;">可点击头部（箭头 + 文字），点击切换折叠</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.group-header .arrow</code></td>
+<td style="padding:6px 10px;">箭头：展开 ▼，折叠 ►（旋转 -90°）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.group-items</code></td>
+<td style="padding:6px 10px;">子项列表，左侧竖直连线 border-left</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.group-items.collapsed</code></td>
+<td style="padding:6px 10px;">折叠状态（max-height:0;opacity:0）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.sidebar-link-standalone</code></td>
+<td style="padding:6px 10px;">独立链接，无折叠</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.tag</code></td>
+<td style="padding:6px 10px;">普通标签（主色背景）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.tag.hot</code></td>
+<td style="padding:6px 10px;">热点标签（橙色背景）</td>
+</tr>
+</table>
+<h3>最佳实践</h3>
+<ul>
+<li><b>分组命名</b>：使用简洁明了的名称，如"概述"、"页面布局"、"交互组件"</li>
+<li><b>层级控制</b>：建议最多嵌套 2-3 层，避免过深</li>
+<li><b>默认状态</b>：常用分组默认展开，不常用分组可设置 <code>data-collapsed="true"</code></li>
+<li><b>链接文字</b>：保持简短，与章节标题一致</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-Section">
+<h2 class="anchor" id="DocWrite-Section">区块编写</h2>
+<p>每个章节是一个 <code>.doc-section</code> 容器，默认隐藏。首个章节加 <code>.active</code> 作为默认显示。切换区块后代码块自动初始化（Document.js 内部 MutationObserver）。</p>
+<h3>章节模板</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">章节模板 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 首个章节必须加 .active 类 --&gt;
+&lt;div class="doc-section active" id="sec-SectionName"&gt;
+  &lt;!-- 必须使用 h2.anchor，id 与侧滑栏 href 对应 --&gt;
+  &lt;h2 class="anchor" id="SectionName"&gt;章节标题&lt;/h2&gt;
+  &lt;!-- 子标题使用 h3 --&gt;
+  &lt;h3&gt;子标题&lt;/h3&gt;
+  &lt;!-- 正文段落 --&gt;
+  &lt;p&gt;正文段落内容...&lt;/p&gt;
+  &lt;!-- 无序列表 --&gt;
+  &lt;ul&gt;
+    &lt;li&gt;列表项1&lt;/li&gt;
+    &lt;li&gt;列表项2&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;!-- 有序列表 --&gt;
+  &lt;ol&gt;
+    &lt;li&gt;步骤1&lt;/li&gt;
+    &lt;li&gt;步骤2&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;!-- 代码块 --&gt;
+  &lt;div class="code-container"&gt;...&lt;/div&gt;
+  &lt;!-- 表格 --&gt;
+  &lt;table&gt;...&lt;/table&gt;
+  &lt;!-- 高亮块 --&gt;
+  &lt;div class="doc-highlight"&gt;重要提示内容&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- 后续章节不加 .active 类 --&gt;
+&lt;div class="doc-section" id="sec-AnotherSection"&gt;
+  &lt;h2 class="anchor" id="AnotherSection"&gt;另一章节&lt;/h2&gt;
+  &lt;p&gt;内容...&lt;/p&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>必要约定</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">#</th>
+<th style="padding:6px 10px;">规则</th>
+<th style="padding:6px 10px;">说明</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">1</td>
+<td style="padding:6px 10px;">首个章节加 <code>class="active"</code></td>
+<td style="padding:6px 10px;">作为默认显示的章节，否则页面空白</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">2</td>
+<td style="padding:6px 10px;"><code>sec-</code> 前缀不可省略</td>
+<td style="padding:6px 10px;">Document.js 写死查找 <code>#sec-</code>+hash</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">3</td>
+<td style="padding:6px 10px;"><code>h2.anchor</code> id 与侧滑栏 href 一致</td>
+<td style="padding:6px 10px;"><code>href="#Foo"</code> ↔ <code>id="Foo"</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">4</td>
+<td style="padding:6px 10px;">代码块首次可见时自动渲染</td>
+<td style="padding:6px 10px;">无需手动调用 initCodeBlocks</td>
+</tr>
+</table>
+<div class="doc-highlight">
+<b>重要：</b><code>sec-</code> 前缀是 Document.js 的硬编码规则，不可更改！
+</div>
+<h3>章节结构示例</h3>
+<p>一个完整的章节通常包含以下部分：</p>
+<ol>
+<li><b>章节标题</b>：<code>h2.anchor</code> + id</li>
+<li><b>简介段落</b>：<code>p</code> 标签</li>
+<li><b>子标题</b>：<code>h3</code> 标签</li>
+<li><b>内容</b>：段落、列表、代码块、表格等</li>
+<li><b>高亮提示</b>：<code>.doc-highlight</code>（可选）</li>
+</ol>
+<h3>常用文本元素</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">元素</th>
+<th style="padding:6px 10px;">写法</th>
+<th style="padding:6px 10px;">效果</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">内联代码</td>
+<td style="padding:6px 10px;"><code>&lt;code&gt;var&lt;/code&gt;</code></td>
+<td style="padding:6px 10px;">自动获得等宽字体+浅色背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">加粗</td>
+<td style="padding:6px 10px;"><code>&lt;b&gt;文字&lt;/b&gt;</code></td>
+<td style="padding:6px 10px;"><b>文字</b></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">强调</td>
+<td style="padding:6px 10px;"><code>&lt;strong&gt;文字&lt;/strong&gt;</code></td>
+<td style="padding:6px 10px;"><strong>文字</strong>（语义强调）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">有序列表</td>
+<td style="padding:6px 10px;"><code>&lt;ol&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ol&gt;</code></td>
+<td style="padding:6px 10px;">1. 2. 3.</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">无序列表</td>
+<td style="padding:6px 10px;"><code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code></td>
+<td style="padding:6px 10px;">• 圆点</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">高亮块</td>
+<td style="padding:6px 10px;"><code>&lt;div class="doc-highlight"&gt;...&lt;/div&gt;</code></td>
+<td style="padding:6px 10px;">柔和蓝底居中块，用于突出关键信息</td>
+</tr>
+</table>
+<h3>最佳实践</h3>
+<ul>
+<li><b>章节粒度</b>：每个章节聚焦一个主题，避免过长</li>
+<li><b>标题层级</b>：h2 用于章节标题，h3 用于子标题，h4 用于更细的分组</li>
+<li><b>内容组织</b>：先文字说明，再代码示例，最后表格参考</li>
+<li><b>高亮使用</b>：重要概念、核心规则、注意事项使用高亮块</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-Text">
+<h2 class="anchor" id="DocWrite-Text">文本与内联元素</h2>
+<p>文档正文中除普通段落外，提供多种内联元素用于强调、代码标记等场景。所有样式由 CSS 自动处理，无需手写 <code>style</code>。</p>
+<h3>内联元素速查</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">HTML</th>
+<th style="padding:6px 10px;">渲染效果</th>
+<th style="padding:6px 10px;">用途</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;b&gt;文字&lt;/b&gt;</code></td>
+<td style="padding:6px 10px;"><b>加粗文字</b></td>
+<td style="padding:6px 10px;">强调关键词</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;strong&gt;文字&lt;/strong&gt;</code></td>
+<td style="padding:6px 10px;"><strong>重要文字</strong></td>
+<td style="padding:6px 10px;">语义强调（通常同粗体）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;code&gt;var&lt;/code&gt;</code></td>
+<td style="padding:6px 10px;"><code>var</code></td>
+<td style="padding:6px 10px;">内联代码：自动等宽字体 + 浅色背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;u&gt;文字&lt;/u&gt;</code></td>
+<td style="padding:6px 10px;"><u>下划线文字</u></td>
+<td style="padding:6px 10px;">标记补充说明（谨慎使用）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;br&gt;</code></td>
+<td style="padding:6px 10px;">换行</td>
+<td style="padding:6px 10px;">段落内强制换行</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&amp;copy;</code></td>
+<td style="padding:6px 10px;">©</td>
+<td style="padding:6px 10px;">版权符号</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&amp;nbsp;</code></td>
+<td style="padding:6px 10px;">不换行空格</td>
+<td style="padding:6px 10px;">阻止单词间自动换行</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&amp;rarr;</code></td>
+<td style="padding:6px 10px;">→</td>
+<td style="padding:6px 10px;">右箭头符号</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&amp;larr;</code></td>
+<td style="padding:6px 10px;">←</td>
+<td style="padding:6px 10px;">左箭头符号</td>
+</tr>
+</table>
+<h3>段落与标题层级</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">标签</th>
+<th style="padding:6px 10px;">字号</th>
+<th style="padding:6px 10px;">使用场景</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;h2&gt;</code></td>
+<td style="padding:6px 10px;">20px 粗体</td>
+<td style="padding:6px 10px;">章节主标题（必须带 <code>class="anchor"</code> + id）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;h3&gt;</code></td>
+<td style="padding:6px 10px;">继承字号</td>
+<td style="padding:6px 10px;">章内子标题，不需要 anchor</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;h4&gt;</code></td>
+<td style="padding:6px 10px;">继承字号</td>
+<td style="padding:6px 10px;">更细的分组标题</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;p&gt;</code></td>
+<td style="padding:6px 10px;">继承字号</td>
+<td style="padding:6px 10px;">正文段落，自动使用 <code>--md-color-on-surface-variant</code></td>
+</tr>
+</table>
+<h3>列表</h3>
+<h4>代码</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">有序 / 无序列表 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 有序列表（步骤、流程） --&gt;
+&lt;ol&gt;
+  &lt;li&gt;第一步：安装依赖&lt;/li&gt;
+  &lt;li&gt;第二步：引入 CSS&lt;/li&gt;
+  &lt;li&gt;第三步：编写 HTML&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- 无序列表（功能、特性） --&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;功能 A&lt;/b&gt;：描述...&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;功能 B&lt;/b&gt;：描述...&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;功能 C&lt;/b&gt;：描述...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 嵌套列表 --&gt;
+&lt;ul&gt;
+  &lt;li&gt;父项1
+    &lt;ul&gt;
+      &lt;li&gt;子项1.1&lt;/li&gt;
+      &lt;li&gt;子项1.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;父项2&lt;/li&gt;
+&lt;/ul&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h4>预览效果</h4>
+<div style="padding: 16px; background: var(--md-color-surface-variant); border-radius: 12px; margin: 12px 0;">
+<p style="margin: 0 0 8px 0; font-weight: bold; color: var(--md-color-on-surface);">有序列表：</p>
+<ol>
+<li>第一步：安装依赖</li>
+<li>第二步：引入 CSS</li>
+<li>第三步：编写 HTML</li>
+</ol>
+<p style="margin: 16px 0 8px 0; font-weight: bold; color: var(--md-color-on-surface);">无序列表：</p>
+<ul>
+<li><b>功能 A</b>：描述...</li>
+<li><b>功能 B</b>：描述...</li>
+<li><b>功能 C</b>：描述...</li>
+</ul>
+<p style="margin: 16px 0 8px 0; font-weight: bold; color: var(--md-color-on-surface);">嵌套列表：</p>
+<ul>
+<li>父项1
+<ul>
+<li>子项1.1</li>
+<li>子项1.2</li>
+</ul>
+</li>
+<li>父项2</li>
+</ul>
+</div>
+<h3>高亮块</h3>
+<p>使用 <code>.doc-highlight</code> 类创建醒目的提示块，适合展示关键公式、核心概念或重要提示。</p>
+<h4>代码</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">高亮块 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 简单高亮块 --&gt;
+&lt;div class="doc-highlight"&gt;
+  &lt;code&gt;--md-color-{角色}&lt;/code&gt;
+&lt;/div&gt;
+&lt;!-- 带说明的高亮块 --&gt;
+&lt;div class="doc-highlight"&gt;
+  &lt;b&gt;核心公式：&lt;/b&gt;&lt;code&gt;--md-color-primary&lt;/code&gt; ↔ &lt;code&gt;id="sec-XXX"&lt;/code&gt;
+&lt;/div&gt;
+&lt;!-- 带多行内容的高亮块 --&gt;
+&lt;div class="doc-highlight"&gt;
+  &lt;b&gt;重要提示：&lt;/b&gt;&lt;br&gt;
+  1. 首个章节必须加 &lt;code&gt;.active&lt;/code&gt; 类&lt;br&gt;
+  2. &lt;code&gt;sec-&lt;/code&gt; 前缀不可省略&lt;br&gt;
+  3. h2.anchor 的 id 必须与侧滑栏 href 一致
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h4>预览效果</h4>
+<div class="doc-highlight">
+<code>--md-color-{角色}</code>
+</div>
+<div class="doc-highlight">
+<b>核心公式：</b><code>--md-color-primary</code> ↔ <code>id="sec-XXX"</code>
+</div>
+<div class="doc-highlight">
+<b>重要提示：</b><br>
+1. 首个章节必须加 <code>.active</code> 类<br>
+2. <code>sec-</code> 前缀不可省略<br>
+3. h2.anchor 的 id 必须与侧滑栏 href 一致
+</div>
+<p>样式：柔和蓝色背景（<code>--md-color-highlight</code>）、居中、圆角、带描边。内部 <code>&lt;code&gt;</code> 自动继承配色。</p>
+<h3>实战示例</h3>
+<p>以下是一个完整的段落编写示例：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">段落示例 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;h3&gt;功能说明&lt;/h3&gt;
+&lt;p&gt;本系统支持&lt;b&gt;主题切换&lt;/b&gt;功能，通过 &lt;code&gt;CoreLogic.js&lt;/code&gt; 实现。&lt;/p&gt;
+&lt;p&gt;主要特性：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;双主题&lt;/b&gt;：支持亮色和暗色主题&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;自动记忆&lt;/b&gt;：使用 &lt;code&gt;localStorage&lt;/code&gt; 保存用户偏好&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;系统跟随&lt;/b&gt;：自动跟随系统主题设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="doc-highlight"&gt;
+  &lt;b&gt;提示：&lt;/b&gt;主题切换按钮的 id 必须为 &lt;code&gt;themeToggle&lt;/code&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>编写建议</h3>
+<ul>
+<li><b>关键词加粗</b>：使用 <code>&lt;b&gt;</code> 标记重要概念</li>
+<li><b>代码标记</b>：变量名、类名、标签名都用 <code>&lt;code&gt;</code> 包裹</li>
+<li><b>段落间距</b>：每个 <code>&lt;p&gt;</code> 自动有 16px 下边距</li>
+<li><b>列表使用</b>：步骤用有序列表，特性用无序列表</li>
+<li><b>高亮适度</b>：不要滥用高亮块，只用于关键信息</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-Table">
+<h2 class="anchor" id="DocWrite-Table">表格编写</h2>
+<p>所有表格自动获得 Excel 网格风格描边（<code>border-collapse:collapse</code> + <code>1px solid</code> 边框），表头自动使用 <code>--md-color-table-head</code> 背景色。只需写 HTML 结构，无需手动加边框。</p>
+<div class="doc-highlight">
+<b>自动样式：</b>表头蓝灰背景、单元格描边、合并边框 — 无需手写 CSS
+</div>
+<h3>基础表格</h3>
+<h4>预览效果</h4>
+<table style="width:100%;">
+<tr>
+<th>列A</th>
+<th>列B</th>
+<th>列C</th>
+</tr>
+<tr>
+<td>数据1</td>
+<td>数据2</td>
+<td>数据3</td>
+</tr>
+<tr>
+<td>数据4</td>
+<td>数据5</td>
+<td>数据6</td>
+</tr>
+</table>
+<h4>代码示例</h4>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">基础表格 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;table style="width:100%;"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;列A&lt;/th&gt;
+    &lt;th&gt;列B&lt;/th&gt;
+    &lt;th&gt;列C&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;数据1&lt;/td&gt;
+    &lt;td&gt;数据2&lt;/td&gt;
+    &lt;td&gt;数据3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;数据4&lt;/td&gt;
+    &lt;td&gt;数据5&lt;/td&gt;
+    &lt;td&gt;数据6&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>自定义列宽</h3>
+<p>通过内联 <code>style</code> 控制列宽和文本对齐：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">列宽控制 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;table style="width:100%;"&gt;
+  &lt;tr&gt;
+    &lt;th style="width:30%;text-align:left;"&gt;宽列（30%）&lt;/th&gt;
+    &lt;th style="width:15%;text-align:center;"&gt;窄列（15%）&lt;/th&gt;
+    &lt;th style="text-align:center;"&gt;居中&lt;/th&gt;
+    &lt;th&gt;自适应&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="padding:8px 12px;"&gt;内容&lt;/td&gt;
+    &lt;td style="text-align:center;"&gt;居中&lt;/td&gt;
+    &lt;td style="text-align:center;"&gt;居中&lt;/td&gt;
+    &lt;td style="text-align:right;"&gt;右对齐&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>表格内代码</h3>
+<p>在单元格中使用 <code>&lt;code&gt;</code> 标签，自动获得内联代码样式：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">表格内代码 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;tr&gt;
+  &lt;td style="padding:6px 10px;"&gt;&lt;code&gt;--md-color-primary&lt;/code&gt;&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;#1976D2&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;主色调&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td style="padding:6px 10px;"&gt;&lt;code&gt;.sidebar-group&lt;/code&gt;&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;折叠组容器&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;必需&lt;/td&gt;
+&lt;/tr&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>表格 CSS 规则速查</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">CSS 规则</th>
+<th style="padding:6px 10px;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.main-wrap table { border-collapse:collapse }</code></td>
+<td style="padding:6px 10px;">合并单元格边框（单线）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.main-wrap th { background:--md-color-table-head }</code></td>
+<td style="padding:6px 10px;">表头蓝灰背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.main-wrap th, .main-wrap td { border:1px solid --md-color-outline }</code></td>
+<td style="padding:6px 10px;">所有单元格描边</td>
+</tr>
+</table>
+<h3>实战示例：从零搭建一张表</h3>
+<p>以下演示如何一步步写出一张带<b>表头、数据、内联代码、列宽控制</b>的完整表格（即本页面的「色值变量表」）。</p>
+<p><b>步骤 1：写骨架</b></p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">步骤1 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;table style="width:100%;"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;变量名&lt;/th&gt;
+    &lt;th&gt;亮色值&lt;/th&gt;
+    &lt;th&gt;暗色值&lt;/th&gt;
+    &lt;th&gt;用途&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p><b>步骤 2：加列宽和文字对齐</b> — 变量名列给 35%，颜色值列给 15% 并居中，用途列自适应左对齐：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">步骤2 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;tr&gt;
+  &lt;th style="width:35%;"&gt;变量名&lt;/th&gt;
+  &lt;th style="width:15%;text-align:center;"&gt;亮色值&lt;/th&gt;
+  &lt;th style="width:15%;text-align:center;"&gt;暗色值&lt;/th&gt;
+  &lt;th&gt;用途&lt;/th&gt;
+&lt;/tr&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p><b>步骤 3：填充数据行，变量名用 <code>&lt;code&gt;</code> 包裹</b>，颜色值居中显示：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">步骤3 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;tr&gt;
+  &lt;td style="padding:6px 10px;"&gt;&lt;code&gt;--md-color-primary&lt;/code&gt;&lt;/td&gt;
+  &lt;td style="padding:6px 10px;text-align:center;"&gt;#1976D2&lt;/td&gt;
+  &lt;td style="padding:6px 10px;text-align:center;"&gt;#88BDE8&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;主色调：图标、按钮、弹窗文字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td style="padding:6px 10px;"&gt;&lt;code&gt;--md-color-surface&lt;/code&gt;&lt;/td&gt;
+  &lt;td style="padding:6px 10px;text-align:center;"&gt;#ECEDFB&lt;/td&gt;
+  &lt;td style="padding:6px 10px;text-align:center;"&gt;#1C1F29&lt;/td&gt;
+  &lt;td style="padding:6px 10px;"&gt;页面底层背景&lt;/td&gt;
+&lt;/tr&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<p><b>步骤 4：完成。</b>表头自动蓝灰背景、所有单元格自动描边，无需额外 CSS。</p>
+<h3>编写建议</h3>
+<ul>
+<li><b>padding</b>：建议每格 <code>padding:6px 10px</code>（太密用 <code>8px 12px</code>）</li>
+<li><b>列宽</b>：给固定列设置 <code>width:百分比</code>，留一列自适应</li>
+<li><b>对齐</b>：数值/代码列居中（<code>text-align:center</code>），文字列左对齐</li>
+<li><b>代码</b>：变量名、类名、标签名都放 <code>&lt;code&gt;</code> 中</li>
+<li><b>不要</b>：不要在 <code>&lt;table&gt;</code> 上写 <code>border-collapse</code>（CSS 已全局设置）</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-CodeBlock">
+<h2 class="anchor" id="DocWrite-CodeBlock">代码块嵌入</h2>
+<p>在文档中嵌入带行号和高亮的代码示例。代码内容需 HTML 转义后放入 <code>&lt;script type="text/plain" class="code-source"&gt;</code>。</p>
+<div class="doc-highlight">
+<b>关键：</b>代码必须 HTML 转义后放入 <code>.code-source</code>，Document.js 会自动反转义并渲染
+</div>
+<h3>完整代码块结构</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">代码块完整模板 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 代码块容器 --&gt;
+&lt;div class="code-container"&gt;
+  &lt;!-- 顶部文件名栏 + 复制按钮 --&gt;
+  &lt;div class="code-header"&gt;
+    &lt;span class="code-header-name"&gt;文件名.后缀 | 语言&lt;/span&gt;
+    &lt;button class="copy-btn" onclick="copyCode(this)"&gt;复制&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;!-- 代码内容区 --&gt;
+  &lt;div class="code-content"&gt;
+    &lt;!-- 行号容器（自动填充） --&gt;
+    &lt;div class="line-numbers"&gt;&lt;/div&gt;
+    &lt;!-- 代码包装器 --&gt;
+    &lt;div class="code-wrapper"&gt;
+      &lt;!-- 原始代码（必须 HTML 转义） --&gt;
+      &lt;script type="text/plain" class="code-source"&gt;
+        &amp;lt;div&amp;gt;你的代码（已HTML转义）&amp;lt;/div&amp;gt;
+      &lt;/script&gt;
+      &lt;!-- 高亮渲染目标 --&gt;
+      &lt;pre&gt;&lt;code class="display-code language-html"&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>关键类名</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">类名</th>
+<th style="padding:6px 10px;">必须</th>
+<th style="padding:6px 10px;">作用</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.code-container</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">外层容器，深色背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.code-header</code></td>
+<td style="padding:6px 10px;">推荐</td>
+<td style="padding:6px 10px;">顶部文件名栏 + 复制按钮</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.code-source</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">原始代码（HTML 转义后），type="text/plain" 防止执行</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.display-code</code></td>
+<td style="padding:6px 10px;">是</td>
+<td style="padding:6px 10px;">高亮渲染目标，需加 <code>language-xxx</code> 类</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>.line-numbers</code></td>
+<td style="padding:6px 10px;">推荐</td>
+<td style="padding:6px 10px;">行号栏容器，自动填充</td>
+</tr>
+</table>
+<h3>语言标记</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">语言</th>
+<th style="padding:6px 10px;">标记</th>
+<th style="padding:6px 10px;">示例</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;">HTML</td>
+<td style="padding:6px 10px;"><code>language-html</code></td>
+<td style="padding:6px 10px;">&lt;div&gt;...&lt;/div&gt;</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">CSS</td>
+<td style="padding:6px 10px;"><code>language-css</code></td>
+<td style="padding:6px 10px;">.class { color: red; }</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">JavaScript</td>
+<td style="padding:6px 10px;"><code>language-javascript</code></td>
+<td style="padding:6px 10px;">const x = 1;</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">JSON</td>
+<td style="padding:6px 10px;"><code>language-json</code></td>
+<td style="padding:6px 10px;">{"key": "value"}</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">Bash/Shell</td>
+<td style="padding:6px 10px;"><code>language-bash</code></td>
+<td style="padding:6px 10px;">$ npm install</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;">纯文本</td>
+<td style="padding:6px 10px;"><code>language-plaintext</code></td>
+<td style="padding:6px 10px;">普通文本</td>
+</tr>
+</table>
+<h3>实战示例</h3>
+<p>以下是一个完整的代码块示例：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">示例：HTML代码块 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 实际写入文档的代码块 --&gt;
+&lt;div class="code-container"&gt;
+  &lt;div class="code-header"&gt;
+    &lt;span class="code-header-name"&gt;index.html | HTML&lt;/span&gt;
+    &lt;button class="copy-btn" onclick="copyCode(this)"&gt;复制&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="code-content"&gt;
+    &lt;div class="line-numbers"&gt;&lt;/div&gt;
+    &lt;div class="code-wrapper"&gt;
+      &lt;script type="text/plain" class="code-source"&gt;
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang="zh-CN"&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset="UTF-8"&amp;gt;
+  &amp;lt;title&amp;gt;页面标题&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+      &lt;/script&gt;
+      &lt;pre&gt;&lt;code class="display-code language-html"&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>复制按钮</h3>
+<p>复制按钮的 <code>onclick="copyCode(this)"</code> 由 <code>Document.js</code> 提供。点击后按钮变绿并显示"已复制"，1.5 秒后恢复。</p>
+<h3>编写建议</h3>
+<ul>
+<li><b>文件名</b>：在 <code>.code-header-name</code> 中写明文件名和语言</li>
+<li><b>代码缩进</b>：保持代码原有的缩进格式</li>
+<li><b>转义顺序</b>：先转义 <code>&amp;</code>，再转义 <code>&lt;</code> 和 <code>&gt;</code></li>
+<li><b>语言选择</b>：根据代码类型选择正确的语言标记</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-DocWrite-Escape">
+<h2 class="anchor" id="DocWrite-Escape">HTML 转义参考</h2>
+<p>代码块中的代码必须经过 HTML 转义，否则浏览器会尝试解析。将源码中的特殊字符替换为对应实体：</p>
+<div class="doc-highlight">
+<b>重要：</b>转义顺序很重要！<code>&amp;</code> 必须最先转义，否则会影响其他实体
+</div>
+<h3>转义字符表</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;">字符</th>
+<th style="padding:6px 10px;">名称</th>
+<th style="padding:6px 10px;">HTML 实体</th>
+<th style="padding:6px 10px;">说明</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&amp;</code></td>
+<td style="padding:6px 10px;">与号</td>
+<td style="padding:6px 10px;"><code>&amp;amp;</code></td>
+<td style="padding:6px 10px;">必须最先转义，否则影响其他实体</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&lt;</code></td>
+<td style="padding:6px 10px;">小于号</td>
+<td style="padding:6px 10px;"><code>&amp;lt;</code></td>
+<td style="padding:6px 10px;">最常需要转义，否则被当作标签开始</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>&gt;</code></td>
+<td style="padding:6px 10px;">大于号</td>
+<td style="padding:6px 10px;"><code>&amp;gt;</code></td>
+<td style="padding:6px 10px;">通常可省略，但建议转义</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>"</code></td>
+<td style="padding:6px 10px;">双引号</td>
+<td style="padding:6px 10px;"><code>&amp;quot;</code></td>
+<td style="padding:6px 10px;">属性值中使用时需转义</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>'</code></td>
+<td style="padding:6px 10px;">单引号</td>
+<td style="padding:6px 10px;"><code>&amp;#039;</code></td>
+<td style="padding:6px 10px;">属性值中使用时需转义</td>
+</tr>
+</table>
+<h3>转义示例</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">转义前后对比</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">原始代码（放入 .code-source 前）:
+<div class="foo">Hello & World</div>
+转义后（放入 .code-source 中）:
+&lt;div class=&quot;foo&quot;&gt;Hello &amp; World&lt;/div&gt;
+Document.js 会自动反转义并在 .display-code 中渲染为:
+<div class="foo">Hello & World</div></script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+<h3>转义顺序</h3>
+<p><b>&amp; 必须先转义为 &amp;amp;</b>，否则后续转义产生的 <code>&amp;lt;</code> 等会被错误处理。</p>
+<ol>
+<li><code>&amp;</code> → <code>&amp;amp;</code>（最先转义）</li>
+<li><code>&lt;</code> → <code>&amp;lt;</code></li>
+<li><code>&gt;</code> → <code>&amp;gt;</code></li>
+<li><code>"</code> → <code>&amp;quot;</code></li>
+<li><code>'</code> → <code>&amp;#039;</code></li>
+</ol>
+<h3>快速转义示例</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">HTML 代码转义示例</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">原始 HTML 代码：
+&lt;div class="container"&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;Hello &amp; Welcome&lt;/p&gt;
+  &lt;a href="https://example.com"&gt;Link&lt;/a&gt;
+&lt;/div&gt;
+转义后（放入 .code-source 中）：
+&amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt;
+  &amp;lt;h1&amp;gt;Title&amp;lt;/h1&amp;gt;
+  &amp;lt;p&amp;gt;Hello &amp;amp; Welcome&amp;lt;/p&amp;gt;
+  &amp;lt;a href=&amp;quot;https://example.com&amp;quot;&amp;gt;Link&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;</script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+<h3>CSS 代码转义示例</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">CSS 代码转义示例</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">原始 CSS 代码：
+.container {
+  color: #1976D2;
+  background: var(--md-color-surface);
+}
+转义后（放入 .code-source 中）：
+.container {
+  color: #1976D2;
+  background: var(--md-color-surface);
+}
+注意：CSS 代码通常不需要转义，除非包含 &lt; &gt; &amp; 等字符</script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+<h3>JavaScript 代码转义示例</h3>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">JavaScript 代码转义示例</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">原始 JavaScript 代码：
+const element = document.querySelector('.container');
+if (x < 10 && y > 5) {
+  console.log('Hello & World');
+}
+转义后（放入 .code-source 中）：
+const element = document.querySelector(&#39;.container&#39;);
+if (x &lt; 10 &amp;&amp; y &gt; 5) {
+  console.log(&#39;Hello &amp; World&#39;);
+}</script>
+<pre><code class="display-code language-plaintext"></code></pre>
+</div>
+</div>
+</div>
+<h3>常见问题</h3>
+<ul>
+<li><b>Q: 代码块显示异常？</b><br>A: 检查是否正确转义了 <code>&amp;</code>、<code>&lt;</code>、<code>&gt;</code> 字符</li>
+<li><b>Q: 引号显示错误？</b><br>A: 在属性值中的引号需要转义为 <code>&amp;quot;</code> 或 <code>&amp;#039;</code></li>
+<li><b>Q: 可以使用在线转义工具吗？</b><br>A: 可以，搜索 "HTML escape tool" 即可找到在线工具</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-CoreLogic">
+<h2 class="anchor" id="JS-CoreLogic">CoreLogic.js — 核心逻辑</h2>
+<p>负责三大核心功能：<b>主题切换</b>、<b>MD3 弹窗 + 跳转卡片</b>、<b>版权年份自动更新</b>。</p>
+<h3>主题切换</h3>
+<ul>
+<li>初始化：优先读 <code>localStorage.userTheme</code>（10 分钟有效），否则跟随系统 <code>prefers-color-scheme</code></li>
+<li>切换：body 上 toggle <code>.dark-theme</code>，图标切换 dark_mode ↔ light_mode</li>
+<li>系统主题变化时自动跟随（仅当用户未手动设置时）</li>
+</ul>
+<h3>MD3 弹窗</h3>
+<ul>
+<li><code>showDialog(title, content, href)</code> — 填充并显示弹窗</li>
+<li><code>hideDialog()</code> — 关闭弹窗，恢复页面滚动位置</li>
+<li>自动处理 <code>\n → &lt;br&gt;</code> 和 <code>&lt;img&gt;</code> 样式</li>
+<li>点击遮罩空白处关闭</li>
+</ul>
+<h3>跳转卡片</h3>
+<ul>
+<li>自动为所有 <code>.list-item</code> 绑定点击事件</li>
+<li>读取 <code>data-href</code> / <code>data-title</code> / <code>data-content</code></li>
+<li>点击 → 弹出确认对话框 → 确认 → 跳转</li>
+</ul>
+<h3>版权年份</h3>
+<ul>
+<li>自动更新 <code>#chinese-copyright-year</code> 和 <code>#english-copyright-year</code></li>
+<li>当年份 > 2025 时显示 <code>2025-当前年</code></li>
+</ul>
+<h3>CoreLogic.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Protect.js</td>
+<td style="padding:8px 12px;">保护系统，CoreLogic.js 会检查是否加载</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Cookie.js</td>
+<td style="padding:8px 12px;">协议检查，CoreLogic.js 会检查是否加载</td>
+</tr>
+</table>
+<h3>CoreLogic.js 初始化流程</h3>
+<ol>
+<li>检查所有必需脚本是否加载（Protect.js、Cookie.js）</li>
+<li>等待 DOM 加载完成</li>
+<li>移除跳转卡片的 href 属性</li>
+<li>初始化主题切换</li>
+<li>初始化 MD3 弹窗</li>
+<li>初始化跳转卡片涟漪动画</li>
+<li>更新版权年份</li>
+</ol>
+<h3>CoreLogic.js 配置选项</h3>
+<ul>
+<li><code>REQUIRED_SCRIPTS</code>：必需脚本列表</li>
+<li><code>coreInitialized</code>：核心初始化状态</li>
+<li><code>window.__PROTECT</code>：保护系统状态</li>
+<li><code>window.__COOKIE</code>：协议检查状态</li>
+</ul>
+<h3>CoreLogic.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 CoreLogic.js</li>
+<li>确保页面中有必需的元素（如 <code>#themeToggle</code>、<code>#md3Dialog</code>）</li>
+<li>不要修改 CoreLogic.js 的核心逻辑</li>
+<li>可以通过 CSS 变量自定义样式</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-Document">
+<h2 class="anchor" id="JS-Document">Document.js — 文档页面逻辑</h2>
+<p>专为文档类型页面设计。负责：<b>侧滑栏开/关</b>、<b>折叠组初始化</b>、<b>区块切换</b>、<b>代码块渲染</b>、<b>details 动画</b>。</p>
+<h3>侧滑栏</h3>
+<ul>
+<li><code>openS()</code> / <code>closeS()</code> — 控制 sidebar 滑出/滑入 + 遮罩</li>
+<li>移动端（&lt;768px）点击菜单按钮打开，点击遮罩关闭</li>
+</ul>
+<h3>折叠组 initSidebarGroups()</h3>
+<ul>
+<li>遍历所有 <code>.sidebar-group</code>，用 <code>:scope ></code> 选择直接子元素</li>
+<li>点击 header 时 toggle <code>.collapsed</code> 类</li>
+<li>支持任意层级嵌套（每层独立折叠）</li>
+<li>默认全部展开，可通过 <code>data-collapsed="true"</code> 属性让特定组默认折叠</li>
+</ul>
+<h3>默认折叠状态配置</h3>
+<p>在 <code>.sidebar-group</code> 元素上添加 <code>data-collapsed="true"</code> 属性，即可让该折叠组默认处于折叠状态：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">默认折叠示例 | HTML</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">&lt;!-- 默认展开（不添加 data-collapsed 属性） --&gt;
+&lt;div class="sidebar-group"&gt;
+  &lt;div class="group-header"&gt;&lt;span class="arrow"&gt;▼&lt;/span&gt;&lt;span&gt;概述&lt;/span&gt;&lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#Overview"&gt;项目概述&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#QuickStart"&gt;快速开始&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- 默认折叠（添加 data-collapsed="true"） --&gt;
+&lt;div class="sidebar-group" data-collapsed="true"&gt;
+  &lt;div class="group-header"&gt;&lt;span class="arrow"&gt;▼&lt;/span&gt;&lt;span&gt;高级功能&lt;/span&gt;&lt;/div&gt;
+  &lt;ul class="group-items"&gt;
+    &lt;li&gt;&lt;a href="#Advanced1"&gt;高级功能1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#Advanced2"&gt;高级功能2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</script>
+<pre><code class="display-code language-html"></code></pre>
+</div>
+</div>
+</div>
+<h3>区块切换 showSection()</h3>
+<ul>
+<li>监听 hashchange 和侧滑栏链接点击</li>
+<li><code>#SectionName</code> → 显示 <code>#sec-SectionName</code></li>
+<li>切换后自动初始化代码块</li>
+</ul>
+<h3>代码块 initCodeBlocks()</h3>
+<ul>
+<li>读取 <code>.code-source</code> 的原始内容（HTML 反转义）</li>
+<li>填充到 <code>.display-code</code> 并调用 hljs.highlightElement()</li>
+<li>自动生成行号</li>
+</ul>
+<h3>Document.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">highlight.js</td>
+<td style="padding:8px 12px;">代码高亮库</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Document.css</td>
+<td style="padding:8px 12px;">文档页面样式</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Code.css</td>
+<td style="padding:8px 12px;">代码框样式</td>
+</tr>
+</table>
+<h3>Document.js 初始化流程</h3>
+<ol>
+<li>等待 DOM 加载完成</li>
+<li>初始化侧滑栏开/关功能</li>
+<li>初始化折叠组</li>
+<li>监听 hashchange 事件</li>
+<li>初始化代码块</li>
+<li>初始化 details 折叠动画</li>
+</ol>
+<h3>Document.js 配置选项</h3>
+<ul>
+<li>无全局配置选项</li>
+<li>所有功能通过 CSS 类名和 ID 控制</li>
+</ul>
+<h3>Document.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 Document.js</li>
+<li>确保页面中有必需的元素（如 <code>#sidebar</code>、<code>#menuBtn</code>）</li>
+<li>不要修改 Document.js 的核心逻辑</li>
+<li>可以通过 CSS 变量自定义样式</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-Cookie">
+<h2 class="anchor" id="JS-Cookie">Cookie.js — 协议检查</h2>
+<p>页面加载时自动检查用户是否已同意协议。未同意则跳转到 <code>Agreement.html</code>。</p>
+<ul>
+<li>已同意（<code>cookie_agreement=agreed</code>）→ 正常浏览</li>
+<li>未同意且不在 Agreement.html → 自动跳转</li>
+<li>自动适配非根目录路径（计算 <code>../</code> 深度）</li>
+<li><code>agreeAndContinue()</code> 设置永久 Cookie（2 年有效期）后跳转首页</li>
+</ul>
+<h3>Cookie.js 工作原理</h3>
+<ol>
+<li>页面加载时检查 <code>cookie_agreement</code> Cookie</li>
+<li>如果 Cookie 存在且值为 <code>agreed</code>，则正常浏览</li>
+<li>如果 Cookie 不存在或值不是 <code>agreed</code>，则跳转到 <code>Agreement.html</code></li>
+<li>在 <code>Agreement.html</code> 页面，用户点击同意按钮后调用 <code>agreeAndContinue()</code></li>
+<li><code>agreeAndContinue()</code> 设置 Cookie 并跳转到首页</li>
+</ol>
+<h3>Cookie.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">无</td>
+<td style="padding:8px 12px;">独立模块，无依赖</td>
+</tr>
+</table>
+<h3>Cookie.js 配置选项</h3>
+<ul>
+<li><code>cookie_agreement</code>：Cookie 名称</li>
+<li><code>agreed</code>：Cookie 值</li>
+<li>Cookie 有效期：2 年</li>
+</ul>
+<h3>Cookie.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 Cookie.js</li>
+<li>确保 <code>Agreement.html</code> 页面存在</li>
+<li>不要修改 Cookie.js 的核心逻辑</li>
+<li>可以通过修改 Cookie 名称和值来自定义</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-Protect">
+<h2 class="anchor" id="JS-Protect">Protect.js — 保护系统</h2>
+<ul>
+<li>禁用 F12、Ctrl+Shift+I、Ctrl+Shift+J、Ctrl+U</li>
+<li>禁用 <code>document.designMode</code></li>
+<li>设置 <code>window.__PROTECT = true</code> 标志</li>
+</ul>
+<h3>Protect.js 工作原理</h3>
+<ol>
+<li>监听键盘事件，禁用特定快捷键</li>
+<li>使用 <code>Object.defineProperty</code> 锁定 <code>document.designMode</code></li>
+<li>设置全局标志供 CoreLogic.js 检查</li>
+</ol>
+<h3>Protect.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">无</td>
+<td style="padding:8px 12px;">独立模块，无依赖</td>
+</tr>
+</table>
+<h3>Protect.js 配置选项</h3>
+<ul>
+<li>无全局配置选项</li>
+<li>所有功能通过事件监听实现</li>
+</ul>
+<h3>Protect.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 Protect.js</li>
+<li>不要修改 Protect.js 的核心逻辑</li>
+</ul>
+<h3>Protect.js 限制</h3>
+<ul>
+<li>无法完全防止所有调试方法</li>
+<li>无法防止用户禁用 JavaScript</li>
+<li>无法防止用户使用浏览器扩展</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-Search">
+<h2 class="anchor" id="JS-Search">Search.js — 搜索过滤</h2>
+<ul>
+<li>监听 <code>#SearchInput</code> 的 input 事件</li>
+<li>匹配 <code>.list-title</code> 和 <code>.list-subtitle</code>（大小写不敏感）</li>
+<li>无匹配 → 隐藏该项；卡片内所有项隐藏 → 隐藏整张卡片</li>
+<li>清空搜索框 → 恢复全部显示</li>
+</ul>
+<h3>Search.js 工作原理</h3>
+<ol>
+<li>监听搜索框的 <code>input</code> 事件</li>
+<li>获取搜索关键词</li>
+<li>遍历所有 <code>.list-item</code> 元素</li>
+<li>匹配 <code>.list-title</code> 和 <code>.list-subtitle</code> 的文本内容</li>
+<li>显示匹配的项，隐藏不匹配的项</li>
+<li>如果卡片内所有项都隐藏，则隐藏整张卡片</li>
+</ol>
+<h3>Search.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Search.css</td>
+<td style="padding:8px 12px;">搜索框样式</td>
+</tr>
+</table>
+<h3>Search.js 配置选项</h3>
+<ul>
+<li>无全局配置选项</li>
+<li>所有功能通过 CSS 类名和 ID 控制</li>
+</ul>
+<h3>Search.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 Search.js</li>
+<li>确保页面中有 <code>#SearchInput</code> 元素</li>
+<li>不要修改 Search.js 的核心逻辑</li>
+<li>可以通过修改匹配规则来自定义搜索</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-JS-Code">
+<h2 class="anchor" id="JS-Code">Code.js — 代码框</h2>
+<ul>
+<li><code>initLineNumbers()</code> — 页面加载时自动为所有 <code>.code-container</code> 生成行号和高亮</li>
+<li><code>copyCode(btn)</code> — 复制代码到剪贴板，按钮文字变为"已复制"并变绿 1.5 秒</li>
+<li><code>unescapeHtml()</code> / <code>escapeHtml()</code> — HTML 实体编解码</li>
+</ul>
+<h3>Code.js 工作原理</h3>
+<ol>
+<li>页面加载时调用 <code>initLineNumbers()</code></li>
+<li>遍历所有 <code>.code-container</code> 元素</li>
+<li>读取 <code>.code-source</code> 的原始内容</li>
+<li>HTML 反转义后填充到 <code>.display-code</code></li>
+<li>调用 <code>hljs.highlightElement()</code> 进行代码高亮</li>
+<li>自动生成行号</li>
+</ol>
+<h3>Code.js 依赖关系</h3>
+<table style="width:100%;margin:12px 0;">
+<tr>
+<th style="padding:8px 12px;text-align:left;">依赖</th>
+<th style="padding:8px 12px;text-align:left;">说明</th>
+</tr>
+<tr>
+<td style="padding:8px 12px;">highlight.js</td>
+<td style="padding:8px 12px;">代码高亮库</td>
+</tr>
+<tr>
+<td style="padding:8px 12px;">Code.css</td>
+<td style="padding:8px 12px;">代码框样式</td>
+</tr>
+</table>
+<h3>Code.js 配置选项</h3>
+<ul>
+<li>无全局配置选项</li>
+<li>所有功能通过 CSS 类名和 ID 控制</li>
+</ul>
+<h3>Code.js 最佳实践</h3>
+<ul>
+<li>确保在页面中正确引入 Code.js</li>
+<li>确保页面中有 <code>.code-container</code> 元素</li>
+<li>不要修改 Code.js 的核心逻辑</li>
+<li>可以通过修改高亮主题来自定义样式</li>
+</ul>
+</div>
+<div class="doc-section" id="sec-CSS-Vars-Naming">
+<h2 class="anchor" id="CSS-Vars-Naming">命名规则</h2>
+<p>所有 CSS 变量遵循统一命名规范：</p>
+<div class="doc-highlight">
+--<b>前缀</b>-<b>用途</b>-<b>亮度/角色</b>
+</div>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">段</th>
+<th style="padding:6px 10px;text-align:left;">含义</th>
+<th style="padding:6px 10px;text-align:left;">可选值</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><b>前缀</b></td>
+<td style="padding:6px 10px;">设计体系标识</td>
+<td style="padding:6px 10px;"><code>md</code>（Material Design）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><b>用途</b></td>
+<td style="padding:6px 10px;">颜色语义：是什么</td>
+<td style="padding:6px 10px;">（省略，直接接角色）</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><b>亮度/角色</b></td>
+<td style="padding:6px 10px;">颜色层级与功能角色</td>
+<td style="padding:6px 10px;"><code>primary</code> / <code>surface</code> / <code>outline</code> 等</td>
+</tr>
+</table>
+<h3>角色后缀体系</h3>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">后缀</th>
+<th style="padding:6px 10px;text-align:left;">含义</th>
+<th style="padding:6px 10px;text-align:left;">示例</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>primary</code></td>
+<td style="padding:6px 10px;">主色调（最亮/饱和）</td>
+<td style="padding:6px 10px;"><code>--md-color-primary</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>on-primary</code></td>
+<td style="padding:6px 10px;">叠加在主色上的文字/图标</td>
+<td style="padding:6px 10px;"><code>--md-color-on-primary</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>primary-container</code></td>
+<td style="padding:6px 10px;">主色的浅色容器背景</td>
+<td style="padding:6px 10px;"><code>--md-color-primary-container</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>on-primary-container</code></td>
+<td style="padding:6px 10px;">叠加在容器上的文字</td>
+<td style="padding:6px 10px;"><code>--md-color-on-primary-container</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>surface</code></td>
+<td style="padding:6px 10px;">页面底层背景</td>
+<td style="padding:6px 10px;"><code>--md-color-surface</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>on-surface</code></td>
+<td style="padding:6px 10px;">页面主文字</td>
+<td style="padding:6px 10px;"><code>--md-color-on-surface</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>surface-variant</code></td>
+<td style="padding:6px 10px;">次级表面（卡片背景）</td>
+<td style="padding:6px 10px;"><code>--md-color-surface-variant</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>on-surface-variant</code></td>
+<td style="padding:6px 10px;">次级表面文字</td>
+<td style="padding:6px 10px;"><code>--md-color-on-surface-variant</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>outline</code></td>
+<td style="padding:6px 10px;">边框 / 分割线 / 连线</td>
+<td style="padding:6px 10px;"><code>--md-color-outline</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>icon-background</code></td>
+<td style="padding:6px 10px;">卡片图标背景色</td>
+<td style="padding:6px 10px;"><code>--md-color-icon-background</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>dialog-header</code></td>
+<td style="padding:6px 10px;">弹窗顶栏背景</td>
+<td style="padding:6px 10px;"><code>--md-color-dialog-header</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>table-head</code></td>
+<td style="padding:6px 10px;">表格表头背景</td>
+<td style="padding:6px 10px;"><code>--md-color-table-head</code></td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>highlight</code></td>
+<td style="padding:6px 10px;">文档高亮块背景</td>
+<td style="padding:6px 10px;"><code>--md-color-highlight</code></td>
+</tr>
+</table>
+<h3>命名速记</h3>
+<ul>
+<li><b>无前缀</b> = 该层主色 → <code>--md-color-primary</code>、<code>--md-color-surface</code></li>
+<li><b>on-</b> = 叠加在该层上的内容色 → <code>--md-color-on-primary</code>、<code>--md-color-on-surface</code></li>
+<li><b>-container</b> = 该色的浅色容器版本 → <code>--md-color-primary-container</code></li>
+<li><b>on-...-container</b> = 叠加在容器上的内容色 → <code>--md-color-on-primary-container</code></li>
+<li><b>-variant</b> = 次级/弱化版本 → <code>--md-color-surface-variant</code></li>
+</ul>
+</div>
+<div class="doc-section" id="sec-CSS-Vars-Table">
+<h2 class="anchor" id="CSS-Vars-Table">色值变量表</h2>
+<p>所有变量定义在 <code>MainColorStyle_Default.css</code>。亮色在 <code>:root</code>，暗色在 <code>body.dark-theme</code> 覆盖。</p>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">变量名</th>
+<th style="padding:6px 10px;text-align:left;">亮色值</th>
+<th style="padding:6px 10px;text-align:left;">暗色值</th>
+<th style="padding:6px 10px;text-align:left;">用途</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-primary</code></td>
+<td style="padding:6px 10px;"><span style="color:#1976D2;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#1976D2</span></td>
+<td style="padding:6px 10px;"><span style="color:#88BDE8;background:#1C1F29;padding:2px 4px;border-radius:3px;">#88BDE8</span></td>
+<td style="padding:6px 10px;">主色调：图标、按钮、弹窗文字</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-on-primary</code></td>
+<td style="padding:6px 10px;"><span style="color:#FFFFFF;background:#333;padding:2px 4px;border-radius:3px;">#FFFFFF</span></td>
+<td style="padding:6px 10px;"><span style="color:#1F113F;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#1F113F</span></td>
+<td style="padding:6px 10px;">叠加在主色上的文字</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-primary-container</code></td>
+<td style="padding:6px 10px;"><span style="color:#DAE1FF;background:#181B25;padding:2px 4px;border-radius:3px;">#DAE1FF</span></td>
+<td style="padding:6px 10px;"><span style="color:#2C3140;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#2C3140</span></td>
+<td style="padding:6px 10px;">主色浅容器：主栏背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-on-primary-container</code></td>
+<td style="padding:6px 10px;"><span style="color:#001849;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#001849</span></td>
+<td style="padding:6px 10px;"><span style="color:#F7F1FF;background:#1C1F29;padding:2px 4px;border-radius:3px;">#F7F1FF</span></td>
+<td style="padding:6px 10px;">主色容器上的文字</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-surface</code></td>
+<td style="padding:6px 10px;"><span style="color:#ECEDFB;background:#181B25;padding:2px 4px;border-radius:3px;">#ECEDFB</span></td>
+<td style="padding:6px 10px;"><span style="color:#1C1F29;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#1C1F29</span></td>
+<td style="padding:6px 10px;">页面底层背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-on-surface</code></td>
+<td style="padding:6px 10px;"><span style="color:#181B25;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#181B25</span></td>
+<td style="padding:6px 10px;"><span style="color:#E0E2EF;background:#1C1F29;padding:2px 4px;border-radius:3px;">#E0E2EF</span></td>
+<td style="padding:6px 10px;">页面主文字、标题</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-surface-variant</code></td>
+<td style="padding:6px 10px;"><span style="color:#FAF8FF;background:#181B25;padding:2px 4px;border-radius:3px;">#FAF8FF</span></td>
+<td style="padding:6px 10px;"><span style="color:#363943;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#363943</span></td>
+<td style="padding:6px 10px;">次级表面：卡片、侧滑栏</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-on-surface-variant</code></td>
+<td style="padding:6px 10px;"><span style="color:#434654;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#434654</span></td>
+<td style="padding:6px 10px;"><span style="color:#C3C6D6;background:#1C1F29;padding:2px 4px;border-radius:3px;">#C3C6D6</span></td>
+<td style="padding:6px 10px;">次级文字：描述、页尾</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-icon-background</code></td>
+<td style="padding:6px 10px;"><span style="color:#1976D2;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#1976D2</span></td>
+<td style="padding:6px 10px;"><span style="color:#23292E;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#23292E</span></td>
+<td style="padding:6px 10px;">卡片左侧图标背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-outline</code></td>
+<td style="padding:6px 10px;"><span style="color:#48484A;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#48484A</span></td>
+<td style="padding:6px 10px;"><span style="color:#8B8A8A;background:#1C1F29;padding:2px 4px;border-radius:3px;">#8B8A8A</span></td>
+<td style="padding:6px 10px;">边框 / 分割线 / 侧滑栏连线</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-dialog-header</code></td>
+<td style="padding:6px 10px;"><span style="color:#5095FF;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#5095FF</span></td>
+<td style="padding:6px 10px;"><span style="color:#003FA4;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#003FA4</span></td>
+<td style="padding:6px 10px;">弹窗顶栏背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-table-head</code></td>
+<td style="padding:6px 10px;"><span style="color:#C0CDE5;background:#181B25;padding:2px 4px;border-radius:3px;">#C0CDE5</span></td>
+<td style="padding:6px 10px;"><span style="color:#2E3340;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#2E3340</span></td>
+<td style="padding:6px 10px;">表格表头背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-highlight</code></td>
+<td style="padding:6px 10px;"><span style="color:#D3DDF7;background:#181B25;padding:2px 4px;border-radius:3px;">#D3DDF7</span></td>
+<td style="padding:6px 10px;"><span style="color:#282E3C;background:#E0E2EF;padding:2px 4px;border-radius:3px;">#282E3C</span></td>
+<td style="padding:6px 10px;">涟漪动画色、文档高亮块背景</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-secondary</code></td>
+<td style="padding:6px 10px;"><span style="color:#625B71;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#625B71</span></td>
+<td style="padding:6px 10px;"><span style="color:#A88A9E;background:#1C1F29;padding:2px 4px;border-radius:3px;">#A88A9E</span></td>
+<td style="padding:6px 10px;">辅助色</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-tertiary</code></td>
+<td style="padding:6px 10px;"><span style="color:#7D5260;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#7D5260</span></td>
+<td style="padding:6px 10px;"><span style="color:#B58E9F;background:#1C1F29;padding:2px 4px;border-radius:3px;">#B58E9F</span></td>
+<td style="padding:6px 10px;">第三色</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-color-error</code></td>
+<td style="padding:6px 10px;"><span style="color:#B3261E;background:#FFFFFF;padding:2px 4px;border-radius:3px;">#B3261E</span></td>
+<td style="padding:6px 10px;"><span style="color:#F2B8B5;background:#1C1F29;padding:2px 4px;border-radius:3px;">#F2B8B5</span></td>
+<td style="padding:6px 10px;">错误/警告色</td>
+</tr>
+</table>
+</div>
+<div class="doc-section" id="sec-CSS-BorderRadius">
+<h2 class="anchor" id="CSS-BorderRadius">全局圆角变量</h2>
+<p>定义在 <code>AdditionalStyles.css</code> 的 <code>:root</code>：</p>
+<div class="code-container">
+<div class="code-header"><span class="code-header-name">圆角变量</span><button class="copy-btn" onclick="copyCode(this)">复制</button></div>
+<div class="code-content">
+<div class="line-numbers"></div>
+<div class="code-wrapper">
+<script type="text/plain" class="code-source">:root {
+  --border-radius-basic: 16px;
+  --border-radius-small: 8px;
+}</script>
+<pre><code class="display-code language-css"></code></pre>
+</div>
+</div>
+</div>
+<p>统一控制以下组件的圆角：主栏、卡片、跳转卡片、头像、弹窗、弹窗按钮、底部按钮栏。<code>--border-radius-basic</code> 控制大圆角（16px），<code>--border-radius-small</code> 控制小圆角（8px）。修改即可全局调整圆角大小。</p>
+<h3>阴影与过渡变量</h3>
+<p>同样定义在 <code>AdditionalStyles.css</code> 的 <code>:root</code>：</p>
+<table style="width:100%;">
+<tr>
+<th style="padding:6px 10px;text-align:left;">变量名</th>
+<th style="padding:6px 10px;text-align:left;">值</th>
+<th style="padding:6px 10px;text-align:left;">用途</th>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-elevation-1</code></td>
+<td style="padding:6px 10px;">0 1px 3px / 0 1px 2px</td>
+<td style="padding:6px 10px;">卡片默认阴影</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-elevation-2</code></td>
+<td style="padding:6px 10px;">0 3px 6px / 0 2px 4px</td>
+<td style="padding:6px 10px;">卡片悬停阴影、主栏阴影</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-elevation-3</code></td>
+<td style="padding:6px 10px;">0 10px 20px / 0 3px 6px</td>
+<td style="padding:6px 10px;">头像阴影</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-elevation-4</code></td>
+<td style="padding:6px 10px;">0 15px 25px / 0 5px 10px</td>
+<td style="padding:6px 10px;">弹窗、底部栏阴影</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-transition-short</code></td>
+<td style="padding:6px 10px;">200ms</td>
+<td style="padding:6px 10px;">圆角、背景色变化</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-transition-standard</code></td>
+<td style="padding:6px 10px;">300ms</td>
+<td style="padding:6px 10px;">弹窗展开、折叠动画</td>
+</tr>
+<tr>
+<td style="padding:6px 10px;"><code>--md-transition-long</code></td>
+<td style="padding:6px 10px;">500ms</td>
+<td style="padding:6px 10px;">页面级过渡（预留）</td>
+</tr>
+</table>
+</div>
+</div>
+<script>
+async function copy(str) {
+await navigator.clipboard.writeText(str);
+alert("已复制");
+}
+</script>
+<div class="md3-dialog" id="md3Dialog">
+<div class="md3-dialog-content">
+<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
+<div class="md3-dialog-body" id="md3DialogBody">内容</div>
+<div class="md3-dialog-actions">
+<button class="md3-button text" id="md3DialogCancel">取消</button>
+<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+</div>
+</div>
+</div>
+<div class="md3-dialog">
+<div class="md3-dialog-content">
+<div class="md3-dialog-header">提示</div>
+<div class="md3-dialog-body">内容</div>
+<div class="md3-dialog-actions"><button class="md3-button text">确定</button></div>
+</div>
+</div>
+<script src="./js/CoreLogic.js"></script>
+<script src="./js/Protect.js"></script>
+<script src="./js/Cookie.js"></script>
+<script src="./js/Search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="./js/Document.js"></script>
+</body>
+</html>
