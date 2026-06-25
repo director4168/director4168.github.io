@@ -3,54 +3,6 @@
  https://director4168.github.io
  本CSS与网站一同开源，开源协议MPL-2.0
  负责处理彩蛋弹窗的颜色样式
- Version: v26.04.16.1524
 */
 
-
-/* 弹窗底层日间模式亮色调配色 */
-:root {
-	/* 顶栏文本、亮色暗色切换控件矢量图图标、弹窗部分文本 */
-	--egg-primary: #FFB6C1;
-	/* 顶栏文字配色 */
-	--egg-on-primary: #000000;
-	/* 弹窗按钮配色 */
-	--egg-primary-container: #FFD3EC;
-	/* 介绍栏基本文字配色 */
-	--egg-on-primary-container: #FF84C9;
-	/* 基本背景配色 */
-	--egg-surface: #FEE8EB;
-	/* 卡片主名称配色、栏的介绍配色 */
-	--egg-on-surface: #FF46AE;
-	/* 分栏基本背景配色 */
-	--egg-surface-variant: #E7E0EC;
-	/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
-	--egg-on-surface-variant: #49454F;
-	/* 卡片右侧矢量图图标配色 */
-	--egg-outline: #79747E;
-}
-
-
-
-
-
-/* 弹窗夜间模式暗色调配色 */
-body.dark-theme {
-	/* 顶栏文本、亮色暗色切换控件矢量图图标、弹窗部分文本 */
-	--egg-primary: #FFB6DF;
-	/* 顶栏文字配色 */
-	--egg-on-primary: #000000;
-	/* 弹窗按钮配色 */
-	--egg-primary-container: #FFD3EC;
-	/* 介绍栏基本文字配色 */
-	--egg-on-primary-container: #FF84C9;
-	/* 基本背景配色 */
-	--egg-surface: #FEE8ED;
-	/* 卡片主名称配色、栏的介绍配色 */
-	--egg-on-surface: #FF46AE;
-	/* 分栏基本背景配色 */
-	--egg-surface-variant: #49454F;
-	/* 分栏主称、卡片介绍配色、解释、版本&版权声明文本配色 */
-	--egg-on-surface-variant: #CAC4D0;
-	/* 卡片右侧矢量图图标配色 */
-	--egg-outline: #938F99;
-}
+:root {--egg-primary: #FFB6C1;--egg-on-primary: #000000;--egg-primary-container: #FFD3EC;--egg-on-primary-container: #FF84C9;--egg-surface: #FEE8EB;--egg-on-surface: #FF46AE;--egg-surface-variant: #E7E0EC;--egg-on-surface-variant: #49454F;--egg-outline: #79747E;}body.dark-theme {--egg-primary: #FFB6DF;--egg-on-primary: #000000;--egg-primary-container: #FFD3EC;--egg-on-primary-container: #FF84C9;--egg-surface: #FEE8ED;--egg-on-surface: #FF46AE;--egg-surface-variant: #49454F;--egg-on-surface-variant: #CAC4D0;--egg-outline: #938F99;}
