@@ -1,165 +1,103 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://director4168.github.io/css/MainColorStyle_Default.css">
-<link rel="stylesheet" href="https://director4168.github.io/css/AdditionalStyles.css">
-<meta http-equiv="refresh" content="5;url=https://director4168.github.io">
-</head>
-<body class="dark-theme">
-<div class="main-content">
-<div class="MainColumn-section" style="--md-color-primary-container: #404450;--md-color-on-primary-container: #FFFFFF;--md-color-on-surface-variant: #FFFFFF;">
-<h1 class="MainColumn-title" style="color: #FFFFFF;font-size: 96px;margin: -25px 0px;">404</h1>
-<p class="MainColumn-description">页面不存在！ | The page does not exist!</p>
-<p class="MainColumn-description">5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.</p>
-</div>
-<div class="card">
-<h2 class="card-title">返回 | Return</h2>
-<p class="MainColumn-description">访问页面不存在，请返回。 | The accessed page does not exist, please return.</p>
-<p class="MainColumn-description">5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.</p>
-<div class="grid"><a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io" data-title="返回首页 | Return to homepage" data-content="是否返回首页？"><span class="material-icons list-icon">home</span>
-<div class="list-content">
-<div class="list-title">返回首页 | Return to homepage</div>
-<div class="list-subtitle">返回到首页 | Return to homepage</div>
-</div><span class="material-icons" style="color: var(--md-color-outline);">insert_link</span>
-</a></div>
-</div>
-<div class="footer">
-<p>
-Version: v26.04.22.1643 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议User Agreement</a>
-</p>
-<p>
-&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
-</p>
-<p>
-&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
-</p>
-</div>
-<div class="bottom-actions">
-<div class="btn" id="themeToggle"><span class="material-icons">dark_mode</span></div>
-</div>
-<div class="md3-dialog" id="md3Dialog">
-<div class="md3-dialog-content">
-<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
-<div class="md3-dialog-body" id="md3DialogBody">内容</div>
-<div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">取消</button><button class="md3-button contained" id="md3DialogConfirm">确定</button></div>
-</div>
-</div>
-<div class="md3-dialog">
-<div class="md3-dialog-content">
-<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
-<div class="md3-dialog-body" id="md3DialogBody">内容</div>
-<div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">确定</button></div>
-</div>
-</div>
-<script src="https://director4168.github.io/js/Protect.js"></script>
-<script>
-(function() {
-'use strict';
-const REQUIRED_SCRIPTS = [
-'./js/Protect.js',
-//'./js/d.js',
-];
-let coreInitialized = false;
-function areAllScriptsLoaded() {
-return true;
-}
-function CoreFeatures() {
-if (coreInitialized) return;
-coreInitialized = true;
-const body = document.body;
-// 主题切换
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-const icon = themeToggle.querySelector('.material-icons');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-const setTheme = (dark) => {
-body.classList.toggle('dark-theme', dark);
-if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
-};
-setTheme(prefersDark.matches);
-prefersDark.addEventListener('change', e => setTheme(e.matches));
-themeToggle.addEventListener('click', () => setTheme(!body.classList.contains('dark-theme')));
-}
-// 更新版权年份
-const year = new Date().getFullYear();
-['chinese-copyright-year',
-'english-copyright-year'
-].forEach(id => {
-const el = document.getElementById(id);
-if (el) el.textContent = year > 2025 ? `2025-${year}` : '2025';
-});
-// MD3 对话框&列表项点击
-const dialog = document.getElementById('md3Dialog');
-if (!dialog) return;
-const header = document.getElementById('md3DialogHeader');
-const bodyEl = document.getElementById('md3DialogBody');
-const cancelBtn = document.getElementById('md3DialogCancel');
-const confirmBtn = document.getElementById('md3DialogConfirm');
-let currentHref = '';
-let scrollPosition = 0;
-const showDialog = (title, content, href) => {
-if (header) header.textContent = title || '提示';
-if (bodyEl) bodyEl.innerHTML = (content || '').replace(/\\n/g, '<br>');
-currentHref = href || '';
-// 禁止在弹窗开启时能够滑动页面
-scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-document.body.style.position = 'fixed';
-document.body.style.top = `-${scrollPosition}px`;
-document.body.style.width = '100%';
-document.body.style.overflow = 'hidden';
-dialog.classList.add('show');
-};
-const hideDialog = () => {
-dialog.classList.remove('show');
-document.body.style.position = '';
-document.body.style.top = '';
-document.body.style.width = '';
-document.body.style.overflow = '';
-window.scrollTo(0, scrollPosition);
-};
-if (cancelBtn) cancelBtn.onclick = hideDialog;
-if (confirmBtn) confirmBtn.onclick = () => {
-if (currentHref) window.location.href = currentHref;
-hideDialog();
-};
-// 点击空白处关闭弹窗
-// dialog.addEventListener('click', e => {
-//if (e.target === dialog) hideDialog();
-// });
-// 列表项点击
-document.querySelectorAll('.list-item').forEach(item => {
-item.addEventListener('click', e => {
-e.stopPropagation();
-const href = item.dataset.href;
-const title = item.dataset.title;
-const content = item.dataset.content;
-if (href && title && content) {
-showDialog(title, content, href);
-}
-});
-});
-// startAntiDebug();
-}
-function startAntiDebug() {
-}
-function checkAndRun() {
-if (coreInitialized) return;
-CoreFeatures();
-}
-if (document.readyState === 'loading') {
-document.addEventListener('DOMContentLoaded', checkAndRun);
-} else {
-checkAndRun();
-}
-window.__PROTECT = true;
-window.__COOKIE = true;
-})();
-</script>
-</div>
-</body>
-</html>
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>404</title><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://director4168.github.io/css/MainColorStyle_Default.css"><link rel="stylesheet" href="https://director4168.github.io/css/AdditionalStyles.css"><meta http-equiv="refresh" content="5;url=https://director4168.github.io"></head><body class="dark-theme"><div class="main-content"><div class="MainColumn-section" style="--md-color-primary-container: #404450;--md-color-on-primary-container: #FFFFFF;--md-color-on-surface-variant: #FFFFFF;"><h1 class="MainColumn-title" style="color: #FFFFFF;font-size: 96px;margin: -25px 0px;">404</h1><p class="MainColumn-description">页面不存在！ | The page does not exist!</p><p class="MainColumn-description">5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.</p></div><div class="card"><h2 class="card-title">返回 | Return</h2><p class="MainColumn-description">访问页面不存在，请返回。 | The accessed page does not exist, please return.</p><p class="MainColumn-description">5秒后自动返回首页。 | Automatically return to homepage after 5 seconds.</p><div class="grid"><a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io" data-title="返回首页 | Return to homepage" data-content="是否返回首页？"><span class="material-icons list-icon">home</span><div class="list-content"><div class="list-title">返回首页 | Return to homepage</div><div class="list-subtitle">返回到首页 | Return to homepage</div></div><span class="material-icons" style="color: var(--md-color-outline);">insert_link</span></a></div></div><div class="footer"><p> 				Version: v26.04.22.1643 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议User Agreement</a></p><p> 				&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。 			</p><p> 				&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. 			</p></div><div class="bottom-actions"><div class="btn" id="themeToggle"><span class="material-icons">dark_mode</span></div></div><div class="md3-dialog" id="md3Dialog"><div class="md3-dialog-content"><div class="md3-dialog-header" id="md3DialogHeader">标题</div><div class="md3-dialog-body" id="md3DialogBody">内容</div><div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">取消</button><button class="md3-button contained" id="md3DialogConfirm">确定</button></div></div></div><div class="md3-dialog"><div class="md3-dialog-content"><div class="md3-dialog-header" id="md3DialogHeader">标题</div><div class="md3-dialog-body" id="md3DialogBody">内容</div><div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">确定</button></div></div></div> 		<script src="https://director4168.github.io/js/Protect.js"></script> 		<script>
+			(function() {
+				'use strict';
+				const REQUIRED_SCRIPTS = [
+					'./js/Protect.js',
+					//'./js/d.js',
+				];
+				let coreInitialized = false;
+				function areAllScriptsLoaded() {
+					return true;
+				}
+				function CoreFeatures() {
+					if (coreInitialized) return;
+					coreInitialized = true;
+					const body = document.body;
+					// 主题切换
+					const themeToggle = document.getElementById('themeToggle');
+					if (themeToggle) {
+						const icon = themeToggle.querySelector('.material-icons');
+						const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+						const setTheme = (dark) => {
+							body.classList.toggle('dark-theme', dark);
+							if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
+						};
+						setTheme(prefersDark.matches);
+						prefersDark.addEventListener('change', e => setTheme(e.matches));
+						themeToggle.addEventListener('click', () => setTheme(!body.classList.contains('dark-theme')));
+					}
+					// 更新版权年份
+					const year = new Date().getFullYear();
+					['chinese-copyright-year',
+						'english-copyright-year'
+					].forEach(id => {
+						const el = document.getElementById(id);
+						if (el) el.textContent = year > 2025 ? `2025-${year}` : '2025';
+					});
+					// MD3 对话框&列表项点击
+					const dialog = document.getElementById('md3Dialog');
+					if (!dialog) return;
+					const header = document.getElementById('md3DialogHeader');
+					const bodyEl = document.getElementById('md3DialogBody');
+					const cancelBtn = document.getElementById('md3DialogCancel');
+					const confirmBtn = document.getElementById('md3DialogConfirm');
+					let currentHref = '';
+					let scrollPosition = 0;
+					const showDialog = (title, content, href) => {
+						if (header) header.textContent = title || '提示';
+						if (bodyEl) bodyEl.innerHTML = (content || '').replace(/\\n/g, '<br>');
+						currentHref = href || '';
+						// 禁止在弹窗开启时能够滑动页面
+						scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+						document.body.style.position = 'fixed';
+						document.body.style.top = `-${scrollPosition}px`;
+						document.body.style.width = '100%';
+						document.body.style.overflow = 'hidden';
+						dialog.classList.add('show');
+					};
+					const hideDialog = () => {
+						dialog.classList.remove('show');
+						document.body.style.position = '';
+						document.body.style.top = '';
+						document.body.style.width = '';
+						document.body.style.overflow = '';
+						window.scrollTo(0, scrollPosition);
+					};
+					if (cancelBtn) cancelBtn.onclick = hideDialog;
+					if (confirmBtn) confirmBtn.onclick = () => {
+						if (currentHref) window.location.href = currentHref;
+						hideDialog();
+					};
+					// 点击空白处关闭弹窗
+					// dialog.addEventListener('click', e => {
+					//	if (e.target === dialog) hideDialog();
+					// });
+					// 列表项点击
+					document.querySelectorAll('.list-item').forEach(item => {
+						item.addEventListener('click', e => {
+							e.stopPropagation();
+							const href = item.dataset.href;
+							const title = item.dataset.title;
+							const content = item.dataset.content;
+							if (href && title && content) {
+								showDialog(title, content, href);
+							}
+						});
+					});
+					// startAntiDebug();
+				}
+				function startAntiDebug() {
+				}
+				function checkAndRun() {
+					if (coreInitialized) return;
+					CoreFeatures();
+				}
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', checkAndRun);
+				} else {
+					checkAndRun();
+				}
+				window.__PROTECT = true;
+				window.__COOKIE = true;
+			})();
+		</script> 	</div></body></html>

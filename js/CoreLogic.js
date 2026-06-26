@@ -37,6 +37,25 @@ document.addEventListener('contextmenu', function(e) {
 var p = e.target.closest('.list-item');
 if (p) { e.preventDefault(); return false; }
 }, true);
+// 防止顶部/底部功能栏按钮长按锁定
+// 原理：移动端长按 <a> 标签会触发浏览器预览/菜单，导致页面锁定
+// 解决：移除 href 属性并用 JS 处理导航，阻止 contextmenu
+(function() {
+var btns = document.querySelectorAll('.home-btn, #languageToggle');
+btns.forEach(function(btn) {
+btn.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); });
+var href = btn.getAttribute('href');
+if (href) {
+btn.dataset.href = href;
+btn.removeAttribute('href');
+btn.style.cursor = 'pointer';
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+window.location.href = href;
+});
+}
+});
+})();
 var themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
 var icon = themeToggle.querySelector('.material-icons');
