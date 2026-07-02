@@ -1,0 +1,42 @@
+/*
+ (C) 2026 director_Carter All Rights Reserved.
+ https://director4168.github.io/
+ 本CSS与网站一同开源，开源协议MPL-2.0
+ DebugTest.html 调试/控件测试页专用样式
+
+ 说明：通用控件已迁移到 AdditionalStyles.css 的“原版内置控件库”中。
+ 本文件只保留 DebugTest.html 专用布局样式，不再定义按钮、输入框、Switch 等通用控件外观。
+*/
+
+.debug-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.debug-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.debug-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+#debugCanvas {
+    display: block;
+    width: 100%;
+    height: 180px;
+}
+
+@media (min-width: 760px) {
+    .debug-hero-grid,
+    .debug-card-grid,
+    .debug-two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

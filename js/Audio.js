@@ -1,10 +1,11 @@
 const audio = document.getElementById('StartAudio');
 
-// Start
+// 播放
 function StartAudio() {
 	audio.play();
 }
-// Pause
+
+// 暂停
 function PauseAudio() {
 	audio.pause();
 }

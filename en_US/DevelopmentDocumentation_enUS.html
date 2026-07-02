@@ -1,8 +1,298 @@
-<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Development documentation</title><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/MainColorStyle_Default.css"><link rel="stylesheet" href="../css/AdditionalStyles.css"><link rel="stylesheet" href="../css/Search.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"><link href="../css/Code.css" rel="stylesheet"><link rel="stylesheet" href="../EasterEgg/css/EasterEggStyle.css"><link rel="stylesheet" href="../EasterEgg/css/EasterEggPop-up_Level1.css"><link rel="stylesheet" href="../EasterEgg/css/EasterEggPop-up_Level2.css"><link href="../css/Document.css" rel="stylesheet"></head><body><div class="top-header"><div class="menu-btn" id="menuBtn"><span></span><span></span><span></span></div><div class="header-title">Development documentation</div><div class="header-right"><a href="./index.html" class="home-btn" title="Return to homepage"><span class="material-icons">home</span></a><a href="../DevelopmentDocumentation.html" class="language-btn" id="languageToggle"><span class="material-icons">translate</span></a><div class="theme-btn" id="themeToggle"><span class="material-icons">dark_mode</span></div></div></div><div class="mask" id="mask"></div><div class="sidebar" id="sidebar"><h3>Document directory</h3><ul><li><a onclick="window.scrollTo(0,0);return false;"><b>#header</b></a></li><br><hr><h4 style="text-align: center;">introduce</h4><li><a href="#Introduction">introduce</a></li><br><hr><h4 style="text-align: center;">basic framework</h4><li><a href="#Basic">basic framework</a></li><br><hr><h4 style="text-align: center;">top bar</h4><li><a href="#TopBar">top bar</a></li><br><hr><h4 style="text-align: center;">Main column</h4><li><a href="#MainColumn-NoAvatar">Main column - no avatar</a></li><nr><li><a href="#MainColumn-Avatar">Avatar control</a></li><br><hr><li><a href="javascript:window.scrollTo(0,document.body.scrollHeight)"><b>#End of page</b></a></li><br><hr><p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;"><span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span> 					Translation provided by Google Translate, may differ from actual content. 				</p><br></ul></div><div class="main-wrap"><div class="article"><h1 id="Header">Development documentation</h1><br><hr><br><h2 id="Introduction" class="anchor">introduce</h2><h3>1. Code version</h3><p>This site is based on front-end development of <b>HTML 5, JS ES6 (ECMAScript 2015), and CSS 3 (Level 3)</b>. It is a purely static website, but <span style="color: #FF0000;"><strong> hardly supports the IE series kernel</strong></span></p><br><h3>2. Available controls</h3><p>Provide the following content:</p><ul style="all: revert !important; margin-block: 0 !important;"><li>Top bar (cancelled, but still available)</li><li>Main column (optional whether to include avatar)</li><li>Basic avatar (click to include animation, optional function)</li><li>Columns</li><li>Jump card (including animation)</li><li>Code box (with copy and highlight (based on highlight) functions)</li><li>Music play/pause</li><li>Pop-up window system (including animation)</li><li>Theme switching system (including animation)</li><li>Folding system (including animation)</li><li>Language switching system (a tag jump page)</li><li>Bottom Solid Plastic Button Hover System</li><li>……</li></ul><br> 			Starting from <u>Index.html v26.05.13.2051</u>, the theme memory function (located in the <u>/CoreLogic.js</u> theme switching module) is added. The memory is valid for ten minutes (10*60*1000). During the memory period, the memorized theme will be used directly instead of the browser theme. 			<br><br><p><strong>--Project developer: director_Carter</strong></p><ul style="all: revert !important; margin-block: 0 !important;"><li><strong><a href="mailto:2705722903@qq.com">Email：2705722903@qq.com</a></strong><button onclick="copy('2705722903@qq.com')">Copy</button><br><strong><a href="mailto:3623293903@qq.com">Alternate email：3623293903@qq.com</a></strong><button onclick="copy('3623293903@qq.com')">Copy</button></li></ul><br><b><p>--Project repository (MPL-2.0)</p></b><ul style="all: revert !important; margin-block: 0 !important;"><li><a href="https://github.com/director4168/director4168.github.io" style="word-wrap: break-word;">https://github.com/director4168/director4168.github.io</a><button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li></ul><br><b><p>--Deployed</p></b><ul style="all: revert !important; margin-block: 0 !important;"><li><a href="https://director4168.github.io" style="word-wrap: break-word;">https://director4168.github.io</a><button onclick="copy('https://director4168.github.io')">Copy</button></li></ul><br><hr><br><h2 id="Basic" class="anchor">Basic framework</h2><p>Standard basic framework, complete HTML framework, but may not include all Js/CSS, for reference only</p><p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;"><span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span> 				All code in the framework contains too much content, so jump cards are used 			</p><br><a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html" data-title="View basic framework code" data-content="View the basic framework code (<b>Github link</b>)"><span class="material-icons list-icon" style="color: #FFFFFF;">code</span><div class="list-content"><div class="list-title"> 						View code 					</div><div class="list-subtitle"> 						Go to view the basic framework code 					</div></div><span class="material-icons" style="color: var(--md-color-outline);">preview</span></a><br><a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="Go to preview" data-content="Go to preview basic frame effect"><span class="material-icons list-icon" style="color: #FFFFFF;">preview</span><div class="list-content"><div class="list-title"> 						Preview 					</div><div class="list-subtitle"> 						Go to preview the basic frame effect 					</div></div><span class="material-icons" style="color: var(--md-color-outline);">insert_link</span></a></div><br><hr><br><h2 id="TopBar" class="anchor">Top Bar</h2><p>Top bar, add a non-clickable bar at the top of the page. It will slide as the page slides and will not be fixed in one position like the bottom button. 			<br> 			Put it directly into the main frame <u>body</u></p><div class="grid"><div class="code-container"><div class="code-header"><span class="code-header-name">Top bar | HTML</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><div class="code-content"><div class="line-numbers"></div><div class="code-wrapper"> 						<script type="text/plain" id="code-source"><div class="top-app-bar">
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Development documentation</title>
+	<!-- Material Icons -->
+	<!-- Official website https://material.io/resources/icons/ -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Font library-Siyuan Songti -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+	<!--Introducing main color CSS -->
+	<link rel="stylesheet" href="../css/MainColorStyle_Default.css">
+	<!-- Introducing additional CSS styles -->
+	<link rel="stylesheet" href="../css/AdditionalStyles.css">
+
+	<!-- Introduce search CSS style -->
+	<link rel="stylesheet" href="../css/Search.css">
+
+
+	<!-- Highlight -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+
+	<!--Introduce code code to copy CSS style -->
+	<link href="../css/Code.css" rel="stylesheet">
+
+	<!--Introducing Easter egg CSS style -->
+	<link rel="stylesheet" href="../EasterEgg/css/EasterEggStyle.css">
+	<link rel="stylesheet" href="../EasterEgg/css/EasterEggPop-up_Level1.css">
+	<link rel="stylesheet" href="../EasterEgg/css/EasterEggPop-up_Level2.css">
+
+	<!--Introducing standard document CSS styles -->
+	<link href="../css/Document.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<!-- Top bar -->
+	<div class="top-header">
+		<div class="menu-btn" id="menuBtn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="header-title">Development documentation</div>
+
+
+
+
+
+		<!-- Right button group -->
+		<div class="header-right">
+			<!-- Return to home page -->
+			<a href="./index.html" class="home-btn" title="Return to homepage">
+				<span class="material-icons">home</span>
+			</a>
+			<!-- Language switching -->
+			<a href="../DevelopmentDocumentation.html" class="language-btn" id="languageToggle">
+				<span class="material-icons">translate</span>
+			</a>
+			<!-- Switch between day and night -->
+			<div class="theme-btn" id="themeToggle">
+				<span class="material-icons">dark_mode</span>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- Mask -->
+	<div class="mask" id="mask"></div>
+
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+		<h3>Document directory</h3>
+		<ul>
+			<li><a onclick="window.scrollTo(0,0);return false;"><b>#header</b></a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">introduce</h4>
+			<li><a href="#Introduction">introduce</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">basic framework</h4>
+			<li><a href="#Basic">basic framework</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">top bar</h4>
+			<li><a href="#TopBar">top bar</a></li>
+			<br>
+			<hr>
+			<h4 style="text-align: center;">Main column</h4>
+			<li><a href="#MainColumn-NoAvatar">Main column - no avatar</a></li>
+			<nr>
+				<li><a href="#MainColumn-Avatar">Avatar control</a></li>
+				<br>
+				<hr>
+				<li><a href="javascript:window.scrollTo(0,document.body.scrollHeight)"><b>#End of page</b></a></li>
+				<br>
+				<hr>
+				<p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;">
+					<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+					Translation provided by Google Translate, may differ from actual content.
+				</p>
+				<br>
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- Text content -->
+	<div class="main-wrap">
+		<div class="article">
+			<h1 id="Header">Development documentation</h1>
+
+			<br>
+			<hr><br>
+			<h2 id="Introduction" class="anchor">introduce</h2>
+			<h3>1. Code version</h3>
+			<p>This site is based on front-end development of <b>HTML 5, JS ES6 (ECMAScript 2015), and CSS 3 (Level 3)</b>. It is a purely static website, but <span style="color: #FF0000;"><strong> hardly supports the IE series kernel</strong></span></p>
+			<br>
+
+			<h3>2. Available controls</h3>
+			<p>Provide the following content:</p>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li>Top bar (cancelled, but still available)</li>
+				<li>Main column (optional whether to include avatar)</li>
+				<li>Basic avatar (click to include animation, optional function)</li>
+				<li>Columns</li>
+				<li>Jump card (including animation)</li>
+				<li>Code box (with copy and highlight (based on highlight) functions)</li>
+				<li>Music play/pause</li>
+				<li>Pop-up window system (including animation)</li>
+				<li>Theme switching system (including animation)</li>
+				<li>Folding system (including animation)</li>
+				<li>Language switching system (a tag jump page)</li>
+				<li>Bottom Solid Plastic Button Hover System</li>
+				<li>……</li>
+			</ul>
+			<br>
+
+			Starting from <u>Index.html v26.05.13.2051</u>, the theme memory function (located in the <u>/CoreLogic.js</u> theme switching module) is added. The memory is valid for ten minutes (10*60*1000). During the memory period, the memorized theme will be used directly instead of the browser theme.
+			<br>
+
+			<br>
+			<p><strong>--Project developer: director_Carter</strong></p>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><strong><a href="mailto:2705722903@qq.com">Email：2705722903@qq.com</a></strong><button onclick="copy('2705722903@qq.com')">Copy</button>
+					<br>
+					<strong><a href="mailto:3623293903@qq.com">Alternate email：3623293903@qq.com</a></strong><button onclick="copy('3623293903@qq.com')">Copy</button>
+				</li>
+			</ul><br>
+
+			<b>
+				<p>--Project repository (MPL-2.0)</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://github.com/director4168/director4168.github.io" style="word-wrap: break-word;">https://github.com/director4168/director4168.github.io</a><button onclick="copy('https://github.com/director4168/director4168.github.io')">Copy</button></li>
+			</ul><br>
+
+			<b>
+				<p>--Deployed</p>
+			</b>
+			<ul style="all: revert !important; margin-block: 0 !important;">
+				<li><a href="https://director4168.github.io" style="word-wrap: break-word;">https://director4168.github.io</a><button onclick="copy('https://director4168.github.io')">Copy</button></li>
+			</ul><br>
+			<hr><br>
+
+
+
+
+
+			<h2 id="Basic" class="anchor">Basic framework</h2>
+			<p>Standard basic framework, complete HTML framework, but may not include all Js/CSS, for reference only</p>
+			<p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;">
+				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+				All code in the framework contains too much content, so jump cards are used
+			</p>
+			<br>
+			<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io/blob/main/Basic.html" data-title="View basic framework code" data-content="View the basic framework code (<b>Github link</b>)">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">code</span>
+				<div class="list-content">
+					<div class="list-title">
+						View code
+					</div>
+					<div class="list-subtitle">
+						Go to view the basic framework code
+					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-color-outline);">preview</span>
+			</a>
+			<br>
+			<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Basic.html" data-title="Go to preview" data-content="Go to preview basic frame effect">
+				<span class="material-icons list-icon" style="color: #FFFFFF;">preview</span>
+				<div class="list-content">
+					<div class="list-title">
+						Preview
+					</div>
+					<div class="list-subtitle">
+						Go to preview the basic frame effect
+					</div>
+				</div>
+				<span class="material-icons" style="color: var(--md-color-outline);">insert_link</span>
+			</a>
+		</div>
+		<br>
+		<hr><br>
+
+
+
+
+
+		<h2 id="TopBar" class="anchor">Top Bar</h2>
+		<p>Top bar, add a non-clickable bar at the top of the page. It will slide as the page slides and will not be fixed in one position like the bottom button.
+			<br>
+			Put it directly into the main frame <u>body</u>
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Top bar | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+				</div>
+
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source"><div class="top-app-bar">
 	<span class="material-icons" style="color: var(--md-color-on-primary);">person</span>
 	<h1 class="app-bar-title">Top bar text</h1>
 </div>
-				</script> 						<pre><code id="display-code" class="language-html"></code></pre></div></div></div><details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;"><summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;"><h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);"> 						Click me to collapse or expand the rendering<b></b><br></h6></summary><div class="details-animated-wrapper"><div class="details-content-inner"><h2 style="text-align: center;">Effect:</h2><div class="top-app-bar"><span class="material-icons" style="color: var(--md-color-on-primary);">person</span><h1 class="app-bar-title">Top bar text</h1></div><br></div></div></details></div><br><hr><br><h2 id="MainColumn-NoAvatar" class="anchor">Main column (no avatar)</h2><p>The standard main column should include title, introduction, and optional avatar and warm reminder. Generally, no jump button is added. 			<br> 			It needs to be placed in the <u>.main-content</u> container in the main frame <u>body</u><br> 			Usually placed in the first position within the .main-content container 		</p><div class="grid"><div class="code-container"><div class="code-header"><span class="code-header-name">Main Column | HTML</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><div class="code-content"><div class="line-numbers"></div><div class="code-wrapper"> 						<script type="text/plain" id="code-source"><div class="MainColumn-section">
+				</script>
+
+						<pre><code id="display-code" class="language-html"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);">
+						Click me to collapse or expand the rendering<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">Effect:</h2>
+						<div class="top-app-bar">
+							<span class="material-icons" style="color: var(--md-color-on-primary);">person</span>
+							<h1 class="app-bar-title">Top bar text</h1>
+						</div>
+						<br>
+					</div>
+				</div>
+			</details>
+		</div>
+		<br>
+		<hr><br>
+
+
+
+
+
+		<h2 id="MainColumn-NoAvatar" class="anchor">Main column (no avatar)</h2>
+		<p>The standard main column should include title, introduction, and optional avatar and warm reminder. Generally, no jump button is added.
+			<br>
+			It needs to be placed in the <u>.main-content</u> container in the main frame <u>body</u>
+			<br>
+			Usually placed in the first position within the .main-content container
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Main Column | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+				</div>
+
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source"><div class="MainColumn-section">
 	<h1 class="MainColumn-title">Main column-main title</h1>
 	<p class="MainColumn-description">
 		Main Column-Introduction
@@ -11,10 +301,166 @@
 		Main column-warm reminder
 	</p>
 </div>
-				</script> 						<pre><code id="display-code" class="language-html"></code></pre></div></div></div><details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;"><summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;"><h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);"> 						Click me to collapse or expand the rendering<b></b><br></h6></summary><div class="details-animated-wrapper"><div class="details-content-inner"><h2 style="text-align: center;">Effect:</h2><div class="MainColumn-section"><h1 class='MainColumn-title'>Main column-main name</h1><p class='MainColumn-description'> 								Main Column-Introduction 							<p style='margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;'><span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span> 								Main column-warm reminder 							</p></div></div></div></details></div><br><hr><br><h2 id="MainColumn-Avatar" class="anchor">Avatar control</h2><p>You can optionally add this control to the main column. This control is a <u>avatar</u> control, with click animation. It is optional to include functions. <u>Default Easter egg function</u><br> 			Generally placed in the <u>MainColumn-section</u> container in the main column container <u>.main-content</u><br> 			By default, <u>avatar.jpg</u> under the <u>root directory</u> is used as the display image. You can choose it yourself. 		</p><div class="grid"><div class="code-container"><div class="code-header"><span class="code-header-name">Avatar | HTML</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div><div class="code-content"><div class="line-numbers"></div><div class="code-wrapper"> 						<script type="text/plain" id="code-source"><div class="avatar" id="avatar">
+				</script>
+
+						<pre><code id="display-code" class="language-html"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);">
+						Click me to collapse or expand the rendering<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">Effect:</h2>
+
+						<div class="MainColumn-section">
+							<h1 class='MainColumn-title'>Main column-main name</h1>
+							<p class='MainColumn-description'>
+								Main Column-Introduction
+							<p style='margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;'>
+								<span class='material-icons' style='font-size: 14px; vertical-align: middle;'>info</span>
+								Main column-warm reminder
+							</p>
+						</div>
+					</div>
+				</div>
+			</details>
+		</div>
+		<br>
+		<hr><br>
+
+
+
+
+
+		<h2 id="MainColumn-Avatar" class="anchor">Avatar control</h2>
+		<p>You can optionally add this control to the main column. This control is a <u>avatar</u> control, with click animation. It is optional to include functions. <u>Default Easter egg function</u>
+			<br>
+			Generally placed in the <u>MainColumn-section</u> container in the main column container <u>.main-content</u>
+			<br>
+			By default, <u>avatar.jpg</u> under the <u>root directory</u> is used as the display image. You can choose it yourself.
+		</p>
+		<div class="grid">
+			<div class="code-container">
+				<div class="code-header">
+					<span class="code-header-name">Avatar | HTML</span>
+					<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+				</div>
+
+				<div class="code-content">
+					<div class="line-numbers"></div>
+
+					<div class="code-wrapper">
+						<script type="text/plain" id="code-source"><div class="avatar" id="avatar">
 	<img src="./jpg/avatar.jpg" alt="Avatar-Main Avatar">
 </div>
-				</script> 						<pre><code id="display-code" class="language-html"></code></pre></div></div></div><details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;"><summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;"><h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);"> 						Click me to collapse or expand the rendering<b></b><br></h6></summary><div class="details-animated-wrapper"><div class="details-content-inner"><h2 style="text-align: center;">Effect:</h2><div class="MainColumn-section"><div class="avatar" id="avatar"><img src="../jpg/avatar.jpg" alt="Avatar-Main Avatar"></div></div></div></div></details><hr></div></div></div><div style="text-align: center; padding: 24px; color: var(--md-color-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-color-outline); margin-top: 40px; padding-bottom: 100px;"><p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;"><span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span> 			Translation provided by Google Translate, may differ from actual content. 		</p><br><p> 			Version: v26.05.15.1551 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement</a></p><p> 			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。 		</p><p> 			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved. 		</p></div><div class="easter-egg-modal" id="easterEggModal"><div class="easter-egg-content"><h2>Easter eggs</h2><p> 				Congratulations, you found a little easter egg I buried, so why are you poking my head? 			</p><button class="easter-egg-close" id="easterEggClose">Click me to close，小雑魚~</button></div></div><div class="egg-dialog" id="easterEggCloseDialog"><div class="egg-dialog-content"><div class="egg-dialog-header" id="easterEggCloseDialogHeader"> 				雑魚雑魚~ 			</div><div class="egg-dialog-body" id="easterEggCloseDialogBody"> 				雑魚雑魚、小さな雑魚ちゃん～ 			</div><div class="egg-dialog-actions"><button class="egg-button contained" id="easterEggCloseDialogConfirm">确定</button></div></div></div> 	 	<script>
+				</script>
+
+						<pre><code id="display-code" class="language-html"></code></pre>
+					</div>
+				</div>
+			</div>
+
+			<details id="version-details" style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 0 16px;">
+				<summary style="padding: 12px 0; cursor: pointer; outline: none; list-style: none;">
+					<h6 class="MainColumn-description" style="display:inline;color: var(--md-color-on-surface);">
+						Click me to collapse or expand the rendering<b></b><br>
+					</h6>
+				</summary>
+				<div class="details-animated-wrapper">
+					<div class="details-content-inner">
+						<h2 style="text-align: center;">Effect:</h2>
+
+						<div class="MainColumn-section">
+							<div class="avatar" id="avatar">
+								<img src="../jpg/avatar.jpg" alt="Avatar-Main Avatar">
+							</div>
+						</div>
+					</div>
+				</div>
+			</details>
+			<hr>
+		</div>
+
+
+
+
+
+
+
+	</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!--End of page -->
+	<div style="text-align: center; padding: 24px; color: var(--md-color-on-surface-variant); font-size: 14px; border-top: 1px solid var(--md-color-outline); margin-top: 40px; padding-bottom: 100px;">
+		<p style="margin-top: 12px; font-size: 14px; color: var(--md-color-on-surface-variant); border: 1px solid var(--md-color-primary); border-radius: 16px; padding: 12px 16px;">
+			<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
+			Translation provided by Google Translate, may differ from actual content.
+		</p>
+		<br>
+		<p>
+			Version: v26.05.15.1551 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">User Agreement</a>
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!--Easter egg pop-up first-level pop-up window -->
+
+	<div class="easter-egg-modal" id="easterEggModal">
+		<div class="easter-egg-content">
+			<h2>Easter eggs</h2>
+			<p>
+				Congratulations, you found a little easter egg I buried, so why are you poking my head?
+			</p>
+			<button class="easter-egg-close" id="easterEggClose">Click me to close，小雑魚~</button>
+		</div>
+	</div>
+
+	<!-- 彩蛋弹窗二级关闭确认对话框 -->
+	<div class="egg-dialog" id="easterEggCloseDialog">
+		<div class="egg-dialog-content">
+			<div class="egg-dialog-header" id="easterEggCloseDialogHeader">
+				雑魚雑魚~
+			</div>
+			<div class="egg-dialog-body" id="easterEggCloseDialogBody">
+				雑魚雑魚、小さな雑魚ちゃん～
+			</div>
+			<div class="egg-dialog-actions">
+				<button class="egg-button contained" id="easterEggCloseDialogConfirm">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 彩蛋各部分逻辑 -->
+	<script>
 		const avatar = document.getElementById('avatar');
 		const easterEggModal = document.getElementById('easterEggModal');
 		const easterEggClose = document.getElementById('easterEggClose');
@@ -56,4 +502,78 @@
 			await navigator.clipboard.writeText(str);
 			alert("已复制");
 		}
-	</script> 	 	<div class="md3-dialog" id="md3Dialog"><div class="md3-dialog-content"><div class="md3-dialog-header" id="md3DialogHeader"> 				Title 			</div><div class="md3-dialog-body" id="md3DialogBody"> 				content 			</div><div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">Cancel</button><button class="md3-button contained" id="md3DialogConfirm">Confirm</button></div></div></div><div class="md3-dialog"><div class="md3-dialog-content"><div class="md3-dialog-header" id="md3DialogHeader"> 				Title 			</div><div class="md3-dialog-body" id="md3DialogBody"> 				content 			</div><div class="md3-dialog-actions"><button class="md3-button text" id="md3DialogCancel">OK</button></div></div></div> 	 	<script src="../js/CoreLogic.js"></script> 	<script src="../js/Protect.js"></script> 	 	<script src="../js/Cookie.js"></script> 	 	<script src="../js/Search.js"></script> 	 	<script src="../js/Code.js"></script> 	 	<script src="../js/Details_Animation.js"></script> 	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script> 	 	<script src="../js/Document.js"></script> 	 	 	 	<script src="../js/Document.js"></script> </body></html>
+	</script>
+
+
+
+
+
+
+
+
+
+	<!-- MD3 dialog box -->
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				Title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">Cancel</button>
+				<button class="md3-button contained" id="md3DialogConfirm">Confirm</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="md3-dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">
+				Title
+			</div>
+			<div class="md3-dialog-body" id="md3DialogBody">
+				content
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">OK</button>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!--Introducing core JS -->
+	<script src="../js/CoreLogic.js"></script>
+	<script src="../js/Protect.js"></script>
+
+	<!-- Reference Cookie processing -->
+	<script src="../js/Cookie.js"></script>
+
+	<!-- Search JS -->
+	<script src="../js/Search.js"></script>
+
+	<!-- Code copy function -->
+	<script src="../js/Code.js"></script>
+
+	<!-- Introducing folding system animation -->
+	<script src="../js/Details_Animation.js"></script>
+
+	<!-- Highlight -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+	<!-- Standard Document JS -->
+	<script src="../js/Document.js"></script>
+
+	<!-- Easter eggs -->
+	<!-- <script src="../EasterEgg/js/EasterEgg.js"></script> -->
+	<!--Introduce document Js -->
+	<script src="../js/Document.js"></script>
+</body>
+
+</html>

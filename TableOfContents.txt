@@ -5,6 +5,7 @@
 │   ├── 🎨 AdditionalStyles.css
 │   ├── 🎨 Audio_A.css
 │   ├── 🎨 Code.css
+│   ├── 🎨 DebugTest.css
 │   ├── 🎨 Document.css
 │   ├── 🎨 MainColorStyle_Default.css
 │   ├── 🎨 MainColorStyle_ERROR.css
@@ -39,6 +40,7 @@
 │   ├── 💻 Code.js
 │   ├── 💻 Cookie.js
 │   ├── 💻 CoreLogic.js
+│   ├── 💻 DebugTest.js
 │   ├── 💻 Details_Animation.js
 │   ├── 💻 Document.js
 │   ├── 💻 Protect.js
@@ -50,6 +52,7 @@
 ├── 🌐 ContactInformation.html
 ├── 🌐 DevelopmentDocumentation.html
 ├── 🌐 DevelopmentDocumentation_Abandoned.html
+├── 🌐 DebugTest.html
 ├── 🌐 Goodbye.html
 ├── 🌐 index.html
 ├── 📜 LICENSE

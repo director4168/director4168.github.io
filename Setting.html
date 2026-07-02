@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>director_Carter的站点-设置</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/MainColorStyle_Default.css">
+	<link rel="stylesheet" href="./css/AdditionalStyles.css">
+	<style>
+		.setting-control {display: flex;flex-direction: column;gap: 12px;width: 100%;position: relative;z-index: 1;}.setting-row {display: flex;align-items: center;gap: 12px;flex-wrap: wrap;}.setting-input {width: 140px;padding: 10px 12px;border-radius: var(--border-radius-small);border: 1px solid var(--md-color-outline);background: var(--md-color-surface);color: var(--md-color-on-surface);font: inherit;}.setting-import-textarea {width: 100%;min-height: 180px;resize: vertical;box-sizing: border-box;border: 1px solid var(--md-color-outline);border-radius: 12px;padding: 12px;background: var(--md-color-surface);color: var(--md-color-on-surface);font: inherit;font-family: monospace;}.setting-actions {display: flex;gap: 10px;flex-wrap: wrap;align-items: center;}.setting-actions > button,.setting-actions > .site-button,.setting-actions > .md3-button {flex: 1 1 180px;}.setting-color-tools {display: flex;gap: 10px;align-items: center;flex-wrap: wrap;padding: 0 0 12px 0;}.setting-color-row {display: grid;grid-template-columns: minmax(210px, 1fr) minmax(130px, 180px) 44px;align-items: center;gap: 10px;width: 100%;position: relative;z-index: 1;}.setting-color-preview {width: 40px;height: 32px;border: 1px solid #5f6368;border-radius: 8px;box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);background: transparent;cursor: pointer;}@media (min-width: 760px) {body .main-content {max-width: min(1180px, calc(100vw - 48px));}.card .site-panel > .list-group {display: grid;grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap: 10px;}.card .site-panel > .list-group > .list-item {align-items: flex-start;border-radius: var(--border-radius-basic) !important;margin-bottom: 0;height: 100%;}.card .site-panel > .list-group > .list-item .setting-control {height: 100%;}.card .site-panel > #colorSettingsList.list-group {grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));}}@media (max-width: 520px) {.setting-actions {flex-direction: column;align-items: stretch;}.setting-actions > button,.setting-actions > .site-button,.setting-actions > .md3-button {width: 100%;flex-basis: auto;}.setting-color-row {grid-template-columns: 1fr;}.setting-color-preview {width: 100%;}}
+	</style>
+</head>
+
+<body class="dark-theme">
+	<div class="main-content">
+		<div class="MainColumn-section">
+			<h1 class="MainColumn-title">设置</h1>
+			<p class="MainColumn-description">
+				提供本站部分功能的设置
+			</p>
+			<div class="setting-actions" style="margin-top: 16px;">
+				<button class="site-button tonal" id="exportConfigBtn" type="button"><span class="material-icons">content_copy</span>复制配置 JSON</button>
+				<button class="site-button outlined" id="importConfigBtn" type="button"><span class="material-icons">content_paste</span>导入配置 JSON</button>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<div class="section-title">主题设置</div>
+			<div class="card">
+				<div class="site-panel" style="margin-top: 0; margin-bottom: 0;">
+					<div class="list-group">
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">schedule</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">主题自动切换记忆功能 记忆时间修改</div>
+									<div class="list-subtitle">设置手动切换主题后，网站优先记住用户选择的时间。超过该时间后恢复跟随系统主题。</div>
+								</div>
+								<div class="setting-row">
+									<label for="themeMemoryMinutesInput" class="list-subtitle">记忆时间：</label>
+									<input class="setting-input" id="themeMemoryMinutesInput" type="number" min="1" max="525600" step="1" inputmode="numeric">
+									<span class="list-subtitle">分钟</span>
+								</div>
+								<div class="list-subtitle" id="themeMemoryCurrentText"></div>
+								<div class="setting-actions">
+									<button class="md3-button contained" id="saveThemeMemoryBtn" type="button">保存</button>
+									<button class="md3-button text" id="resetThemeMemoryBtn" type="button">恢复默认 10 分钟</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<div class="section-title">弹窗设置</div>
+			<div class="card">
+				<div class="site-panel" style="margin-top: 0; margin-bottom: 0;">
+					<div class="list-group">
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">open_in_full</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">点击空白处关闭 MD 弹窗</div>
+									<div class="list-subtitle">开启后允许点击弹窗外部关闭弹窗；关闭后只能点击取消关闭弹窗，或点击跳转进入其他页面。</div>
+								</div>
+								<label class="site-toggle" for="mdDialogBackdropCloseInput" style="cursor: pointer;"><input class="site-switch" id="mdDialogBackdropCloseInput" type="checkbox" role="switch" aria-label="点击空白处关闭MD弹窗"><span>启用</span></label>
+								<div class="setting-actions">
+									<button class="md3-button contained" id="saveDialogSettingsBtn" type="button">保存弹窗设置</button>
+									<button class="md3-button text" id="resetDialogSettingsBtn" type="button">恢复默认开启</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<div class="section-title">过渡动画设置</div>
+			<div class="card">
+				<div class="site-panel" style="margin-top: 0; margin-bottom: 0;">
+					<div class="list-group">
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">animation</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">主题切换过渡时长</div>
+									<div class="list-subtitle">控制深色/浅色主题切换时，页面背景与文字颜色的过渡时长。</div>
+								</div>
+								<div class="setting-row"><label for="themeTransitionMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="themeTransitionMsInput" data-key="themeTransitionMs" data-default="600" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">rounded_corner</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 圆角点击过渡</div>
+									<div class="list-subtitle">控制卡片按下时圆角变化的过渡时长。</div>
+								</div>
+								<div class="setting-row"><label for="cardRadiusTransitionMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="cardRadiusTransitionMsInput" data-key="cardRadiusTransitionMs" data-default="100" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">touch_app</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 状态点击过渡</div>
+									<div class="list-subtitle">控制卡片背景色、阴影等状态变化的过渡时长。</div>
+								</div>
+								<div class="setting-row"><label for="cardStateTransitionMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="cardStateTransitionMsInput" data-key="cardStateTransitionMs" data-default="150" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">radio_button_checked</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 水波展开动画</div>
+									<div class="list-subtitle">控制点击卡片时水波纹从中心展开的动画时长。</div>
+								</div>
+								<div class="setting-row"><label for="cardRippleExpandMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="cardRippleExpandMsInput" data-key="cardRippleExpandMs" data-default="350" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">radio_button_unchecked</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 水波消失动画</div>
+									<div class="list-subtitle">控制松开/取消点击后，水波纹淡出的动画时长。</div>
+								</div>
+								<div class="setting-row"><label for="cardRippleFadeMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="cardRippleFadeMsInput" data-key="cardRippleFadeMs" data-default="300" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">unfold_more</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">折叠系统完全折叠/展开所需时间</div>
+									<div class="list-subtitle">控制新版 collapse-card 与旧版 details 折叠系统从开始到完全折叠/展开的动画时长。</div>
+								</div>
+								<div class="setting-row"><label for="collapseDurationMsInput" class="list-subtitle">时长：</label><input class="setting-input transition-setting-input" id="collapseDurationMsInput" data-key="collapseDurationMs" data-default="400" type="number" min="0" max="10000" step="10" inputmode="numeric"><span class="list-subtitle">ms</span></div>
+							</div>
+						</div>
+
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">pending</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 水波必须完全展开后才消失</div>
+									<div class="list-subtitle">开启后，如果水波纹还没完全展开鼠标/手指就离开当前区域，会继续展开到完整大小后再淡出。</div>
+								</div>
+								<label class="site-toggle" for="cardRippleMustCompleteInput" style="cursor: pointer;"><input class="site-switch" id="cardRippleMustCompleteInput" type="checkbox" role="switch" aria-label="水波必须完全展开后才消失"><span>启用</span></label>
+							</div>
+						</div>
+					</div>
+					<div class="setting-actions" style="padding: 16px 0 0 0;">
+						<button class="md3-button contained" id="saveTransitionSettingsBtn" type="button">保存过渡设置</button>
+						<button class="md3-button text" id="resetTransitionSettingsBtn" type="button">恢复默认过渡</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<div class="section-title">颜色配置CSS变量</div>
+			<div class="card">
+				<div class="site-panel" style="margin-top: 0; margin-bottom: 0;">
+					<div class="setting-color-tools">
+						<label for="colorThemeSelect" class="list-subtitle">编辑主题：</label>
+						<select class="setting-input" id="colorThemeSelect">
+							<option value="light">亮色 :root</option>
+							<option value="dark">暗色 body.dark-theme</option>
+						</select>
+					</div>
+					<div class="list-group" id="colorSettingsList"></div>
+					<div class="setting-actions" style="padding: 16px 0 0 0;">
+						<button class="md3-button contained" id="saveColorSettingsBtn" type="button">保存颜色配置</button>
+						<button class="md3-button text" id="resetColorSettingsBtn" type="button">恢复当前主题默认颜色</button>
+						<button class="md3-button text" id="resetAllColorSettingsBtn" type="button">恢复全部默认颜色</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<p>
+			Version: v26.07.02.1435 | <a href="https://director4168.github.io/Agreement.html" class="list-subtitle">用户协议</a>
+		</p>
+		<p>
+			&copy; <span id="chinese-copyright-year">2025</span> director_Carter 保留所有权利。
+		</p>
+		<p>
+			&copy; <span id="english-copyright-year">2025</span> director_Carter All Rights Reserved.
+		</p>
+	</div>
+
+	<div class="bottom-actions">
+		<a href="./index.html" class="btn" id="languageToggle">
+			<span class="material-icons">home</span>
+		</a>
+		<div class="btn" id="themeToggle">
+			<span class="material-icons">dark_mode</span>
+		</div>
+	</div>
+
+	<div class="md3-dialog" id="md3Dialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header" id="md3DialogHeader">标题</div>
+			<div class="md3-dialog-body" id="md3DialogBody">内容</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="md3DialogCancel">取消</button>
+				<button class="md3-button contained" id="md3DialogConfirm">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="md3-dialog" id="settingsImportDialog">
+		<div class="md3-dialog-content">
+			<div class="md3-dialog-header">导入配置 JSON</div>
+			<div class="md3-dialog-body">
+				<div class="list-subtitle" style="margin-bottom: 10px;">请粘贴导出的配置 JSON：</div>
+				<textarea class="setting-import-textarea" id="settingsImportJsonInput" spellcheck="false" placeholder="在此粘贴配置 JSON"></textarea>
+			</div>
+			<div class="md3-dialog-actions">
+				<button class="md3-button text" id="settingsImportCancelBtn" type="button">取消</button>
+				<button class="md3-button contained" id="settingsImportConfirmBtn" type="button">导入</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-toast" id="siteToast"><span id="siteToastText"></span></div>
+
+	<script>
+		(function () {
+			'use strict';
+			const THEME_MEMORY_KEY = 'themeMemoryMinutes';
+			const DEFAULT_MINUTES = 10;
+			const MIN_MINUTES = 1;
+			const MAX_MINUTES = 525600;
+			const TRANSITION_SETTINGS = {
+				themeTransitionMs: { css: '--md-theme-transition-duration', def: 600, min: 0, max: 10000 },
+				cardRadiusTransitionMs: { css: '--md-list-item-radius-transition-duration', def: 100, min: 0, max: 10000 },
+				cardStateTransitionMs: { css: '--md-list-item-state-transition-duration', def: 150, min: 0, max: 10000 },
+				cardRippleExpandMs: { css: '--md-ripple-expand-duration', def: 350, min: 0, max: 10000 },
+				cardRippleFadeMs: { css: '--md-ripple-fade-duration', def: 300, min: 0, max: 10000 },
+				collapseDurationMs: { css: '--md-collapse-duration', def: 400, min: 0, max: 10000 }
+			};
+			const COLOR_DEFAULTS = {
+				light: {
+					'--md-color-primary': '#1976D2',
+					'--md-color-on-primary': '#FFFFFF',
+					'--md-color-primary-container': '#DAE1FF',
+					'--md-color-on-primary-container': '#001849',
+					'--md-color-surface': '#ECEDFB',
+					'--md-color-on-surface': '#181B25',
+					'--md-color-surface-variant': '#FAF8FF',
+					'--md-color-on-surface-variant': '#434654',
+					'--md-color-icon-background': '#1976D2',
+					'--md-color-outline': '#48484A',
+					'--md-color-dialog-header': '#5095FF',
+					'--md-color-table-head': '#C0CDE5',
+					'--md-color-highlight': '#D3DDF7',
+					'--md-color-secondary': '#625B71',
+					'--md-color-tertiary': '#7D5260',
+					'--md-color-error': '#B3261E'
+				},
+				dark: {
+					'--md-color-primary': '#88BDE8',
+					'--md-color-on-primary': '#1F113F',
+					'--md-color-primary-container': '#2C3140',
+					'--md-color-on-primary-container': '#F7F1FF',
+					'--md-color-surface': '#1C1F29',
+					'--md-color-on-surface': '#E0E2EF',
+					'--md-color-surface-variant': '#363943',
+					'--md-color-on-surface-variant': '#C3C6D6',
+					'--md-color-icon-background': '#23292E',
+					'--md-color-outline': '#8B8A8A',
+					'--md-color-dialog-header': '#003FA4',
+					'--md-color-table-head': '#2E3340',
+					'--md-color-highlight': '#282E3C',
+					'--md-color-secondary': '#A88A9E',
+					'--md-color-tertiary': '#B58E9F',
+					'--md-color-error': '#A14C47'
+				}
+			};
+			const COLOR_VAR_IDS = Object.keys(COLOR_DEFAULTS.light);
+			const exportConfigBtn = document.getElementById('exportConfigBtn');
+			const importConfigBtn = document.getElementById('importConfigBtn');
+			const input = document.getElementById('themeMemoryMinutesInput');
+			const currentText = document.getElementById('themeMemoryCurrentText');
+			const saveBtn = document.getElementById('saveThemeMemoryBtn');
+			const resetBtn = document.getElementById('resetThemeMemoryBtn');
+			const mdDialogBackdropCloseInput = document.getElementById('mdDialogBackdropCloseInput');
+			const saveDialogSettingsBtn = document.getElementById('saveDialogSettingsBtn');
+			const resetDialogSettingsBtn = document.getElementById('resetDialogSettingsBtn');
+			const transitionInputs = Array.from(document.querySelectorAll('.transition-setting-input'));
+			const saveTransitionBtn = document.getElementById('saveTransitionSettingsBtn');
+			const resetTransitionBtn = document.getElementById('resetTransitionSettingsBtn');
+			const cardRippleMustCompleteInput = document.getElementById('cardRippleMustCompleteInput');
+			const colorThemeSelect = document.getElementById('colorThemeSelect');
+			const colorSettingsList = document.getElementById('colorSettingsList');
+			const saveColorBtn = document.getElementById('saveColorSettingsBtn');
+			const resetColorBtn = document.getElementById('resetColorSettingsBtn');
+			const resetAllColorBtn = document.getElementById('resetAllColorSettingsBtn');
+		
+			function getSavedMinutes() {
+				const raw = localStorage.getItem(THEME_MEMORY_KEY);
+				const value = Number(raw);
+				if (!Number.isFinite(value) || value <= 0) return DEFAULT_MINUTES;
+				return Math.min(Math.max(Math.round(value), MIN_MINUTES), MAX_MINUTES);
+			}
+		
+			function normalizeTransitionValue(key, value) {
+				const cfg = TRANSITION_SETTINGS[key];
+				let ms = Number(value);
+				if (!cfg || !Number.isFinite(ms)) ms = cfg ? cfg.def : 0;
+				return Math.min(Math.max(Math.round(ms), cfg.min), cfg.max);
+			}
+		
+			function getTransitionValue(key) {
+				const cfg = TRANSITION_SETTINGS[key];
+				const raw = localStorage.getItem(key);
+				if (raw === null) return cfg.def;
+				return normalizeTransitionValue(key, raw);
+			}
+		
+			function getColorSettings() {
+				try {
+					const data = JSON.parse(localStorage.getItem('siteColorVars') || '{}');
+					return data && typeof data === 'object' ? data : {};
+				} catch (e) {
+					localStorage.removeItem('siteColorVars');
+					return {};
+				}
+			}
+		
+			function setColorSettings(settings) {
+				localStorage.setItem('siteColorVars', JSON.stringify(settings));
+			}
+		
+			function normalizeHexInput(value, fallback) {
+				let v = String(value || '').replace(/^#/, '').toUpperCase().replace(/[^A-F0-9]/g, '').slice(0, 6);
+				if (!v && fallback) v = normalizeHexInput(fallback);
+				return v;
+			}
+		
+			function getDefaultHex(theme, varId) {
+				return normalizeHexInput(COLOR_DEFAULTS[theme][varId]);
+			}
+		
+			function getCompleteColorSettings() {
+				const saved = getColorSettings();
+				const complete = { light: {}, dark: {} };
+				['light', 'dark'].forEach(function (theme) {
+					const active = saved[theme] || {};
+					COLOR_VAR_IDS.forEach(function (varId) {
+						const value = normalizeHexInput(active[varId]);
+						complete[theme][varId] = value.length === 6 ? value : getDefaultHex(theme, varId);
+					});
+				});
+				return complete;
+			}
+		
+			function getGroupedColorSettings() {
+				const complete = getCompleteColorSettings();
+				const grouped = {};
+				COLOR_VAR_IDS.forEach(function (varId) {
+					grouped[varId] = ['#' + complete.light[varId], '#' + complete.dark[varId]];
+				});
+				return grouped;
+			}
+		
+			function hexToCss(hex) {
+				const v = normalizeHexInput(hex);
+				return v.length === 6 ? '#' + v : 'transparent';
+			}
+		
+			function applyTransitionSettings() {
+				Object.keys(TRANSITION_SETTINGS).forEach(function (key) {
+					const cfg = TRANSITION_SETTINGS[key];
+					document.documentElement.style.setProperty(cfg.css, getTransitionValue(key) + 'ms');
+				});
+				if (typeof window.applySiteTransitionSettings === 'function') {
+					window.applySiteTransitionSettings();
+				}
+			}
+		
+			function applyColorSettings() {
+				if (typeof window.applySiteColorSettings === 'function') {
+					window.applySiteColorSettings();
+				}
+			}
+		
+			function showMessage(text) {
+				if (typeof window.showToast === 'function') {
+					window.showToast(text);
+				} else {
+					console.info(text);
+				}
+			}
+		
+			function collectConfig() {
+				const transitions = {};
+				Object.keys(TRANSITION_SETTINGS).forEach(function (key) {
+					transitions[key] = getTransitionValue(key);
+				});
+				return {
+					version: 1,
+					exportedAt: new Date().toISOString(),
+					settings: {
+						themeMemoryMinutes: getSavedMinutes(),
+						mdDialogBackdropClose: localStorage.getItem('mdDialogBackdropClose') !== 'false',
+						transitions: transitions,
+						cardRippleMustComplete: localStorage.getItem('cardRippleMustComplete') !== 'false',
+						siteColorVars: getGroupedColorSettings()
+					}
+				};
+			}
+		
+			function copyTextToClipboard(text) {
+				if (navigator.clipboard && window.isSecureContext) {
+					return navigator.clipboard.writeText(text);
+				}
+				return new Promise(function (resolve, reject) {
+					const textarea = document.createElement('textarea');
+					textarea.value = text;
+					textarea.setAttribute('readonly', 'readonly');
+					textarea.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+					document.body.appendChild(textarea);
+					textarea.select();
+					try {
+						const ok = document.execCommand('copy');
+						textarea.remove();
+						ok ? resolve() : reject(new Error('copy failed'));
+					} catch (err) {
+						textarea.remove();
+						reject(err);
+					}
+				});
+			}
+		
+			function exportConfig() {
+				const text = JSON.stringify(collectConfig());
+				copyTextToClipboard(text).then(function () {
+					showMessage('配置 JSON 已复制到粘贴板');
+				}).catch(function (err) {
+					console.error(err);
+					showMessage('复制失败，请检查浏览器权限');
+				});
+			}
+		
+			function importConfigObject(data) {
+				const settings = data && data.settings ? data.settings : data;
+				if (!settings || typeof settings !== 'object') throw new Error('配置格式无效');
+				if (settings.themeMemoryMinutes !== undefined) {
+					let minutes = Number(settings.themeMemoryMinutes);
+					if (!Number.isFinite(minutes)) minutes = DEFAULT_MINUTES;
+					minutes = Math.min(Math.max(Math.round(minutes), MIN_MINUTES), MAX_MINUTES);
+					localStorage.setItem(THEME_MEMORY_KEY, String(minutes));
+				}
+				if (settings.mdDialogBackdropClose !== undefined) {
+					localStorage.setItem('mdDialogBackdropClose', settings.mdDialogBackdropClose ? 'true' : 'false');
+				}
+				if (settings.transitions && typeof settings.transitions === 'object') {
+					Object.keys(TRANSITION_SETTINGS).forEach(function (key) {
+						if (settings.transitions[key] !== undefined) {
+							localStorage.setItem(key, String(normalizeTransitionValue(key, settings.transitions[key])));
+						}
+					});
+				}
+				if (settings.cardRippleMustComplete !== undefined) {
+					localStorage.setItem('cardRippleMustComplete', settings.cardRippleMustComplete ? 'true' : 'false');
+				}
+				if (settings.siteColorVars && typeof settings.siteColorVars === 'object') {
+					const colorData = { light: {}, dark: {} };
+					const sourceVars = settings.siteColorVars;
+					if (sourceVars.light || sourceVars.dark) {
+						['light', 'dark'].forEach(function (theme) {
+							const source = sourceVars[theme] || {};
+							COLOR_VAR_IDS.forEach(function (varId) {
+								let value = normalizeHexInput(source[varId]);
+								if (value.length !== 6) value = getDefaultHex(theme, varId);
+								colorData[theme][varId] = value;
+							});
+						});
+					} else {
+						COLOR_VAR_IDS.forEach(function (varId) {
+							const value = sourceVars[varId];
+							let lightValue = '';
+							let darkValue = '';
+							if (Array.isArray(value)) {
+								lightValue = normalizeHexInput(value[0]);
+								darkValue = normalizeHexInput(value[1]);
+							} else if (value && typeof value === 'object') {
+								lightValue = normalizeHexInput(value.light);
+								darkValue = normalizeHexInput(value.dark);
+							}
+							colorData.light[varId] = lightValue.length === 6 ? lightValue : getDefaultHex('light', varId);
+							colorData.dark[varId] = darkValue.length === 6 ? darkValue : getDefaultHex('dark', varId);
+						});
+					}
+					setColorSettings(colorData);
+				}
+				refreshThemeMemory();
+				refreshDialogSettings();
+				refreshTransitionInputs();
+				applyColorSettings();
+				refreshColorRows();
+			}
+		
+			function openImportConfigDialog() {
+				const dialog = document.getElementById('settingsImportDialog');
+				const textarea = document.getElementById('settingsImportJsonInput');
+				const cancelBtn = document.getElementById('settingsImportCancelBtn');
+				const confirmBtn = document.getElementById('settingsImportConfirmBtn');
+				let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+				function closeDialog() {
+					dialog.classList.remove('show');
+					document.body.style.position = '';
+					document.body.style.top = '';
+					document.body.style.width = '';
+					document.body.style.overflow = '';
+					window.scrollTo(0, scrollPos);
+				}
+				textarea.value = '';
+				cancelBtn.onclick = closeDialog;
+				confirmBtn.onclick = function () {
+					try {
+						importConfigObject(JSON.parse(textarea.value || '{}'));
+						closeDialog();
+						showMessage('配置 JSON 已导入');
+					} catch (err) {
+						console.error(err);
+						showMessage('配置 JSON 导入失败');
+					}
+				};
+			dialog.onclick = function (e) {
+					if (e.target === dialog && localStorage.getItem('mdDialogBackdropClose') !== 'false') closeDialog();
+				};
+				scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+				document.body.style.position = 'fixed';
+				document.body.style.top = '-' + scrollPos + 'px';
+				document.body.style.width = '100%';
+				document.body.style.overflow = 'hidden';
+				dialog.classList.add('show');
+				setTimeout(function () { textarea.focus(); }, 50);
+			}
+		
+			function refreshThemeMemory() {
+				const minutes = getSavedMinutes();
+				input.value = String(minutes);
+				currentText.textContent = '当前记忆时间：' + minutes + ' 分钟';
+			}
+		
+			function refreshDialogSettings() {
+				mdDialogBackdropCloseInput.checked = localStorage.getItem('mdDialogBackdropClose') !== 'false';
+			}
+		
+			function refreshTransitionInputs() {
+				transitionInputs.forEach(function (el) {
+					el.value = String(getTransitionValue(el.dataset.key));
+				});
+				cardRippleMustCompleteInput.checked = localStorage.getItem('cardRippleMustComplete') !== 'false';
+				applyTransitionSettings();
+			}
+		
+			function refreshColorRows() {
+				const theme = colorThemeSelect.value;
+				const saved = getColorSettings();
+				const active = saved[theme] || {};
+				colorSettingsList.innerHTML = '';
+				COLOR_VAR_IDS.forEach(function (varId) {
+					const value = normalizeHexInput(active[varId], getDefaultHex(theme, varId));
+					const item = document.createElement('div');
+					item.className = 'list-item standalone';
+					item.innerHTML = '<div class="setting-color-row">'
+						+ '<code class="list-title"></code>'
+						+ '<input class="setting-input color-setting-input" type="text" maxlength="6" pattern="[A-F0-9]{0,6}" spellcheck="false" inputmode="text">'
+						+ '<span class="setting-color-preview" role="button" tabindex="0" title="单击打开颜色选择器" aria-label="颜色预览，单击打开颜色选择器"></span>'
+						+ '<input class="color-picker-input" type="color" aria-hidden="true" tabindex="-1" style="position:absolute;opacity:0;width:1px;height:1px;pointer-events:none;">'
+						+ '</div>';
+					const idEl = item.querySelector('code');
+					const inputEl = item.querySelector('.color-setting-input');
+					const previewEl = item.querySelector('.setting-color-preview');
+					const pickerEl = item.querySelector('.color-picker-input');
+					idEl.textContent = varId;
+					inputEl.value = value;
+					inputEl.dataset.varId = varId;
+					function updatePreview() {
+						const normalized = normalizeHexInput(inputEl.value);
+						if (inputEl.value !== normalized) inputEl.value = normalized;
+						previewEl.style.background = hexToCss(normalized);
+						pickerEl.value = normalized.length === 6 ? '#' + normalized : '#' + getDefaultHex(theme, varId);
+					}
+					function openColorPicker() {
+						updatePreview();
+						pickerEl.click();
+					}
+					inputEl.addEventListener('input', updatePreview);
+					pickerEl.addEventListener('input', function () {
+						inputEl.value = normalizeHexInput(pickerEl.value);
+						updatePreview();
+					});
+					previewEl.addEventListener('click', openColorPicker);
+					previewEl.addEventListener('keydown', function (e) {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							openColorPicker();
+						}
+					});
+					updatePreview();
+					colorSettingsList.appendChild(item);
+				});
+			}
+		
+			saveBtn.addEventListener('click', function () {
+				let minutes = Number(input.value);
+				if (!Number.isFinite(minutes)) minutes = DEFAULT_MINUTES;
+				minutes = Math.min(Math.max(Math.round(minutes), MIN_MINUTES), MAX_MINUTES);
+				localStorage.setItem(THEME_MEMORY_KEY, String(minutes));
+				refreshThemeMemory();
+				showMessage('主题记忆时间已保存：' + minutes + ' 分钟');
+			});
+		
+			resetBtn.addEventListener('click', function () {
+				localStorage.removeItem(THEME_MEMORY_KEY);
+				refreshThemeMemory();
+				showMessage('主题记忆时间已恢复默认：10 分钟');
+			});
+		
+			saveDialogSettingsBtn.addEventListener('click', function () {
+				localStorage.setItem('mdDialogBackdropClose', mdDialogBackdropCloseInput.checked ? 'true' : 'false');
+				refreshDialogSettings();
+				showMessage('弹窗设置已保存');
+			});
+		
+			resetDialogSettingsBtn.addEventListener('click', function () {
+				localStorage.removeItem('mdDialogBackdropClose');
+				refreshDialogSettings();
+				showMessage('弹窗设置已恢复默认开启');
+			});
+		
+			saveTransitionBtn.addEventListener('click', function () {
+				transitionInputs.forEach(function (el) {
+					const key = el.dataset.key;
+					localStorage.setItem(key, String(normalizeTransitionValue(key, el.value)));
+				});
+				localStorage.setItem('cardRippleMustComplete', cardRippleMustCompleteInput.checked ? 'true' : 'false');
+				refreshTransitionInputs();
+				showMessage('过渡动画设置已保存');
+			});
+		
+			resetTransitionBtn.addEventListener('click', function () {
+				Object.keys(TRANSITION_SETTINGS).forEach(function (key) {
+					localStorage.removeItem(key);
+				});
+				localStorage.removeItem('cardRippleMustComplete');
+				refreshTransitionInputs();
+				showMessage('过渡动画设置已恢复默认');
+			});
+		
+			colorThemeSelect.addEventListener('change', refreshColorRows);
+		
+			saveColorBtn.addEventListener('click', function () {
+				const theme = colorThemeSelect.value;
+				const settings = getColorSettings();
+				settings[theme] = settings[theme] || {};
+				Array.from(colorSettingsList.querySelectorAll('.color-setting-input')).forEach(function (el) {
+					const varId = el.dataset.varId;
+					let value = normalizeHexInput(el.value);
+					if (value.length !== 6) value = getDefaultHex(theme, varId);
+					settings[theme][varId] = value;
+				});
+				setColorSettings(settings);
+				applyColorSettings();
+				refreshColorRows();
+				showMessage('颜色配置已保存');
+			});
+		
+			resetColorBtn.addEventListener('click', function () {
+				const theme = colorThemeSelect.value;
+				const settings = getColorSettings();
+				delete settings[theme];
+				setColorSettings(settings);
+				applyColorSettings();
+				refreshColorRows();
+				showMessage('当前主题颜色已恢复默认');
+			});
+		
+			resetAllColorBtn.addEventListener('click', function () {
+				localStorage.removeItem('siteColorVars');
+				applyColorSettings();
+				refreshColorRows();
+				showMessage('全部颜色配置已恢复默认');
+			});
+		
+			exportConfigBtn.addEventListener('click', exportConfig);
+			importConfigBtn.addEventListener('click', openImportConfigDialog);
+		
+			refreshThemeMemory();
+			refreshDialogSettings();
+			refreshTransitionInputs();
+			colorThemeSelect.value = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+			refreshColorRows();
+			setTimeout(function () {
+				colorThemeSelect.value = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+				refreshColorRows();
+			}, 80);
+		})();
+	</script>
+	<script src="./js/Cookie.js"></script>
+	<script src="./js/Protect.js"></script>
+	<script src="./js/CoreLogic.js"></script>
+</body>
+
+</html>
