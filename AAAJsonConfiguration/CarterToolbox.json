@@ -1,6 +1,7 @@
 {
 	"name": "Carter工具箱",
 	"version": "26071013",
-	"DownloadUrl": "待定",
-	"SHA256": "待定"
+	"announcement": "No Announcement",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071012/CarterToolbox_3.4.0.apk",
+	"SHA256": "8fc036e543195b4b73ae3e914f82ae701c285e57a64724cb4189b9881fe12113"
 }
