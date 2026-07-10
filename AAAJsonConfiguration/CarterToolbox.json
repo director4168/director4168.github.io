@@ -4,6 +4,6 @@
 	"announcement": "No Announcement",
 	"version": "26071015",
 	"update_content": "1. 下载新版本时，添加进度框（同时支持显示网速等）\n2. 更新弹窗支持显示更新内容",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071012/CarterToolbox_3.4.0.apk",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071014/CarterToolBox_3.4.0.apk",
 	"SHA256": "aeca5aebddad6f696ea11f2803fb5222e2693ce5b22c2c0923e390a44d948530"
 }
