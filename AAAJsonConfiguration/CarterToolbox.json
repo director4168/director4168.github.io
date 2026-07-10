@@ -3,7 +3,7 @@
 	"time": "2026/07/10_10:54",
 	"announcement": "No Announcement",
 	"version": "26071020",
-	"update_content": "1. 首页-HEX偏移:选择对文件进行偏移时，强制分块大小以防止文件内容过大造成OOM崩溃\n本次更新约13.56 MB",
+	"update_content": "1. 首页-HEX偏移:选择对文件进行偏移时，强制分块偏移以防止文件内容过大造成OOM崩溃\n本次更新约13.56 MB",
 	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071020/CarterToolbox_3.8.0.apk",
 	"SHA256": "35d45aebfded591a7708bf96a6d1600f19fca75e4f57d1fcc0c8bbdfea7817be"
 }
