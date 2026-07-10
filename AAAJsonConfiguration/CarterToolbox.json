@@ -1,9 +1,9 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/10_09:22",
+	"time": "2026/07/10_10:54",
 	"announcement": "No Announcement",
-	"version": "26071016",
-	"update_content": "1. 此版本修复了一些已知弹窗问题\nTest line break",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071015/CarterToolbox_3.6.1.apk",
-	"SHA256": "850d7d57afbc0e7e19f0636add82943070d412441b667dd2f6200abc76ccf2a2"
+	"version": "26071018",
+	"update_content": "1. 代码逻辑优化\n2. 软件部分内容修改\n3. 用户协议与免责声明 修改",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071018/CarterToolbox_3.6.4.apk",
+	"SHA256": "2ea9c1a4119363c50085b8526f39b980b95b610ee62012e385054d8370d62e65"
 }
