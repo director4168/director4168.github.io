@@ -2,8 +2,8 @@
 	"name": "Carter工具箱",
 	"time": "2026/07/10_10:54",
 	"announcement": "No Announcement",
-	"version": "26071018",
-	"update_content": "1. 代码逻辑优化\n2. 软件部分内容修改\n3. 修改用户协议与免责声明\n本次更新约13.55 MB",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071018/CarterToolbox_3.6.4.apk",
-	"SHA256": "2ea9c1a4119363c50085b8526f39b980b95b610ee62012e385054d8370d62e65"
+	"version": "26071020",
+	"update_content": "1. 首页-HEX偏移:选择对文件进行偏移时，强制分块大小以防止文件内容过大造成OOM崩溃\n本次更新约13.56 MB",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071020/CarterToolbox_3.8.0.apk",
+	"SHA256": "35d45aebfded591a7708bf96a6d1600f19fca75e4f57d1fcc0c8bbdfea7817be"
 }
