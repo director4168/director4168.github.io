@@ -1,8 +1,9 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/10_08:53",
+	"time": "2026/07/10_09:13",
 	"announcement": "No Announcement",
-	"version": "26071013",
+	"version": "26071015",
+	"update_content": "1. 下载新版本时，添加进度框（同时支持显示网速等）\n2. 更新弹窗支持显示更新内容",
 	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071012/CarterToolbox_3.4.0.apk",
-	"SHA256": "da283f7dea597cbcc6f208ac4f92dc5d2a0bb10e7c50d265f32cafed79b3d274"
+	"SHA256": "aeca5aebddad6f696ea11f2803fb5222e2693ce5b22c2c0923e390a44d948530"
 }
