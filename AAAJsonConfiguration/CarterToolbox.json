@@ -1,10 +1,10 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/11_19:49",
+	"time": "2026/07/11_20:50",
 	"announcement": "No Announcement",
 	"version": "99999999",
-	"compulsory": "true",
-	"update_content": "项目高危漏洞，更新通道暂时关闭！",
+	"compulsory": "false",
+	"update_content": "1. 修复了一项严重问题(编译阶段)\n2. 修复了已知问题\n3. [b]添加了强制更新属性[/b]\n===以下为新版本功能测试===\nB[b]加粗[b]B\ni[i]斜体[/i]i\n[u]下划线[/u]u\n[color='#00FFFF']#00FFFF[/color]\n\[b\]B\[\]\n==嵌套测试==\n[b][i][u][color='#00FFFF]B, i, U, color[/color][u][i][b]\n\n感谢您的使用",
 	"DownloadUrl": "No data",
 	"SHA256": "No data"
 }
