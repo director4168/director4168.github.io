@@ -3,6 +3,7 @@
 	"time": "2026/07/11_19:49",
 	"announcement": "No Announcement",
 	"version": "99999999",
+	"compulsory": "false",
 	"update_content": "项目高危漏洞，更新通道暂时关闭！",
 	"DownloadUrl": "No data",
 	"SHA256": "No data"
