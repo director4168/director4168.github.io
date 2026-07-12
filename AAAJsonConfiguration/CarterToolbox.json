@@ -4,7 +4,7 @@
 	"announcement": "No Announcement",
 	"version": "99999999",
 	"compulsory": false,
-	"update_content": "1. [b]修复了一项严重问题([u]编译阶段[/u])[/b]\n2. 修复了已知问题\n3. [b]添加了强制更新属性[/b]\n===以下为新版本功能测试===\nB[b]加粗[/b]B\ni[i]斜体[/i]i\nu[u]下划线[/u]u\ncolor[color='#FF0000']#FF0000[/color]color\n\[b\]B\[/B\]\n==嵌套测试==\n[b][i][u][color='#FF0000']B, i, U, color[/color][/u][/i][/b]\n==无闭合测试==\n[b]B\n[i]i\n[u]u\n\n[color='#FF0000]FF0000; [color='#FF0000']FF0000, 2; [color='GGGGGG']GGGGGG\n\n感谢您的使用",
+	"update_content": "1. [b]修复了一项严重问题[/b]\n2. 修复了已知问题\n3. [b]添加了强制更新属性[/b]\n===以下为新版本功能测试===\nB[b]加粗[/b]B\ni[i]斜体[/i]i\nu[u]下划线[/u]u\ncolor[color='#FF0000']#FF0000[/color]color\n\[b\]B\[/B\]\n==嵌套测试==\n[b][i][u][color='#FF0000']B, i, U, color[/color][/u][/i][/b]\n==无闭合测试==\n[b]B\n[i]i\n[u]u\n\n[color='#FF0000]FF0000; [color='#FF0000']FF0000, 2; [color='GGGGGG']GGGGGG\n\n感谢您的使用",
 	"DownloadUrl": "No data",
 	"SHA256": "No data"
 }
