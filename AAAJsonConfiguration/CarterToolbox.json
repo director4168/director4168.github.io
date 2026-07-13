@@ -1,10 +1,10 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/11_20:50",
+	"time": "2026/07/13_11:10",
 	"announcement": "No Announcement",
-	"version": "99999999",
+	"version": "26071313",
 	"compulsory": false,
-	"update_content": "1. 修复了一项严重问题\n2. 修复了已知问题\n3. [b]添加了强制更新属性[/b]\n4. [b]更新弹窗支持解析指定标签[/b]\n===以下为新版本功能测试===\nB[b]加粗[/b]B\ni[i]斜体[/i]i\nu[u]下划线[/u]u\ncolor[color='#FF0000']#FF0000[/color]color\n\[b\]B\[/B\]\n==嵌套测试==\n[b][i][u][color='#FF0000']B, i, U, color[/color][/u][/i][/b]\n==无闭合测试==\n[b]B\n[i]i\n[u]u\n\n[color='#FF0000]FF0000; [color='#FF0000']FF0000, 2; [color='GGGGGG']GGGGGG\n\n感谢您的使用",
-	"DownloadUrl": "No data",
-	"SHA256": "No data"
+	"update_content": "v3.16.2(26071313)\n本版本主要更新:\n1. SQLite数据库编辑器\2. 优化主题切换逻辑，同时移出一些动画调用\n[b]权限增加:[/b]\n1. 新增所有文件访问权限\n2. 新增Shizuku权限（需在设置里面手动申请）\n[b]往期更新内容极多,请前往 https://github.com/director4168/CarterToolbox/releases/tag/26071313 查看[/b]\n\n感谢您的使用",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071313/CarterToolbox_3.16.2_release.apk",
+	"SHA256": "5e292775d92a493849c1062984056297a47d462264f5b13a2ae5159c7132d906"
 }
