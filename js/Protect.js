@@ -7,10 +7,29 @@
 	var hasRun = false;
 	window.__PROTECT = true;
 
-	function protectAvatars() {
-		document.querySelectorAll('.avatar, .avatar img').forEach(function(el) {
-			if (el._avatarProtected) return;
-			el._avatarProtected = true;
+	function protectLongPressTargets() {
+		var selector = [
+			'a',
+			'button',
+			'summary',
+			'[role="button"]',
+			'[data-href]',
+			'.avatar',
+			'.avatar img',
+			'.list-item',
+			'.site-button',
+			'.md3-button',
+			'.btn',
+			'.home-btn',
+			'.collapse-header',
+			'.bottom-actions a',
+			'.bottom-actions .btn',
+			'img'
+		].join(', ');
+
+		document.querySelectorAll(selector).forEach(function(el) {
+			if (el._longPressProtected) return;
+			el._longPressProtected = true;
 			el.style.webkitTouchCallout = 'none';
 			el.style.webkitUserSelect = 'none';
 			el.style.userSelect = 'none';
@@ -20,7 +39,9 @@
 			if (el.tagName && el.tagName.toLowerCase() === 'img') {
 				el.setAttribute('draggable', 'false');
 				el.style.webkitUserDrag = 'none';
-				el.style.pointerEvents = 'none';
+				if (el.closest('.avatar')) {
+					el.style.pointerEvents = 'none';
+				}
 			}
 			['contextmenu', 'dragstart', 'selectstart'].forEach(function(type) {
 				el.addEventListener(type, function(e) {
@@ -54,7 +75,7 @@
 				return false;
 			}
 		};
-		protectAvatars();
+		protectLongPressTargets();
 	}
 
 

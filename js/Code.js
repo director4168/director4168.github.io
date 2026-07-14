@@ -15,7 +15,24 @@ function unescapeHtml(text) {
 
 
 
+const CODE_LINE_NUMBERS_SCROLL_KEY = 'codeLineNumbersScroll';
+
+function getCodeLineNumbersScroll() {
+	return localStorage.getItem(CODE_LINE_NUMBERS_SCROLL_KEY) === 'true';
+}
+
+function applyCodeLineNumbersScrollSetting() {
+	const enabled = getCodeLineNumbersScroll();
+	document.documentElement.classList.toggle('code-line-numbers-scroll', enabled);
+	document.body.classList.toggle('code-line-numbers-scroll', enabled);
+}
+
+window.applyCodeLineNumbersScrollSetting = applyCodeLineNumbersScrollSetting;
+
+
+
 function initLineNumbers() {
+	applyCodeLineNumbersScrollSetting();
 	const containers = document.querySelectorAll('.code-container');
 	containers.forEach(container => {
 		const source = container.querySelector('#code-source');
@@ -69,3 +86,8 @@ function copyCode(btn) {
 
 
 window.addEventListener('DOMContentLoaded', initLineNumbers);
+window.addEventListener('pageshow', applyCodeLineNumbersScrollSetting);
+window.addEventListener('focus', applyCodeLineNumbersScrollSetting);
+window.addEventListener('storage', function(e) {
+	if (!e || e.key === CODE_LINE_NUMBERS_SCROLL_KEY) applyCodeLineNumbersScrollSetting();
+});

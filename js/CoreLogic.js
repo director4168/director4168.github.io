@@ -196,7 +196,7 @@
 		if (themeToggle) {
 			var icon = themeToggle.querySelector('.material-icons');
 			var pref = window.matchMedia('(prefers-color-scheme: dark)');
-			var DEFAULT_THEME_MEMORY_MINUTES = 10;
+			var DEFAULT_THEME_MEMORY_MINUTES = 90;
 
 			function getThemeMemoryMinutes() {
 				var raw = localStorage.getItem('themeMemoryMinutes');
@@ -347,12 +347,32 @@
 
 		// 卡片水波
 		var items = document.querySelectorAll('.list-item');
+		var releaseRippleHandlers = [];
+
+		function releaseAllRipples() {
+			releaseRippleHandlers.forEach(function(release) {
+				release();
+			});
+		}
+
 		items.forEach(function(item) {
 			if (item._b) return;
 			item._b = true;
 			var currentRipple = null;
+
+			function getRippleEnabled() {
+				return localStorage.getItem('cardRippleEnabled') !== 'false';
+			}
+
 			item.addEventListener('pointerdown', function(e) {
+				if (item.setPointerCapture && e.pointerId !== undefined) {
+					try {
+						item.setPointerCapture(e.pointerId);
+					} catch (err) {}
+				}
 				if (currentRipple && currentRipple.parentNode) currentRipple.remove();
+				currentRipple = null;
+				if (!getRippleEnabled()) return;
 				var rect = item.getBoundingClientRect();
 				var size = Math.max(rect.width, rect.height) * 2.2;
 				var x = e.clientX - rect.left - size / 2;
@@ -416,9 +436,11 @@
 					fadeRipple(r);
 				}
 			}
+			releaseRippleHandlers.push(releaseRipple);
 			item.addEventListener('pointerup', releaseRipple);
 			item.addEventListener('pointerleave', releaseRipple);
 			item.addEventListener('pointercancel', releaseRipple);
+			item.addEventListener('lostpointercapture', releaseRipple);
 			item.addEventListener('click', function(e) {
 				if (dialog.classList.contains('show')) return;
 				var href = this.dataset.href;
@@ -430,6 +452,15 @@
 					show(title, content, href);
 				}
 			});
+		});
+
+		['pointerup', 'pointercancel', 'touchend', 'touchcancel', 'mouseup', 'contextmenu'].forEach(function(type) {
+			document.addEventListener(type, releaseAllRipples, true);
+		});
+		window.addEventListener('blur', releaseAllRipples);
+		window.addEventListener('pageshow', releaseAllRipples);
+		document.addEventListener('visibilitychange', function() {
+			if (document.visibilityState !== 'visible') releaseAllRipples();
 		});
 
 

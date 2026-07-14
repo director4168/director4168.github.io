@@ -25,7 +25,19 @@
 		return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 	}
 
+	function getCodeLineNumbersScroll() {
+		return localStorage.getItem('codeLineNumbersScroll') === 'true';
+	}
+
+	function applyCodeLineNumbersScrollSetting() {
+		var enabled = getCodeLineNumbersScroll();
+		document.documentElement.classList.toggle('code-line-numbers-scroll', enabled);
+		document.body.classList.toggle('code-line-numbers-scroll', enabled);
+	}
+	window.applyCodeLineNumbersScrollSetting = applyCodeLineNumbersScrollSetting;
+
 	function initCodeBlocks() {
+		applyCodeLineNumbersScrollSetting();
 		document.querySelectorAll('.doc-section.active .code-container').forEach(function(container) {
 			if (container.dataset.codeInited === 'true') return;
 			container.dataset.codeInited = 'true';
@@ -200,6 +212,11 @@
 		});
 	}
 	initSidebarGroups();
+	window.addEventListener('pageshow', applyCodeLineNumbersScrollSetting);
+	window.addEventListener('focus', applyCodeLineNumbersScrollSetting);
+	window.addEventListener('storage', function(e) {
+		if (!e || e.key === 'codeLineNumbersScroll') applyCodeLineNumbersScrollSetting();
+	});
 
 
 

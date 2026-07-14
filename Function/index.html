@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="../css/MainColorStyle_Default.css">
 	<!-- 引入附加CSS样式 -->
 	<link rel="stylesheet" href="../css/AdditionalStyles.css">
+	<!-- 引入搜索CSS样式 -->
+	<link rel="stylesheet" href="../css/Search.css">
 
 	<!-- 引入彩蛋CSS样式 -->
 	<link rel="stylesheet" href="../EasterEgg/css/EasterEggStyle.css">
@@ -38,6 +40,13 @@
 				<span class="material-icons" style="font-size: 14px; vertical-align: middle;">info</span>
 
 			</p>
+		</div>
+
+		<div class="search-wrapper">
+			<div class="search-stroke" id="searchContainer">
+				<span class="material-icons">search</span>
+				<input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索工具">
+			</div>
 		</div>
 
 
@@ -159,8 +168,8 @@
 		<a href="../Setting.html" class="btn" id="settingsToggle" title="设置">
 			<span class="material-icons">settings</span>
 		</a>
-		<a href="../en_US/Function/index_en_US.html" class="btn" id="languageToggle">
-			<span class="material-icons">translate</span>
+		<a href="../index.html" class="btn" id="languageToggle" title="返回首页">
+			<span class="material-icons">home</span>
 		</a>
 
 		<!-- 主题切换 -->
@@ -213,6 +222,8 @@
 	<!-- 引入核心JS -->
 	<script src="../js/CoreLogic.js"></script>
 	<script src="../js/Protect.js"></script>
+	<!-- 搜索JS -->
+	<script src="../js/Search.js"></script>
 </body>
 
 </html>

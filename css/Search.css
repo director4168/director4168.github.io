@@ -5,4 +5,132 @@
  负责搜索框的样式
 */
 
-.search-wrapper {margin: 0 0 24px 0;}.search-stroke {position: relative;display: flex;align-items: center;background: var(--md-color-surface-variant);border: 1px solid var(--md-color-outline);border-radius: 28px;padding: 0 16px;height: 56px;transition: border-color 0.3s ease, box-shadow 0.3s ease;}.search-InputBox {flex: 1;border: none;background: transparent;color: var(--md-color-on-surface);font-size: 16px;outline: none;font-family: inherit;}
+.search-wrapper {
+	margin: 0 0 24px 0;
+}
+
+.search-stroke {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--md-color-surface-variant);
+	border: 1px solid var(--md-color-outline);
+	border-radius: 28px;
+	padding: 0 12px 0 16px;
+	min-height: 56px;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.search-stroke:focus-within {
+	border-color: var(--md-color-primary);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-color-primary) 24%, transparent);
+}
+
+.search-stroke.no-results {
+	border-color: var(--md-color-error);
+}
+
+.search-stroke > .material-icons {
+	color: var(--md-color-primary);
+	font-size: 24px;
+	flex: 0 0 auto;
+}
+
+.search-InputBox {
+	flex: 1;
+	min-width: 0;
+	border: none;
+	background: transparent;
+	color: var(--md-color-on-surface);
+	font-size: 16px;
+	outline: none;
+	font-family: inherit;
+	min-height: 52px;
+}
+
+.search-InputBox::placeholder {
+	color: var(--md-color-on-surface-variant);
+}
+
+.search-clear {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--md-color-on-surface-variant);
+	cursor: pointer;
+	padding: 0;
+	flex: 0 0 auto;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.search-stroke.has-value .search-clear {
+	display: inline-flex;
+}
+
+.search-clear:hover,
+.search-clear:focus-visible {
+	background: var(--md-color-highlight);
+	color: var(--md-color-on-surface);
+}
+
+.search-clear .material-icons {
+	font-size: 22px;
+}
+
+.search-status {
+	margin-top: 8px;
+	padding: 0 16px;
+	color: var(--md-color-on-surface-variant);
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.search-hidden {
+	display: none !important;
+}
+
+.search-highlight {
+	padding: 0 2px;
+	border-radius: 4px;
+	background: var(--md-color-highlight);
+	color: var(--md-color-on-surface);
+}
+
+.search-empty-state {
+	display: none;
+	align-items: center;
+	gap: 12px;
+	margin: 16px 0 24px;
+	padding: 16px 18px;
+	border: 1px dashed var(--md-color-outline);
+	border-radius: var(--border-radius-basic);
+	background: var(--md-color-surface-variant);
+	color: var(--md-color-on-surface-variant);
+}
+
+.search-empty-state.show {
+	display: flex;
+}
+
+.search-empty-state > .material-icons {
+	font-size: 28px;
+	color: var(--md-color-primary);
+	flex: 0 0 auto;
+}
+
+.search-empty-title {
+	color: var(--md-color-on-surface);
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.search-empty-desc {
+	font-size: 13px;
+	line-height: 1.4;
+}

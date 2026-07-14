@@ -22,8 +22,8 @@
 				提供本站部分功能的设置
 			</p>
 			<div class="setting-actions" style="margin-top: 16px;">
-				<button class="site-button tonal" id="exportConfigBtn" type="button"><span class="material-icons">content_copy</span>复制配置 JSON</button>
-				<button class="site-button outlined" id="importConfigBtn" type="button"><span class="material-icons">content_paste</span>导入配置 JSON</button>
+				<button class="site-button tonal" id="exportConfigBtn" type="button"><span class="material-icons">content_copy</span>复制配置</button>
+				<button class="site-button outlined" id="importConfigBtn" type="button"><span class="material-icons">content_paste</span>导入配置</button>
 			</div>
 		</div>
 
@@ -47,7 +47,7 @@
 								<div class="list-subtitle" id="themeMemoryCurrentText"></div>
 								<div class="setting-actions">
 									<button class="md3-button contained" id="saveThemeMemoryBtn" type="button">保存</button>
-									<button class="md3-button text" id="resetThemeMemoryBtn" type="button">恢复默认 10 分钟</button>
+									<button class="md3-button text" id="resetThemeMemoryBtn" type="button">恢复默认 90 分钟</button>
 								</div>
 							</div>
 						</div>
@@ -147,6 +147,17 @@
 						</div>
 
 						<div class="list-item standalone">
+							<span class="material-icons list-icon">touch_app</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">跳转/纯展示卡片 展示水波动画</div>
+									<div class="list-subtitle">控制点击跳转卡片或纯展示卡片时是否显示水波纹动画。默认开启。</div>
+								</div>
+								<label class="site-toggle" for="cardRippleEnabledInput" style="cursor: pointer;"><input class="site-switch" id="cardRippleEnabledInput" type="checkbox" role="switch" aria-label="展示水波动画"><span>启用</span></label>
+							</div>
+						</div>
+
+						<div class="list-item standalone">
 							<span class="material-icons list-icon">pending</span>
 							<div class="setting-control">
 								<div>
@@ -160,6 +171,30 @@
 					<div class="setting-actions" style="padding: 16px 0 0 0;">
 						<button class="md3-button contained" id="saveTransitionSettingsBtn" type="button">保存过渡设置</button>
 						<button class="md3-button text" id="resetTransitionSettingsBtn" type="button">恢复默认过渡</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<div class="section-title">代码框设置</div>
+			<div class="card">
+				<div class="site-panel" style="margin-top: 0; margin-bottom: 0;">
+					<div class="list-group">
+						<div class="list-item standalone">
+							<span class="material-icons list-icon">format_list_numbered</span>
+							<div class="setting-control">
+								<div>
+									<div class="list-title">代码框行号栏跟随代码段滑动</div>
+									<div class="list-subtitle">关闭时行号栏固定在左侧；开启后行号栏会和代码内容一起横向滑动。默认关闭。</div>
+								</div>
+								<label class="site-toggle" for="codeLineNumbersScrollInput" style="cursor: pointer;"><input class="site-switch" id="codeLineNumbersScrollInput" type="checkbox" role="switch" aria-label="代码框行号栏跟随代码段滑动"><span>启用</span></label>
+							</div>
+						</div>
+					</div>
+					<div class="setting-actions" style="padding: 16px 0 0 0;">
+						<button class="md3-button contained" id="saveCodeSettingsBtn" type="button">保存代码框设置</button>
+						<button class="md3-button text" id="resetCodeSettingsBtn" type="button">恢复默认设置</button>
 					</div>
 				</div>
 			</div>
@@ -201,7 +236,7 @@
 	</div>
 
 	<div class="bottom-actions">
-		<a href="./index.html" class="btn" id="languageToggle">
+		<a href="./index.html" class="btn" id="languageToggle" title="返回首页">
 			<span class="material-icons">home</span>
 		</a>
 		<div class="btn" id="themeToggle">
@@ -222,10 +257,10 @@
 
 	<div class="md3-dialog" id="settingsImportDialog">
 		<div class="md3-dialog-content">
-			<div class="md3-dialog-header">导入配置 JSON</div>
+			<div class="md3-dialog-header">导入配置</div>
 			<div class="md3-dialog-body">
-				<div class="list-subtitle" style="margin-bottom: 10px;">请粘贴导出的配置 JSON：</div>
-				<textarea class="setting-import-textarea" id="settingsImportJsonInput" spellcheck="false" placeholder="在此粘贴配置 JSON"></textarea>
+				<div class="list-subtitle" style="margin-bottom: 10px;">请粘贴导出的配置：</div>
+				<textarea class="setting-import-textarea" id="settingsImportJsonInput" spellcheck="false" placeholder="在此粘贴配置"></textarea>
 			</div>
 			<div class="md3-dialog-actions">
 				<button class="md3-button text" id="settingsImportCancelBtn" type="button">取消</button>
@@ -240,7 +275,7 @@
 		(function () {
 			'use strict';
 			const THEME_MEMORY_KEY = 'themeMemoryMinutes';
-			const DEFAULT_MINUTES = 10;
+			const DEFAULT_MINUTES = 90;
 			const MIN_MINUTES = 1;
 			const MAX_MINUTES = 525600;
 			const TRANSITION_SETTINGS = {
@@ -302,7 +337,11 @@
 			const transitionInputs = Array.from(document.querySelectorAll('.transition-setting-input'));
 			const saveTransitionBtn = document.getElementById('saveTransitionSettingsBtn');
 			const resetTransitionBtn = document.getElementById('resetTransitionSettingsBtn');
+			const cardRippleEnabledInput = document.getElementById('cardRippleEnabledInput');
 			const cardRippleMustCompleteInput = document.getElementById('cardRippleMustCompleteInput');
+			const codeLineNumbersScrollInput = document.getElementById('codeLineNumbersScrollInput');
+			const saveCodeSettingsBtn = document.getElementById('saveCodeSettingsBtn');
+			const resetCodeSettingsBtn = document.getElementById('resetCodeSettingsBtn');
 			const colorThemeSelect = document.getElementById('colorThemeSelect');
 			const colorSettingsList = document.getElementById('colorSettingsList');
 			const saveColorBtn = document.getElementById('saveColorSettingsBtn');
@@ -352,6 +391,16 @@
 		
 			function getDefaultHex(theme, varId) {
 				return normalizeHexInput(COLOR_DEFAULTS[theme][varId]);
+			}
+		
+			function createDefaultColorSettings() {
+				const defaults = { light: {}, dark: {} };
+				['light', 'dark'].forEach(function (theme) {
+					COLOR_VAR_IDS.forEach(function (varId) {
+						defaults[theme][varId] = getDefaultHex(theme, varId);
+					});
+				});
+				return defaults;
 			}
 		
 			function getCompleteColorSettings() {
@@ -417,7 +466,9 @@
 						themeMemoryMinutes: getSavedMinutes(),
 						mdDialogBackdropClose: localStorage.getItem('mdDialogBackdropClose') !== 'false',
 						transitions: transitions,
+						cardRippleEnabled: localStorage.getItem('cardRippleEnabled') !== 'false',
 						cardRippleMustComplete: localStorage.getItem('cardRippleMustComplete') !== 'false',
+						codeLineNumbersScroll: localStorage.getItem('codeLineNumbersScroll') === 'true',
 						siteColorVars: getGroupedColorSettings()
 					}
 				};
@@ -448,7 +499,7 @@
 			function exportConfig() {
 				const text = JSON.stringify(collectConfig());
 				copyTextToClipboard(text).then(function () {
-					showMessage('配置 JSON 已复制到粘贴板');
+					showMessage('配置数据已复制到粘贴板');
 				}).catch(function (err) {
 					console.error(err);
 					showMessage('复制失败，请检查浏览器权限');
@@ -474,8 +525,14 @@
 						}
 					});
 				}
+				if (settings.cardRippleEnabled !== undefined) {
+					localStorage.setItem('cardRippleEnabled', settings.cardRippleEnabled ? 'true' : 'false');
+				}
 				if (settings.cardRippleMustComplete !== undefined) {
 					localStorage.setItem('cardRippleMustComplete', settings.cardRippleMustComplete ? 'true' : 'false');
+				}
+				if (settings.codeLineNumbersScroll !== undefined) {
+					localStorage.setItem('codeLineNumbersScroll', settings.codeLineNumbersScroll ? 'true' : 'false');
 				}
 				if (settings.siteColorVars && typeof settings.siteColorVars === 'object') {
 					const colorData = { light: {}, dark: {} };
@@ -510,6 +567,7 @@
 				refreshThemeMemory();
 				refreshDialogSettings();
 				refreshTransitionInputs();
+				refreshCodeSettings();
 				applyColorSettings();
 				refreshColorRows();
 			}
@@ -534,10 +592,10 @@
 					try {
 						importConfigObject(JSON.parse(textarea.value || '{}'));
 						closeDialog();
-						showMessage('配置 JSON 已导入');
+						showMessage('配置数据已导入');
 					} catch (err) {
 						console.error(err);
-						showMessage('配置 JSON 导入失败');
+						showMessage('导入配置失败');
 					}
 				};
 			dialog.onclick = function (e) {
@@ -566,8 +624,19 @@
 				transitionInputs.forEach(function (el) {
 					el.value = String(getTransitionValue(el.dataset.key));
 				});
+				cardRippleEnabledInput.checked = localStorage.getItem('cardRippleEnabled') !== 'false';
 				cardRippleMustCompleteInput.checked = localStorage.getItem('cardRippleMustComplete') !== 'false';
 				applyTransitionSettings();
+			}
+		
+			function refreshCodeSettings() {
+				codeLineNumbersScrollInput.checked = localStorage.getItem('codeLineNumbersScroll') === 'true';
+				if (typeof window.applyCodeLineNumbersScrollSetting === 'function') {
+					window.applyCodeLineNumbersScrollSetting();
+				} else {
+					document.documentElement.classList.toggle('code-line-numbers-scroll', codeLineNumbersScrollInput.checked);
+					document.body.classList.toggle('code-line-numbers-scroll', codeLineNumbersScrollInput.checked);
+				}
 			}
 		
 			function refreshColorRows() {
@@ -629,9 +698,9 @@
 			});
 		
 			resetBtn.addEventListener('click', function () {
-				localStorage.removeItem(THEME_MEMORY_KEY);
+				localStorage.setItem(THEME_MEMORY_KEY, String(DEFAULT_MINUTES));
 				refreshThemeMemory();
-				showMessage('主题记忆时间已恢复默认：10 分钟');
+				showMessage('主题记忆时间已恢复默认：90 分钟');
 			});
 		
 			saveDialogSettingsBtn.addEventListener('click', function () {
@@ -641,7 +710,7 @@
 			});
 		
 			resetDialogSettingsBtn.addEventListener('click', function () {
-				localStorage.removeItem('mdDialogBackdropClose');
+				localStorage.setItem('mdDialogBackdropClose', 'true');
 				refreshDialogSettings();
 				showMessage('弹窗设置已恢复默认开启');
 			});
@@ -651,6 +720,7 @@
 					const key = el.dataset.key;
 					localStorage.setItem(key, String(normalizeTransitionValue(key, el.value)));
 				});
+				localStorage.setItem('cardRippleEnabled', cardRippleEnabledInput.checked ? 'true' : 'false');
 				localStorage.setItem('cardRippleMustComplete', cardRippleMustCompleteInput.checked ? 'true' : 'false');
 				refreshTransitionInputs();
 				showMessage('过渡动画设置已保存');
@@ -658,11 +728,24 @@
 		
 			resetTransitionBtn.addEventListener('click', function () {
 				Object.keys(TRANSITION_SETTINGS).forEach(function (key) {
-					localStorage.removeItem(key);
+					localStorage.setItem(key, String(TRANSITION_SETTINGS[key].def));
 				});
-				localStorage.removeItem('cardRippleMustComplete');
+				localStorage.setItem('cardRippleEnabled', 'true');
+				localStorage.setItem('cardRippleMustComplete', 'true');
 				refreshTransitionInputs();
 				showMessage('过渡动画设置已恢复默认');
+			});
+		
+			saveCodeSettingsBtn.addEventListener('click', function () {
+				localStorage.setItem('codeLineNumbersScroll', codeLineNumbersScrollInput.checked ? 'true' : 'false');
+				refreshCodeSettings();
+				showMessage('代码框设置已保存');
+			});
+		
+			resetCodeSettingsBtn.addEventListener('click', function () {
+				localStorage.setItem('codeLineNumbersScroll', 'false');
+				refreshCodeSettings();
+				showMessage('代码框设置已恢复默认设置');
 			});
 		
 			colorThemeSelect.addEventListener('change', refreshColorRows);
@@ -685,8 +768,8 @@
 		
 			resetColorBtn.addEventListener('click', function () {
 				const theme = colorThemeSelect.value;
-				const settings = getColorSettings();
-				delete settings[theme];
+				const settings = getCompleteColorSettings();
+				settings[theme] = createDefaultColorSettings()[theme];
 				setColorSettings(settings);
 				applyColorSettings();
 				refreshColorRows();
@@ -694,7 +777,7 @@
 			});
 		
 			resetAllColorBtn.addEventListener('click', function () {
-				localStorage.removeItem('siteColorVars');
+				setColorSettings(createDefaultColorSettings());
 				applyColorSettings();
 				refreshColorRows();
 				showMessage('全部颜色配置已恢复默认');
@@ -706,6 +789,7 @@
 			refreshThemeMemory();
 			refreshDialogSettings();
 			refreshTransitionInputs();
+			refreshCodeSettings();
 			colorThemeSelect.value = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
 			refreshColorRows();
 			setTimeout(function () {
@@ -717,6 +801,7 @@
 	<script src="./js/Cookie.js"></script>
 	<script src="./js/Protect.js"></script>
 	<script src="./js/CoreLogic.js"></script>
+	<script src="./js/Code.js"></script>
 </body>
 
 </html>

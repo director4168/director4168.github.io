@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="./css/MainColorStyle_Default.css">
 	<!-- 引入附加CSS样式 -->
 	<link rel="stylesheet" href="./css/AdditionalStyles.css">
+	<!-- 引入搜索CSS样式 -->
+	<link rel="stylesheet" href="./css/Search.css">
 </head>
 
 <body class="dark-theme">
@@ -37,34 +39,23 @@
 			</p>
 		</div>
 
-		<!-- 通用设置分组 -->
+		<div class="search-wrapper">
+			<div class="search-stroke" id="searchContainer">
+				<span class="material-icons">search</span>
+				<input type="text" class="search-InputBox" id="SearchInput" placeholder="搜索导航、工具、文档">
+			</div>
+		</div>
+
+		<!-- 功能分组 -->
 		<div class="card-section">
-			<div class="section-title">通用设置</div>
+			<div class="section-title">功能</div>
 			<div class="card">
 				<div class="list-group">
-					<a class="list-item" href="javascript:void(0);" data-href="./ContactInformation.html" data-title="联系方式" data-content="是否跳转到联系方式页？">
-						<span class="material-icons list-icon">contacts</span>
-						<div class="list-content">
-							<div class="list-title">社交账号</div>
-							<div class="list-subtitle">我的各个社交账号，如QQ、B站、YouTube</div>
-						</div>
-						<span class="material-icons">insert_link</span>
-					</a>
-
 					<a class="list-item" href="javascript:void(0);" data-href="./Function/index.html" data-title="功能" data-content="是否跳转到工具页？">
 						<span class="material-icons list-icon">build</span>
 						<div class="list-content">
 							<div class="list-title">工具</div>
 							<div class="list-subtitle">本站各工具、娱乐等功能等的目录页</div>
-						</div>
-						<span class="material-icons">insert_link</span>
-					</a>
-
-					<a class="list-item" href="javascript:void(0);" data-href="./Version.html" data-title="版本信息" data-content="是否跳转到版本信息页？">
-						<span class="material-icons list-icon">upgrade</span>
-						<div class="list-content">
-							<div class="list-title">版本信息</div>
-							<div class="list-subtitle">本站各文件版本，以及该站源代码目录表</div>
 						</div>
 						<span class="material-icons">insert_link</span>
 					</a>
@@ -86,6 +77,15 @@
 						<span class="material-icons">article</span>
 					</a>
 
+					<a class="list-item" href="javascript:void(0);" data-href="./ContactInformation.html" data-title="开发者联系方式" data-content="是否跳转到联系方式页？">
+						<span class="material-icons list-icon">contacts</span>
+						<div class="list-content">
+							<div class="list-title">开发者联系方式</div>
+							<div class="list-subtitle">我的各个社交账号，如QQ、B站、YouTube</div>
+						</div>
+						<span class="material-icons">insert_link</span>
+					</a>
+
 					<a class="list-item" href="javascript:void(0);" data-href="https://github.com/director4168/director4168.github.io" data-title="网站开源地址" data-content="是否前往该网站开源地址？<br>Github链接，中国大陆用户需要使用科学上网才能访问(注: 网站使用并遵守MPL-2.0开源协议）<br>如果感兴趣的话可以给我的这个项目加一个星标⭐️来支持我">
 						<span class="material-icons list-icon">code</span>
 						<div class="list-content">
@@ -102,6 +102,15 @@
 							<div class="list-subtitle">点击后将弹出我的微信赞赏码，支持我的创作</div>
 						</div>
 						<span class="material-icons">image</span>
+					</a>
+
+					<a class="list-item" href="javascript:void(0);" data-href="./Version.html" data-title="版本信息" data-content="是否跳转到版本信息页？">
+						<span class="material-icons list-icon">upgrade</span>
+						<div class="list-content">
+							<div class="list-title">版本信息</div>
+							<div class="list-subtitle">本站各文件版本，以及该站源代码目录表</div>
+						</div>
+						<span class="material-icons">insert_link</span>
 					</a>
 
 					<a class="list-item" href="javascript:void(0);" data-href="https://director4168.github.io/Agreement.html" data-title="用户协议" data-content="是否查看本站用户协议？">
@@ -137,10 +146,6 @@
 		<a href="./Setting.html" class="btn" id="settingsToggle" title="设置">
 			<span class="material-icons">settings</span>
 		</a>
-		<a href="./en_US/index_en_US.html" class="btn" id="languageToggle">
-			<span class="material-icons">translate</span>
-		</a>
-
 		<!-- 主题切换 -->
 		<div class="btn" id="themeToggle">
 			<span class="material-icons">dark_mode</span>
@@ -167,6 +172,8 @@
 	<!-- 引入核心JS -->
 	<script src="./js/CoreLogic.js"></script>
 	<script src="./js/Protect.js"></script>
+	<!-- 搜索JS -->
+	<script src="./js/Search.js"></script>
 </body>
 
 </html>
