@@ -1,10 +1,10 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/13_11:10",
+	"time": "2026/07/15_19:31",
 	"announcement": "No Announcement",
-	"version": "26071313",
+	"version": "26071508",
 	"compulsory": false,
-	"update_content": "v3.16.2(26071313)\n本版本主要更新:\n1. SQLite数据库编辑器\2. 优化主题切换逻辑，同时移出一些动画调用\n[b]权限增加:[/b]\n1. 新增所有文件访问权限\n2. 新增Shizuku权限（需在设置里面手动申请）\n[b]往期更新内容极多,请前往 https://github.com/director4168/CarterToolbox/releases/tag/26071313 查看[/b]\n\n感谢您的使用",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071313/CarterToolbox_3.16.2_release.apk",
-	"SHA256": "5e292775d92a493849c1062984056297a47d462264f5b13a2ae5159c7132d906"
+	"update_content": "v3.16.8(26071508)\n本版本主要更新:\n1. 子页面隐藏底部导航栏，顶栏改为动态标题 + 圆形返回箭头\n2. 修复跟随系统主题失灵，切换主题不再重建 Activity\n3. SQLite 数据库列表新增删除按钮，新建/无原文件时自动导出到下载目录并追加时间戳\n4. 存储权限、Shizuku权限、SQLite 所有弹窗统一改为 MD 风格，支持深色模式\n5. 系统文件选择器修复空白问题，改用 `ACTION_OPEN_DOCUMENT` + `MediaStore` 初始目录\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071508/CarterToolBox_3.16.8_release.apk",
+	"SHA256": "21de734344f804dd5c51d5e2c894e8c9f7de89bac10c886623500c464be24305"
 }
