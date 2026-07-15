@@ -4,7 +4,7 @@
 	"announcement": "No Announcement",
 	"version": "26071509",
 	"compulsory": false,
-	"update_content": "v3.16.8([b]26071508[/b])\n本版本主要更新:\n1. 子页面隐藏底部导航栏，顶栏改为动态标题与返回\n2. 修复跟随系统主题失效，且切换主题不再重建 Activity\n3. [b]SQLite 数据库列表新增删除按钮，新建/无原文件时自动导出到下载目录并追加时间戳[/b]\n4. 存储权限、Shizuku权限、SQLite 所有弹窗统一改为 MD 风格，支持深色模式\n5. 系统文件选择器修复空白问题\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
+	"update_content": "v3.16.8([b]26071508[/b])\n本版本主要更新:\n1. 子页面隐藏底部导航栏，顶栏改为动态标题与返回\n2. 修复跟随系统主题失效，且切换主题不再重建 Activity\n3. [b]SQLite 数据库列表新增删除按钮；新建无原文件时自动导出到下载目录并追加时间戳[/b]\n4. 存储权限、Shizuku权限、SQLite 所有弹窗统一改为 MD 风格，支持深色模式\n5. 系统文件选择器修复空白问题\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
 	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071508/CarterToolBox_3.16.8_release.apk",
 	"SHA256": "21de734344f804dd5c51d5e2c894e8c9f7de89bac10c886623500c464be24305"
 }
