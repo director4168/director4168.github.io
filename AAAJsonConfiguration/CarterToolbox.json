@@ -1,10 +1,10 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/15_19:55",
+	"time": "2026/07/17_20:42",
 	"announcement": "No Announcement",
-	"version": "26071508",
+	"version": "26071714",
 	"compulsory": false,
-	"update_content": "v3.16.8([b]26071508[/b])\n本版本主要更新:\n1. [b]优化[/b] 系统文件选择器修复空白问题\n2. [u]修复[/u] 跟随系统主题失效，且切换主题不再重建Activity\n3. [b]修改[/b] 存储权限、Shizuku权限、SQLite 所有弹窗统一改为软件内置弹窗\n4. [b]新增[/b] SQLite数据库列表新增删除按钮；新建无原文件时自动导出到下载目录并追加时间\n5. [b]修改[/b] 子页面隐藏底部导航栏，顶栏改为动态标题与返回\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071508/CarterToolBox_3.16.8_release.apk",
-	"SHA256": "21de734344f804dd5c51d5e2c894e8c9f7de89bac10c886623500c464be24305"
+	"update_content": "v3.18.8([b]26071714[/b])\n本版本主要更新:\1..[b]优化[/b] 启动与崩溃页：签名校验前置执行，拦截非正版通过崩溃页入侵；精简崩溃页按钮，完善反馈文案与日志版本号\n2. [b]新增[/b] 更新系统能力：增加Github代理可选配置，代理失效自动回退原生Github；优化更新失败弹窗提示，自动检测失败改为静默不打扰\n3. [b]新增[/b] 自动点击功能：支持多套点击配置、多点位坐标+延迟+备注配置；支持JSON导入导出；悬浮窗快捷触发；基于无障碍实现自动点击；增加权限实时检测刷新；支持按钮CSS样式自定义\n4. [b]优化[/b] 设置页、关于页面布局；补充完整用户协议与隐私协议文本\n5. [b]优化[/b] UI交互与数据逻辑：自动点击管理弹窗升级MD3样式；移除删除二次确认弹窗；新增配置未保存提醒；支持配置重命名；配置预览限制展示8条；修复备注无法保存问题；修复悬浮窗退出残留问题\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26071714/CarterToolbox_3.18.8_release.apk",
+	"SHA256": "f5fd17c4af740a166bf97a3797c837557be28676b8e228700256ce19420a13a3"
 }
