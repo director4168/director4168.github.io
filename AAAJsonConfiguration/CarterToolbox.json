@@ -2,7 +2,7 @@
 	"name": "Carter工具箱",
 	"time": "2026/07/22_18:28",
 	"announcement": "No Announcement",
-	"version": "26072108",
+	"version": "26072107",
 	"compulsory": false,
 	"update_content": "v4.2.0(26072107)\n[b][新增][/b] 自动点击，需要权限才能运行\n[b][新增][/b] MCP，MCP支持：点击屏幕、滑动屏幕、识别屏幕（与传统的OCR识别不同）、通过应用名称或包名打开应用等，需要无障碍权限\n[b][新增][/b] 插件支持，工具箱现在支持使用插件，插件应当向工具箱先申请一个快捷键，用户在工具箱内允许使用此快捷键后插件即可使用\n[b][修复][/b] 修复已知问题\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
 	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26072107/CarterToolbox_4.2.0.apk",
