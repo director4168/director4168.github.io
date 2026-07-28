@@ -1,10 +1,10 @@
 {
 	"name": "Carter工具箱",
-	"time": "2026/07/22_18:28",
+	"time": "2026/07/28_14:35",
 	"announcement": "No Announcement",
-	"version": "26072107",
+	"version": "26072802",
 	"compulsory": false,
-	"update_content": "v4.2.0(26072107)\n[b][新增][/b] 自动点击，需要权限才能运行\n[b][新增][/b] MCP，MCP支持：点击屏幕、滑动屏幕、识别屏幕（与传统的OCR识别不同）、通过应用名称或包名打开应用等，需要无障碍权限\n[b][新增][/b] 插件支持，工具箱现在支持使用插件，插件应当向工具箱先申请一个快捷键，用户在工具箱内允许使用此快捷键后插件即可使用\n[b][修复][/b] 修复已知问题\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
-	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26072107/CarterToolbox_4.2.0.apk",
-	"SHA256": "242a9bee9e6f410a0736e42f15e8166e26bcc9e9a4553ceb0690747b226c669d"
+	"update_content": "v4.3.8(26072802)\n1. [b]新增[/b] 游戏\n2. [b]新增[/b] 内置浏览器\n3. [b]修复[/b] 已知Bug\n\n感谢您的使用，如果您觉得好用不妨把它推荐给您身边的朋友！项目仓库：https://github.com/director4168/CarterToolbox",
+	"DownloadUrl": "https://github.com/director4168/CarterToolbox/releases/download/26072802/CarterToolbox_4.3.8.apk",
+	"SHA256": "b2e444b17e4f75897bb3a661a5684de98428c1c85f4a0574e64d1fcfb388cc12"
 }
