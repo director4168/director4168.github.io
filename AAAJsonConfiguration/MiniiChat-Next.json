@@ -4,6 +4,6 @@
     "version": "26092299",
     "compulsory": false,
     "update_content": "**测试**",
-    "DownloadUrl": "https://release-assets.githubusercontent.com/github-production-release-asset/1358938418/55b5982c-0e59-42dc-bd6c-37eacdacd5c5?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-09-22T04%3A58%3A53Z&rscd=attachment%3B+filename%3DMiniiChat-Next-1.4.0-rc.1-arm64-v8a-release.apk&rsct=application%2Fvnd.android.package-archive&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-09-22T03%3A58%3A52Z&ske=2026-09-22T04%3A58%3A53Z&sks=b&skv=2018-11-09&sig=tMifehRU9K65b0AV3%2FwcSAqA0UZnuaVFhwEv1Xuh5YM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MDA1MDUzOCwibmJmIjoxNzkwMDUwMjM4LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.QMLhAO5kypmO-twXo_FntkQBVYzLK0zFa4o6yQ2Ju7E&response-content-disposition=attachment%3B%20filename%3DMiniiChat-Next-1.4.0-rc.1-arm64-v8a-release.apk&response-content-type=application%2Fvnd.android.package-archive",
+    "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.4.0-rc.1/MiniiChat-Next-1.4.0-rc.1-arm64-v8a-release.apk",
     "SHA256": "20eab7fa536c7f26d6b287a57dc4110704883fb4c84110d519a526323bc857e8"
 }
