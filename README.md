@@ -5,7 +5,6 @@ http://mozilla.org/MPL/2.0/
 
 ---
 
-<a name='ContactInformation_cn'></a>
 ## 联系方式
 
 ### 个人网站
@@ -32,20 +31,8 @@ https://bbs.binmt.cc/home.php?mod=space&uid=134138&do=profile&mobile=2
 - 2705722903@qq.com
 - 3623293903@qq.com
 
----
-
-<a name='WarmReminder_cn'></a>
-## 温馨提醒
-
-- 原作者**没有义务**承担因您使用本程序而导致的**任何风险与责任**。
-- **所有文件**均采用 **MPL-2.0** 开源协议（详见项目中的 `LICENSE` 与 `NOTICE.md` 文件）。
-- 如需修改和使用，请**严格遵守** **MPL-2.0** 开源协议的要求。
-- 本程序仅供娱乐、学习与参考。
-- 此MarkDown文档，**英文**部分由**Google Translate**（**谷歌翻译**）提供翻译支持，与实际内容可能存在偏差！
-
 ----
 
-<a name='license'></a>
 ## 许可证 (License)
 
 本项目源码采用 [MPL-2.0](http://mozilla.org/MPL/2.0/) 协议开源。
