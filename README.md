@@ -1,12 +1,4 @@
-# 声明
 
-<a name='CopyrightStatement'></a>
-## 版权声明 | Copyright Statement
-
-**(C) 2025 director_Carter 保留所有权利**  
-**(C) 2025 director_Carter. All Rights Reserved**
-
-### 中文
 - 本版权声明适用于 [**https://github.com/director4168/director4168.github.io**] 和 [**https://director4168.github.io**] 整体 网站/仓库 及所有随附分发的文件（除非单个文件中另有特殊说明）。  
 - 本项目整体源代码受 Mozilla 公共许可证（MPL）v2.0 的条款约束。如果未随本文件分发 MPL 的副本，您可以在以下网址获取一份：
 http://mozilla.org/MPL/2.0/  
