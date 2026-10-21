@@ -2,7 +2,6 @@
     "name": "MiniiChat-Next",
     "time": "2026-10-13 13:50",
     "versionCode": "261013060",
-    "annotation_1": "下方version属性给旧版解析器使用，旧版更新系统解析的是version属性而非versionCode"
     "version": "261013060",
     "versionName": "v1.5.0-Beta",
     "compulsory": false,
