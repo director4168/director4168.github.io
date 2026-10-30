@@ -1,11 +1,12 @@
 {
-    "name": "MiniiChat-Next",
-    "time": "2026-10-29 23:03",
-    "versionCode": "261029099",
-    "version": "261029099",
-    "versionName": "v1.5.1",
-    "compulsory": false,
-    "update_content": "## v1.5.1(261029099)\nv1.5.0(261029095)版本更新日志: [点我查看](https://github.com/director4168/MiniiChat-Next/releases/tag/v1.5.0)\nBug反馈/功能建议: [点我前往](https://github.com/director4168/MiniiChat-Next/issues)\n\n### 设置与 UI\n| 类型 | 条目 |\n|------|------|\n| 优化 | 用量达到100万显示M |\n| 优化 | 用量达到10亿显示B |\n| 优化 | 更多偏好设置入口移至外观栏下面 |\n\n### 聊天面板与背景\n| 类型 | 条目 |\n|------|------|\n| 修复 | 打开加号菜单后页面只剩自定义背景 |\n| 修复 | 打开候选回复后页面只剩自定义背景 |\n| 修复 | 面板打开时聊天内容与输入栏被背景层遮挡 |\n| 修复 | 面板收起层占满布局导致输入栏被挤出屏幕 |\n| 修复 | 原生背景WebView面板打开后仍保持可见 |\n| 优化 | 面板打开时隔离CSS/图片背景层 |\n| 优化 | 恢复聊天主体独立合成层与前景层级 |",
-    "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.5.1/MiniiChat-Next-v1.5.1-arm64-v8a-release.apk",
-    "SHA256": "82fb0cfbf414d1e9c3cab09e3e7ac1a71057b132a7e6cb95734239ca361eb1b7"
+  "name": "MiniiChat-Next",
+  "time": "2026-10-31 02:49",
+  "versionCode": "261031115",
+  "versionName": "v1.6.0",
+  "compulsory": false,
+  "update_content": "## v1.6.0(261031115)\n\n### 更新\n|  类型| 条目 |\n|------|------|\n| 新增 | 新增2项`armabi-v7a`字段，用来支持下载与校验32位更新安装包 |\n\n### 主题\n| 类型 | 条目 |\n|------|------|\n| 优化 | 浅色主题完整配色扩充 |\n| 优化 | 深色主题完整配色扩充 |\n| 优化 | 增加secondary和tertiary角色 |\n| 优化 | 完善错误和警告容器配色 |\n| 优化 | 优化outline和scrim层次 |\n| 优化 | surfaceTint和inverseSurface支持 |\n| 优化 | 关于页面视觉层次 |\n\n### 头像与存储\n| 类型 | 条目 |\n|------|------|\n| 新增 | 头像背景存储和导入导出 |\n| 修复 | 头像选择后不生效的问题 |\n| 优化 | 头像缓存加载和更新 |\n| 优化 | 存储路径管理和权限处理 |\n| 优化 | 缓存清理机制 |\n\n### 初始启动引导\n| 类型 | 条目 |\n|------|------|\n| 新增 | 首次启动欢迎页 |\n| 新增 | 用户资料设置 |\n| 新增 | 服务商快速配置 |\n| 新增 | 权限状态检测 |\n| 优化 | 引导页面按需显示 |\n\n### 工具与资源\n| 类型 | 条目 |\n|------|------|\n| 优化 | 澄清工具支持一次至多提问16个 |\n| 修复 | 多问题澄清选项不显示 |\n| 优化 | 澄清回答后自动折叠 |\n| 优化 | 中英文资源同步整理 |\n| 优化 | 内置工具代码独立成模块 |\n| 优化 | 文件权限提示移入内置工具 |\n| 新增 | 内置工具页日历权限提示 |\n| 新增 | 关闭流式回复前弹出说明 |\n| 优化 | `time_now`支持时区参数 |\n| 优化 | 内置工具介绍去掉工具数量 |\n| 优化 | 日历权限提示移入设备工具 |\n| 修复 | 崩溃反馈邮件只列邮箱应用 |\n| 修复 | 服务商保存时预设弹窗闪现 |\n| 优化 | 设备工具提示所需全部权限 |",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.0/MiniiChat-Next-v1.6.0-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.0/MiniiChat-Next-v1.6.0-armeabi-v7a-release.apk",
+  "SHA256": "5170a315a41041f96bedf6019bd132b07370f55df4eb9acfc95c0caea504b009",
+  "SHA256_armabi_v7a": "sha256:4a76a159b9bdb265192bcaef445d8d81666400f040e49dddc89a024ae30618be"
 }
