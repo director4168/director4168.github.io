@@ -5,7 +5,7 @@
     "version": "261029099",
     "versionName": "v1.5.1",
     "compulsory": false,
-    "update_content": "## v1.5.1(261029099)\nv1.5.0(261029095)版本更新日志: [点我查看](https://github.com/director4168/MiniiChat-Next/releases/tag/v1.5.0)\n\n### 设置与 UI\n| 类型 | 条目 |\n|------|------|\n| 优化 | 用量达到100万显示M |\n| 优化 | 用量达到10亿显示B |\n| 优化 | 更多偏好设置入口移至外观栏下面 |\n\n### 聊天面板与背景\n| 类型 | 条目 |\n|------|------|\n| 修复 | 打开加号菜单后页面只剩自定义背景 |\n| 修复 | 打开候选回复后页面只剩自定义背景 |\n| 修复 | 面板打开时聊天内容与输入栏被背景层遮挡 |\n| 修复 | 面板收起层占满布局导致输入栏被挤出屏幕 |\n| 修复 | 原生背景WebView面板打开后仍保持可见 |\n| 优化 | 面板打开时隔离CSS/图片背景层 |\n| 优化 | 恢复聊天主体独立合成层与前景层级 |",
+    "update_content": "## v1.5.1(261029099)\nv1.5.0(261029095)版本更新日志: [点我查看](https://github.com/director4168/MiniiChat-Next/releases/tag/v1.5.0)\nBug反馈/功能建议: [点我前往](https://github.com/director4168/MiniiChat-Next/issues)\n\n### 设置与 UI\n| 类型 | 条目 |\n|------|------|\n| 优化 | 用量达到100万显示M |\n| 优化 | 用量达到10亿显示B |\n| 优化 | 更多偏好设置入口移至外观栏下面 |\n\n### 聊天面板与背景\n| 类型 | 条目 |\n|------|------|\n| 修复 | 打开加号菜单后页面只剩自定义背景 |\n| 修复 | 打开候选回复后页面只剩自定义背景 |\n| 修复 | 面板打开时聊天内容与输入栏被背景层遮挡 |\n| 修复 | 面板收起层占满布局导致输入栏被挤出屏幕 |\n| 修复 | 原生背景WebView面板打开后仍保持可见 |\n| 优化 | 面板打开时隔离CSS/图片背景层 |\n| 优化 | 恢复聊天主体独立合成层与前景层级 |",
     "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.5.1/MiniiChat-Next-v1.5.1-arm64-v8a-release.apk",
     "SHA256": "82fb0cfbf414d1e9c3cab09e3e7ac1a71057b132a7e6cb95734239ca361eb1b7"
 }
