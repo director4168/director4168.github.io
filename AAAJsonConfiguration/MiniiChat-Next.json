@@ -6,7 +6,7 @@
   "compulsory": false,
   "update_content": "## v1.6.1(261101001)\n\n### 修复\n| 类型 | 条目 |\n|------|------|\n| 修复 | 空工具Schema缺少object类型 |\n| 修复 | 修复剪贴板只读工具请求错误 |",
   "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.1/MiniiChat-Next-v1.6.1-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.1/MiniiChat-Next-v1.6.0-armeabi-v7a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.1/MiniiChat-Next-v1.6.1-armeabi-v7a-release.apk",
   "SHA256": "08419744d7fdb28d424cedc4bd1baaca39f1ffef3c93a5fc9beb4ceab29f9bf3",
   "SHA256_armabi_v7a": "cbf72a8340fa04ae3054d3fd231e502770f3e109a448d5cdbac59b2aa1a5d0a3"
 }
