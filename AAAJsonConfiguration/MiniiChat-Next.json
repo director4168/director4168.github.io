@@ -1,13 +1,13 @@
 {
   "name": "MiniiChat-Next",
-  "time": "2026-11-05 00:11",
-  "versionCode": "261102005",
-  "version": "261102005",
-  "versionName": "v1.6.2",
+  "time": "2026-11-08 16:22",
+  "versionCode": "261108023",
+  "version": "261108023",
+  "versionName": "v1.7.0-beta",
   "compulsory": false,
-  "update_content": "## v1.6.2\n\n### 优化\n| 类型 | 条目 |\n|------|------|\n| 优化 | 取消工具调用轮数上限 |\n| 优化 | 错误提示停留延长至4秒 |\n| 优化 | 允许服务商API Key为空 |\n| 优化 | toast配色与时长集中配置 |\n| 优化 | 初始页添加服务商后静默获取模型 |\n\n### 修复\n| 类型 | 条目 |\n|------|------|\n| 修复 | 历史消息的模型标签跟着当前模型变 |",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.2/MiniiChat-Next-v1.6.2-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.6.2/MiniiChat-Next-v1.6.2-armeabi-v7a-release.apk",
-  "SHA256": "0d65db45b09f2ebbc2d5adca33b6e3dea0823e5356d0de3698ec656289f23114",
-  "SHA256_armabi_v7a": "7a8e0c318bc00f6926acf2eac58ca670bbab96e2837b7b0147ca1e028291db8f"
+  "update_content": "## v1.7.0-beta\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 新增 | 消息耗时速度及Token统计 |\n| 优化 | 移植RikkaHub消息用量组件 |\n| 修复 | 侧滑栏切换对话未关闭 |\n| 修复 | 旧计量源码残留编译报错 |\n| 新增 | 模型选择页服务商入口 |\n| 新增 | 对话消息快速翻页按钮 |\n| 修复 | 弹窗未保存设置提前生效 |\n| 优化 | 回复中停止按钮使用警告色 |\n| 优化 | 选择弹窗确定改为保存 |\n\n### 设置与服务商\n| 类型 | 条目 |\n|------|------|\n| 新增 | 会话显示及输入偏好 |\n| 新增 | 应用启动次数记录 |\n| 优化 | 服务商名称长按拖动排序 |\n| 优化 | 配色修改支持透明度 |\n| 优化 | 标题候选支持使用对话模型 |\n\n### MCP服务\n| 类型 | 条目 |\n|------|------|\n| 修复 | 审批配置保存与工具同步 |\n| 优化 | 同步失败使用内置错误提示 |\n| 修复 | 相同MCP重复添加问题 |\n| 优化 | 区分配置保存与工具同步 |\n\n### 数据与日志\n| 类型 | 条目 |\n|------|------|\n| 新增 | ZIP备份与覆盖合并导入 |\n| 新增 | 快速备份与全量加密备份 |\n| 优化 | 导入自动识别备份模式 |\n| 新增 | 多文件日志查看器 |\n\n### 初始启动引导\n| 类型 | 条目 |\n|------|------|\n| 修复 | 授权后初始页错误跳转 |\n\n### 图片与交互\n| 类型 | 条目 |\n|------|------|\n| 修复 | 裁剪器深色模式配色 |\n| 修复 | 粘贴附件与裁剪器编译报错 |\n| 优化 | 多问题卡片随内容增高 |",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.0-beta/MiniiChat-Next-v1.7.0-beta-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.0-beta/MiniiChat-Next-v1.7.0-beta-armeabi-v7a-release.apk",
+  "SHA256": "de839b13fc8e5b7ae38c00fa2aa3e821fb8757a62b217dfff8c3f5c7979462f7",
+  "SHA256_armabi_v7a": "e693f1bd9d89b5127454c1d5a3aeb192431a3569148681ed36d4a192ba8f2730"
 }
