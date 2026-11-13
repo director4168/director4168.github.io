@@ -1,13 +1,13 @@
 {
   "name": "MiniiChat-Next",
-  "time": "2026-11-13 07:57",
-  "versionCode": "261113047",
-  "version": "261113047",
-  "versionName": "v1.7.1",
+  "time": "2026-11-13 21:35",
+  "versionCode": "261113048",
+  "version": "261113048",
+  "versionName": "v1.7.2",
   "compulsory": false,
-  "update_content": "## v1.7.1\n\n### 崩溃与日志\n| 类型 | 条目 |\n|------|------|\n| 修复 | 日志时间戳格式化线程安全 |\n\n### Markdown渲染\n| 类型 | 条目 |\n|------|------|\n| 修复 | 标识符大小写固定使用ROOT |\n\n### 提示词\n| 类型 | 条目 |\n|------|------|\n| 优化 | 提示词时间格式化按语言缓存 |\n\n### 附件与存储\n| 类型 | 条目 |\n|------|------|\n| 优化 | 扩展名规范化统一使用ROOT |\n\n### MCP与服务商\n| 类型 | 条目 |\n|------|------|\n| 优化 | URI及推理标识统一使用ROOT |\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 翻页惯性干扰及消息首尾错位 |\n| 修复 | 向下翻页定位下一条开头 |",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.1/MiniiChat-Next-v1.7.1-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.1/MiniiChat-Next-v1.7.1-armeabi-v7a-release.apk",
-  "SHA256": "c0fccb236ecbb29d4bb07f09cb569945a2f87f6e63439e01a2b82892a3e7e5b4",
-  "SHA256_armabi_v7a": "dacacb9dc27db0f60a8fb6811b107620233f63445887435729a6ed9260bb9783"
+  "update_content": "## v1.7.2\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 流式时手动滚动不再被顶走 |",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.2/MiniiChat-Next-v1.7.2-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.2/MiniiChat-Next-v1.7.2-armeabi-v7a-release.apk",
+  "SHA256": "8d66d9c8fdc938d1d18a164fc4fbb009fe620057a0fb722f9e56c52d51592a95",
+  "SHA256_armabi_v7a": "0aa940d8ab2088383686e8dee57991be53846b31291b004cdbdf6ef7bf5ba338"
 }
