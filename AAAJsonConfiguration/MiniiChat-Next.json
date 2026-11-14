@@ -1,13 +1,13 @@
 {
   "name": "MiniiChat-Next",
-  "time": "2026-11-14 14:12",
-  "versionCode": "261114051",
-  "version": "261114051",
-  "versionName": "v1.7.3",
+  "time": "2026-11-14 21:05",
+  "versionCode": "261114055",
+  "version": "261114055",
+  "versionName": "v1.7.4",
   "compulsory": false,
-  "update_content": "## v1.7.3\n\n### 权限与设置\n| 类型 | 条目 |\n|------|------|\n| 修复 | 旧系统无`MANAGE_APP_ALL_FILES_ACCESS_PERMISSION`权限导致系统无法找到对应Activity进而崩溃 |\n| 修复 | Android10及以下不提示存储权限 |",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.3/MiniiChat-Next-v1.7.3-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.3/MiniiChat-Next-v1.7.3-armeabi-v7a-release.apk",
+  "update_content": "## v1.7.4\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 流式上滑查看时仍被自动回滚 |\n| 修复 | 上滑阅读时仍有微小滚动抖动 |\n| 修复 | 工具调用期间无法停止生成 |\n| 修复 | 流式滚动状态切换后仍有漂移 |\n| 修复 | 流式阅读时不再接管滚动 |\n| 修复 | 流式贴底时中间帧闪屏 |\n\n### 工具与审批\n| 类型 | 条目 |\n|------|------|\n| 修复 | 未开审批的工具也显示审批按钮 |\n| 修复 | 工具审批状态切换后卡住 |\n\n### 权限与设置\n| 类型 | 条目 |\n|------|------|\n| 修复 | Android10初始页权限状态错误 |",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.4/MiniiChat-Next-v1.7.4-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.4/MiniiChat-Next-v1.7.4-armeabi-v7a-release.apk",
   "SHA256": "2710dbc9728d0558f3ba68b9e5b4ff5089be8dacbcb0a0153eb35a0d6ede6ccf",
   "SHA256_armabi_v7a": "e29951945b5d88e49328f83d3a022e45dadf6a19e6ef896aef4e8fda7e5a546f"
 }
