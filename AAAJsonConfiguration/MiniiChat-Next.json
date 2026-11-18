@@ -5,7 +5,7 @@
   "version": "261116007",
   "versionName": "v1.7.5",
   "compulsory": false,
-  "update_content": "## v1.7.5\n此999999999版本为测试期间所调整，最新版仍然为v1.7.5\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 生成结束后消息信息消失 |\n| 修复 | 无用量响应缺少信息详情 |\n| 修复 | 部分接口用量字段解析异常 |\n| 修复 | 回复期间实时展示实报用量 |\n| 修复 | 流式无用量时移除等待文案 |\n| 修复 | 无usage时结束后保留约算 |\n| 修复 | 免审批工具卡在执行中 |",
+  "update_content": "## v1.7.5\n此999999999版本为测试期间所调整，最新版仍然为v1.7.5\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 生成结束后消息信息消失 |\n| 修复 | 无用量响应缺少信息详情 |\n| 修复 | 部分接口用量字段解析异常 |\n| 修复 | 回复期间实时展示实报用量 |\n| 修复 | 流式无用量时移除等待文案 |\n| 修复 | 无usage时结束后保留约算 |\n| 修复 | 免审批工具卡在执行中 |\n\n---\n\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest",
   "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.5/MiniiChat-Next-v1.7.5-arm64-v8a-release.apk",
   "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.5/MiniiChat-Next-v1.7.5-armeabi-v7a-release.apk",
   "SHA256": "b8e82efd7bba77c3d2c2c763b7ac56515925616ff567ebf87a0b6d733c63d156",
