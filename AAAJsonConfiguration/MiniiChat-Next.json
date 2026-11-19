@@ -5,9 +5,9 @@
   "version": "261116007",
   "versionName": "v1.7.5",
   "compulsory": false,
-  "update_content": "## v1.7.5\n此999999999版本为测试期间所调整，最新版仍然为v1.7.5\n\n### 对话与消息\n| 类型 | 条目 |\n|------|------|\n| 修复 | 生成结束后消息信息消失 |\n| 修复 | 无用量响应缺少信息详情 |\n| 修复 | 部分接口用量字段解析异常 |\n| 修复 | 回复期间实时展示实报用量 |\n| 修复 | 流式无用量时移除等待文案 |\n| 修复 | 无usage时结束后保留约算 |\n| 修复 | 免审批工具卡在执行中 |\n\n---\n\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.5/MiniiChat-Next-v1.7.5-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.7.5/MiniiChat-Next-v1.7.5-armeabi-v7a-release.apk",
-  "SHA256": "b8e82efd7bba77c3d2c2c763b7ac56515925616ff567ebf87a0b6d733c63d156",
-  "SHA256_armabi_v7a": "720bf33e5cb422a32a744c07ae68d98110aaf0c4e5d59da94071f5bf7fb56ada"
+  "update_content": "## v1.8.0\n\n### 图表预览\n| 类型 | 条目 |\n|------|------|\n| 修复 | SVG预览空白 |\n| 修复 | 真机图表视图空白 |\n| 修复 | 查看页源码颜色过浅 |\n| 修复 | Mermaid初始化脚本异常 |\n| 优化 | 统一图表预览与全屏查看 |\n| 新增 | 图表查看与导出SVG |\n\n### 文档与致谢\n| 类型 | 条目 |\n|------|------|\n| 文档 | 补充图表与WebView来源声明 |\n| 文档 | 补充Operit下载来源及许可 |\n\n### 更新与版本\n| 类型 | 条目 |\n|------|------|\n| 修复 | 英文更新标题重复版本前缀 |\n| 优化 | 新版仅使用versionCode |\n| 修复 | 校验失败保留强制安装入口 |\n| 修复 | 节点开关保存与直连状态 |\n| 修复 | 关闭节点后显示原地址直连 |\n| 修复 | 重启后扫描APK校验并复用 |\n| 修复 | 校验失败误显示下载失败 |\n| 优化 | 测速下载校验分阶段展示 |\n| 优化 | 弹窗阶段切换保持遮罩 |\n| 优化 | 精简更新页面提示说明 |\n| 优化 | 版本校验显示预期与实际值 |\n| 新增 | 节点延迟与测速结果列表 |\n| 新增 | 更新弹窗底部显示当前包信息 |\n| 新增 | 更新设置显示版本信息 |\n| 优化 | 更新弹窗改为底部弹窗 |\n| 优化 | 长更新内容自适应高度 |\n| 优化 | 包信息居中固定于页底 |\n| 新增 | 更新节点测速与自动选源 |\n| 优化 | 完整APK仅从选定节点下载 |\n| 新增 | 节点加速开关与节点编辑 |\n| 优化 | 两次采样筛选稳定节点 |\n| 新增 | APK后台下载与通知进度 |\n| 新增 | 下载弹窗隐藏与恢复 |\n| 优化 | 已验证更新包直接复用 |\n| 优化 | 安装前核对版本架构签名 |\n\n### 主题与配色\n| 类型 | 条目 |\n|------|------|\n| 修复 | 配色导入导出图标方向 |\n| 优化 | 默认使用指定静态配色 |\n\n### 日志与备份\n| 类型 | 条目 |\n|------|------|\n| 优化 | 网络错误降为WARN |\n| 优化 | 清理临时导出日志 |\n| 优化 | 加密备份密码校验 |",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.8.0/MiniiChat-Next-v1.8.0-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.8.0/MiniiChat-Next-v1.8.0-armeabi-v7a-release.apk",
+  "SHA256": "9d5c1c4115053780701330bd53e9ae374380a3d04a7d4f1b5a0dae8f83951e6f",
+  "SHA256_armabi_v7a": "682e14928f5aa298d4eb64cc9ff01d77b8170198acbfbf47725525eeca637266"
 }
