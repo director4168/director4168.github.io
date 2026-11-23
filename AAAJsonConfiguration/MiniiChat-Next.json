@@ -5,7 +5,7 @@
   "version": "261123002",
   "versionName": "v1.9.1",
   "compulsory": false,
-  "update_content": "## v1.9.1\n\n| 类型 | 条目 |\n|------|------|\n| 修复 | 旧设备更新校验误判 |\n| ?修复 | 强制安装无法拉起 |\n\n> [!NOTE]\n> *带 **?** 的是已知仍有问题但未完全解决、待后续审查*",
+  "update_content": "旧设备用户若出现无法安装情况，请手动前往 [https://github.com/director4168/MiniiChat-Next/releases/tag/v1.9.1](https://github.com/director4168/MiniiChat-Next/releases/tag/v1.9.1) 下载安装\n\n## v1.9.1\n\n| 类型 | 条目 |\n|------|------|\n| 修复 | 旧设备更新校验误判 |\n| ?修复 | 强制安装无法拉起 |\n\n> [!NOTE]\n> *带 **?** 的是已知仍有问题但未完全解决、待后续审查*",
   "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.9.1/MiniiChat-Next-v1.9.1-arm64-v8a-release.apk",
   "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.9.1/MiniiChat-Next-v1.9.1-armeabi-v7a-release.apk",
   "SHA256": "565957b7623d8be6711b81f11eb872e87deef83d103fea20f76efe2aab7c8b4d",
