@@ -1,13 +1,13 @@
 {
   "name": "MiniiChat-Next",
-  "time": "2026-11-23 13:09",
-  "versionCode": "261123002",
-  "version": "261123002",
-  "versionName": "v1.9.1",
+  "time": "2026-11-24 12:52",
+  "versionCode": "261124001",
+  "version": "261124001",
+  "versionName": "v2.0.0-beta",
   "compulsory": false,
-  "update_content": "旧设备用户若出现无法安装情况，请手动前往 [https://github.com/director4168/MiniiChat-Next/releases/tag/v1.9.1](https://github.com/director4168/MiniiChat-Next/releases/tag/v1.9.1) 下载安装\n\n## v1.9.1\n\n| 类型 | 条目 |\n|------|------|\n| 修复 | 旧设备更新校验误判 |\n| ?修复 | 强制安装无法拉起 |\n\n> [!NOTE]\n> *带 **?** 的是已知仍有问题但未完全解决、待后续审查*",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.9.1/MiniiChat-Next-v1.9.1-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v1.9.1/MiniiChat-Next-v1.9.1-armeabi-v7a-release.apk",
-  "SHA256": "565957b7623d8be6711b81f11eb872e87deef83d103fea20f76efe2aab7c8b4d",
-  "SHA256_armabi_v7a": "69a4f09e0ec661242b512ec7073e46260074fded10b5ebd914a2ed2b0281fb02"
+  "update_content": "## v2.0.0-beta\n\n### 会话存储与升级\n| 类型 | 条目 |\n|------|------|\n| 新增 | SQLite会话存储 |\n| 新增 | 旧会话宽容迁移 |\n| 新增 | 升级页与前台通知 |\n| 优化 | 流式回复按消息写入 |\n| 优化 | 侧栏按会话摘要读取 |\n| 优化 | 校验后清理旧会话文件 |\n| 新增 | 导入旧会话备份自动升级 |\n| 优化 | 配置统一迁入SQLite |\n| 新增 | 支持导入旧配置备份 |\n| 优化 | 新备份使用SQLite |\n| 修复 | SQLite备份导出失败 |\n| 修复 | 正常启动闪现升级页 |\n| 修复 | 启动时侧栏闪现或默认展开 |\n| 优化 | 节点测速改用固定文件 |\n\n### 调试工具\n| 类型 | 条目 |\n|------|------|\n| 新增 | 清空数据 |\n\n> [!IMPORTANT]\n> 版本升级了数据存储格式，旧格式不兼新格式，因此，安装此版本后数据会进行升级，升级前请先进行数据备份！",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta/MiniiChat-Next-v2.0.0-beta-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta/MiniiChat-Next-v2.0.0-beta-armeabi-v7a-release.apk",
+  "SHA256": "0417d3ed7788d77d37fa5dd82d779ff85aba359329d3e12a80a7775e9a23877f",
+  "SHA256_armabi_v7a": "5c8a7a400422fb79732c8bfc61dabcb5923f979f400a528df01651aac2bd8bcb"
 }
