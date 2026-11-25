@@ -1,13 +1,13 @@
 {
   "name": "MiniiChat-Next",
-  "time": "2026-11-24 12:52",
-  "versionCode": "261124001",
-  "version": "261124001",
-  "versionName": "v2.0.0-beta",
+  "time": "2026-11-25 12:02",
+  "versionCode": "261124018",
+  "version": "261124018",
+  "versionName": "v2.0.0-beta.2",
   "compulsory": false,
-  "update_content": "## v2.0.0-beta\n\n### 会话存储与升级\n| 类型 | 条目 |\n|------|------|\n| 新增 | SQLite会话存储 |\n| 新增 | 旧会话宽容迁移 |\n| 新增 | 升级页与前台通知 |\n| 优化 | 流式回复按消息写入 |\n| 优化 | 侧栏按会话摘要读取 |\n| 优化 | 校验后清理旧会话文件 |\n| 新增 | 导入旧会话备份自动升级 |\n| 优化 | 配置统一迁入SQLite |\n| 新增 | 支持导入旧配置备份 |\n| 优化 | 新备份使用SQLite |\n| 修复 | SQLite备份导出失败 |\n| 修复 | 正常启动闪现升级页 |\n| 修复 | 启动时侧栏闪现或默认展开 |\n| 优化 | 节点测速改用固定文件 |\n\n### 调试工具\n| 类型 | 条目 |\n|------|------|\n| 新增 | 清空数据 |\n\n> [!IMPORTANT]\n> 版本升级了数据存储格式，旧格式不兼新格式，因此，安装此版本后数据会进行升级，升级前请先进行数据备份！",
-  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta/MiniiChat-Next-v2.0.0-beta-arm64-v8a-release.apk",
-  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta/MiniiChat-Next-v2.0.0-beta-armeabi-v7a-release.apk",
-  "SHA256": "0417d3ed7788d77d37fa5dd82d779ff85aba359329d3e12a80a7775e9a23877f",
-  "SHA256_armabi_v7a": "5c8a7a400422fb79732c8bfc61dabcb5923f979f400a528df01651aac2bd8bcb"
+  "update_content": "## v2.0.0-beta.2\n\n### 本机模型\n| 类型 | 条目 |\n|------|------|\n| 新增 | 内置GGUF模型文件支持 |\n| 新增 | GGUF文件与URL导入 |\n| 新增 | 系统意图解析器 GGUF导入 打开方式 |\n| 修复 | 代码框无法长按选中 |\n| 修复 | 代码消息无法打开操作菜单 |\n| 优化 | 本机模型使用系统文件选择器 |\n| 修复 | 用户消息正文可长按选中 |\n| 修复 | GGUF文件无法在系统选择器显示 |\n| 优化 | Debug警告弹窗统一图标 |\n\n> [!NOTE]\n> 不支持32位设备使用自定义自定义本地GGUF模型",
+  "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta.2/MiniiChat-Next-v2.0.0-beta.2-arm64-v8a-release.apk",
+  "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta.2/MiniiChat-Next-v2.0.0-beta.2-armeabi-v7a-release.apk",
+  "SHA256": "64fc12fe34a0801e60e5da3ba6554b24386a54e70ff62b983040b69a24e3aa59",
+  "SHA256_armabi_v7a": "96d01e43c9a3a2e3505430a318106a41ceb0fecef075b974da19fe505b22a559"
 }
