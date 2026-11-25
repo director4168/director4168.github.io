@@ -5,7 +5,7 @@
   "version": "261124018",
   "versionName": "v2.0.0-beta.2",
   "compulsory": false,
-  "update_content": "## v2.0.0-beta.2\n\n### 本机模型\n| 类型 | 条目 |\n|------|------|\n| 新增 | 内置GGUF模型文件支持 |\n| 新增 | GGUF文件与URL导入 |\n| 新增 | 系统意图解析器 GGUF导入 打开方式 |\n| 修复 | 代码框无法长按选中 |\n| 修复 | 代码消息无法打开操作菜单 |\n| 优化 | 本机模型使用系统文件选择器 |\n| 修复 | 用户消息正文可长按选中 |\n| 修复 | GGUF文件无法在系统选择器显示 |\n| 优化 | Debug警告弹窗统一图标 |\n\n> [!NOTE]\n> 不支持32位设备使用自定义自定义本地GGUF模型",
+  "update_content": "## v2.0.0-beta.2\n\n### 本机模型\n| 类型 | 条目 |\n|------|------|\n| 新增 | 内置GGUF模型文件支持 |\n| 新增 | GGUF文件与URL导入 |\n| 新增 | 系统意图解析器 GGUF导入 打开方式 |\n| 修复 | 代码框无法长按选中 |\n| 修复 | 代码消息无法打开操作菜单 |\n| 优化 | 本机模型使用系统文件选择器 |\n| 修复 | 用户消息正文可长按选中 |\n| 修复 | GGUF文件无法在系统选择器显示 |\n| 优化 | Debug警告弹窗统一图标 |\n\n> [!NOTE]\n> 不支持32位设备使用本机模型功能",
   "DownloadUrl": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta.2/MiniiChat-Next-v2.0.0-beta.2-arm64-v8a-release.apk",
   "DownloadUrl_armabi_v7a": "https://github.com/director4168/MiniiChat-Next/releases/download/v2.0.0-beta.2/MiniiChat-Next-v2.0.0-beta.2-armeabi-v7a-release.apk",
   "SHA256": "64fc12fe34a0801e60e5da3ba6554b24386a54e70ff62b983040b69a24e3aa59",
